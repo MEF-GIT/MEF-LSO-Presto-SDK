@@ -7,7 +7,9 @@ definitions in YANG and Swagger.
 
 The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
-[ Link to MEF Page for LSO Presto ]
+More information about the LSO Presto API reference point can be found here:
+
+https://wiki.mef.net/display/CESG/LSO+Presto
 
 [ Define wider context of MEF Lifecycle Service Orchestration architecture ]
 
