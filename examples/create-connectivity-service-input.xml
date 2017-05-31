@@ -1,0 +1,45 @@
+<create-connectivity-service xmlns="urn:mef:yang:TapiConnectivity">
+  <input>
+    <end-point>
+      <service-interface-point>endpoint:a:uuid</service-interface-point>
+      <direction>bidirectional</direction>
+      <layer-protocol-name>eth</layer-protocol-name>
+      <nrp-cg-eth-frame-flow-spec xmlns="urn:mef:yang:NRP_Interface">
+        <ce-vlan-id-list-or-untag>
+          <type>all</type>
+        </ce-vlan-id-list-or-untag>
+      </nrp-cg-eth-frame-flow-spec>
+      <nrp-cg-eth-uni-spec xmlns="urn:mef:yang:NRP_Interface">
+        <ingress-cg-eth-bwpflow>
+          <uuid>bwp:uuid</uuid>
+        </ingress-cg-eth-bwpflow>
+        <egress-cg-eth-bwpflow>
+          <uuid>bwp:uuid</uuid>
+        </egress-cg-eth-bwpflow>
+      </nrp-cg-eth-uni-spec>
+    </end-point>
+    <end-point>
+      <service-interface-point>endpoint:z:uuid</service-interface-point>
+      <direction>bidirectional</direction>
+      <layer-protocol-name>eth</layer-protocol-name>
+      <nrp-cg-eth-frame-flow-spec xmlns="urn:mef:yang:NRP_Interface">
+      </nrp-cg-eth-frame-flow-spec>
+      <nrp-cg-eth-enni-spec xmlns="urn:mef:yang:NRP_Interface">
+      </nrp-cg-eth-enni-spec>
+    </end-point>
+    <conn-constraint>
+      <service-type>point-to-point-connectivity</service-type>
+      <service-level>best-effort</service-level>
+    </conn-constraint>
+    <nrp-cg-eth-conn-serv-spec xmlns="urn:mef:yang:NRP_Interface">
+      <connection-type>point-to-point</connection-type>
+      <max-frame-size>2000</max-frame-size>
+      <ce-vlan-id-preservation>preserve</ce-vlan-id-preservation>
+      <ce-vlan-pcp-preservation>true</ce-vlan-pcp-preservation>
+      <ce-vlan-dei-preservation>true</ce-vlan-dei-preservation>
+      <s-vlan-pcp-preservation>true</s-vlan-pcp-preservation>
+      <s-vlan-dei-preservation>true</s-vlan-dei-preservation>
+      <l2cp-address-set>ctb</l2cp-address-set>
+    </nrp-cg-eth-conn-serv-spec>
+  </input>
+</create-connectivity-service>
