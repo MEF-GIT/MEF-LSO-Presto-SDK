@@ -47,6 +47,4 @@ https://github.com/OpenNetworkingFoundation/Snowmass-ONFOpenTransport
 
 ## Copyright
 
-© The MEF Forum 2017. Any reproduction of this document, or any portion thereof, shall contain
-the following statement: "Reproduced with permission of the MEF Forum." No user of this document
-is authorized to modify any of the information contained herein.
+Copyright 2017 MEF Forum
