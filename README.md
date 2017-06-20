@@ -37,7 +37,8 @@ An instance of the Unimgr project is provided in MEFnet for MEF
 members to undertake integration testing. Please see the MEFnet Terms of Use.
 
 https://wiki.mef.net/display/CTO/MEFnet
-https://mef.net/Assets/Documents/Bylaws/MEFnet-Terms-of-Use-1-Dec-2016.pdf
+
+https://mef.net/TOU
 
 ## Related Projects
 
