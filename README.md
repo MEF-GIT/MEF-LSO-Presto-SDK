@@ -20,11 +20,12 @@ This SDK contains the following items:
 * COPYRIGHT - [ will need a wording of the copyright message that applies to whole project ]
 * LICENSE - Contains a copy of the Apache 2.0 license.
 * MEF-NRP-IPS.docx
-* yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
-  which the MEF NRP API is based.
-* swagger - Contains the MEF NRP Swagger specifications.
-* examples - Contains example JSON API requests and Postman collections.
-* tutorial - A guide for getting started with the MEF LSO Presto SDK
+* experimental - SDK content for unpublished MEF specifications
+  * yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
+    which the MEF NRP API is based.
+  * swagger - Contains the MEF NRP Swagger specifications.
+  * examples - Contains example JSON API requests and Postman collections.
+  * tutorial - A guide for getting started with the MEF LSO Presto SDK
 
 ## Reference Implementations
 
