@@ -17,8 +17,8 @@ https://wiki.mef.net/display/CESG/LSO+Presto
 
 This SDK contains the following items:
 
-* COPYRIGHT - [ will need a wording of the copyright message that applies to whole project ]
-* LICENSE - Contains a copy of the Apache 2.0 license.
+* COPYRIGHT - Copyright 2017 MEF Forum
+* LICENSE - Contains a copy of the Apache 2.0 license
 * MEF-NRP-IPS.docx
 * experimental - SDK content for unpublished MEF specifications
   * yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
@@ -26,6 +26,7 @@ This SDK contains the following items:
   * swagger - Contains the MEF NRP Swagger specifications.
   * examples - Contains example JSON API requests and Postman collections.
   * tutorial - A guide for getting started with the MEF LSO Presto SDK
+* published - SDK content for published MEF specifications
 
 ## Reference Implementations
 
