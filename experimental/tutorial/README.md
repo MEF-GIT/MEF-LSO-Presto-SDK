@@ -95,7 +95,7 @@ You can run this tutorial step with the *tutorial.sh* helper:
 % ./tutorial.sh init
 ```
 
-## Step 1 - Get Availiable Topology
+## Step 1 - Get Available Topology
 
 The controller provides a topology view which includes endpoints that are elegible for
 connectivity serivces. Here we use a RESTCONF request to retrieve a single topology with the
@@ -229,6 +229,13 @@ The JSON request looks like this:
     }
   }
 }
+```
+
+You can run this tutorial step with the *tutorial.sh* helper:
+
+```sh
+% ./tutorial.sh step2
+{"output":{"service":{"uuid":"cs:15d08dd666c:-7f69bf18","connection": ...
 ```
 
 ## Step 3 - Get List of Connectivity Services
