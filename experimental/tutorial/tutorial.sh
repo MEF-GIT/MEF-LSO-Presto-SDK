@@ -7,6 +7,23 @@ URL="http://${HOST}:8181"
 GET="curl --basic -u ${AUTH}"
 POST="curl -X POST -H Content-Type:application/json --basic -u ${AUTH}"
 
+# Set up OpenDaylight with OVS
+init() {
+    ${POST} ${URL}/restconf/config/network-topology:network-topology/topology/ovsdb:1 --data-ascii @- <<EOF
+{
+    "node": [
+        {
+            "node-id": "odl",
+            "connection-info": {
+              "remote-ip": "127.0.0.1",
+              "remote-port": 6640
+            }
+        }
+    ]
+}
+EOF
+}
+
 # Get available topology
 step1() {
     set -x
@@ -107,6 +124,7 @@ Usage: $0 <tutorial-step> [ argument ... ]
 
 Tutorial steps are:
 
+init           Set up OpenDaylight with OVS info
 step1          Get topology
 step2          Create a connectivity service
 step3          Get a list of connectivity services
@@ -124,7 +142,7 @@ then
 fi
 
 case "$1" in
-    step*)
+    step*|init)
         $*
         ;;
     *)

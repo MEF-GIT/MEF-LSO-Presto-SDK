@@ -8,23 +8,98 @@ OpenDaylight Unimgr.
 The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet. If
 you need to manually start OpenDaylight, these are the steps:
 
+### Start OpenDaylight
+
 ```sh
 % cd unimgr-karaf-0.3.0-SNAPSHOT
 % ./bin/karaf
+Apache Karaf starting up. Press Enter to open the shell now...
+100% [========================================================================]
+
+Karaf started in 17s. Bundle stats: 338 active, 338 total
+
+    ________                       ________                .__  .__       .__     __
+    \_____  \ ______   ____   ____ \______ \ _____  ___.__.|  | |__| ____ |  |___/  |
+     /   |   \\____ \_/ __ \ /    \ |    |  \\__  \<   |  ||  | |  |/ ___\|  |  \   __\
+    /    |    \  |_> >  ___/|   |  \|    `   \/ __ \\___  ||  |_|  / /_/  >   Y  \  |
+    \_______  /   __/ \___  >___|  /_______  (____  / ____||____/__\___  /|___|  /__|
+            \/|__|        \/     \/        \/     \/\/            /_____/      \/
+
+
+Hit '<tab>' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown OpenDaylight.
+
+opendaylight-user@root>
+```
+### Enable OVS Driver in OpenDaylight
+
+```sh
 opendaylight-user@root>feature:install odl-unimgr-ovs-driver
 ```
+
+### Launch Mininet
 
 There is a script provided for starting mininet:
 
 ```sh
 % cd mininet
 % sudo python create_topology.py
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4
+*** Adding switches:
+s1 s2 s3 s4 s5
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s5) (h4, s5) (s1, s2) (s1, s3) (s1, s4) (s2, s3) (s3, s4) (s3, s5) (s4, s5)
+*** Configuring hosts
+h1 h2 h3 h4
+*** Starting controller
+c0
+*** Starting 5 switches
+s1 s2 s3 s4 s5 ...
+*** Starting CLI:
+mininet>
+```
+
+### Register OVS with OpenDaylight
+
+The RESTCONF call looks like this:
+
+```
+POST /restconf/config/network-topology:network-topology/topology/ovsdb:1
+Authorization: basic-auth
+Content-Type: application/json
+```
+
+The JSON request looks like this:
+
+```json
+{
+    "node": [
+        {
+            "node-id": "odl",
+            "connection-info": {
+              "remote-ip": "127.0.0.1",
+              "remote-port": 6640
+            }
+        }
+    ]
+}
+```
+
+You can run this tutorial step with the *tutorial.sh* helper:
+
+```sh
+% ./tutorial.sh init
 ```
 
 ## Step 1 - Get Availiable Topology
 
 The controller provides a topology view which includes endpoints that are elegible for
-connectivity serivces. Here we use a RESTCONF request to retrieve the topology.
+connectivity serivces. Here we use a RESTCONF request to retrieve a single topology with the
+name **mef:presto-nrp-topology**.
 
 The RESTCONF call looks like this:
 ```
@@ -233,7 +308,7 @@ The JSON request payload looks like this:
 }
 ```
 
-You can run this tutorial step with the *tutorial.sh* helper:
+You can run this tutorial step with the *tutorial.sh* helper - take the service-uuid from the output in step 3:
 
 ```sh
 % ./tutorial.sh step4 <service-uuid>
