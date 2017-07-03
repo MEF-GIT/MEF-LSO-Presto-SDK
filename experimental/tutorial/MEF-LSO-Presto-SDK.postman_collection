@@ -1,0 +1,156 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MEF LSO Presto SDK",
+		"_postman_id": "b75eef7d-4152-4856-b1ce-4530d5ff8bb0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step 1 - get Tapi Topology - mef:presto-nrp-topology",
+			"request": {
+				"url": "http://{{ip_address}}:8181/restconf/operational/tapi-common:context/tapi-topology:topology/mef:presto-nrp-topology",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - create connnectivity service",
+			"request": {
+				"url": "http://{{ip_address}}:8181/restconf/operations/tapi-connectivity:create-connectivity-service",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"input\": {\n    \"end-point\": [\n      {\n        \"service-interface-point\": \"sip:ovs-node:s1:s1-eth1\",\n        \"direction\": \"bidirectional\",\n        \"layer-protocol-name\": \"eth\",\n        \"nrp-cg-eth-frame-flow-cpa-aspec\": {\n        \t\"ce-vlan-id-list\": {\n        \t\t\"vlan-id-list\":[\n        \t\t\t{\n        \t\t\t\t\"vlan-id\": 300\n        \t\t\t}\n        \t\t]\n        \t}\n        }\n      },\n      {\n        \"service-interface-point\": \"sip:ovs-node:s5:s5-eth1\",\n        \"direction\": \"bidirectional\",\n        \"layer-protocol-name\": \"eth\",\n        \"nrp-cg-eth-frame-flow-cpa-aspec\": {\n        \t\"ce-vlan-id-list\": {\n        \t\t\"vlan-id-list\":[\n        \t\t\t{\n        \t\t\t\t\"vlan-id\": 300\n        \t\t\t}\n        \t\t]\n        \t}\n        }\n      }\n    ],\n    \"conn-constraint\": {\n      \"service-type\": \"point-to-point-connectivity\",\n      \"service-level\": \"best-effort\"\n    },\n    \"nrp-cg-eth-conn-serv-spec\": {\n      \"connection-type\": \"point-to-point\",\n      \"max-frame-size\": \"2000\",\n      \"unicast-frame-delivery\": \"unconditionally\",\n      \"broadcast-frame-delivery\": \"unconditionally\",\n      \"multicast-frame-delivery\": \"unconditionally\",\n      \"ce-vlan-id-preservation\": \"preserve\",\n      \"ce-vlan-pcp-preservation\": \"true\",\n      \"ce-vlan-dei-preservation\": \"true\",\n      \"s-vlan-pcp-preservation\": \"true\",\n      \"s-vlan-dei-preservation\": \"true\",\n      \"available-meg-level\": \"0\",\n      \"l2cp-address-set\": \"ctb\"\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Step 3 - get connnectivity service list",
+			"request": {
+				"url": "http://{{ip_address}}:8181/restconf/operations/tapi-connectivity:get-connectivity-service-list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Step 4 - delete connectivity service",
+			"request": {
+				"url": "http://{{ip_address}}:8181/restconf/operations/tapi-connectivity:delete-connectivity-service",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"input\" : {\n    \"service-id-or-name\" : \"{{service_uuid}}\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Init - add OVSDB Node",
+			"request": {
+				"url": "http://{{ip_address}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb:1/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"node\": [\n        {\n            \"node-id\": \"odl\",\n            \"connection-info\": {\n              \"remote-ip\": \"127.0.0.1\",\n              \"remote-port\": 6640\n            }\n        }\n    ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "del OVSDB Node",
+			"request": {
+				"url": "http://{{ip_address}}:8181/restconf/config/network-topology:network-topology/topology/ovsdb%3A1/node/odl",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

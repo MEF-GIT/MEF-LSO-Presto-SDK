@@ -3,6 +3,12 @@
 This tutorial introduces the MEF LSO Presto API with examples that can be used live with
 OpenDaylight Unimgr.
 
+There are several ways for you to run through the steps in this tutorial:
+
+* Play along with the provided MEF-LSO-Presto-SDK Postman collection.
+* Use the provided *tutorial.sh* to run each step from your shell.
+* Construct and execute each of the HTTP requests in your favourite programming language.
+
 ## Prerequisites
 
 The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet. If
