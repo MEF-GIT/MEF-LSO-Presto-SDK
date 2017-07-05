@@ -41,38 +41,30 @@ step2() {
         "service-interface-point": "sip:ovs-node:s1:s1-eth1",
         "direction": "bidirectional",
         "layer-protocol-name": "eth",
-        "nrp-cg-eth-frame-flow-cpa-aspec": {
-        	"ce-vlan-id-list": {
-        		"vlan-id-list":[
-        			{
-        				"vlan-id": 300
-        			}
-        		]
-        	}
+        "nrp-cg-eth-frame-flow-spec": {
+            "ce-vlan-id-list-or-untag": {
+                "vlan-id-list":[ {
+                    "vlan-id": 300
+                } ]
+            }
         }
       },
       {
         "service-interface-point": "sip:ovs-node:s5:s5-eth1",
         "direction": "bidirectional",
         "layer-protocol-name": "eth",
-        "nrp-cg-eth-frame-flow-cpa-aspec": {
-        	"ce-vlan-id-list": {
-        		"vlan-id-list":[
-        			{
-        				"vlan-id": 300
-        			}
-        		]
-        	}
+        "nrp-cg-eth-frame-flow-spec": {
+            "ce-vlan-id-list-or-untag": {
+                "vlan-id-list":[ {
+                    "vlan-id": 300
+                } ]
+            }
         }
       }
     ],
     "conn-constraint": {
       "service-type": "point-to-point-connectivity",
       "service-level": "best-effort",
-      "requested-capacity": {
-        "committed-information-rate": 1000,
-        "committed-burst-size": 100
-      }
     },
     "nrp-cg-eth-conn-serv-spec": {
       "connection-type": "point-to-point",
@@ -85,7 +77,6 @@ step2() {
       "ce-vlan-dei-preservation": "true",
       "s-vlan-pcp-preservation": "true",
       "s-vlan-dei-preservation": "true",
-      "available-meg-level": "0",
       "l2cp-address-set": "ctb"
     }
   }

@@ -186,8 +186,8 @@ The JSON request looks like this:
         "service-interface-point": "sip:ovs-node:s1:s1-eth1",
         "direction": "bidirectional",
         "layer-protocol-name": "eth",
-        "nrp-cg-eth-frame-flow-cpa-aspec": {
-        	"ce-vlan-id-list": {
+        "nrp-cg-eth-frame-flow-spec": {
+            "ce-vlan-id-list-or-untag": {
         		"vlan-id-list":[
         			{
         				"vlan-id": 300
@@ -200,8 +200,8 @@ The JSON request looks like this:
         "service-interface-point": "sip:ovs-node:s5:s5-eth1",
         "direction": "bidirectional",
         "layer-protocol-name": "eth",
-        "nrp-cg-eth-frame-flow-cpa-aspec": {
-        	"ce-vlan-id-list": {
+        "nrp-cg-eth-frame-flow-spec": {
+            "ce-vlan-id-list-or-untag": {
         		"vlan-id-list":[
         			{
         				"vlan-id": 300
@@ -213,11 +213,7 @@ The JSON request looks like this:
     ],
     "conn-constraint": {
       "service-type": "point-to-point-connectivity",
-      "service-level": "best-effort",
-      "requested-capacity": {
-        "committed-information-rate": 1000,
-        "committed-burst-size": 100
-      }
+      "service-level": "best-effort"
     },
     "nrp-cg-eth-conn-serv-spec": {
       "connection-type": "point-to-point",
@@ -230,7 +226,6 @@ The JSON request looks like this:
       "ce-vlan-dei-preservation": "true",
       "s-vlan-pcp-preservation": "true",
       "s-vlan-dei-preservation": "true",
-      "available-meg-level": "0",
       "l2cp-address-set": "ctb"
     }
   }
