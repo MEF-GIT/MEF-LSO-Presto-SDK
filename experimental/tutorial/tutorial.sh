@@ -40,44 +40,49 @@ step2() {
       {
         "service-interface-point": "sip:ovs-node:s1:s1-eth1",
         "direction": "bidirectional",
-        "layer-protocol-name": "eth",
-        "nrp-cg-eth-frame-flow-spec": {
-            "ce-vlan-id-list-or-untag": {
-                "vlan-id-list":[ {
-                    "vlan-id": 300
-                } ]
-            }
+        "layer-protocol": {
+        	"local-id":"eth",
+        	"layer-protocol-name" : "eth"
+        },
+        "nrp-interface:nrp-carrier-eth-connectivity-end-point-resource": {
+        	"ce-vlan-id-list-and-untag": {
+        		"vlan-id":[
+        			{
+        				"vlan-id": 300
+        			}
+        		]
+        	}
         }
       },
       {
-        "service-interface-point": "sip:ovs-node:s5:s5-eth1",
+        "service-interface-point": "sip:ovs-node:s2:s2-eth3",
         "direction": "bidirectional",
-        "layer-protocol-name": "eth",
-        "nrp-cg-eth-frame-flow-spec": {
-            "ce-vlan-id-list-or-untag": {
-                "vlan-id-list":[ {
-                    "vlan-id": 300
-                } ]
-            }
+        "layer-protocol": {
+        	"local-id":"eth",
+        	"layer-protocol-name" : "eth"
+        },
+        "nrp-interface:nrp-carrier-eth-connectivity-end-point-resource": {
+        	"ce-vlan-id-list-and-untag": {
+        		"vlan-id":[
+        			{
+        				"vlan-id": 300
+        			}
+        		]
+        	}
         }
       }
     ],
     "conn-constraint": {
       "service-type": "point-to-point-connectivity",
-      "service-level": "best-effort",
+      "service-level": "best-effort"
     },
-    "nrp-cg-eth-conn-serv-spec": {
-      "connection-type": "point-to-point",
+    "nrp-interface:nrp-carrie-eth-connectivity-resource": {
       "max-frame-size": "2000",
-      "unicast-frame-delivery": "unconditionally",
-      "broadcast-frame-delivery": "unconditionally",
-      "multicast-frame-delivery": "unconditionally",
       "ce-vlan-id-preservation": "preserve",
       "ce-vlan-pcp-preservation": "true",
       "ce-vlan-dei-preservation": "true",
       "s-vlan-pcp-preservation": "true",
-      "s-vlan-dei-preservation": "true",
-      "l2cp-address-set": "ctb"
+      "s-vlan-dei-preservation": "true"
     }
   }
 }
