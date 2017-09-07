@@ -3,7 +3,7 @@ swagger: "2.0"
 info:
   description: "tapi-connectivity,nrp-interface,tapi-topology,mef-types,tapi-common,nrm-connectivity,tapi-path-computation,mef-common\
     \ API generated from yang definitions"
-  version: "1.0.0-SNAPSHOT"
+  version: "2017A"
   title: "tapi-connectivity,nrp-interface,tapi-topology,mef-types,tapi-common,nrm-connectivity,tapi-path-computation,mef-common\
     \ API"
 host: "localhost:1234"

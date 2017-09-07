@@ -11,8 +11,17 @@ There are several ways for you to run through the steps in this tutorial:
 
 ## Prerequisites
 
-The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet. If
-you need to manually start OpenDaylight, these are the steps:
+The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet. The VM can be downloaded from the following locations: 
+
+* Presto-SDK.zip (https://metroethernetforum.box.com/s/h5j78genqwx2y4z7msho6119wxqnpffe)
+* Presto-SDK.z01 (https://metroethernetforum.box.com/s/2rhbl3ct3wqkszm06ootbe31frjhyhps)
+
+Here are the commands to unzip after you have downloaded both the files
+
+* zip -s 0 Presto-SDK.zip --out Presto-SDK-full.zip
+* unzip Presto-SDK-full.zip
+
+If you need to manually start OpenDaylight, these are the steps:
 
 ### Start OpenDaylight
 

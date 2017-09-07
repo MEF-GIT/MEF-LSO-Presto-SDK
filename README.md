@@ -19,7 +19,6 @@ This SDK contains the following items:
 
 * COPYRIGHT - Copyright 2017 MEF Forum
 * LICENSE - Contains a copy of the Apache 2.0 license
-* MEF-NRP-IPS.docx
 * experimental - SDK content for unpublished MEF specifications
   * yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
     which the MEF NRP API is based.
