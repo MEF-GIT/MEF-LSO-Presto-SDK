@@ -24,8 +24,7 @@ This SDK contains the following items:
     which the MEF NRP API is based.
   * swagger - Contains the MEF NRP Swagger specifications.
   * examples - Contains example JSON API requests and Postman collections.
-  * tutorial - A guide for getting started with the MEF LSO Presto SDK
-             - A packaged LSO Presto SDK demo VM running OpenDaylight Unimgr and mininet.
+  * tutorial - A guide for getting started with the MEF LSO Presto SDK & a packaged demo VM running OpenDaylight Unimgr and mininet.
 * published - SDK content for published MEF specifications
 
 ## Reference Implementations
