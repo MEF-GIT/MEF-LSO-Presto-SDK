@@ -31,24 +31,21 @@ This SDK contains the following items:
 
 1) LSO Presto APIs in OpenDaylight SDN Controller
 
-A reference implementation of the MEF Network Resource Provisioning API is available from the
-OpenDaylight Unimgr project.
+   A reference implementation of the MEF Network Resource Provisioning API is available from the OpenDaylight Unimgr project.
 
-https://wiki.opendaylight.org/view/Unimgr:Main
+   https://wiki.opendaylight.org/view/Unimgr:Main
 
-An instance of the Unimgr project is provided in MEFnet for MEF
-members to undertake integration testing. Please see the MEFnet Terms of Use.
+   An instance of the Unimgr project is provided in MEFnet for MEF members to undertake integration testing. Please see the MEFnet Terms of Use.
 
-https://wiki.mef.net/display/CTO/MEFnet
+   https://wiki.mef.net/display/CTO/MEFnet
 
-https://mef.net/TOU
+   https://mef.net/TOU
 
 2) LSO Presto APIs (older version) in ONOS SDN Controller
 
-A plugin to get network topology from Open Network Operating System (ONOS) and return to the Service Orchestration Functionality (SOF).
-is available here
+   A plugin to get network topology from Open Network Operating System (ONOS) and return to the Service Orchestration Functionality (SOF) is available here
 
-https://github.com/aboelbisher/LOS-PRESTO
+   https://github.com/aboelbisher/LOS-PRESTO
 
 
 ## Commercial Implementations
