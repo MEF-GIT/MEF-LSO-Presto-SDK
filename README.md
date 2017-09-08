@@ -25,9 +25,12 @@ This SDK contains the following items:
   * swagger - Contains the MEF NRP Swagger specifications.
   * examples - Contains example JSON API requests and Postman collections.
   * tutorial - A guide for getting started with the MEF LSO Presto SDK
+             - A packaged LSO Presto SDK demo VM running OpenDaylight Unimgr and mininet.
 * published - SDK content for published MEF specifications
 
 ## Reference Implementations
+
+LSO Presto APIs in OpenDaylight SDN Controller
 
 A reference implementation of the MEF Network Resource Provisioning API is available from the
 OpenDaylight Unimgr project.
@@ -40,6 +43,7 @@ members to undertake integration testing. Please see the MEFnet Terms of Use.
 https://wiki.mef.net/display/CTO/MEFnet
 
 https://mef.net/TOU
+
 
 ## Related Projects
 
