@@ -38,51 +38,45 @@ step2() {
   "input": {
     "end-point": [
       {
-        "service-interface-point": "sip:ovs-node:s1:s1-eth1",
-        "direction": "bidirectional",
-        "layer-protocol": {
-        	"local-id":"eth",
-        	"layer-protocol-name" : "eth"
+        "service-interface-point": {
+          "service-interface-point-id" :"sip:ovs-node:s1:s1-eth1"
+
         },
-        "nrp-interface:nrp-carrier-eth-connectivity-end-point-resource": {
-        	"ce-vlan-id-list-and-untag": {
-        		"vlan-id":[
-        			{
-        				"vlan-id": 300
-        			}
-        		]
-        	}
+        "direction": "BIDIRECTIONAL",
+        "layer-protocol-name": "ETH",
+        "nrp-carrier-eth-connectivity-end-point-resource": {
+          "ce-vlan-id-list-and-untag": {
+            "vlan-id":[
+              {
+                "vlan-id": 301
+              }
+            ]
+          }
         }
       },
       {
-        "service-interface-point": "sip:ovs-node:s2:s2-eth3",
-        "direction": "bidirectional",
-        "layer-protocol": {
-        	"local-id":"eth",
-        	"layer-protocol-name" : "eth"
+        "service-interface-point": {
+          "service-interface-point-id" :"sip:ovs-node:s2:s2-eth1"
         },
-        "nrp-interface:nrp-carrier-eth-connectivity-end-point-resource": {
-        	"ce-vlan-id-list-and-untag": {
-        		"vlan-id":[
-        			{
-        				"vlan-id": 300
-        			}
-        		]
-        	}
+        "direction": "BIDIRECTIONAL",
+        "layer-protocol-name": "ETH",
+        "nrp-carrier-eth-connectivity-end-point-resource": {
+          "ce-vlan-id-list-and-untag": {
+            "vlan-id":[
+              {
+                "vlan-id": 301
+              }
+            ]
+          }
         }
       }
     ],
     "conn-constraint": {
-      "service-type": "point-to-point-connectivity",
-      "service-level": "best-effort"
+      "service-type": "POINT_TO_POINT_CONNECTIVITY",
+      "service-level": "BEST_EFFORT"
     },
-    "nrp-interface:nrp-carrie-eth-connectivity-resource": {
-      "max-frame-size": "2000",
-      "ce-vlan-id-preservation": "preserve",
-      "ce-vlan-pcp-preservation": "true",
-      "ce-vlan-dei-preservation": "true",
-      "s-vlan-pcp-preservation": "true",
-      "s-vlan-dei-preservation": "true"
+    "nrp-interface:nrp-carrier-eth-connectivity-resource": {
+      "max-frame-size": "2000"
     }
   }
 }
