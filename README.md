@@ -20,12 +20,12 @@ This SDK contains the following items:
 * COPYRIGHT - Copyright 2018 MEF Forum
 * LICENSE - Contains a copy of the Apache 2.0 license
 * experimental - SDK content for unpublished MEF specifications
+* published - SDK content for published MEF specifications
   * yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
     which the MEF NRP API is based.
   * [swagger](published/swagger/README.md) - Contains the MEF NRP Swagger specifications.
   * [examples](published/examples/README.md) - Contains example JSON API requests and Postman collections.
   * [tutorial](published/tutorial/README.md) - A guide for getting started with the MEF LSO Presto SDK & a packaged demo VM running OpenDaylight Unimgr and mininet.
-* published - SDK content for published MEF specifications
 
 ## Reference Implementations
 
