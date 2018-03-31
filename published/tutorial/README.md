@@ -11,18 +11,23 @@ There are several ways for you to run through the steps in this tutorial:
 
 ## Prerequisites
 
-The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet. The VM can be downloaded from the following locations: 
+The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet.
+The VM can be downloaded from the following locations: 
 
 * Presto-SDK.zip (https://metroethernetforum.box.com/s/h5j78genqwx2y4z7msho6119wxqnpffe)
 * Presto-SDK.z01 (https://metroethernetforum.box.com/s/2rhbl3ct3wqkszm06ootbe31frjhyhps)
+
+Login: mef-dev
+Password: mef-dev
 
 Here are the commands to unzip after you have downloaded both the files
 
 * zip -s 0 Presto-SDK.zip --out Presto-SDK-full.zip
 * unzip Presto-SDK-full.zip
 
-Alternatively, you can install mininet and Opendaylight by yourself. Presto SDK R2 is not part of official distribution of Opendaylight yet,
-therefore you can download sources from github fork: https://github.com/donaldh/unimgr/tree/presto-20180307  
+Alternatively, you can install mininet and Opendaylight by yourself. Presto SDK R2 is not
+part of official distribution of Opendaylight yet, but you can download the sources from 
+this GitHub fork: https://github.com/donaldh/unimgr/tree/presto-20180307  
 
 If you need to manually start OpenDaylight, these are the steps:
 
@@ -122,7 +127,8 @@ You can run this tutorial step with the *tutorial.sh* helper:
 % ./tutorial.sh init
 ```
 
-If you prefer to use postman, the collection with all the tutorial steps can be found in ../examples directory ``MEF-LSO-Presto-SDK-ODL.postman_collection``
+If you prefer to use postman, the collection with all the tutorial steps can be found in
+the ../examples directory ``MEF-LSO-Presto-SDK-ODL.postman_collection``
 
 ## Step 1 - Get Available Topology
 
