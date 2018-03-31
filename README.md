@@ -1,15 +1,33 @@
 # MEF LSO Presto SDK
 
-This repository contains the MEF LSO Presto SDK. It includes the following features:
+This repository contains the MEF LSO Presto SDK. 
 
-* MEF Network Resource Provisioning (NRP) Interface Profile Specification with a set of API
-definitions in YANG and Swagger.
+This release is a significant step towards utilizing programmable
+networks as part of our MEF 3.0 vision. The SDK builds on the previous
+release to align the API schemas and definitions for Network Resource
+Provisioning (NRP) to the LSO Presto NRP IPS which was recently
+published as MEF 60. In addition, its information model incorporates the
+latest ONF TAPI 2.0 release. The SDK’s data models are supported in a
+reference implementation of the OpenDaylight SDN Controller and will be
+part of the official Fluorine release. This reference implementation
+demonstrates how a northbound application can, in a technology-agnostic
+and vendor-agnostic manner, provision a point-to-point or
+point-to-multipoint network connectivity service between end points.
+Released Presto APIs are controller and underlay technology-agnostic
+thus enabling programmatic network orchestration via various SDN
+controllers as well as via proprietary NMS/EMS software.
+
+MEF has leveraged collaborative input from the ONF on its TAPI model in
+the creation of the LSO Presto NRP (Network Resource Provisioning) IPS.
+CenturyLink, Nokia, Amartus, Ciena, Cisco, Coriant, Ericsson, Huawei,
+Infinera, Iometrix, NEC and RAD are among the key contributors of this
+release.
 
 The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
 More information about the LSO Presto API reference point can be found here:
 
-https://wiki.mef.net/display/CESG/LSO+Presto
+https://wiki.mef.net/display/CESG/LSO+Presto+SDK
 
 [ Define wider context of MEF Lifecycle Service Orchestration architecture ]
 
