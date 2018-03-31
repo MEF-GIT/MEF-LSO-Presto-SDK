@@ -6,17 +6,18 @@ This release is a significant step towards utilizing programmable
 networks as part of our MEF 3.0 vision. The SDK builds on the previous
 release to align the API schemas and definitions for Network Resource
 Provisioning (NRP) to the LSO Presto NRP IPS which was recently
-published as MEF 60. In addition, its information model incorporates the
-latest ONF TAPI 2.0 release. The SDK’s data models are supported in a
-reference implementation of the OpenDaylight SDN Controller and will be
-part of the official Fluorine release. This reference implementation
+published as [MEF
+60](https://www.mef.net/Assets/Technical_Specifications/PDF/MEF_60.pdf).
+In addition, its information model incorporates the latest ONF TAPI 2.0
+release. The SDK’s data models are supported in a reference
+implementation of the OpenDaylight SDN Controller and will be part of
+the official Fluorine release. This reference implementation
 demonstrates how a northbound application can, in a technology-agnostic
 and vendor-agnostic manner, provision a point-to-point or
 point-to-multipoint network connectivity service between end points.
 Released Presto APIs are controller and underlay technology-agnostic
 thus enabling programmatic network orchestration via various SDN
 controllers as well as via proprietary NMS/EMS software.
-
 MEF has leveraged collaborative input from the ONF on its TAPI model in
 the creation of the LSO Presto NRP (Network Resource Provisioning) IPS.
 CenturyLink, Nokia, Amartus, Ciena, Cisco, Coriant, Ericsson, Huawei,
