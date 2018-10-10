@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 ../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
+  <uml:Model xmi:id="_BTq7kDAzEeeMUevANHuhog" name="MEF_Types">
+    <packagedElement xmi:type="uml:Package" xmi:id="_X1dtgDAzEeeMUevANHuhog" name="TypeDefinitions">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_tQ_6kPEnEeWd4sURjtTdCg" name="AdminState" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aS-74PbOEeWistjeMISOCw" annotatedElement="_tQ_6kPEnEeWd4sURjtTdCg">
+          <body>This enumeration is for Administrative states. Refer to ITU-T X.731.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vYnuYPEnEeWd4sURjtTdCg" name="UNLOCKED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_kTsckFN4EeaEs5BdAlff7g" annotatedElement="_vYnuYPEnEeWd4sURjtTdCg">
+            <body>The resource is administratively permitted to perform services for its users.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yO5_APEnEeWd4sURjtTdCg" name="LOCKED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lf80UFN4EeaEs5BdAlff7g" annotatedElement="_yO5_APEnEeWd4sURjtTdCg">
+            <body>The resource is administratively prohibited from performing services for its users.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_2oHXIE3lEeW8nr4xP1Jhmg" name="AggLinkDepth" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_M2rQ0M6XEeW_pf7K3O_uIQ" annotatedElement="_2oHXIE3lEeW8nr4xP1Jhmg">
+          <body>This is a pair of &lt;VLAN ID, link depth> indicating that a given VLAN ID maps to a given number of links in the Port Conversation ID to Aggregation Link Map.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_K0QuEE3rEeW8nr4xP1Jhmg" name="vlanId" type="__yzNwE3UEeW8nr4xP1Jhmg">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__OGHEP7BEeWD282cpCAwGQ" annotatedElement="_K0QuEE3rEeW8nr4xP1Jhmg">
+            <body>The ingress frame Vlan ID. </body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Qof9kE3rEeW8nr4xP1Jhmg" name="linkDepth" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CZ_bUP7CEeWD282cpCAwGQ" annotatedElement="_Qof9kE3rEeW8nr4xP1Jhmg">
+            <body>The number of links for the aggregation link.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WKV1gE3rEeW8nr4xP1Jhmg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WKWckE3rEeW8nr4xP1Jhmg" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_ECFdUNAZEeWuNf2VLdfDCg" name="AvailableMegLevel" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JJW5INAZEeWuNf2VLdfDCg" annotatedElement="_ECFdUNAZEeWuNf2VLdfDCg">
+          <body>This enumeration is for available MEG level, can be either NONE or value 0..7.  NONE indicates that SOAM EI Frames are not guaranteed to pass over at any MEG Level.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MEHaENAZEeWuNf2VLdfDCg" name="NONE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_wjP58FOJEeaEs5BdAlff7g" annotatedElement="_MEHaENAZEeWuNf2VLdfDCg">
+            <body>Indicates that SOAM EI Frames are not guaranteed to pass over this OVC at any MEG Level.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OujnENAZEeWuNf2VLdfDCg" name="0"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_R2ExoNAZEeWuNf2VLdfDCg" name="1"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_TwgeANAZEeWuNf2VLdfDCg" name="2"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VWmSENAZEeWuNf2VLdfDCg" name="3"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XN2uoNAZEeWuNf2VLdfDCg" name="4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Yq2RENAZEeWuNf2VLdfDCg" name="5"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_auwpkNAZEeWuNf2VLdfDCg" name="6"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_cERrANAZEeWuNf2VLdfDCg" name="7"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_uPS5oPCJEeWpK_sr5bd0BQ" name="ColorFieldType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_r7sfAPbOEeWistjeMISOCw" annotatedElement="_uPS5oPCJEeWpK_sr5bd0BQ">
+          <body>This enumeration is for selecting which frame field being used for color indication.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xgOe4PCJEeWpK_sr5bd0BQ" name="PCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1jN-cFOKEeaEs5BdAlff7g" annotatedElement="_xgOe4PCJEeWpK_sr5bd0BQ">
+            <body>Using PCP field to map to the color.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zTWpYPCJEeWpK_sr5bd0BQ" name="DEI">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4IjpAFOKEeaEs5BdAlff7g" annotatedElement="_zTWpYPCJEeWpK_sr5bd0BQ">
+            <body>Using DEI field to map to the color.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0uOE4PCJEeWpK_sr5bd0BQ" name="END_POINT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_wlDbUFOKEeaEs5BdAlff7g" annotatedElement="_0uOE4PCJEeWpK_sr5bd0BQ">
+            <body>Using EVC End Point or the OVC End Point to map to the color.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3Rer0PCJEeWpK_sr5bd0BQ" name="DSCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6IlAAFOKEeaEs5BdAlff7g" annotatedElement="_3Rer0PCJEeWpK_sr5bd0BQ">
+            <body>Using DSCP field to map to the color.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_qeqNwEddEeWHAqNDvf1r-A" name="ColorMode" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aoh3IM6XEeW_pf7K3O_uIQ" annotatedElement="_qeqNwEddEeWHAqNDvf1r-A">
+          <body>This enumeration indicates whether the Color Identifier of the Service Frame is considered by the Bandwidth Profile Algorithm.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_so5QsEddEeWHAqNDvf1r-A" name="COLOR_AWARE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xOneoEddEeWHAqNDvf1r-A" name="COLOR_BLIND"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_JBwp8MCPEeWixMV2RCA9FQ" name="ConnectionType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JBwp8cCPEeWixMV2RCA9FQ" annotatedElement="_JBwp8MCPEeWixMV2RCA9FQ">
+          <body>This is for EVC or OVC connection types, including point to point, multi-point and rooted multi-point.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JBwp8sCPEeWixMV2RCA9FQ" name="POINT_TO_POINT"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JBwp88CPEeWixMV2RCA9FQ" name="MULTIPOINT"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JBwp9MCPEeWixMV2RCA9FQ" name="ROOTED_MULTIPOINT"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_VUKwcE0EEeWOKsU_6x9uZA" name="ConversationIdToAggregationLinkMap" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_re0e0M6XEeW_pf7K3O_uIQ" annotatedElement="_VUKwcE0EEeWOKsU_6x9uZA">
+          <body>This is a Port Conversation ID to Aggregation Link Map as defined in IEEE Std 802.1AX – 2014.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZumUYE0EEeWOKsU_6x9uZA" name="conversationId" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gCPSkP7CEeWD282cpCAwGQ" annotatedElement="_ZumUYE0EEeWOKsU_6x9uZA">
+            <body>The conversation ID is a Vlan ID or 0 for untagged or priority tagged frame.. </body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dhIx4E0EEeWOKsU_6x9uZA" name="linkIdList" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_nD7zsP7CEeWD282cpCAwGQ" annotatedElement="_dhIx4E0EEeWOKsU_6x9uZA">
+            <body>The link ID of the aggregation link.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_q35igFNOEeaEs5BdAlff7g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_q9nwAFNOEeaEs5BdAlff7g" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_zosaYO-QEeW3dY7H090qAA" name="CosOrEecMappingType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zGeqsPbOEeWistjeMISOCw" annotatedElement="_zosaYO-QEeW3dY7H090qAA">
+          <body>This lists the Class of Service identifier type, or the Equivalence Class Identifier type. </body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3WF5MO-QEeW3dY7H090qAA" name="END_POINT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FapKIFOLEeaEs5BdAlff7g" annotatedElement="_3WF5MO-QEeW3dY7H090qAA">
+            <body>Using EVC End Point or OVC End Point to map to the CoS Name as CoS ID.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7H9oUO-QEeW3dY7H090qAA" name="PCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IroZwFOLEeaEs5BdAlff7g" annotatedElement="_7H9oUO-QEeW3dY7H090qAA">
+            <body>Using PCP field to map to the CoS Name as CoS ID.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9EGk4O-QEeW3dY7H090qAA" name="DSCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LnBz4FOLEeaEs5BdAlff7g" annotatedElement="_9EGk4O-QEeW3dY7H090qAA">
+            <body>Using DSCP field to map to the CoS Name as CoS ID.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_0BjCMN8cEeW5q4lbqE_mvw" name="DeiOrDiscard" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_6w_VsN8cEeW5q4lbqE_mvw" annotatedElement="_0BjCMN8cEeW5q4lbqE_mvw">
+          <body>This lists the DEI value for color or discard, used for Egress Map.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7136IN8cEeW5q4lbqE_mvw" name="DISCARD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_smOY0FOLEeaEs5BdAlff7g" annotatedElement="_7136IN8cEeW5q4lbqE_mvw">
+            <body>Discard the egress frame when the Egress Map determines based on CoS Name (and ingress Color).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-0EJkN8cEeW5q4lbqE_mvw" name="0">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1FrRYFOLEeaEs5BdAlff7g" annotatedElement="_-0EJkN8cEeW5q4lbqE_mvw">
+            <body>Set  egress frame DEI field to be 0 when the Egress Map determines based on CoS Name (and ingress Color).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Aj2FIN8dEeW5q4lbqE_mvw" name="1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3g59sFOLEeaEs5BdAlff7g" annotatedElement="_Aj2FIN8dEeW5q4lbqE_mvw">
+            <body>Set  egress frame DEI field to be 1 when the Egress Map determines based on CoS Name (and ingress Color).</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_FTXTMPB_EeWpK_sr5bd0BQ" name="EgressMapType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9qMhEPbOEeWistjeMISOCw" annotatedElement="_FTXTMPB_EeWpK_sr5bd0BQ">
+          <body>This lists the Egress Map types, either CoS Name to PCP, or CoS Name and Ingress Color to PCP, or  CoS Name and Ingress Color to DEI for S-Tag or C-Tag.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ho0HoPB_EeWpK_sr5bd0BQ" name="CN_C_TAG_PCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_RF39UE_JEeaQZZGC477UzQ" annotatedElement="_Ho0HoPB_EeWpK_sr5bd0BQ">
+            <body>CoS Name to C-Tag PCP egress map type</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JKt_QPB_EeWpK_sr5bd0BQ" name="CC_C_TAG_PCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_U9-3UE_JEeaQZZGC477UzQ" annotatedElement="_JKt_QPB_EeWpK_sr5bd0BQ">
+            <body>CoS Name and Color to C-Tag PCP egress map type</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H6DvAPCHEeWpK_sr5bd0BQ" name="CC_C_TAG_DEI">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZWl2UE_JEeaQZZGC477UzQ" annotatedElement="_H6DvAPCHEeWpK_sr5bd0BQ">
+            <body>CoS Name and Color to C-Tag DEI egress map type</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eYSrEE_IEeaQZZGC477UzQ" name="CN_S_TAG_PCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_iTff4E_JEeaQZZGC477UzQ" annotatedElement="_eYSrEE_IEeaQZZGC477UzQ">
+            <body>CoS Name to S-Tag PCP egress map type</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__CX7oE_IEeaQZZGC477UzQ" name="CC_S_TAG_PCP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eu0fQE_JEeaQZZGC477UzQ" annotatedElement="__CX7oE_IEeaQZZGC477UzQ">
+            <body>CoS Name and Color to S-Tag PCP egress map type</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__Ca-8E_IEeaQZZGC477UzQ" name="CC_S_TAG_DEI">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_bau4UE_JEeaQZZGC477UzQ" annotatedElement="__Ca-8E_IEeaQZZGC477UzQ">
+            <body>CoS Name and Color to S-Tag DEI egress map type</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_5s958GYoEeWw2sqXN8ggfQ" name="EthernetFrameFormat" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_WFZFwGeiEeWPQagsKdiB-g" annotatedElement="_5s958GYoEeWw2sqXN8ggfQ">
+          <body>This is a single value read only attribute. Keep this in the info model just because MEF 10.3 lists it as a service attribute.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CzRXIGYpEeWw2sqXN8ggfQ" name="ETHERNET"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_TIbvgNEYEeWSGOiCH6EQXQ" name="EvcEndPointRole" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_U241YNEYEeWSGOiCH6EQXQ" annotatedElement="_TIbvgNEYEeWSGOiCH6EQXQ">
+          <body>The value indicates how external interface frames mapped to the  EVC End Point can be forwarded.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YJP-ANEYEeWSGOiCH6EQXQ" name="ROOT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VoChkFRWEeakqtpOU88Hyg" annotatedElement="_YJP-ANEYEeWSGOiCH6EQXQ">
+            <body>EVC End Point has role of root for the EVC.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_cnNXENEYEeWSGOiCH6EQXQ" name="LEAF">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XLIsAFRWEeakqtpOU88Hyg" annotatedElement="_cnNXENEYEeWSGOiCH6EQXQ">
+            <body>EVC End Point has role of leaf for the EVC.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_glA5MEeLEeWHAqNDvf1r-A" name="FrameColor" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_GfiTIM6YEeW_pf7K3O_uIQ" annotatedElement="_glA5MEeLEeWHAqNDvf1r-A">
+          <body>Frame color is either Green or Yellow.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jfY_oEeLEeWHAqNDvf1r-A" name="GREEN"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_lIS3IEeLEeWHAqNDvf1r-A" name="YELLOW"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_hLAh4MCPEeWixMV2RCA9FQ" name="FrameDelivery" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_w29LcMCREeWixMV2RCA9FQ" annotatedElement="_hLAh4MCPEeWixMV2RCA9FQ">
+          <body>Service frame delivery defined in MEF 10.3. When the value is conditionally, the specific condition has to be addresses by the users. What conditions should be supported are not in the scope.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hLAh4cCPEeWixMV2RCA9FQ" name="DISCARD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MLqYoFRUEeakqtpOU88Hyg" annotatedElement="_hLAh4cCPEeWixMV2RCA9FQ">
+            <body>Frame must be discarded.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hLAh4sCPEeWixMV2RCA9FQ" name="CONDITIONALLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Qx0EYFRUEeakqtpOU88Hyg" annotatedElement="_hLAh4sCPEeWixMV2RCA9FQ">
+            <body>Frame will be delivered with specified condition.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hLAh48CPEeWixMV2RCA9FQ" name="UNCONDITIONALLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VgxG0FRUEeakqtpOU88Hyg" annotatedElement="_hLAh48CPEeWixMV2RCA9FQ">
+            <body>Frame will be delivered unconditionally.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_HOlScEzbEeWOKsU_6x9uZA" name="Identifier45" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_d0NxgPbPEeWistjeMISOCw" annotatedElement="_HOlScEzbEeWOKsU_6x9uZA">
+          <body>Unique by network administrative domain, containing no more than 45 characters and non-null RFC Display String but not contain the characters 0x00 through 0x1f.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Lclj8EzbEeWOKsU_6x9uZA" name="identifier45">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_r4JQUEzbEeWOKsU_6x9uZA" annotatedElement="_Lclj8EzbEeWOKsU_6x9uZA">
+            <body>non-null RFC2579 Display String but not contain the characters 0x00 through 0x1f.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_k8-4cEe3EeagooSm58To6w" name="Identifier90" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_89qqQEe3EeagooSm58To6w" annotatedElement="_k8-4cEe3EeagooSm58To6w">
+          <body>Unique by network administrative domain, containing no more than 90 characters and non-null RFC Display String but not contain the characters 0x00 through 0x1f.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_sl8N4Ee3EeagooSm58To6w" name="identifier90">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vm4usFBwEeaTKIsduPvT_A" annotatedElement="_sl8N4Ee3EeagooSm58To6w">
+            <body>non-null RFC2579 Display String but not contain the characters 0x00 through 0x1f</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_t0cVYEqgEeWslOhmT__Dhw" name="InterfaceResiliency" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_1_wwMM6mEeW_pf7K3O_uIQ" annotatedElement="_t0cVYEqgEeWslOhmT__Dhw">
+          <body>The method for protection, if any, against a physical link failure. Refer to MEF 10.3.2 and MEF 26.2.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0iW-4EqgEeWslOhmT__Dhw" name="NONE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2TzHUEqgEeWslOhmT__Dhw" name="2_LINK_ACTIVE_STANDBY"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7jQOwEqgEeWslOhmT__Dhw" name="ALL_ACTIVE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-ZJd0EqgEeWslOhmT__Dhw" name="OTHER"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_c40usEXzEeW_36b5t8KMXQ" name="IpVersion" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_TubnUP6xEeWD282cpCAwGQ" annotatedElement="_c40usEXzEeW_36b5t8KMXQ">
+          <body>This enumeration lists the IP versions, including IPv4, IPv6 and both.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_gsueIEXzEeW_36b5t8KMXQ" name="IPV4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jlgCEEXzEeW_36b5t8KMXQ" name="IPV6"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_SOgDsEboEeWt4qep_dG1ow" name="IPV4_AND_IPV6"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Zi6cQEqoEeWslOhmT__Dhw" name="L2cpAddressSet" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ccVLkP6xEeWD282cpCAwGQ" annotatedElement="_Zi6cQEqoEeWslOhmT__Dhw">
+          <body>This lists the L2CP Address Set. Refer to MEF 45.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_cmPqYEqoEeWslOhmT__Dhw" name="CTA">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_39HbIEevEeagooSm58To6w" annotatedElement="_cmPqYEqoEeWslOhmT__Dhw">
+            <body>CE-Vlan Tag Aware</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_e4yUwEqoEeWslOhmT__Dhw" name="CTB">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6Pkl8EevEeagooSm58To6w" annotatedElement="_e4yUwEqoEeWslOhmT__Dhw">
+            <body>CE-Vlan Tag Blind</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_gtmhUEqoEeWslOhmT__Dhw" name="CTB2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-ho4EEevEeagooSm58To6w" annotatedElement="_gtmhUEqoEeWslOhmT__Dhw">
+            <body>CE-Vlan Tag Blind option 2</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_CNbxUEqtEeWslOhmT__Dhw" name="L2cpPeering" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_bp54sM9UEeWRWbOLN8gaJg" annotatedElement="_CNbxUEqtEeWslOhmT__Dhw">
+          <body>This is a list specifies the L2CP Protocol Identifier and the Destination Address in use by the protocol entity.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_OztVUEqtEeWslOhmT__Dhw" name="protocolId" type="_0dchMEetEeagooSm58To6w">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qKITIP7DEeWD282cpCAwGQ" annotatedElement="_OztVUEqtEeWslOhmT__Dhw">
+            <body>This is a L2CP Protocol Identifier.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TAzA0EqtEeWslOhmT__Dhw" name="destinationAddress" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mjSwEEqtEeWslOhmT__Dhw" annotatedElement="_TAzA0EqtEeWslOhmT__Dhw">
+            <body>This is a Mac Address.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_54bx8GTzEeaPEPG51uosWA" name="linkIdList" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZNODgGT0EeaPEPG51uosWA" annotatedElement="_54bx8GTzEeaPEPG51uosWA">
+            <body>It is possible that a protocol (e.g. ESMC) could operate on some, but not all, of the physical&#xD;
+links. When linkId is not listed, the protocol peering applies to all members of the aggregation link.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-9wtAGTzEeaPEPG51uosWA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-986QGTzEeaPEPG51uosWA" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_0dchMEetEeagooSm58To6w" name="L2cpProtocol" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="__yu-cEetEeagooSm58To6w" annotatedElement="_0dchMEetEeagooSm58To6w">
+          <body>This data type defines a L2CP protocol (LLC address type or EtherType) with possible subtype.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BaY4wEeuEeagooSm58To6w" name="l2cpProtocolType" type="_jGco0PB8EeWpK_sr5bd0BQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xR5VwEeuEeagooSm58To6w" annotatedElement="_BaY4wEeuEeagooSm58To6w">
+            <body>This attribute specifies the type of L2CP protocol, i.e., LLC or EtherType.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GKzTwEeuEeagooSm58To6w" name="llcAddressOrEtherType" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-Zv80EeuEeagooSm58To6w" annotatedElement="_GKzTwEeuEeagooSm58To6w">
+            <body>This attribute specifies the LLC address or the EtherType value.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bMEuIEeuEeagooSm58To6w" name="subType" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_m5R8IEeuEeagooSm58To6w" annotatedElement="_bMEuIEeuEeagooSm58To6w">
+            <body>This attribute specifies the subtype of the L2CP protocol.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Nv9igJGVEeashaijITykAg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NwDpIJGVEeashaijITykAg" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_jGco0PB8EeWpK_sr5bd0BQ" name="L2cpProtocolType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oBRbYPbPEeWistjeMISOCw" annotatedElement="_jGco0PB8EeWpK_sr5bd0BQ">
+          <body>This lists the L2CP protocol types, either EtherType, or LLC Address.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_l6cacPB8EeWpK_sr5bd0BQ" name="ETHERTYPE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4H7IEFRUEeakqtpOU88Hyg" annotatedElement="_l6cacPB8EeWpK_sr5bd0BQ">
+            <body>EtherType for L2CP, e.g., LLDP (0x88CC).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AKHW4PB-EeWpK_sr5bd0BQ" name="LLC">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__I4CUFRUEeakqtpOU88Hyg" annotatedElement="_AKHW4PB-EeWpK_sr5bd0BQ">
+            <body>Logical Link Control sublayer address for L2CP, e.g., STP (0x42).</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_sD5lgE5pEeW_Eq19e84R8Q" name="MepDirection" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ngOW0P6xEeWD282cpCAwGQ" annotatedElement="_sD5lgE5pEeW_Eq19e84R8Q">
+          <body>This is for MEP direction, either Down MEP or Up MEP.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vq1P8E5pEeW_Eq19e84R8Q" name="DOWN"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-bBGwE5pEeW_Eq19e84R8Q" name="UP"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_ZbL98E5pEeW_Eq19e84R8Q" name="MepLevelAndDirection" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_sagfgP6xEeWD282cpCAwGQ" annotatedElement="_ZbL98E5pEeW_Eq19e84R8Q">
+          <body>This complex data type includes MEG LEVEL and MEP direction.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_iXxecE5pEeW_Eq19e84R8Q" name="level" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Tc_sgP7GEeWD282cpCAwGQ" annotatedElement="_iXxecE5pEeW_Eq19e84R8Q">
+            <body>This is the MEG level, value between 0..7.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nIolYE5pEeW_Eq19e84R8Q" name="direction" type="_sD5lgE5pEeW_Eq19e84R8Q">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XG058P7GEeWD282cpCAwGQ" annotatedElement="_nIolYE5pEeW_Eq19e84R8Q">
+            <body>This is MEP direction, UP or DOWN.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_IFxQQM-MEeWZuobpkt7kiw" name="NaturalNumber" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_MGmocM-MEeWZuobpkt7kiw" annotatedElement="_IFxQQM-MEeWZuobpkt7kiw">
+          <body>An integer >=0</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NFM-sM-MEeWZuobpkt7kiw" name="naturalNum">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eWZfAP7GEeWD282cpCAwGQ" annotatedElement="_NFM-sM-MEeWZuobpkt7kiw">
+            <body>This is an integer >=0.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_0JGa0PEnEeWd4sURjtTdCg" name="OperationalState" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_iQflAPbOEeWistjeMISOCw" annotatedElement="_0JGa0PEnEeWd4sURjtTdCg">
+          <body>This enumeration is for Operational states. Refer to ITU-T X.731.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2AHm0PEnEeWd4sURjtTdCg" name="ENABLED"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6rkpUPEnEeWd4sURjtTdCg" name="DISABLED"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_-aG0APCMEeWpK_sr5bd0BQ" name="OvcEndPointMapForm" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3rbAEPbPEeWistjeMISOCw" annotatedElement="_-aG0APCMEeWpK_sr5bd0BQ">
+          <body>The OVC End Point Map types, for ENNI (FORM E), for UNI (FORM U), for VUNI (FORM V), or for Trunk (FORM T).</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_A773kPCNEeWpK_sr5bd0BQ" name="FORM_E">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5_KhEFRVEeakqtpOU88Hyg" annotatedElement="_A773kPCNEeWpK_sr5bd0BQ">
+            <body>OVC End Point Map for ENNI.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FNPUsPCNEeWpK_sr5bd0BQ" name="FORM_V">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_723pkFRVEeakqtpOU88Hyg" annotatedElement="_FNPUsPCNEeWpK_sr5bd0BQ">
+            <body>OVC End Point Map for VUNI.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HA98IPCNEeWpK_sr5bd0BQ" name="FORM_U">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9QDqEFRVEeakqtpOU88Hyg" annotatedElement="_HA98IPCNEeWpK_sr5bd0BQ">
+            <body>OVC End Point Map for UNI.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KC1KoPCNEeWpK_sr5bd0BQ" name="FORM_T">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BXahAFRWEeakqtpOU88Hyg" annotatedElement="_KC1KoPCNEeWpK_sr5bd0BQ">
+            <body>OVC End Point Map for Trunk.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_rpT2cEUBEeW-dNUjw7YBHQ" name="OvcEndPointRole" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0Zt9QM6XEeW_pf7K3O_uIQ" annotatedElement="_rpT2cEUBEeW-dNUjw7YBHQ">
+          <body>The value indicates how external interface frames mapped to the  OVC End Point can be forwarded.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_veh0gEUBEeW-dNUjw7YBHQ" name="ROOT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_OgOKUFRWEeakqtpOU88Hyg" annotatedElement="_veh0gEUBEeW-dNUjw7YBHQ">
+            <body>OVC End Point has role of root for the OVC.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yErXYEUBEeW-dNUjw7YBHQ" name="LEAF">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Qbb50FRWEeakqtpOU88Hyg" annotatedElement="_yErXYEUBEeW-dNUjw7YBHQ">
+            <body>OVC End Point has role of leaf for the OVC.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8hlb4EzoEeWOKsU_6x9uZA" name="TRUNK">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLKLAFRWEeakqtpOU88Hyg" annotatedElement="_8hlb4EzoEeWOKsU_6x9uZA">
+            <body>OVC End Point has role of trunk for the OVC.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_TJKgkNEeEeWSGOiCH6EQXQ" name="PcpOrDiscard" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Y1ApENEeEeWSGOiCH6EQXQ" annotatedElement="_TJKgkNEeEeWSGOiCH6EQXQ">
+          <body>This enumeration lists one of PCP values or DISCARD.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_br-2MNEeEeWSGOiCH6EQXQ" name="DISCARD"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_br_dQNEeEeWSGOiCH6EQXQ" name="0"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_br_dQdEeEeWSGOiCH6EQXQ" name="1"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bsAEUNEeEeWSGOiCH6EQXQ" name="2"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bsAEUdEeEeWSGOiCH6EQXQ" name="3"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bsArYNEeEeWSGOiCH6EQXQ" name="4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bsArYdEeEeWSGOiCH6EQXQ" name="5"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bsBScNEeEeWSGOiCH6EQXQ" name="6"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bsB5gNEeEeWSGOiCH6EQXQ" name="7"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_5k66wEtZEeWBk67gbHGsmg" name="Percentage" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_GJKcAPbQEeWistjeMISOCw" annotatedElement="_5k66wEtZEeWBk67gbHGsmg">
+          <body>Data type for percentage, 0%-100%.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-X6vsEtZEeWBk67gbHGsmg" name="percentage">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sS09oP7GEeWD282cpCAwGQ" annotatedElement="_-X6vsEtZEeWBk67gbHGsmg">
+            <body>This is a real number between 0 and 1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_MyfpUEqeEeWslOhmT__Dhw" name="PhysicalLayer" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JevkIEqfEeWslOhmT__Dhw" annotatedElement="_MyfpUEqeEeWslOhmT__Dhw">
+          <body>IEEE802.3 (2012) defined list excluding 1000BASE-PX-D and 1000BASE-PX-U. NONE is added with further MEF 10.3 discussion, for supporting logical interfaces.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fyS7MEqeEeWslOhmT__Dhw" name="10BASE2"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mEhuQEqeEeWslOhmT__Dhw" name="10BASE5"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wA0YQEqeEeWslOhmT__Dhw" name="10BASE_F"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7hvaUGYUEeWw2sqXN8ggfQ" name="10BASE_FB"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AejSkGYVEeWw2sqXN8ggfQ" name="10BASE_FL"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DGrycGYVEeWw2sqXN8ggfQ" name="10BASE_FP"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_F8tkYGYVEeWw2sqXN8ggfQ" name="10BASE_T"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_M4Xu8GYVEeWw2sqXN8ggfQ" name="10BASE_TE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_REct0GYVEeWw2sqXN8ggfQ" name="10BROAD36"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_U4pYMGYVEeWw2sqXN8ggfQ" name="10PASS_TS"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZuhiAGYVEeWw2sqXN8ggfQ" name="100BASE_BX10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZwlWgGYgEeWw2sqXN8ggfQ" name="100BASE_FX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_d11UoGYgEeWw2sqXN8ggfQ" name="100BASE_LX10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_gTZjQGYgEeWw2sqXN8ggfQ" name="100BASE_T"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_iBkVQGYgEeWw2sqXN8ggfQ" name="100BASE_T2"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mGotMGYgEeWw2sqXN8ggfQ" name="100BASE_T4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rKAgcGYgEeWw2sqXN8ggfQ" name="100BASE_TX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_tXJtcGYgEeWw2sqXN8ggfQ" name="100BASE_X"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wlYkAGYgEeWw2sqXN8ggfQ" name="1000BASE_BX10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0fiFYGYgEeWw2sqXN8ggfQ" name="1000BASE_CX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4UzGwGYgEeWw2sqXN8ggfQ" name="1000BASE_KX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_64gZoGYgEeWw2sqXN8ggfQ" name="1000BASE_LX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_x6L-UGYhEeWw2sqXN8ggfQ" name="1000BASE_LX10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1Z8pwGYhEeWw2sqXN8ggfQ" name="1000BASE_PX10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6y7goGYhEeWw2sqXN8ggfQ" name="1000BASE_PX20"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-FGcAGYhEeWw2sqXN8ggfQ" name="1000BASE_SX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JNpoUGYjEeWw2sqXN8ggfQ" name="1000BASE_T"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_WC-fgGYkEeWw2sqXN8ggfQ" name="1000BASE_X"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Y8H24GYkEeWw2sqXN8ggfQ" name="10GBASE_CX4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_di7C4GYkEeWw2sqXN8ggfQ" name="10GBASE_E"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jgo-gGYkEeWw2sqXN8ggfQ" name="10GBASE_ER"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mVN-8GYkEeWw2sqXN8ggfQ" name="10GBASE_EW"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pkWNYGYkEeWw2sqXN8ggfQ" name="10GBASE_KR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wKFLQGYkEeWw2sqXN8ggfQ" name="10GBASE_KX4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2-_NkGYkEeWw2sqXN8ggfQ" name="10GBASE_L"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_APnrcGYlEeWw2sqXN8ggfQ" name="10GBASE_LR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EX36QGYlEeWw2sqXN8ggfQ" name="10GBASE_LRM"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_IQkqIGYlEeWw2sqXN8ggfQ" name="10GBASE_LW"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_L2qnEGYlEeWw2sqXN8ggfQ" name="10GBASE_LX4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Pxy_4GYlEeWw2sqXN8ggfQ" name="10GBASE_PR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ydj2IGYlEeWw2sqXN8ggfQ" name="10GBASE_PRX"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_b-zvUGYlEeWw2sqXN8ggfQ" name="10GBASE_R"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_f5pNMGYlEeWw2sqXN8ggfQ" name="10GBASE_S"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_v5R5sGYlEeWw2sqXN8ggfQ" name="10GBASE_SR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ybtaMGYlEeWw2sqXN8ggfQ" name="10GBASE_SW"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1S8tEGYlEeWw2sqXN8ggfQ" name="10GBASE_T"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4LN6sGYlEeWw2sqXN8ggfQ" name="10GBASE_W"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8JJv4GYlEeWw2sqXN8ggfQ" name="10GBASE_X"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__CAMUGYlEeWw2sqXN8ggfQ" name="100GBASE_R"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CJqg0GYmEeWw2sqXN8ggfQ" name="100GBASE_CR10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Gj20MGYmEeWw2sqXN8ggfQ" name="100GBASE_ER4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LFZFsGYmEeWw2sqXN8ggfQ" name="100GBASE_LR4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OJqH8GYmEeWw2sqXN8ggfQ" name="100GBASE_SR10"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_TZzy8GYmEeWw2sqXN8ggfQ" name="40GBASE_R"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YwQTMGYmEeWw2sqXN8ggfQ" name="40GBASE_CR4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jk46cGYmEeWw2sqXN8ggfQ" name="40GBASE__FR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mgAAsGYmEeWw2sqXN8ggfQ" name="40GBASE_KR4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rVYbQGYmEeWw2sqXN8ggfQ" name="40GBASE_LR4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uMkDwGYmEeWw2sqXN8ggfQ" name="40GBASE_SR4"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xR4O4GYmEeWw2sqXN8ggfQ" name="1BASE5"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_04MOQGYmEeWw2sqXN8ggfQ" name="2BASE_TL"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AY5RUGYnEeWw2sqXN8ggfQ" name="1G_EPON"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EuD6wGYnEeWw2sqXN8ggfQ" name="10G_EPON"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H55koGYnEeWw2sqXN8ggfQ" name="10_1G_EPON"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_K_RaIGYnEeWw2sqXN8ggfQ" name="10_10G_EPON"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u30bQP4IEeWr3oednEsUlw" name="OTHER"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_v5t1QEqfEeWslOhmT__Dhw" name="NONE"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_1AVxYGhaEeWJq6qF01kEMA" name="PhysicalLayerPerLink" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_5ACcoP6xEeWD282cpCAwGQ" annotatedElement="_1AVxYGhaEeWJq6qF01kEMA">
+          <body>A link may consist of one or more physical ports. This data type includes the link ID and the physical port associated to the link Id.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6RtkYGhaEeWJq6qF01kEMA" name="linkId" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3nUJoP7GEeWD282cpCAwGQ" annotatedElement="_6RtkYGhaEeWJq6qF01kEMA">
+            <body>This is the link ID.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-xQR0GhaEeWJq6qF01kEMA" name="physicalLayer" type="_MyfpUEqeEeWslOhmT__Dhw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8PeAgP7GEeWD282cpCAwGQ" annotatedElement="_-xQR0GhaEeWJq6qF01kEMA">
+            <body>This is the physical layer. IEEE802.3 (2012) defined.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_C4qkMFArEeaTKIsduPvT_A" name="PmMetricType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_TS3FwFArEeaTKIsduPvT_A" annotatedElement="_C4qkMFArEeaTKIsduPvT_A">
+          <body>This enumeration provides the list of PM Metric types, including FD, MFD, FDR, IFDV, FLR, AV, HLI, CHLI, GROUP_AV, and CPM.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VAtHoFArEeaTKIsduPvT_A" name="FD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_frKMUFRWEeakqtpOU88Hyg" annotatedElement="_VAtHoFArEeaTKIsduPvT_A">
+            <body>Frame Delay Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XuQ6EFArEeaTKIsduPvT_A" name="FDR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hMBiIFRWEeakqtpOU88Hyg" annotatedElement="_XuQ6EFArEeaTKIsduPvT_A">
+            <body>Frame Delay Range Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ac-jEFArEeaTKIsduPvT_A" name="MFD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_i1BgQFRWEeakqtpOU88Hyg" annotatedElement="_ac-jEFArEeaTKIsduPvT_A">
+            <body>Mean Frame Delay Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_esoaYFArEeaTKIsduPvT_A" name="IFDV">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lmdtIFRWEeakqtpOU88Hyg" annotatedElement="_esoaYFArEeaTKIsduPvT_A">
+            <body>Inter Frame Delay Variation Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hwtPYFArEeaTKIsduPvT_A" name="FLR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_nP8zcFRWEeakqtpOU88Hyg" annotatedElement="_hwtPYFArEeaTKIsduPvT_A">
+            <body>Frame Loss Ratio Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_kG-jMFArEeaTKIsduPvT_A" name="AV">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pLO0YFRWEeakqtpOU88Hyg" annotatedElement="_kG-jMFArEeaTKIsduPvT_A">
+            <body>Availability Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ndek8FArEeaTKIsduPvT_A" name="HLI">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_r-1kcFRWEeakqtpOU88Hyg" annotatedElement="_ndek8FArEeaTKIsduPvT_A">
+            <body>High Loss Interval Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pzgBIFArEeaTKIsduPvT_A" name="CHLI">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_t6CF0FRWEeakqtpOU88Hyg" annotatedElement="_pzgBIFArEeaTKIsduPvT_A">
+            <body>Consecutive High Loss Interval Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uRGN0FArEeaTKIsduPvT_A" name="GROUP_AV">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zpqiIFRWEeakqtpOU88Hyg" annotatedElement="_uRGN0FArEeaTKIsduPvT_A">
+            <body>Group Availability (for a single EVC/OVC) Performance Metric.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xIBXoFArEeaTKIsduPvT_A" name="CPM">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3c-bsFRWEeakqtpOU88Hyg" annotatedElement="_xIBXoFArEeaTKIsduPvT_A">
+            <body>Composite Performance Metric. Refer to MEF 10.3.1.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_lG_HcODJEeWuO75iMjg96g" name="PmUnit" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_UxsLoPbQEeWistjeMISOCw" annotatedElement="_lG_HcODJEeWuO75iMjg96g">
+          <body>PM Unit, used for pairing with Value in data type PmUnitAndValue. Can be second, millisecond, micro second, etc. </body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_njJn4ODJEeWuO75iMjg96g" name="MILLISECOND">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_bVdh8FRXEeakqtpOU88Hyg" annotatedElement="_njJn4ODJEeWuO75iMjg96g">
+            <body>Measured Performance Metric in PM report as milliseconds, for FD, FDR, IFDV, and MFD.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_w-lAgODJEeWuO75iMjg96g" name="COUNT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_B04DoFRXEeakqtpOU88Hyg" annotatedElement="_w-lAgODJEeWuO75iMjg96g">
+            <body>Measured Performance Metric in PM report as count number, for HLI and CHLI.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hYFGYFOAEeaEs5BdAlff7g" name="PERCENT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_NEn5kFRXEeakqtpOU88Hyg" annotatedElement="_hYFGYFOAEeaEs5BdAlff7g">
+            <body>Measured Performance Metric in PM report as percentage, for FLR, Availability, Group Availability and Composite PM.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_AdVC8ODJEeWuO75iMjg96g" name="PmUnitAndValue" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aBfZsODJEeWuO75iMjg96g" annotatedElement="_AdVC8ODJEeWuO75iMjg96g">
+          <body>This data type provides the pair of &lt;unit, value> where the unit can be ms (for frame delay), number (for HLI), and value is the correspondent value for that unit.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_biy0YODJEeWuO75iMjg96g" name="pmUnit" type="_lG_HcODJEeWuO75iMjg96g">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SIJUQP7YEeWD282cpCAwGQ" annotatedElement="_biy0YODJEeWuO75iMjg96g">
+            <body>This attribute denotes the &quot;unit&quot;,  e.g., MILLISECOND, COUNT or PERCENT.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_flvFYODJEeWuO75iMjg96g" name="delayValue">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_apvh4P7YEeWD282cpCAwGQ" annotatedElement="_flvFYODJEeWuO75iMjg96g">
+            <body>This attribute denotes the delay value only when the PmUnit=SECOND. It is for FD, FDR, MFD, IFDV.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_upm4cFThEeaGL-EAhjnCiA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_upp7wFThEeaGL-EAhjnCiA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8-oSsFTgEeaGL-EAhjnCiA" name="countValue" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_THCUQFThEeaGL-EAhjnCiA" annotatedElement="_8-oSsFTgEeaGL-EAhjnCiA">
+            <body>This attribute denotes the count value only when the PmUnit=COUNT. It is for HLI and CHLI.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tcT-4FThEeaGL-EAhjnCiA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tcXpQFThEeaGL-EAhjnCiA" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bUalYFThEeaGL-EAhjnCiA" name="percentValue" type="_5k66wEtZEeWBk67gbHGsmg">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jXRBgFThEeaGL-EAhjnCiA" annotatedElement="_bUalYFThEeaGL-EAhjnCiA">
+            <body>This attribute denotes the percentage value only when the PmUnit=PERCENT. It is for FLR, AV, GROUP_AV and CPM.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rbzfsFThEeaGL-EAhjnCiA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rcJd8FThEeaGL-EAhjnCiA" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_YaQA0M-LEeWZuobpkt7kiw" name="PositiveInteger" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_koLWQM-LEeWZuobpkt7kiw" annotatedElement="_YaQA0M-LEeWZuobpkt7kiw">
+          <body>An integer >0</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4Xh1wM-LEeWZuobpkt7kiw" name="positiveInt">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fiBfcP7YEeWD282cpCAwGQ" annotatedElement="_4Xh1wM-LEeWZuobpkt7kiw">
+            <body>This attribute is an integer >0.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_AFo84E7AEeaN1PPntosErw" name="ServiceState" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_XfzhQE7AEeaN1PPntosErw" annotatedElement="_AFo84E7AEeaN1PPntosErw">
+          <body>This enumeration is for Service State.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FPEU0E7AEeaN1PPntosErw" name="PENDING"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KBpTAE7AEeaN1PPntosErw" name="ACTIVE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OW74QE7AEeaN1PPntosErw" name="INACTIVE"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_GBRO8GevEeWPQagsKdiB-g" name="SourceMacAddressLimit" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Ab38EP6yEeWD282cpCAwGQ" annotatedElement="_GBRO8GevEeWPQagsKdiB-g">
+          <body>This limits the number of source MAC Addresses that can be used in ingress external interface frames mapped to the End Point of all types over a time interval.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dmga4GevEeWPQagsKdiB-g" name="limit" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_z-SvUP7YEeWD282cpCAwGQ" annotatedElement="_dmga4GevEeWPQagsKdiB-g">
+            <body>This attribute denotes the maximum acceptable source MAC addresses.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jlQRQGevEeWPQagsKdiB-g" name="timeInterval" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_2SrMwP7YEeWD282cpCAwGQ" annotatedElement="_jlQRQGevEeWPQagsKdiB-g">
+            <body>This attribute denotes the time interval in milliseconds.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="__hq_gNQxEeWazod-zL7GUw" name="SVlanIdControl" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_YGupsNQyEeWazod-zL7GUw" annotatedElement="__hq_gNQxEeWazod-zL7GUw">
+          <body>This lists the S Vlan ID Control, either FULL or PARTIAL.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Zpom4NQyEeWazod-zL7GUw" name="FULL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_A6TcUFRYEeakqtpOU88Hyg" annotatedElement="_Zpom4NQyEeWazod-zL7GUw">
+            <body>Operator can support only a single SP/SO (Service Provider/Super Operator) at the ENNI.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fJtkQNQyEeWazod-zL7GUw" name="PARTIAL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DMaB0FRYEeakqtpOU88Hyg" annotatedElement="_fJtkQNQyEeWazod-zL7GUw">
+            <body>Operator can support only multiple SP/SO (Service Provider/Super Operator) at the ENNI</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_RZi6QGhpEeWJq6qF01kEMA" name="SyncModePerLink" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Hy6bEP6yEeWD282cpCAwGQ" annotatedElement="_RZi6QGhpEeWJq6qF01kEMA">
+          <body>A link may consist of one or more physical ports. This data type includes the link ID and the sync mode of the physical port associated to the link Id.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dGY74GhpEeWJq6qF01kEMA" name="linkId" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-jsnwP7YEeWD282cpCAwGQ" annotatedElement="_dGY74GhpEeWJq6qF01kEMA">
+            <body>This is the link ID of the link in the Aggregation Link.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_f7gH0GhpEeWJq6qF01kEMA" name="syncModeEnabled">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GlWxEP7ZEeWD282cpCAwGQ" annotatedElement="_f7gH0GhpEeWJq6qF01kEMA">
+            <body>This attribute denotes whether the Synchronous Mode is enabled (on the link with the Link ID).</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_3F2VcPFLEeWd4sURjtTdCg" name="TaggedL2cpProcessing" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-fQO4PbQEeWistjeMISOCw" annotatedElement="_3F2VcPFLEeWd4sURjtTdCg">
+          <body>Either 802.1 compliant or not. Refer to MEF 45.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6vTvcPFLEeWd4sURjtTdCg" name="802.1_COMPLIANT"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__TiIkPFLEeWd4sURjtTdCg" name="802.1_NON_COMPLIANT"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_pj3aIOATEeWxn9d0aKrPrw" name="TimeAndDate" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ywjMIOATEeWxn9d0aKrPrw" annotatedElement="_pj3aIOATEeWxn9d0aKrPrw">
+          <body>This data type is for Time and Date in UTC.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NGu1sOAUEeWxn9d0aKrPrw" name="year" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PIXT8P7ZEeWD282cpCAwGQ" annotatedElement="_NGu1sOAUEeWxn9d0aKrPrw">
+            <body>This denotes the year.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_tt6_wOATEeWxn9d0aKrPrw" name="month" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Q7ZX0P7ZEeWD282cpCAwGQ" annotatedElement="_tt6_wOATEeWxn9d0aKrPrw">
+            <body>This denotes the month.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_z9v_EOATEeWxn9d0aKrPrw" name="day" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_WCZt4P7ZEeWD282cpCAwGQ" annotatedElement="_z9v_EOATEeWxn9d0aKrPrw">
+            <body>This denotes the day.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7fTsAOATEeWxn9d0aKrPrw" name="hour" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XZ_L4P7ZEeWD282cpCAwGQ" annotatedElement="_7fTsAOATEeWxn9d0aKrPrw">
+            <body>This denotes the hour.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CV_3AOAUEeWxn9d0aKrPrw" name="minute" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZJjFAP7ZEeWD282cpCAwGQ" annotatedElement="_CV_3AOAUEeWxn9d0aKrPrw">
+            <body>This denotes the minute.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_HRoDgOAUEeWxn9d0aKrPrw" name="second" type="_IFxQQM-MEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ayupUP7ZEeWD282cpCAwGQ" annotatedElement="_HRoDgOAUEeWxn9d0aKrPrw">
+            <body>This denotes the second.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_tKBzEOAUEeWxn9d0aKrPrw" name="TimeIntervalT" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0DMDQOAUEeWxn9d0aKrPrw" annotatedElement="_tKBzEOAUEeWxn9d0aKrPrw">
+          <body>Time interval T for PM. E.g., 1 month, 20 days, 2 weeks, etc.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1-EbkOAUEeWxn9d0aKrPrw" name="unit" type="_BZMbEOAVEeWxn9d0aKrPrw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9343gOAUEeWxn9d0aKrPrw" annotatedElement="_1-EbkOAUEeWxn9d0aKrPrw">
+            <body>Month, week, day, hour, etc.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bmXSkOAVEeWxn9d0aKrPrw" name="number" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_w0URMP7ZEeWD282cpCAwGQ" annotatedElement="_bmXSkOAVEeWxn9d0aKrPrw">
+            <body>This denotes the value (for the unit), e.g., 1 (month), 20 (day), etc.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_BZMbEOAVEeWxn9d0aKrPrw" name="TimeIntervalUnit" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Hf6hsOAVEeWxn9d0aKrPrw" annotatedElement="_BZMbEOAVEeWxn9d0aKrPrw">
+          <body>Time interval unit, e.g., month, day, week, hour, etc.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_UO4HoOAVEeWxn9d0aKrPrw" name="YEAR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_IbGXkOAVEeWxn9d0aKrPrw" name="MONTH"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KiIVgOAVEeWxn9d0aKrPrw" name="WEEK"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MK4cAOAVEeWxn9d0aKrPrw" name="DAY"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Nw6lsOAVEeWxn9d0aKrPrw" name="HOUR"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PTOtAOAVEeWxn9d0aKrPrw" name="MINUTE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_RfUKEOAVEeWxn9d0aKrPrw" name="SECOND"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="__yzNwE3UEeW8nr4xP1Jhmg" name="VlanId" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7s_y8NAeEeWuNf2VLdfDCg" annotatedElement="__yzNwE3UEeW8nr4xP1Jhmg">
+          <body>This is for VLAN ID from 1 to 4094</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B2inIE3VEeW8nr4xP1Jhmg" name="vlanId" type="_YaQA0M-LEeWZuobpkt7kiw">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5V7F4P7ZEeWD282cpCAwGQ" annotatedElement="_B2inIE3VEeW8nr4xP1Jhmg">
+            <body>This is the Vlan ID value.</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rggUsPYGEeW7BOfIBnaF1Q" name="VlanIdListing" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zAJEIPYIEeW7BOfIBnaF1Q" annotatedElement="_rggUsPYGEeW7BOfIBnaF1Q">
+          <body>The list VLAN IDs, either when type=LIST, or when type==EXCEPT (which means the VLAN IDs except the listed). When type=ALL, the vlanId list is not applicable.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_z_kywPYGEeW7BOfIBnaF1Q" name="type" type="_3ctA8PYGEeW7BOfIBnaF1Q">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_z2S2sPbREeWistjeMISOCw" annotatedElement="_z_kywPYGEeW7BOfIBnaF1Q">
+            <body>Can be LIST, or ALL, or EXCEPT.</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Hboi0PYHEeW7BOfIBnaF1Q" name="vlanIdList" type="__yzNwE3UEeW8nr4xP1Jhmg">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__byQ4P7ZEeWD282cpCAwGQ" annotatedElement="_Hboi0PYHEeW7BOfIBnaF1Q">
+            <body>This is a list of Vlan IDs.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PfLigPYHEeW7BOfIBnaF1Q"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PfOl0PYHEeW7BOfIBnaF1Q" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_3ctA8PYGEeW7BOfIBnaF1Q" name="VlanIdMappingType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_MgG6gPbREeWistjeMISOCw" annotatedElement="_3ctA8PYGEeW7BOfIBnaF1Q">
+          <body>Vlan ID types, ALL for all vlan IDs, LIST for a list of Vlan IDs, EXCEPT for all Vlan IDs except the listed. </body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7ZLdkPYGEeW7BOfIBnaF1Q" name="ALL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uhggEFRXEeakqtpOU88Hyg" annotatedElement="_7ZLdkPYGEeW7BOfIBnaF1Q">
+            <body>All Vlan IDs.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8y0xEPYGEeW7BOfIBnaF1Q" name="EXCEPT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xGN4gFRXEeakqtpOU88Hyg" annotatedElement="_8y0xEPYGEeW7BOfIBnaF1Q">
+            <body>All Vlan IDs except the listed.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-nxggPYGEeW7BOfIBnaF1Q" name="LIST">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zHWCwFRXEeakqtpOU88Hyg" annotatedElement="_-nxggPYGEeW7BOfIBnaF1Q">
+            <body>List of Vlan IDs.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_EH9GkOoJEeWM9o9A42VTIA" name="VlanIdPreservation" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_vmCFMOoJEeWM9o9A42VTIA" annotatedElement="_EH9GkOoJEeWM9o9A42VTIA">
+          <body>This is for Vlan ID Preservation. Refer to MEF 26.2 section 12.7.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_J5dLIOoJEeWM9o9A42VTIA" name="PRESERVE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BXkxsFRZEeakqtpOU88Hyg" annotatedElement="_J5dLIOoJEeWM9o9A42VTIA">
+            <body>To achieve EVC CE-VLAN ID Preservation.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MelaUOoJEeWM9o9A42VTIA" name="RETAIN">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_seS1sFRYEeakqtpOU88Hyg" annotatedElement="_MelaUOoJEeWM9o9A42VTIA">
+            <body>C-Tag, if present, is encapsulated with the C-Tag VLAN ID value retained.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_TJ-UQOoJEeWM9o9A42VTIA" name="STRIP">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mIX1cFRYEeakqtpOU88Hyg" annotatedElement="_TJ-UQOoJEeWM9o9A42VTIA">
+            <body>C-Tag is discarded.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_vjkIsNAuEeWuNf2VLdfDCg" name="VlanTag" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9szUQNAuEeWuNf2VLdfDCg" annotatedElement="_vjkIsNAuEeWuNf2VLdfDCg">
+          <body>This is for Vlan Tag type, i.e., S-tag or C-tag.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-yB28NAuEeWuNf2VLdfDCg" name="S_TAG"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BZ0YkNAvEeWuNf2VLdfDCg" name="C_TAG"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_C8Fw8DGeEeeq8-o_3nsquA" name="VlanIdListOrUntag" isLeaf="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ImYaQDGeEeeq8-o_3nsquA" name="type" visibility="public" type="_90MMkCCSEee2wdENZF_53A"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_KsZrkDGeEeeq8-o_3nsquA" name="vlanIdList" type="__yzNwE3UEeW8nr4xP1Jhmg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gcMY0DGeEeeq8-o_3nsquA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gcO1EDGeEeeq8-o_3nsquA" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_90MMkCCSEee2wdENZF_53A" name="VlanIdMappingTypeOrUntag" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_90MMkSCSEee2wdENZF_53A" annotatedElement="_90MMkCCSEee2wdENZF_53A">
+          <body>Vlan ID types, ALL for all Vlan IDs, LIST for a list of Vlan IDs, EXCEPT for all Vlan IDs except the listed, UNTAGGED to indicate that untagged and priority-tagged frames are mapped to this end point.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_90MMkiCSEee2wdENZF_53A" name="ALL"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_90MMlCCSEee2wdENZF_53A" name="EXCEPT"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_90MMlSCSEee2wdENZF_53A" name="LIST"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_90MMliCSEee2wdENZF_53A" name="UNTAGGED"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_930bkFdJEeeBF7bPnBp5dQ" name="ResourceState" isLeaf="true">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qZIY0FdKEeeBF7bPnBp5dQ" name="INACTIVE"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_s1GsAFdKEeeBF7bPnBp5dQ" name="ACTIVE"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_l_YSoPuTEee127MQaaYNaQ" name="SatTestResult" isLeaf="true">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1egTEPuTEee127MQaaYNaQ" name="Pass"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3Es00PuTEee127MQaaYNaQ" name="Fail"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_40glkPuTEee127MQaaYNaQ" name="Untested"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8MtQcPuTEee127MQaaYNaQ" name="Unsupported"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-QPOcPuTEee127MQaaYNaQ" name="Not_Applicable"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AXB70PuUEee127MQaaYNaQ" name="Not_Testable"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CB9zoPuUEee127MQaaYNaQ" name="Unresolved"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ECsVQPuUEee127MQaaYNaQ" name="Not_Initiated"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_jDWYsH6gEeiqyqSVRuW60g" name="PrimaryVlanIdAndMel" isLeaf="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_szEmUH6gEeiqyqSVRuW60g" name="primaryVlanId" type="__yzNwE3UEeW8nr4xP1Jhmg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5QDrcH6gEeiqyqSVRuW60g" name="mel" type="_ECFdUNAZEeWuNf2VLdfDCg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_maE1MH6mEeiqyqSVRuW60g" name="OamDomain" isLeaf="true">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_r8AMsH6mEeiqyqSVRuW60g" name="SUBSCRIBER"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_trVcUH6mEeiqyqSVRuW60g" name="TEST"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uqzVQH6mEeiqyqSVRuW60g" name="EVC"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vvAkQH6mEeiqyqSVRuW60g" name="SP"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_w7-GoH6mEeiqyqSVRuW60g" name="OP"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yTWwUH6mEeiqyqSVRuW60g" name="UNI"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zOdtsH6mEeiqyqSVRuW60g" name="ENNI"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_kCnI8J7vEeicJ6xMjLip8w" name="OrderDesiredResponse" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_OPPioJ9EEeicJ6xMjLip8w" annotatedElement="_kCnI8J7vEeicJ6xMjLip8w">
+          <body>This enumeration is defined in MEF57.1, and extended in the MCM mapping. It defines the set of responses that a Buyer wishes to receive from a Seller when an Order is placed.&#xD;
+The first two enumerations (ERROR and INIT) are part of the standard enumeration package used by MCM. The last three are defined by MEF57.1, and represent a choice of&#xD;
+confirmation and engineering design, confirmation, or none.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_11EBcJ7wEeicJ6xMjLip8w" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mcjPIKzBEei2692ceZx3ZA" annotatedElement="_11EBcJ7wEeicJ6xMjLip8w">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_236lkJ7wEeicJ6xMjLip8w" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ylc6oKzBEei2692ceZx3ZA" annotatedElement="_236lkJ7wEeicJ6xMjLip8w">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6OoCsJ7wEeicJ6xMjLip8w" name="CONFIRM_AND_ENG_DESIGN">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Oav6oKzPEei2692ceZx3ZA" annotatedElement="_6OoCsJ7wEeicJ6xMjLip8w">
+            <body>This literal indicates that the desired response is confirmation and engineering design.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7q82wJ7wEeicJ6xMjLip8w" name="CONFIRM_ONLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_YgO84KzPEei2692ceZx3ZA" annotatedElement="_7q82wJ7wEeicJ6xMjLip8w">
+            <body>This literal indicates that the desired response is confirmation only.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9V3gcJ7wEeicJ6xMjLip8w" name="NONE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_b0Bo4KzPEei2692ceZx3ZA" annotatedElement="_9V3gcJ7wEeicJ6xMjLip8w">
+            <body>This literal indicates that no response is desired.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_8kNj8J9GEeicJ6xMjLip8w" name="McmEntityEnable" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_oy8PEKcsEeikobsgyX1xHg" annotatedElement="_8kNj8J9GEeicJ6xMjLip8w">
+          <body>This is an enumeration that is used for MCMMetaData classes. whether the MCMEntity that this MCMMetaData object refers to is enabled for normal operation or not. </body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HDCTQJ9HEeicJ6xMjLip8w" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ra8bwKzBEei2692ceZx3ZA" annotatedElement="_HDCTQJ9HEeicJ6xMjLip8w">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_J9WvUJ9HEeicJ6xMjLip8w" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4rSQcKzBEei2692ceZx3ZA" annotatedElement="_J9WvUJ9HEeicJ6xMjLip8w">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LX9FEJ9HEeicJ6xMjLip8w" name="ENABLED_FOR_ALL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xOjHMKzDEei2692ceZx3ZA" annotatedElement="_LX9FEJ9HEeicJ6xMjLip8w">
+            <body>This literal indicates that the MCMEntity object that this MCMMetaData object refers to is enabled for normal operation.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Q4EesJ9HEeicJ6xMjLip8w" name="ENABLED_FOR_TEST_ONLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8mpggKzGEei2692ceZx3ZA" annotatedElement="_Q4EesJ9HEeicJ6xMjLip8w">
+            <body>This literal indicates that the MCMEntity object that this MCMMetaData object refers to is enabled only for testing operations, and MUST NOT be used for normal operations.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ux6eEJ9HEeicJ6xMjLip8w" name="DISABLED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CMZoEKzHEei2692ceZx3ZA" annotatedElement="_Ux6eEJ9HEeicJ6xMjLip8w">
+            <body>This literal indicates that the MCMEntity object that this MCMMetaData object refers to is enabled for normal operation.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YprZ0J9HEeicJ6xMjLip8w" name="UNKNOWN">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PFbTgKzIEei2692ceZx3ZA" annotatedElement="_YprZ0J9HEeicJ6xMjLip8w">
+            <body>This literal indicates that the state of the MCMEntity object that this MCMMetaData object refers to is currently unknown (e.g., the management system has not been able to&#xD;
+establish communications with it).</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_DDD9EJ9PEeicJ6xMjLip8w" name="OrderType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7gQfQKcrEeikobsgyX1xHg" annotatedElement="_DDD9EJ9PEeicJ6xMjLip8w">
+          <body>This enumeration is defined in MEF57.1, and extended in the MCM mapping. This defines the type of order, as defined by the business. MCM has extended the set of valid values&#xD;
+defined in MEF57.1.&#xD;
+For this release, this set of literals is also used for MCMOrderItem.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_IgLGAJ9PEeicJ6xMjLip8w" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_leOlsKzBEei2692ceZx3ZA" annotatedElement="_IgLGAJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Jk-K4J9PEeicJ6xMjLip8w" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xdzWEKzBEei2692ceZx3ZA" annotatedElement="_Jk-K4J9PEeicJ6xMjLip8w">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KkQdoJ9PEeicJ6xMjLip8w" name="CREATE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qx0d4KzPEei2692ceZx3ZA" annotatedElement="_KkQdoJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to create a Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LjnB0J9PEeicJ6xMjLip8w" name="INSTALL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ve20wKzPEei2692ceZx3ZA" annotatedElement="_LjnB0J9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to install a Product.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MPug8J9PEeicJ6xMjLip8w" name="CHANGE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ybb6oKzPEei2692ceZx3ZA" annotatedElement="_MPug8J9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to change a Product or Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Mv-uUJ9PEeicJ6xMjLip8w" name="DISCONNECT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1f2G0KzPEei2692ceZx3ZA" annotatedElement="_Mv-uUJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to disconnect a Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_NWYnAJ9PEeicJ6xMjLip8w" name="QUERY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4XozUKzPEei2692ceZx3ZA" annotatedElement="_NWYnAJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to query a Product or Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_N29kgJ9PEeicJ6xMjLip8w" name="AMEND">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CF3MIKzQEei2692ceZx3ZA" annotatedElement="_N29kgJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to amend an order for a Product or Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OrA3oJ9PEeicJ6xMjLip8w" name="CANCEL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_D1vOUKzQEei2692ceZx3ZA" annotatedElement="_OrA3oJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to cancel a Product or Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ppdc4J9PEeicJ6xMjLip8w" name="NOTIFY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GuPsgKzQEei2692ceZx3ZA" annotatedElement="_Ppdc4J9PEeicJ6xMjLip8w">
+            <body>This literal indicates that the type of order is to notify the status of a Product or Service.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_QQJCYJ9PEeicJ6xMjLip8w" name="COMPLETE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Jjv6AKzQEei2692ceZx3ZA" annotatedElement="_QQJCYJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that this order is completed.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Q1H-wJ9PEeicJ6xMjLip8w" name="NO_CHANGE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MUm4EKzQEei2692ceZx3ZA" annotatedElement="_Q1H-wJ9PEeicJ6xMjLip8w">
+            <body>This literal indicates that no change to this order is required.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_ta0s4J-cEeicJ6xMjLip8w" name="McmAdminState" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Zr-uQJ-dEeicJ6xMjLip8w" annotatedElement="_ta0s4J-cEeicJ6xMjLip8w">
+          <body>This enumeration defines the set of states for what the IETF and ITU-T call &quot;AdminStatus&quot;. Note that the MCM version extends both of these. The states are:&#xD;
+   ERROR&#xD;
+   INIT&#xD;
+   ENABLED&#xD;
+   LOCKED&#xD;
+   IN_TEST&#xD;
+   UNKNOWN&#xD;
+LOCKED means that the object cannot be used for normal operations.&#xD;
+IN_TEST means that this object can only respond to test communications and commands&#xD;
+UNKNOWN means that this object was unable to report its current status when last queried</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0zKMYJ-cEeicJ6xMjLip8w" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qS_VMKzBEei2692ceZx3ZA" annotatedElement="_0zKMYJ-cEeicJ6xMjLip8w">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_11E8YJ-cEeicJ6xMjLip8w" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3rUoQKzBEei2692ceZx3ZA" annotatedElement="_11E8YJ-cEeicJ6xMjLip8w">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1-YCUJ-cEeicJ6xMjLip8w" name="ENABLED_FOR_USE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eCXM4KzIEei2692ceZx3ZA" annotatedElement="_1-YCUJ-cEeicJ6xMjLip8w">
+            <body>This literal indicates that the adminState of this MCMManagedEntity object is currently enabled for normal operation and operating correctly. The adminState defines the current&#xD;
+ability of this MCMManagedEntity to communicate with and respond to service requests from other MCMManagedEntity objects.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2J-1YJ-cEeicJ6xMjLip8w" name="LOCKED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qn8NUKzIEei2692ceZx3ZA" annotatedElement="_2J-1YJ-cEeicJ6xMjLip8w">
+            <body>This literal indicates that the adminState of this MCMManagedEntity object is currently prohibited from being used. The adminState defines the current&#xD;
+ability of this MCMManagedEntity to communicate with and respond to service requests from other MCMManagedEntity objects.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_28w9MJ-cEeicJ6xMjLip8w" name="IN_TEST">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xUVz4KzIEei2692ceZx3ZA" annotatedElement="_28w9MJ-cEeicJ6xMjLip8w">
+            <body>This literal indicates that the adminState of this MCMManagedEntity object is currently only available in test mode. Normal operations MUST NOT be used. The adminState defines the&#xD;
+current ability of this MCMManagedEntity to communicate with and respond to service requests from other MCMManagedEntity objects.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3FiesJ-cEeicJ6xMjLip8w" name="UNKNOWN">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_50OKQKzIEei2692ceZx3ZA" annotatedElement="_3FiesJ-cEeicJ6xMjLip8w">
+            <body>This literal indicates that the adminState of this MCMManagedEntity object is currently unknown (e.g., the management system has not been able to establish communications with it).&#xD;
+The adminState defines the current ability of this MCMManagedEntity to communicate with and respond to service requests from other MCMManagedEntity objects.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_cFj_UJ-eEeicJ6xMjLip8w" name="McmOperState" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hPnM4J-fEeicJ6xMjLip8w" annotatedElement="_cFj_UJ-eEeicJ6xMjLip8w">
+          <body>This enumeration defines the set of states for what the IETF and ITU-T call &quot;OperStatus&quot;. Note that the MCM version extends both of these. The states are:&#xD;
+   ERROR&#xD;
+   INIT&#xD;
+   ENABLED_FOR_USE&#xD;
+   INSTALLED_AND_OPERATING_CORRECTLY&#xD;
+   INSTALLED_AND_NOT_OPERATING_CORRECTLY&#xD;
+   INSTALLED_BUT_NOT_OPERATING&#xD;
+   NOT_INSTALLED&#xD;
+   IN_TEST&#xD;
+   LOCKED&#xD;
+   UNKNOWN&#xD;
+INSTALLED_AND_NOT_OPERATING_CORRECTLY means that the object installed but has one or more pending alarms that have not been cleared.&#xD;
+INSTALLED_BUT_NOT_OPERATING means that the object is in a shutdown, powered-off, or similar state.&#xD;
+IN_TEST means that the object can only respond to testing commands and communications&#xD;
+LOCKED means that the object is prohibited from being used&#xD;
+UNKNOWN means that this object was unable to report its status when communication was last attempted</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3z-nIJ-eEeicJ6xMjLip8w" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sUNmEKzBEei2692ceZx3ZA" annotatedElement="_3z-nIJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4uUIcJ-eEeicJ6xMjLip8w" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5qHQMKzBEei2692ceZx3ZA" annotatedElement="_4uUIcJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_43ergJ-eEeicJ6xMjLip8w" name="INSTALLED_AND_OPERATING_CORRECTLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cBX-0KzDEei2692ceZx3ZA" annotatedElement="_43ergJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is currently installed and operational, but has not been enabled for use.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5OL7UJ-eEeicJ6xMjLip8w" name="INSTALLED_AND_NOT_OPERATING_CORRECTLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZoKrwKzDEei2692ceZx3ZA" annotatedElement="_5OL7UJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object currently has one or more pending alarms that have not been cleared.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5XQXwJ-eEeicJ6xMjLip8w" name="ENABLED_FOR_USE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LY5JoKzDEei2692ceZx3ZA" annotatedElement="_5XQXwJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that this MCMManagedEntity object is currently enabled for normal operation and working correctly.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5nw48J-eEeicJ6xMjLip8w" name="INSTALLED_BUT_NOT_OPERATING">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_E1twgKzDEei2692ceZx3ZA" annotatedElement="_5nw48J-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is in a shutdown, powered off, or similar state, and MUST NOT be used until it is enabled for use.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5tcqMJ-eEeicJ6xMjLip8w" name="INSTALLATION_IN_PROCESS">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BElBMKzDEei2692ceZx3ZA" annotatedElement="_5tcqMJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is currently being installed (i.e., installation is not yet finished).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5yzrUJ-eEeicJ6xMjLip8w" name="NOT_INSTALLED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9jW9MKzCEei2692ceZx3ZA" annotatedElement="_5yzrUJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is not installed.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_53-fMJ-eEeicJ6xMjLip8w" name="IN_TEST">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_yzgIQKzCEei2692ceZx3ZA" annotatedElement="_53-fMJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is in a test mode, and MUST only respond to testing commands and communication. Normal operational&#xD;
+commands MUST NOT be processed until this MCMManagedEntity object is put into an ENABLED_FOR_USE state.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_58QiQJ-eEeicJ6xMjLip8w" name="LOCKED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_urKZ4KzCEei2692ceZx3ZA" annotatedElement="_58QiQJ-eEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is currently prohibited from being used.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_cdNN0J-fEeicJ6xMjLip8w" name="UNKNOWN">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_i4CxIKzCEei2692ceZx3ZA" annotatedElement="_cdNN0J-fEeicJ6xMjLip8w">
+            <body>This literal indicates that the operational state of this MCMManagedEntity object is currently unknown (e.g., the management system has not been able to establish communications with it).</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_uOQlQKdNEeiOa5loWFZPnA" name="McmProductOrderType" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_DYpLAKfgEeip9rs5x_Gmtg" annotatedElement="_uOQlQKdNEeiOa5loWFZPnA">
+          <body>This enumeration is defined in the MCM. It is the beginning of a list of different MEF Products that can be purchased by an MCMBuyer.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_y9CokKdNEeiOa5loWFZPnA" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ndlOUKzBEei2692ceZx3ZA" annotatedElement="_y9CokKdNEeiOa5loWFZPnA">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zkGBgKdNEeiOa5loWFZPnA" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ziyFkKzBEei2692ceZx3ZA" annotatedElement="_zkGBgKdNEeiOa5loWFZPnA">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zuXX0KdNEeiOa5loWFZPnA" name="UNI_PRODUCT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_aIG2cKzLEei2692ceZx3ZA" annotatedElement="_zuXX0KdNEeiOa5loWFZPnA">
+            <body>This literal indicates that this is an order for a UNI Product.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_z2QIgKdNEeiOa5loWFZPnA" name="ACCESS_ELINE_PRODUCT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cnRAgKzLEei2692ceZx3ZA" annotatedElement="_z2QIgKdNEeiOa5loWFZPnA">
+            <body>This literal indicates that this is an order for an ACCESS E-Line Product.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_upVc0Kf_EeiHD87Y0lq8Ew" name="McmMetaDataEnableStatus" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_EeE7gKgAEeiHD87Y0lq8Ew" annotatedElement="_upVc0Kf_EeiHD87Y0lq8Ew">
+          <body>This is an optional enumeration that defines whether the MCMEntity that this MCMMetaData object refers to is enabled for normal operation or not. </body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zVgRAKf_EeiHD87Y0lq8Ew" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_tROA4KzBEei2692ceZx3ZA" annotatedElement="_zVgRAKf_EeiHD87Y0lq8Ew">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0ODpoKf_EeiHD87Y0lq8Ew" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6l3t0KzBEei2692ceZx3ZA" annotatedElement="_0ODpoKf_EeiHD87Y0lq8Ew">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0blvUKf_EeiHD87Y0lq8Ew" name="ENABLED_FOR_ALL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_QOcYwKzCEei2692ceZx3ZA" annotatedElement="_0blvUKf_EeiHD87Y0lq8Ew">
+            <body>This literal indicates that the MCMMetaData object is enabled for normal operation.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0j1sYKf_EeiHD87Y0lq8Ew" name="ENABLED_FOR_TEST_ONLY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TffSwKzCEei2692ceZx3ZA" annotatedElement="_0j1sYKf_EeiHD87Y0lq8Ew">
+            <body>This literal indicates that the MCMMetaData object is enabled only for test operations.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0vmQcKf_EeiHD87Y0lq8Ew" name="DISABLED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XT5YgKzCEei2692ceZx3ZA" annotatedElement="_0vmQcKf_EeiHD87Y0lq8Ew">
+            <body>This literal indicates that the MCMMetaData object is disabled for normal operation, and MUST NOT be used.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_05SX8Kf_EeiHD87Y0lq8Ew" name="UNKNOWN">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cbb6EKzCEei2692ceZx3ZA" annotatedElement="_05SX8Kf_EeiHD87Y0lq8Ew">
+            <body>This literal indicates that the state of this MCMMetaData object is currently unknown (e.g., the management system has not been able to establish communications with it).</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_6ZMZMKzAEei2692ceZx3ZA" name="OrderStatus" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_SH8IoKzQEei2692ceZx3ZA" annotatedElement="_6ZMZMKzAEei2692ceZx3ZA">
+          <body>This enumeration is defined in MEF57.1, and extended in the MCM mapping. It defines the status of this ProductOrder.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Bl2NIKzBEei2692ceZx3ZA" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jWe2EKzBEei2692ceZx3ZA" annotatedElement="_Bl2NIKzBEei2692ceZx3ZA">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_C9v0MKzBEei2692ceZx3ZA" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1pjk0KzBEei2692ceZx3ZA" annotatedElement="_C9v0MKzBEei2692ceZx3ZA">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EcGokKzBEei2692ceZx3ZA" name="ACKNOWLEDGED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IwptUKzJEei2692ceZx3ZA" annotatedElement="_EcGokKzBEei2692ceZx3ZA">
+            <body>This literal means that an order has been received and has passed message and basic business validations.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EnA4EKzBEei2692ceZx3ZA" name="ASSESSING_CANCELLATION">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ms4QgKzJEei2692ceZx3ZA" annotatedElement="_EnA4EKzBEei2692ceZx3ZA">
+            <body>This literal means that a request has been made by the Buyer or Seller to cancel the order, and the order is currently being assessed to determine whether it can be cancelled or not.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ev010KzBEei2692ceZx3ZA" name="CANCELLED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_njAnQKzJEei2692ceZx3ZA" annotatedElement="_Ev010KzBEei2692ceZx3ZA">
+            <body>This literal means that an order has been successfully cancelled.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_E5LmIKzBEei2692ceZx3ZA" name="COMPLETED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ocDIEKzJEei2692ceZx3ZA" annotatedElement="_E5LmIKzBEei2692ceZx3ZA">
+            <body>This literal means that an order has been completely provisioned, and the service is now active.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FCG4oKzBEei2692ceZx3ZA" name="CONFIRMED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qG5gUKzJEei2692ceZx3ZA" annotatedElement="_FCG4oKzBEei2692ceZx3ZA">
+            <body>This literal means that an order is committed to delivery for a given delivery date.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FKfYkKzBEei2692ceZx3ZA" name="CONFIGURED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pPjooKzJEei2692ceZx3ZA" annotatedElement="_FKfYkKzBEei2692ceZx3ZA">
+            <body>This literal means that prior to the confirmation of the order, the Seller configures Seller-specific data (e.g., Seller UNI ID, Seller ENNI ID, Seller OVC ID).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FT2I4KzBEei2692ceZx3ZA" name="FAILED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_q8DmsKzJEei2692ceZx3ZA" annotatedElement="_FT2I4KzBEei2692ceZx3ZA">
+            <body>This literal means that all order items in an order have failed, causing the order itself to fail.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FeOM4KzBEei2692ceZx3ZA" name="HELD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rxs1QKzJEei2692ceZx3ZA" annotatedElement="_FeOM4KzBEei2692ceZx3ZA">
+            <body>This literal means that an order cannot be progressed due to an issue that is acceptance by the Seller.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FoXnYKzBEei2692ceZx3ZA" name="IN_PROGRESS">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sj_04KzJEei2692ceZx3ZA" annotatedElement="_FoXnYKzBEei2692ceZx3ZA">
+            <body>This literal means that an order has passed feasibility checks successfully, and service delivery has started.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FxiKcKzBEei2692ceZx3ZA" name="JEOPARDY">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_tXnDIKzJEei2692ceZx3ZA" annotatedElement="_FxiKcKzBEei2692ceZx3ZA">
+            <body>This literal means that an order is in danger of not meeting its expected delivery date. The Seller may request that a new, corrected order be submitted.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_G1zD0KzBEei2692ceZx3ZA" name="PARTIAL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uQLp4KzJEei2692ceZx3ZA" annotatedElement="_G1zD0KzBEei2692ceZx3ZA">
+            <body>This literal means that some order items have completed, and some have failed, for this order.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HFgTwKzBEei2692ceZx3ZA" name="PENDING">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vCyykKzJEei2692ceZx3ZA" annotatedElement="_HFgTwKzBEei2692ceZx3ZA">
+            <body>This literal means that an order is currently in a waiting stage for an action/activity to be completed before the order can progress further, pending amending or assessing the cancellation of the order.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HWv0wKzBEei2692ceZx3ZA" name="PENDING_CANCELLATION">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_v1bJYKzJEei2692ceZx3ZA" annotatedElement="_HWv0wKzBEei2692ceZx3ZA">
+            <body>This literal means that a cancellation request has been assessed and it has been determined that it is feasible to proceed with the cancellation of this order.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HgBskKzBEei2692ceZx3ZA" name="REJECTED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_woQUgKzJEei2692ceZx3ZA" annotatedElement="_HgBskKzBEei2692ceZx3ZA">
+            <body>This literal means that an order has been rejected for one of the following reasons:&#xD;
+   1. The order has failed feasibility checking&#xD;
+   2.  Invalid information was provided on the order&#xD;
+   3. The order failed to pass order validation</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_aAdLALX6EeiaO7CUBvaXBA" name="McmCustomerStatus" isLeaf="true">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_hGqYsLX6EeiaO7CUBvaXBA" annotatedElement="_aAdLALX6EeiaO7CUBvaXBA">
+          <body>This is a mandatory enumeration that defines the current business standing (e.g., active, inactive, prospective) of a customer.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_p_bJILX6EeiaO7CUBvaXBA" name="ERROR">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_t7ZPcLX6EeiaO7CUBvaXBA" annotatedElement="_p_bJILX6EeiaO7CUBvaXBA">
+            <body>This literal indicates that an error has occured.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qOBl0LX6EeiaO7CUBvaXBA" name="INIT">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_yjv6oLX6EeiaO7CUBvaXBA" annotatedElement="_qOBl0LX6EeiaO7CUBvaXBA">
+            <body>This literal indicates that this object is ready to be initialized.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qaqToLX6EeiaO7CUBvaXBA" name="ACTIVE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8x2GULX6EeiaO7CUBvaXBA" annotatedElement="_qaqToLX6EeiaO7CUBvaXBA">
+            <body>This literal indicates that this Customer is in good standing (i.e., is currently doing business with this organization and has no delinquencies).</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qovy8LX6EeiaO7CUBvaXBA" name="RESTRICTED">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HgrnkLX7EeiaO7CUBvaXBA" annotatedElement="_qovy8LX6EeiaO7CUBvaXBA">
+            <body>This literal indicates that this Customer is Active (i.e., is currently doing business with this organization), but has unpad bills.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_q3I0QLX6EeiaO7CUBvaXBA" name="INACTIVE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TcwYALX7EeiaO7CUBvaXBA" annotatedElement="_q3I0QLX6EeiaO7CUBvaXBA">
+            <body>This literal means that this Customer was a previous Customer, but is not currently doing business with this organization.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rGCy8LX6EeiaO7CUBvaXBA" name="PROSPECTIVE">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_YkJIkLX7EeiaO7CUBvaXBA" annotatedElement="_rGCy8LX6EeiaO7CUBvaXBA">
+            <body>This literal means that this is a prospective Customer, and hence, may receive special promotions.</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_aOFxwDAzEeeMUevANHuhog" name="Diagrams"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_cSrfsDAzEeeMUevANHuhog" name="ObjectClasses"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_6w6PIDsoEeegMcfuywP9HQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j87WcFZbEeidxIKT7Fvi4g" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j87WcVZbEeidxIKT7Fvi4g" key="Version" value="0.2.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j87WclZbEeidxIKT7Fvi4g" key="Comment" value="«LifecycleAggregate» stereotype added"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j87Wc1ZbEeidxIKT7Fvi4g" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j87WdFZbEeidxIKT7Fvi4g" key="Date" value="2017-06-21"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j87WdVZbEeidxIKT7Fvi4g" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6w7dQDsoEeegMcfuywP9HQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Model>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xBj4DsoEeegMcfuywP9HQ" base_StructuralFeature="_K0QuEE3rEeW8nr4xP1Jhmg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xDZEDsoEeegMcfuywP9HQ" base_StructuralFeature="_Qof9kE3rEeW8nr4xP1Jhmg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xDZETsoEeegMcfuywP9HQ" base_StructuralFeature="_ZumUYE0EEeWOKsU_6x9uZA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xDZEjsoEeegMcfuywP9HQ" base_StructuralFeature="_dhIx4E0EEeWOKsU_6x9uZA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xEnMDsoEeegMcfuywP9HQ" base_StructuralFeature="_Lclj8EzbEeWOKsU_6x9uZA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xEnMTsoEeegMcfuywP9HQ" base_StructuralFeature="_sl8N4Ee3EeagooSm58To6w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xEnMjsoEeegMcfuywP9HQ" base_StructuralFeature="_OztVUEqtEeWslOhmT__Dhw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcYDsoEeegMcfuywP9HQ" base_StructuralFeature="_TAzA0EqtEeWslOhmT__Dhw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcYTsoEeegMcfuywP9HQ" base_StructuralFeature="_54bx8GTzEeaPEPG51uosWA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcYjsoEeegMcfuywP9HQ" base_StructuralFeature="_BaY4wEeuEeagooSm58To6w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcYzsoEeegMcfuywP9HQ" base_StructuralFeature="_GKzTwEeuEeagooSm58To6w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcZDsoEeegMcfuywP9HQ" base_StructuralFeature="_bMEuIEeuEeagooSm58To6w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcZTsoEeegMcfuywP9HQ" base_StructuralFeature="_iXxecE5pEeW_Eq19e84R8Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcZjsoEeegMcfuywP9HQ" base_StructuralFeature="_nIolYE5pEeW_Eq19e84R8Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xGcZzsoEeegMcfuywP9HQ" base_StructuralFeature="_NFM-sM-MEeWZuobpkt7kiw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqgDsoEeegMcfuywP9HQ" base_StructuralFeature="_-X6vsEtZEeWBk67gbHGsmg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqgTsoEeegMcfuywP9HQ" base_StructuralFeature="_6RtkYGhaEeWJq6qF01kEMA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqgjsoEeegMcfuywP9HQ" base_StructuralFeature="_-xQR0GhaEeWJq6qF01kEMA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqgzsoEeegMcfuywP9HQ" base_StructuralFeature="_biy0YODJEeWuO75iMjg96g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqhDsoEeegMcfuywP9HQ" base_StructuralFeature="_flvFYODJEeWuO75iMjg96g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqhTsoEeegMcfuywP9HQ" base_StructuralFeature="_8-oSsFTgEeaGL-EAhjnCiA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqhjsoEeegMcfuywP9HQ" base_StructuralFeature="_bUalYFThEeaGL-EAhjnCiA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqhzsoEeegMcfuywP9HQ" base_StructuralFeature="_4Xh1wM-LEeWZuobpkt7kiw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqiDsoEeegMcfuywP9HQ" base_StructuralFeature="_dmga4GevEeWPQagsKdiB-g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xHqiTsoEeegMcfuywP9HQ" base_StructuralFeature="_jlQRQGevEeWPQagsKdiB-g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJfsDsoEeegMcfuywP9HQ" base_StructuralFeature="_dGY74GhpEeWJq6qF01kEMA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJfsTsoEeegMcfuywP9HQ" base_StructuralFeature="_f7gH0GhpEeWJq6qF01kEMA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJfsjsoEeegMcfuywP9HQ" base_StructuralFeature="_NGu1sOAUEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJfszsoEeegMcfuywP9HQ" base_StructuralFeature="_tt6_wOATEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJftDsoEeegMcfuywP9HQ" base_StructuralFeature="_z9v_EOATEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJftTsoEeegMcfuywP9HQ" base_StructuralFeature="_7fTsAOATEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJftjsoEeegMcfuywP9HQ" base_StructuralFeature="_CV_3AOAUEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xJftzsoEeegMcfuywP9HQ" base_StructuralFeature="_HRoDgOAUEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt0DsoEeegMcfuywP9HQ" base_StructuralFeature="_1-EbkOAUEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt0TsoEeegMcfuywP9HQ" base_StructuralFeature="_bmXSkOAVEeWxn9d0aKrPrw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt0jsoEeegMcfuywP9HQ" base_StructuralFeature="_B2inIE3VEeW8nr4xP1Jhmg" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt0zsoEeegMcfuywP9HQ" base_StructuralFeature="_z_kywPYGEeW7BOfIBnaF1Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt1DsoEeegMcfuywP9HQ" base_StructuralFeature="_Hboi0PYHEeW7BOfIBnaF1Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt1TsoEeegMcfuywP9HQ" base_StructuralFeature="_ImYaQDGeEeeq8-o_3nsquA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_6xKt1jsoEeegMcfuywP9HQ" base_StructuralFeature="_KsZrkDGeEeeq8-o_3nsquA"/>
+  <OpenModel_Profile:OpenModelStatement xmi:id="_iMV4wLwYEeiJzfxJS6sjLQ" base_Model="_BTq7kDAzEeeMUevANHuhog"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_iMWf0LwYEeiJzfxJS6sjLQ" base_StructuralFeature="_szEmUH6gEeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_iMXG4LwYEeiJzfxJS6sjLQ" base_StructuralFeature="_5QDrcH6gEeiqyqSVRuW60g" partOfObjectKey="1"/>
+</xmi:XMI>

@@ -1,0 +1,1578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 ../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
+  <uml:Model xmi:id="_wAkcEDAyEeeMUevANHuhog" name="MEF_Common">
+    <packagedElement xmi:type="uml:Package" xmi:id="_fqIjsDAzEeeMUevANHuhog" name="TypeDefinitions"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_iK5QQDAzEeeMUevANHuhog" name="Diagrams">
+      <packagedElement xmi:type="uml:Package" xmi:id="_RVGy0Ds_EeeMwdt_5yKiiw" name="Notes">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_SLSpYDs-EeeMwdt_5yKiiw">
+          <body>The SetOfOrderedPairs class allow SOF to provision appropriate MEG/MEP in the infrastructure.&#xD;
+These MEPs will allow Performance Monitoring, which results will be used by SOF to evaluate SLS fulfilment.</body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_kM4WIDAzEeeMUevANHuhog" name="ObjectClasses">
+      <packagedElement xmi:type="uml:Package" xmi:id="_CdSqADs_EeeMwdt_5yKiiw" name="BWP">
+        <packagedElement xmi:type="uml:Class" xmi:id="_qMhCMM-DEeWZuobpkt7kiw" name="BwpFlow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4DDtwPhgEeWDepOecFAMiQ" annotatedElement="_qMhCMM-DEeWZuobpkt7kiw">
+            <body>The BwpFlow object class represents the Bandwidth Profile Flow which includes the bandwidth profile parameters such as CIR, CIR Max, EIR, EIR Max, CBS, EBS, Coupling Flag, Color Mode, etc.  The BwpFlow object class is associated with OperatorUni, ServiceProviderUni, VUNI, CosIdentifier, EecIdentifier, and Envelope, etc. </body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_veTOAEeqEeagooSm58To6w" name="rank">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_AHFlMEerEeagooSm58To6w" annotatedElement="_veTOAEeqEeagooSm58To6w">
+              <body>This attribute denotes the rank of the bandwidth profile flow in the envelope.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_-UIKQEeHEeWHAqNDvf1r-A" name="cir">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_-itJIM-MEeWZuobpkt7kiw" annotatedElement="_-UIKQEeHEeWHAqNDvf1r-A">
+              <body>This attribute denotes the Committed Information Rate that limits the average rate of frames that will be declared Green. In bits per second.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_BWAm4EeIEeWHAqNDvf1r-A" name="cirMax">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_PY8GcM-NEeWZuobpkt7kiw" annotatedElement="_BWAm4EeIEeWHAqNDvf1r-A">
+              <body>This attribute denotes the maximum Committed Information Rate that limits the rate of tokens added to the committed token bucket. In bits per second.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_JUXkkEeIEeWHAqNDvf1r-A" name="cbs">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_o3b6EM-NEeWZuobpkt7kiw" annotatedElement="_JUXkkEeIEeWHAqNDvf1r-A">
+              <body>This attribute denotes the Committed Burst Size that limits the maximum number of bytes available for a burst of frames that will be declared Green, in bytes,</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_EnSxcEeIEeWHAqNDvf1r-A" name="eir">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_y3vhYM-NEeWZuobpkt7kiw" annotatedElement="_EnSxcEeIEeWHAqNDvf1r-A">
+              <body>This attribute denotes the Excess Information Rate that limits the average rate of frames that will be declared Yellow, in bits per second.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_HQwHAEeIEeWHAqNDvf1r-A" name="eirMax">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_7MatUM-NEeWZuobpkt7kiw" annotatedElement="_HQwHAEeIEeWHAqNDvf1r-A">
+              <body>This attribute denotes the Maximum Excess Information Rate that Limits the rate of tokens added to the excess token bucket, in bits per second.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_X4lW0M-OEeWZuobpkt7kiw" name="ebs">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_neJWcM-OEeWZuobpkt7kiw" annotatedElement="_X4lW0M-OEeWZuobpkt7kiw">
+              <body>This attribute denotes the Excessive Burst Size that limits the maximum number of bytes available for a burst of frames that will be declared Yellow, in bytes.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ti_UsEeIEeWHAqNDvf1r-A" name="couplingFlag">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_TmsD0M-OEeWZuobpkt7kiw" annotatedElement="_Ti_UsEeIEeWHAqNDvf1r-A">
+              <body>This attribute denotes the Coupling Flag that Determines if overflow Green tokens can be used as Yellow tokens. FALSE for 0 (overflow green tokens are discarded) and TRUE for 1 (overflow green tokens can be used as yellow tokens)</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_O0-GYEeIEeWHAqNDvf1r-A" name="colorMode">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_As0lYM-PEeWZuobpkt7kiw" annotatedElement="_O0-GYEeIEeWHAqNDvf1r-A">
+              <body>This attribute denotes the Color Mode that Indicates whether the Color Identifier of the frame is considered by the Bandwidth Profile Algorithm.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_qeqNwEddEeWHAqNDvf1r-A"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Wxa7AMFXEeWJxZBDtAhHMw" name="tokenRequestOffset">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_fKgF0MFXEeWJxZBDtAhHMw" annotatedElement="_Wxa7AMFXEeWJxZBDtAhHMw">
+              <body>This attribute adjusts the number of tokens requested for each external interface frame.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_yIJosNBXEeWuNf2VLdfDCg" name="_envelope" type="_TyICUM-PEeWZuobpkt7kiw" aggregation="composite" association="_yIHMcNBXEeWuNf2VLdfDCg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_7gorIJFvEeaqYvL4gCyryg" annotatedElement="_yIJosNBXEeWuNf2VLdfDCg">
+              <body>This attribute represents the relationship between the BwpFlow and the Envelope, indicating which Envelope the BwpFlow belongs.</body>
+            </ownedComment>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_TyICUM-PEeWZuobpkt7kiw" name="Envelope">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_2rZuUM-PEeWZuobpkt7kiw" annotatedElement="_TyICUM-PEeWZuobpkt7kiw">
+            <body>The Envelope object class represents the UNI/ENNI service attribute Envelope, which is a bandwidth profile parameter that consists of an envelope ID and an envelope coupling flag (0) that controls conversion of unused green tokens into yellow tokens in the bandwidth profile algorithm. The Envelope object class is associated with UNI (via OperatorUni or ServiceProviderUni), ENNI (via EnniService), and BwpFlow(s), etc. </body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_2L6Z0EqkEeWslOhmT__Dhw" name="envelopeId">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_6qlnYPLTEeWvL-0U2fqSiQ" annotatedElement="_2L6Z0EqkEeWslOhmT__Dhw">
+              <body>This attribute is a string that identifies the Envelope.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_HOlScEzbEeWOKsU_6x9uZA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Bb9xwEqlEeWslOhmT__Dhw" name="couplingFlagForIndexZero">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_WkYSEM-QEeWZuobpkt7kiw" annotatedElement="_Bb9xwEqlEeWslOhmT__Dhw">
+              <body>This attribute denotes the coupling flag for index zero. FALSE for NO and TRUE for YES (overflow Green tokens can be used as Yellow tokens)</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_D7ZmwDs_EeeMwdt_5yKiiw" name="SLS">
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLe2ojs-EeeMwdt_5yKiiw" name="SetOfOrderedPairs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLe2ozs-EeeMwdt_5yKiiw" annotatedElement="_SLe2ojs-EeeMwdt_5yKiiw">
+            <body>The SetOfOrderedPairs object class is a set of ordered pair sets of (EVC/OVC End Points for a Group Availability PM, for one way direction.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLe2pDs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLk9QDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLe2pTs-EeeMwdt_5yKiiw" annotatedElement="_SLe2pDs-EeeMwdt_5yKiiw">
+              <body>This attribute denotes a set of ordered pairs.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLe2pjs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLe2pzs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLHqQDs-EeeMwdt_5yKiiw" name="SlsCosNameEntry">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLHqQTs-EeeMwdt_5yKiiw" annotatedElement="_SLHqQDs-EeeMwdt_5yKiiw">
+            <body>The SlsCosNameEntry object class represents the CoS Name entry consisting a list of 4-tuples of the form &lt;CoS Name, ∆t, C, n>, where CoS Name as Class of Service Name, ∆t as a small time interval, C as a threshold, and n to identify consecutive ∆t for high loss interval. The SlsCosNameEntry object class is associated with EVC or OVC, and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLHqQjs-EeeMwdt_5yKiiw" name="cosName">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLHqQzs-EeeMwdt_5yKiiw" annotatedElement="_SLHqQjs-EeeMwdt_5yKiiw">
+              <body>This attribute denotes the Class of Service Name.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLHqRDs-EeeMwdt_5yKiiw" name="deltaT">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLHqRTs-EeeMwdt_5yKiiw" annotatedElement="_SLHqRDs-EeeMwdt_5yKiiw">
+              <body>This attribute denotes the ∆t, a time interval in seconds, much smaller than T (SLS time period). E.g., 10 seconds.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLHqRjs-EeeMwdt_5yKiiw" name="thresholdC">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLHqRzs-EeeMwdt_5yKiiw" annotatedElement="_SLHqRjs-EeeMwdt_5yKiiw">
+              <body>This attribute denotes the threshold for PM, used  to determine whether a given time interval delta t has high loss.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+            <defaultValue xmi:type="uml:LiteralReal" xmi:id="_SLHqSDs-EeeMwdt_5yKiiw" value="0.5"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLHqSTs-EeeMwdt_5yKiiw" name="consecutiveIntervalN">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLHqSjs-EeeMwdt_5yKiiw" annotatedElement="_SLHqSTs-EeeMwdt_5yKiiw">
+              <body>This attribute denotes n, used to identify how many consecutive ∆t intervals must have high loss to trigger a change in Availability.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLHqSzs-EeeMwdt_5yKiiw" name="_slsObjectiveAndParameterList" type="_SLEm8Ds-EeeMwdt_5yKiiw" aggregation="composite" association="_SK0IQDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLHqTDs-EeeMwdt_5yKiiw" annotatedElement="_SLHqSzs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between SlsCosNameEntry and a list of SlsObjectiveAndParameters. </body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLHqTTs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLHqTjs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLEm8Ds-EeeMwdt_5yKiiw" name="SlsObjectiveAndParameters">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLEm8Ts-EeeMwdt_5yKiiw" annotatedElement="_SLEm8Ds-EeeMwdt_5yKiiw">
+            <body>The SlsObjectiveAndParameters object class leads to one of the Performance Metrics based on the pmMetricType (FD, FDR, MFD, IFDV, FLR, AV, HLI, CHLI, Group AV, or Composite). It is associated with SlsCosNameEntry, SlsReport(s), and conditional package classes OneWayFdPmPac, OneWayFdrPmPac, OneWayMfdPmPac, OneWayIfdvPmPac, OneWayFlrPmPac, OneWayAvPmPac, OneWayHliPmPac, OneWayChliPmPac, OneWayGroupAvPmPac, and OneWayCompositePmPac.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEm8js-EeeMwdt_5yKiiw" name="pmMetricType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEm8zs-EeeMwdt_5yKiiw" annotatedElement="_SLEm8js-EeeMwdt_5yKiiw">
+              <body>This attribute lists the type of PM Metric for selecting the PM Metric conditional package.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_C4qkMFArEeaTKIsduPvT_A"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEm-Ds-EeeMwdt_5yKiiw" name="_oneWayFdrPmPac" type="_SLKtlDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SKyTEDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEm-Ts-EeeMwdt_5yKiiw" annotatedElement="_SLEm-Ds-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayFdrPmPac (for One Way FDR Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEm-js-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEm-zs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEm_Ds-EeeMwdt_5yKiiw" name="_oneWayIfdvPmPac" type="_SLJfdTs-EeeMwdt_5yKiiw" aggregation="composite" association="_SK-gVTs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEm_Ts-EeeMwdt_5yKiiw" annotatedElement="_SLEm_Ds-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayIfdvPmPac (for One Way IFDV Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEm_js-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEm_zs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnADs-EeeMwdt_5yKiiw" name="_oneWayFlrPmPac" type="_SLPmITs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLJfcDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnATs-EeeMwdt_5yKiiw" annotatedElement="_SLEnADs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayFlrPmPac (for One Way FLR Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnAjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnAzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnBDs-EeeMwdt_5yKiiw" name="_oneWayAvPmPac" type="_SJVhkDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLjIETs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnBTs-EeeMwdt_5yKiiw" annotatedElement="_SLEnBDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayAvPmPac (for One Way Availability Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnBjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnBzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnCDs-EeeMwdt_5yKiiw" name="_oneWayHliPmPac" type="_SLMiwDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SK9SNTs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnCTs-EeeMwdt_5yKiiw" annotatedElement="_SLEnCDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayHliPmPac (for One Way HLI Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnCjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnCzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnDDs-EeeMwdt_5yKiiw" name="_oneWayChliPmPac" type="_SLMiyzs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLGcIDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnDTs-EeeMwdt_5yKiiw" annotatedElement="_SLEnDDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayChliPmPac (for One Way CHLI Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnDjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnDzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnEDs-EeeMwdt_5yKiiw" name="_oneWayGroupAvPmPac" type="_SLgEwDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SK6O4Ds-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnETs-EeeMwdt_5yKiiw" annotatedElement="_SLEnEDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayGroupAvPmPac (for One Way Group Availability Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnEjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnEzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnFDs-EeeMwdt_5yKiiw" name="_oneWayCpmPmPac" type="_SK7dAjs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLQ0Mzs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnFTs-EeeMwdt_5yKiiw" annotatedElement="_SLEnFDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayCompositePmPac (for One Way CPM Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnFjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnFzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnGDs-EeeMwdt_5yKiiw" name="_oneWayMfdPmPac" type="_SLAVgDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLbzUDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnGTs-EeeMwdt_5yKiiw" annotatedElement="_SLEnGDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayMfdPmPac (for One Way MFD Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnGjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnGzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEnHDs-EeeMwdt_5yKiiw" name="_oneWayFdPmPac" type="_SK4ZsDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLSpYTs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEnHTs-EeeMwdt_5yKiiw" annotatedElement="_SLEnHDs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the conditional package OneWayFdPmPac (for One Way FD Pm Metric).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEnHjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEnHzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLPmEDs-EeeMwdt_5yKiiw" name="SlsReport">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmETs-EeeMwdt_5yKiiw" annotatedElement="_SLPmEDs-EeeMwdt_5yKiiw">
+            <body>The experimental SlsReport object class represents the collected and processed Performance result (or report) for a time period T. Some performance metrics may have percentage result and some may have value result.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLPmEjs-EeeMwdt_5yKiiw" name="startTime" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmEzs-EeeMwdt_5yKiiw" annotatedElement="_SLPmEjs-EeeMwdt_5yKiiw">
+              <body>this attribute denotes the start time of the time interval T.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_pj3aIOATEeWxn9d0aKrPrw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLPmFDs-EeeMwdt_5yKiiw" name="stopTime" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmFTs-EeeMwdt_5yKiiw" annotatedElement="_SLPmFDs-EeeMwdt_5yKiiw">
+              <body>this attributes denotes the stop time of the Time Interval T.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_pj3aIOATEeWxn9d0aKrPrw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLPmFjs-EeeMwdt_5yKiiw" name="metObjective" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmFzs-EeeMwdt_5yKiiw" annotatedElement="_SLPmFjs-EeeMwdt_5yKiiw">
+              <body>This attribute denotes whether the PM Objective is met for this Time Interval T.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLPmGDs-EeeMwdt_5yKiiw" name="measuredValue" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmGTs-EeeMwdt_5yKiiw" annotatedElement="_SLPmGDs-EeeMwdt_5yKiiw">
+              <body>This attribute is a pair of &lt;Unit, Value> , e.g., the &lt;Unit=PERCENT, value= 99.9> for 99.9%, or &lt;Unit=MILLISECOND, Value=2> for 2 ms.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_AdVC8ODJEeWuO75iMjg96g"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLPmGjs-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLPmGzs-EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SJVhkDs-EeeMwdt_5yKiiw" name="OneWayAvPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SJVhkTs-EeeMwdt_5yKiiw" annotatedElement="_SJVhkDs-EeeMwdt_5yKiiw">
+            <body>The OneWayAvPmPac object class represents the One Way Availability PM. It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SJVhkjs-EeeMwdt_5yKiiw" name="onewayAvObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SJVhkzs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way availability objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SJVhlDs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLT3hTs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SJVhlTs-EeeMwdt_5yKiiw" annotatedElement="_SJVhlDs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SJVhljs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SJVhlzs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLMiyzs-EeeMwdt_5yKiiw" name="OneWayChliPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLMizDs-EeeMwdt_5yKiiw" annotatedElement="_SLMiyzs-EeeMwdt_5yKiiw">
+            <body>The OneWayChliPmPac object class represents the One Way Consecutive High Loss Interval PM. It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLMizTs-EeeMwdt_5yKiiw" name="consecutiveNumberP">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLMizjs-EeeMwdt_5yKiiw" annotatedElement="_SLMizTs-EeeMwdt_5yKiiw">
+              <body>This attribute is the minimum integer number of ∆t ’s in the (sliding) window (with 0 &lt; p &lt; n) to qualify as a CHLI.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLMizzs-EeeMwdt_5yKiiw" name="onewayChliObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLMi0Ds-EeeMwdt_5yKiiw" annotatedElement="_SLMizzs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way consecutive high loss interval objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLMi0Ts-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLh58Ds-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLMi0js-EeeMwdt_5yKiiw" annotatedElement="_SLMi0Ts-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLMi0zs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLMi1Ds-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SK7dAjs-EeeMwdt_5yKiiw" name="OneWayCompositePmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dAzs-EeeMwdt_5yKiiw" annotatedElement="_SK7dAjs-EeeMwdt_5yKiiw">
+            <body>The OneWayCompositePmPac object class represents the One Way Composite PM. It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dBDs-EeeMwdt_5yKiiw" name="cpiThresholdU">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dBTs-EeeMwdt_5yKiiw" annotatedElement="_SK7dBDs-EeeMwdt_5yKiiw">
+              <body>This attribute is the cpi threshold of the composite performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dBjs-EeeMwdt_5yKiiw" name="frameLossIndicator">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dBzs-EeeMwdt_5yKiiw" annotatedElement="_SK7dBjs-EeeMwdt_5yKiiw">
+              <body>This attribute is the frame loss indicator of the composite performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dCDs-EeeMwdt_5yKiiw" name="frameDelayIndicator">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dCTs-EeeMwdt_5yKiiw" annotatedElement="_SK7dCDs-EeeMwdt_5yKiiw">
+              <body>This attribute is the frame delay indicator of the composite performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dCjs-EeeMwdt_5yKiiw" name="ifdvIndicator">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dCzs-EeeMwdt_5yKiiw" annotatedElement="_SK7dCjs-EeeMwdt_5yKiiw">
+              <body>This attribute is the ifdv indicator of the composite performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dDDs-EeeMwdt_5yKiiw" name="onewayFdThreshold">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dDTs-EeeMwdt_5yKiiw" annotatedElement="_SK7dDDs-EeeMwdt_5yKiiw">
+              <body>This attribute is the one way frame delay threshold (in milliseconds) of the composite performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dDjs-EeeMwdt_5yKiiw" name="onewayIfdvThreshold">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dDzs-EeeMwdt_5yKiiw" annotatedElement="_SK7dDjs-EeeMwdt_5yKiiw">
+              <body>This attribute is the one way IFDV threshold (in milliseconds) of the composite performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dEDs-EeeMwdt_5yKiiw" name="cpmObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dETs-EeeMwdt_5yKiiw" annotatedElement="_SK7dEDs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way composite performance objective. Refer to MEF 10.3.1. MEF 26.2 doesn't include this.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK7dEjs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SK3LkDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK7dEzs-EeeMwdt_5yKiiw" annotatedElement="_SK7dEjs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SK7dFDs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SK7dFTs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SK4ZsDs-EeeMwdt_5yKiiw" name="OneWayFdPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SK4ZsTs-EeeMwdt_5yKiiw" annotatedElement="_SK4ZsDs-EeeMwdt_5yKiiw">
+            <body>The OneWayFdPmPac object class represents the One Way Frame Delay PM. It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK4Zsjs-EeeMwdt_5yKiiw" name="onewayFdPercentile">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK4Zszs-EeeMwdt_5yKiiw" annotatedElement="_SK4Zsjs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way frame delay percentile.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK4ZtDs-EeeMwdt_5yKiiw" name="onewayFdObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK4ZtTs-EeeMwdt_5yKiiw" annotatedElement="_SK4ZtDs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way frame delay (in milliseconds) objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SK4Ztjs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLdBcDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SK4Ztzs-EeeMwdt_5yKiiw" annotatedElement="_SK4Ztjs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SK4ZuDs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SK4ZuTs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLKtlDs-EeeMwdt_5yKiiw" name="OneWayFdrPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLKtlTs-EeeMwdt_5yKiiw" annotatedElement="_SLKtlDs-EeeMwdt_5yKiiw">
+            <body>The OneWayFdrPmPac object class represents the One Way Frame Delay Variation PM (in milliseconds). It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLKtljs-EeeMwdt_5yKiiw" name="onewayFdrPercentile">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLKtlzs-EeeMwdt_5yKiiw" annotatedElement="_SLKtljs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way frame delay range percentile.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLKtmDs-EeeMwdt_5yKiiw" name="onewayFdrObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLKtmTs-EeeMwdt_5yKiiw" annotatedElement="_SLKtmDs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way frame delay range objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLKtmjs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SK-gUDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLKtmzs-EeeMwdt_5yKiiw" annotatedElement="_SLKtmjs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLKtnDs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLKtnTs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLPmITs-EeeMwdt_5yKiiw" name="OneWayFlrPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmIjs-EeeMwdt_5yKiiw" annotatedElement="_SLPmITs-EeeMwdt_5yKiiw">
+            <body>The OneWayFlrPmPac object class represents the One Way Frame Loss Ratio PM. It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLPmIzs-EeeMwdt_5yKiiw" name="onewayFlrObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmJDs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way frame loss ratio objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLPmJTs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLNw5Ds-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLPmJjs-EeeMwdt_5yKiiw" annotatedElement="_SLPmJTs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLPmJzs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLPmKDs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLgEwDs-EeeMwdt_5yKiiw" name="OneWayGroupAvPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLgEwTs-EeeMwdt_5yKiiw" annotatedElement="_SLgEwDs-EeeMwdt_5yKiiw">
+            <body>The OneWayGroupAvPmPac object class represents the One Way Group Availability PM for a single EVC/OVC. It is associated with SetOfOrderedPairs and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLgEwjs-EeeMwdt_5yKiiw" name="minNumberOfSetsAvailableK">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLgEwzs-EeeMwdt_5yKiiw" annotatedElement="_SLgEwjs-EeeMwdt_5yKiiw">
+              <body>This attribute is the minimum number of sets of ordered pairs (K) that have to be available for Group Availability PM.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLgExDs-EeeMwdt_5yKiiw" name="onewayGroupAvObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLgExTs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way group availability objective for a single EVC/OVC.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLgExjs-EeeMwdt_5yKiiw" name="_setOfOrderedPairList" type="_SLe2ojs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLh59Ts-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLgExzs-EeeMwdt_5yKiiw" annotatedElement="_SLgExjs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with SetOfOrderedPairs(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLgEyDs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLgEyTs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLMiwDs-EeeMwdt_5yKiiw" name="OneWayHliPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLMiwTs-EeeMwdt_5yKiiw" annotatedElement="_SLMiwDs-EeeMwdt_5yKiiw">
+            <body>The OneWayHliPmPac object class represents the One Way High Loss Interval PM. It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLMiwjs-EeeMwdt_5yKiiw" name="onewayHliObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLMiwzs-EeeMwdt_5yKiiw" annotatedElement="_SLMiwjs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way high loss interval objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLMixDs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLk9RTs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLMixTs-EeeMwdt_5yKiiw" annotatedElement="_SLMixDs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLMixjs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLMixzs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLJfdTs-EeeMwdt_5yKiiw" name="OneWayIfdvPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLJfdjs-EeeMwdt_5yKiiw" annotatedElement="_SLJfdTs-EeeMwdt_5yKiiw">
+            <body>The OneWayIfdvPmPac object class represents the One Way Frame Inter Frame Delay Variation PM (in milliseconds). It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLJfdzs-EeeMwdt_5yKiiw" name="framePairSeparation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLJfeDs-EeeMwdt_5yKiiw" annotatedElement="_SLJfdzs-EeeMwdt_5yKiiw">
+              <body>This attribute is the frame pair separation of the IFDV performance metric.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLJfeTs-EeeMwdt_5yKiiw" name="onewayIfdvPercentile">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLJfejs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way IFDV percentile</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_5k66wEtZEeWBk67gbHGsmg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLJfezs-EeeMwdt_5yKiiw" name="onewayIfdvObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLJffDs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way IFDV objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLJffTs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SLT3gDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLJffjs-EeeMwdt_5yKiiw" annotatedElement="_SLJffTs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLJffzs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLJfgDs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLAVgDs-EeeMwdt_5yKiiw" name="OneWayMfdPmPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLAVgTs-EeeMwdt_5yKiiw" annotatedElement="_SLAVgDs-EeeMwdt_5yKiiw">
+            <body>The OneWayMfdPmPac object class represents the One Way Mean Frame Delay PM (in milliseconds). It is associated with OrderedPair and SlsObjectiveAndParameters.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLAVgjs-EeeMwdt_5yKiiw" name="onewayMfdObjective">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLAVgzs-EeeMwdt_5yKiiw" annotatedElement="_SLAVgjs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the one way mean frame delay objective.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLAVhDs-EeeMwdt_5yKiiw" name="_orderedPairList" type="_SK6O5Ts-EeeMwdt_5yKiiw" aggregation="composite" association="_SK1WYDs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLAVhTs-EeeMwdt_5yKiiw" annotatedElement="_SLAVhDs-EeeMwdt_5yKiiw">
+              <body>This attributes associates this class with OrderedPair(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLAVhjs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLAVhzs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SK6O5Ts-EeeMwdt_5yKiiw" name="OrderedPair">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SK6O5js-EeeMwdt_5yKiiw" annotatedElement="_SK6O5Ts-EeeMwdt_5yKiiw">
+            <body>The OrderedPair object class is an ordered pair of (EVC/OVC) end points for a specific PM, for one way direction. It is associated with a One Way PM conditional package (all PM conditional packages except Group Availability) and a pair of CarrierEthernetServiceEndPoint pairs (EVC End Points or OVC End Points, one as &quot;from&quot; and one as &quot;to&quot; for indication of &quot;order&quot; or direction).</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_94VAQEXiEee0segBb4Kwjw" name="uuid" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_e22vMMDwEeimjatONtR4zA" name="_toCarrierEthernetServiceEndPoint" type="_mQ-IwDs_EeeMwdt_5yKiiw" aggregation="composite" association="_e2qh8MDwEeimjatONtR4zA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e22vMsDwEeimjatONtR4zA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e22vM8DwEeimjatONtR4zA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_gD3788DwEeimjatONtR4zA" name="_fromCarrierEthernetServiceEndPoint" type="_mQ-IwDs_EeeMwdt_5yKiiw" aggregation="composite" association="_gD378MDwEeimjatONtR4zA">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gD379cDwEeimjatONtR4zA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gD379sDwEeimjatONtR4zA" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_SLdBdTs-EeeMwdt_5yKiiw" name="CarrierEthernetSls">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_SLdBdjs-EeeMwdt_5yKiiw" annotatedElement="_SLdBdTs-EeeMwdt_5yKiiw">
+            <body>The CarrierEthernetSls object class represents Carrier Ethernet Service Level Specification that provides a list of Performance Metrics where each item in the list includes the parameters and performance objective for the given Performance Metric. It is associated with EVC or OVC, and a list of SlsCosNameEntry(s).</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLdBdzs-EeeMwdt_5yKiiw" name="timeIntervalT">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLdBeDs-EeeMwdt_5yKiiw" annotatedElement="_SLdBdzs-EeeMwdt_5yKiiw">
+              <body>This attribute sets the time interval to evaluate the performance for the SLS. All performances of this SLS use the same time interval T, which itself may not be constrained, e.g., 1 month.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_tKBzEOAUEeWxn9d0aKrPrw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLdBeTs-EeeMwdt_5yKiiw" name="startTime">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLdBejs-EeeMwdt_5yKiiw" annotatedElement="_SLdBeTs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the date and time for the start of the SLS. It is the beginning of the first Time Interval T. </body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_pj3aIOATEeWxn9d0aKrPrw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_SLdBezs-EeeMwdt_5yKiiw" name="_slsCosNameEntryList" type="_SLHqQDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLHqVTs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLdBfDs-EeeMwdt_5yKiiw" annotatedElement="_SLdBezs-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the CarrierEthernetSls and SlsCosNameEntry(s) representing CN (CoS Name) entries as lists of 4-tuples of the form &lt;CoS Name, ∆t, C, n> as defined in MEF 26.2 (MEF 10.3 covered the descriptions but not as this format). </body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLdBfTs-EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLdBfjs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_mQ-IwDs_EeeMwdt_5yKiiw" name="CarrierEthernetServiceEndPoint" isAbstract="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-IwTs_EeeMwdt_5yKiiw" annotatedElement="_mQ-IwDs_EeeMwdt_5yKiiw">
+            <body>The CarrierEthernetServiceEndPoint represents the EVC End Point or the OVC End Point. This is an abstract class and the super class of EvcEndPoint and OvcEndPoint. It contains the common attributes of EvcEndPoint and OvcEndPoint, as well as all common associations with the other object classes, such as CosIdentifier(s), EecIdentifier(s), a ColorIdentifier, EgressMap(s), a CarrierEthernetService (i.e., EVC or OVC), etc. </body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-Iwjs_EeeMwdt_5yKiiw" name="adminState">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-Iwzs_EeeMwdt_5yKiiw" annotatedElement="_mQ-Iwjs_EeeMwdt_5yKiiw">
+              <body>This attribute denotes the administrative state of EVC End Point or OVC End Point. The values supported are LOCKED and UNLOCKED. When set to UNLOCKED, the Carrier Ethernet Service End Point (EVC End Point or OVC End Point) is enabled and ready to forward traffic. When set to LOCKED, the Carrier Ethernet Service End Point (EVC End Point or OVC End Point) is disabled and will block (i.e., not forward) traffic.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_tQ_6kPEnEeWd4sURjtTdCg"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_mQ-IxDs_EeeMwdt_5yKiiw" value="UNLOCKED"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-IxTs_EeeMwdt_5yKiiw" name="operationalState" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-Ixjs_EeeMwdt_5yKiiw" annotatedElement="_mQ-IxTs_EeeMwdt_5yKiiw">
+              <body>This attribute denotes the operational state of the EVC End Point or the OVC End Point, as working ENABLED or not working&#xD;
+DISABLED.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_0JGa0PEnEeWd4sURjtTdCg"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-Ixzs_EeeMwdt_5yKiiw" name="userLabel">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-IyDs_EeeMwdt_5yKiiw" annotatedElement="_mQ-Ixzs_EeeMwdt_5yKiiw">
+              <body>This attribute allows the user to define a user friendly description of the entity.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-IyTs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-Iyjs_EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-Iyzs_EeeMwdt_5yKiiw" name="cosMappingType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-IzDs_EeeMwdt_5yKiiw" annotatedElement="_mQ-Iyzs_EeeMwdt_5yKiiw">
+              <body>The Class of Service (CoS) is used to specify ingress Bandwidth Profiles. The CoS Mapping Type is one of SEP (Service End Point) based, PCP based or DSCP based.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_zosaYO-QEeW3dY7H090qAA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-IzTs_EeeMwdt_5yKiiw" name="eecMappingType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-Izjs_EeeMwdt_5yKiiw" annotatedElement="_mQ-IzTs_EeeMwdt_5yKiiw">
+              <body>The Egress Equivalence Class (EEC) is used to specify Egress Bandwidth Profiles. The EEC Mapping Type is one of SEP (Service End Point) based, PCP based or DSCP based. When _eecIdentifierList attribute is empty,  this attribute shall be unset. Otherwise it shall be set.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_zosaYO-QEeW3dY7H090qAA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-Izzs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I0Ds_EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I0Ts_EeeMwdt_5yKiiw" name="sourceMacAddressLimit">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I0js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I0Ts_EeeMwdt_5yKiiw">
+              <body>This attribute limits the number of source MAC Addresses that can be used in ingress EI Frames mapped to the EVC End Point or the OVC End Point of all types over a time interval. When not present, the number of source MAC addresses is unlimited.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_GBRO8GevEeWPQagsKdiB-g"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I0zs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I1Ds_EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I1Ts_EeeMwdt_5yKiiw" name="_egressMapList" type="_IxnDmTtGEeeCFfJ0S3qwlA" aggregation="composite">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I1js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I1Ts_EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the EVC/OVC End Point and the Egress Map(s). This attribute is a set of mappings that determine the content of the S-Tag or C-Tag of an egress EI Frame. This is not defined in MEF 10.3 but future MEF 10.x may adapt this attribute.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I1zs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I2Ds_EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I2Ts_EeeMwdt_5yKiiw" name="_eecIdentifierList" type="_cQesgDtFEeeCFfJ0S3qwlA" aggregation="composite">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I2js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I2Ts_EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the EVC/OVC End Point and the Egress Equivalence Class Identifier(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I2zs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I3Ds_EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I3Ts_EeeMwdt_5yKiiw" name="_colorIdentifier" type="_GNCK1DtCEeeMwdt_5yKiiw" aggregation="composite">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I3js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I3Ts_EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the EVC/OVC End Point and a Color Identifier.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I3zs_EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I4Ds_EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I4Ts_EeeMwdt_5yKiiw" name="_cosIdentifierList" type="_DiXNADtFEeeCFfJ0S3qwlA" aggregation="composite">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I4js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I4Ts_EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the EVC/OVC End Point and the Class of Service Identifier(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I4zs_EeeMwdt_5yKiiw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I5Ds_EeeMwdt_5yKiiw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I5Ts_EeeMwdt_5yKiiw" name="_ingressBwpFlowPerSep" type="_qMhCMM-DEeWZuobpkt7kiw" aggregation="composite">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I5js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I5Ts_EeeMwdt_5yKiiw">
+              <body>This attribute denotes the relationship between an EVC/OVC End Point and the bandwidth profile flow. It describes ingress policing on all ingress EI Frames mapped to a given EVC/OVC End Point</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I5zs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I6Ds_EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mQ-I6Ts_EeeMwdt_5yKiiw" name="_egressBwpFlowPerSep" type="_qMhCMM-DEeWZuobpkt7kiw" aggregation="composite">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mQ-I6js_EeeMwdt_5yKiiw" annotatedElement="_mQ-I6Ts_EeeMwdt_5yKiiw">
+              <body>This attribute denotes the relationship between an EVC/OVC End Point and the bandwidth profile flow. It describes the length and arrival time characteristics of all egress EI Frames mapped to a given EVC/OVC End Point.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mQ-I6zs_EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mQ-I7Ds_EeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_t2450EUaEee0segBb4Kwjw" name="uuid" visibility="public">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_oKXocDtBEeeMwdt_5yKiiw" name="ColorIdentifier">
+        <packagedElement xmi:type="uml:Class" xmi:id="_GNCK1DtCEeeMwdt_5yKiiw" name="ColorIdentifier">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK1TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK1DtCEeeMwdt_5yKiiw">
+            <body>The ColorIdentifier object class represents the Color Identifier. The Color Identifier is a pair of the form &lt;F, M> where F is a field in the ingress EI Frame and M is a mapping between each possible value of the field F and a Color. The ColorIdentifier object class is associated with CarrierEthernetServiceEndPoint (EvcEndPoint or OvcEndPoint), in addition to the different field F, such as SepColorIdPac, PcpColorIdPac, DeiColorIdPac, and DscpColorIdPac, etc.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK1jtCEeeMwdt_5yKiiw" name="colorFieldType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK1ztCEeeMwdt_5yKiiw" annotatedElement="_GNCK1jtCEeeMwdt_5yKiiw">
+              <body>This attribute determines which conditional package (among EVC/OVC End Point, PCP, DEI or DSCP) to be used as the Color Identifier.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_uPS5oPCJEeWpK_sr5bd0BQ"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK2DtCEeeMwdt_5yKiiw" name="_sepColorPac" type="_GNA8sDtCEeeMwdt_5yKiiw" aggregation="composite" association="_GNA8tjtCEeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK2TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK2DtCEeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the ColorIdentifier and the SepColorIdPac (representing the choice that maps EVC End Point or OVC End Point to Color).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNCK2jtCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNCK2ztCEeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK3DtCEeeMwdt_5yKiiw" name="_deiColorPac" type="_GNA8yjtCEeeMwdt_5yKiiw" aggregation="composite" association="_GNA8wDtCEeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK3TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK3DtCEeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the ColorIdentifier and the DeiColorIdPac (representing the choice that maps Vlan tag DEI to Color).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNCK3jtCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNCK3ztCEeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK4DtCEeeMwdt_5yKiiw" name="_pcpColorPac" type="_GNCK7jtCEeeMwdt_5yKiiw" aggregation="composite" association="_GNA8xTtCEeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK4TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK4DtCEeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the ColorIdentifier and the PcpColorIdPac (representing the choice that maps Vlan tag PCPs to Color).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNCK4jtCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNCK4ztCEeeMwdt_5yKiiw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK5DtCEeeMwdt_5yKiiw" name="_dcspColorPac" type="_GNA8zTtCEeeMwdt_5yKiiw" aggregation="composite" association="_GNA8uztCEeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK5TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK5DtCEeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the ColorIdentifier and the DscpColorIdPac (representing the choice that maps DSCP values to Color).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNCK5jtCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNCK5ztCEeeMwdt_5yKiiw" value="2"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_GNA8yjtCEeeMwdt_5yKiiw" name="DeiColorIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GNA8yztCEeeMwdt_5yKiiw" annotatedElement="_GNA8yjtCEeeMwdt_5yKiiw">
+            <body>The DeiColorIdPac object class represents the Color Identifier that maps the vlan tag (S tag or C tag) DEI value to Color, DEI=0 for green color and DEI=1 for yellow color. For an EVC End Point or an OVC End Point at UNI or in a VUNI, the DEI value is from C-Tag ingress EI frames. For an OVC End Point at an ENNI and not in a VUNI, the DEI value is from S-Tag of the ingress EI frames. </body>
+          </ownedComment>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_GNA8zTtCEeeMwdt_5yKiiw" name="DscpColorIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GNA8zjtCEeeMwdt_5yKiiw" annotatedElement="_GNA8zTtCEeeMwdt_5yKiiw">
+            <body>The DscpColorIdPac object class represents the Color Identifier that maps DSCP (IPv4 or IPv6) values to Color.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNA8zztCEeeMwdt_5yKiiw" name="ipVersion">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNA80DtCEeeMwdt_5yKiiw" annotatedElement="_GNA8zztCEeeMwdt_5yKiiw">
+              <body>This attribute denotes which IP version is used. It can be IPV4, IPV6 or IPV4_AND_IPV6.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_c40usEXzEeW_36b5t8KMXQ"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNA80TtCEeeMwdt_5yKiiw" name="dscpValueForGreenList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNA80jtCEeeMwdt_5yKiiw" annotatedElement="_GNA80TtCEeeMwdt_5yKiiw">
+              <body>This attribute provides a list DSCP values map to the green ingress EI frames. The dscpValueForGreenList and the dscpValueForYellowList must disjoint and the union of the two lists must include all possible DSCP values.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNA80ztCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNA81DtCEeeMwdt_5yKiiw" value="64"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNA81TtCEeeMwdt_5yKiiw" name="dscpValueForYellowList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNA81jtCEeeMwdt_5yKiiw" annotatedElement="_GNA81TtCEeeMwdt_5yKiiw">
+              <body>This attribute provides a list DSCP values map to the yellow ingress EI frames. The dscpValueForGreenList and the dscpValueForYellowList must disjoint and the union of the two lists must include all possible DSCP values.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNA81ztCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNA82DtCEeeMwdt_5yKiiw" value="64"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_GNCK7jtCEeeMwdt_5yKiiw" name="PcpColorIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK7ztCEeeMwdt_5yKiiw" annotatedElement="_GNCK7jtCEeeMwdt_5yKiiw">
+            <body>The PcpColorIdPac object class represents the Color Identifier that maps vlan tag (S tag or C tag) PCP values to Color. For an EVC End Point or an OVC End Point at UNI or in a VUNI, the PCP values are from C-Tag ingress EI frames. For an OVC End Point at an ENNI and not in a VUNI, the PCP values are from S-Tag of the ingress EI frames. </body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK8DtCEeeMwdt_5yKiiw" name="pcpValueForGreenList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK8TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK8DtCEeeMwdt_5yKiiw">
+              <body>This attribute provides a list PCP values map to the green ingress EI frames. The pcpValueForGreenList and the pcpValueForYellowList must disjoint and the union of the two lists must include all possible PCP values. </body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNCK8jtCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNCK8ztCEeeMwdt_5yKiiw" value="8"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNCK9DtCEeeMwdt_5yKiiw" name="pcpValueForYellowList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNCK9TtCEeeMwdt_5yKiiw" annotatedElement="_GNCK9DtCEeeMwdt_5yKiiw">
+              <body>This attribute provides a list PCP values map to the yellow ingress EI frames. The pcpValueForGreenList and the pcpValueForYellowList must disjoint and the union of the two lists must include all possible PCP values. </body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GNCK9jtCEeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GNCK9ztCEeeMwdt_5yKiiw" value="8"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_GNA8sDtCEeeMwdt_5yKiiw" name="SepColorIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GNA8sTtCEeeMwdt_5yKiiw" annotatedElement="_GNA8sDtCEeeMwdt_5yKiiw">
+            <body>The SepColorIdPac represents the Color Identifier that maps to the EVC End Point or the OVC End Point to Color.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GNA8sjtCEeeMwdt_5yKiiw" name="color">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_GNA8sztCEeeMwdt_5yKiiw" annotatedElement="_GNA8sjtCEeeMwdt_5yKiiw">
+              <body>This attribute denotes the color of the EI frame, green or yellow.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_glA5MEeLEeWHAqNDvf1r-A"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_L_VZQDtFEeeCFfJ0S3qwlA" name="CosIdentifier">
+        <packagedElement xmi:type="uml:Class" xmi:id="_DiXNADtFEeeCFfJ0S3qwlA" name="CosIdentifier">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DiXNATtFEeeCFfJ0S3qwlA" annotatedElement="_DiXNADtFEeeCFfJ0S3qwlA">
+            <body>The CosIdentifier object class represents the Class of Service Identifier. Each ingress EI Frame mapped to the given EVC/OVC End Point has a single Class of Service. The Class of Service can be determined from inspection of the content of the ingress EI Frame. It is associated with the SepCosIdPac, or the PcpCosIdPac, or the DscpCosIdPac (when the Class of Service Identifier mapping type is Service End Point, or PCP values, or DSCP values respectively). EI Frames of L2CP protocols may be identified by a Class of Service Identifier, mapping to specific CoS Name.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiYbEDtFEeeCFfJ0S3qwlA" name="cosName">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiYbETtFEeeCFfJ0S3qwlA" annotatedElement="_DiYbEDtFEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the Class of Service name that the CosIdentifier map to.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiYbEjtFEeeCFfJ0S3qwlA" name="l2cpProtocolList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiYbEztFEeeCFfJ0S3qwlA" annotatedElement="_DiYbEjtFEeeCFfJ0S3qwlA">
+              <body>This attribute lists the L2CP Protocols that map to the Class of Service Name.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_0dchMEetEeagooSm58To6w"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiYbFDtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiYbFTtFEeeCFfJ0S3qwlA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiYbFjtFEeeCFfJ0S3qwlA" name="_sepCosIdPac" type="_DiXM-DtFEeeCFfJ0S3qwlA" aggregation="composite" association="_DiXM-ztFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiYbFztFEeeCFfJ0S3qwlA" annotatedElement="_DiYbFjtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the CosIdentifier and the SepCosIdPac when the cosMappingType of EvcEndPoint or OvcEndPoint is END_POINT and the cosName is not only for L2CP.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiYbGDtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiYbGTtFEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiYbGjtFEeeCFfJ0S3qwlA" name="_pcpCosIdPac" type="_DiXM8DtFEeeCFfJ0S3qwlA" aggregation="composite" association="_DiUJpjtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiYbGztFEeeCFfJ0S3qwlA" annotatedElement="_DiYbGjtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the CosIdentifier and the PcpCosIdPac  when the cosMappingType of EvcEndPoint or OvcEndPoint is PCP and the cosName is not only for L2CP.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiYbHDtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiYbHTtFEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiYbHjtFEeeCFfJ0S3qwlA" name="_dscpCosIdPac" type="_DiRGUDtFEeeCFfJ0S3qwlA" aggregation="composite" association="_DiUJoDtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiYbHztFEeeCFfJ0S3qwlA" annotatedElement="_DiYbHjtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the CosIdentifier and the DespCosIdPac when the cosMappingType of EvcEndPoint or OvcEndPoint is DSCP and the cosName is not only for L2CP.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiYbIDtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiYbITtFEeeCFfJ0S3qwlA" value="2"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiYbIjtFEeeCFfJ0S3qwlA" name="_ingressBwpPerCos" type="_qMhCMM-DEeWZuobpkt7kiw" aggregation="composite" association="_DiVXyTtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiYbIztFEeeCFfJ0S3qwlA" annotatedElement="_DiYbIjtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the CosIdentifier and the BwpFlow, for ingress bandwidth profile per CoS Name.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiYbJDtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiYbJTtFEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DiRGUDtFEeeCFfJ0S3qwlA" name="DscpCosIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DiRGUTtFEeeCFfJ0S3qwlA" annotatedElement="_DiRGUDtFEeeCFfJ0S3qwlA">
+            <body>The DscpCosIdPac object class represents CoS Identifier that maps the IP DSCP values to the Class of Service Name(s). It can map a list of DSCP values to two different Class of Service Names, one for ingress EI Frames carrying an IPv4 packet and a different one for ingress EI Frames carrying an IPv6 packet. It also can map a list of DSCP values (both IPv4 and IPv6) to one Class of Service Name.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiRGUjtFEeeCFfJ0S3qwlA" name="dscpValueList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiRGUztFEeeCFfJ0S3qwlA" annotatedElement="_DiRGUjtFEeeCFfJ0S3qwlA">
+              <body>This attribute is a list of DSCP values that maps to a CoS Name.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiRGVDtFEeeCFfJ0S3qwlA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiRGVTtFEeeCFfJ0S3qwlA" value="64"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiRGVjtFEeeCFfJ0S3qwlA" name="ipVersion">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiRGVztFEeeCFfJ0S3qwlA" annotatedElement="_DiRGVjtFEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the IP version for the DSCP. It can be IPV4, IPV6 or IPV4_AND_IPV6.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_c40usEXzEeW_36b5t8KMXQ"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DiXM8DtFEeeCFfJ0S3qwlA" name="PcpCosIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DiXM8TtFEeeCFfJ0S3qwlA" annotatedElement="_DiXM8DtFEeeCFfJ0S3qwlA">
+            <body>The PcpCosIdPac object class represents CoS Identifier that maps a list of PCP values to a Class of Service Name. For an EVC End Point or an OVC End Point at UNI or in a VUNI, the PCP values are from C-Tag ingress EI frames. For an OVC End Point at an ENNI and not in a VUNI, the PCP values are from S-Tag of the ingress EI frames. </body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_DiXM8jtFEeeCFfJ0S3qwlA" name="pcpValueList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_DiXM8ztFEeeCFfJ0S3qwlA" annotatedElement="_DiXM8jtFEeeCFfJ0S3qwlA">
+              <body>This attribute is a list of PCP values that map to the CoS Name. </body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DiXM9DtFEeeCFfJ0S3qwlA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DiXM9TtFEeeCFfJ0S3qwlA" value="8"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DiXM-DtFEeeCFfJ0S3qwlA" name="SepCosIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DiXM-TtFEeeCFfJ0S3qwlA" annotatedElement="_DiXM-DtFEeeCFfJ0S3qwlA">
+            <body>The SepCosIdPac represents the CoS Identifier that maps the EVC End Point or the OVC End Point to a Class of Service Name. </body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_tjnBMDtFEeeCFfJ0S3qwlA" name="EecIdentifier">
+        <packagedElement xmi:type="uml:Class" xmi:id="_cQbpMDtFEeeCFfJ0S3qwlA" name="DscpEecIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cQbpMTtFEeeCFfJ0S3qwlA" annotatedElement="_cQbpMDtFEeeCFfJ0S3qwlA">
+            <body>The DscpEecIdPac object class represents Egress Equivalence Class Identifier that maps the IP DSCP values to the Egress Equivalence Class Name(s). It can map a list of DSCP values to two different Egress Equivalence Class Names, one for ingress EI Frames carrying an IPv4 packet and a different one for ingress EI Frames carrying an IPv6 packet. It also can map a list of DSCP values (both IPv4 and IPv6 packets) to an Egress Equivalence Class Name.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQbpMjtFEeeCFfJ0S3qwlA" name="ipVersion">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQbpMztFEeeCFfJ0S3qwlA" annotatedElement="_cQbpMjtFEeeCFfJ0S3qwlA">
+              <body>This attribute specifies the IP version for the DSCP. It can be IPV4, IPV6 or IPV4_AND_IPV6.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_c40usEXzEeW_36b5t8KMXQ"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQbpNDtFEeeCFfJ0S3qwlA" name="dscpValueList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQbpNTtFEeeCFfJ0S3qwlA" annotatedElement="_cQbpNDtFEeeCFfJ0S3qwlA">
+              <body>This attribute is a list of DSCP values that maps to the EEC Name. </body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQbpNjtFEeeCFfJ0S3qwlA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQbpNztFEeeCFfJ0S3qwlA" value="64"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_cQesgDtFEeeCFfJ0S3qwlA" name="EecIdentifier">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cQesgTtFEeeCFfJ0S3qwlA" annotatedElement="_cQesgDtFEeeCFfJ0S3qwlA">
+            <body>The EecIdentifier object class represents the Egress Equivalence Class Identifier. Each egress EI Frame mapped to the given EVC/OVC End Point has a single Egress Equivalence Class. 
+The Egress Equivalence Class can be determined from inspection of the content of the egress EI Frame. It is associated with the SepCosIdPac, or the PcpCosIdPac, or the DscpCosIdPac (representing mapping to EVC/OVC End Point, or PCP, or DSCP respectively). EI Frames of L2CP protocols may be identified by an Egress Equivalence Class Identifier, mapping to specific Egress Equivalence Class Name.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQesgjtFEeeCFfJ0S3qwlA" name="eecName">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQesgztFEeeCFfJ0S3qwlA" annotatedElement="_cQesgjtFEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the Egress Equivalence Class Name that the EecIdentifier maps to.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQeshDtFEeeCFfJ0S3qwlA" name="l2cpProtocolList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQeshTtFEeeCFfJ0S3qwlA" annotatedElement="_cQeshDtFEeeCFfJ0S3qwlA">
+              <body>This attribute lists the L2CP Protocols that map to the Egress Equivalence Class Name.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_0dchMEetEeagooSm58To6w"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQeshjtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQeshztFEeeCFfJ0S3qwlA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQesiDtFEeeCFfJ0S3qwlA" name="_sepEecIdPac" type="_cQUUcDtFEeeCFfJ0S3qwlA" aggregation="composite" association="_cQSfQDtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQesiTtFEeeCFfJ0S3qwlA" annotatedElement="_cQesiDtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EecIdentifier and a SepEecIdPac when the eecMappingType of EvcEndPoint or OvcEndPoint is END_POINT and the eecName is not only for L2CP. This not addressed in MEF 10.3 but can be future consideration.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQesijtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQesiztFEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQesjDtFEeeCFfJ0S3qwlA" name="_pcpEecIdPac" type="_cQabEDtFEeeCFfJ0S3qwlA" aggregation="composite" association="_cQdeYDtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQesjTtFEeeCFfJ0S3qwlA" annotatedElement="_cQesjDtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EecIdentifier and a PcpEecIdPac when the eecMappingType of EvcEndPoint or OvcEndPoint is PCP and the eecName is not only for L2CP.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQesjjtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQesjztFEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQeskDtFEeeCFfJ0S3qwlA" name="_dscpEecIdPac" type="_cQbpMDtFEeeCFfJ0S3qwlA" aggregation="composite" association="_cQdeZTtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQeskTtFEeeCFfJ0S3qwlA" annotatedElement="_cQeskDtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EecIdentifier and a DscpEecIdPac when the eecMappingType of EvcEndPoint or OvcEndPoint is DSCP and the eecName is not only for L2CP.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQeskjtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQeskztFEeeCFfJ0S3qwlA" value="2"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQeslDtFEeeCFfJ0S3qwlA" name="_egressBwpPerEec" type="_qMhCMM-DEeWZuobpkt7kiw" aggregation="composite" association="_cQRRIDtFEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQeslTtFEeeCFfJ0S3qwlA" annotatedElement="_cQeslDtFEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EecIdentifier and the BwpFlow, for egress bandwidth profile per EEC Name.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQesljtFEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQeslztFEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_cQabEDtFEeeCFfJ0S3qwlA" name="PcpEecIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cQabETtFEeeCFfJ0S3qwlA" annotatedElement="_cQabEDtFEeeCFfJ0S3qwlA">
+            <body>The PcpEecIdPac object class represents Egress Equivalence Class Identifier that maps a list of PCP values to Egress Equivalence Class Name. For an EVC End Point or an OVC End Point at UNI or in a VUNI, the PCP values are from C-Tag egress EI frames. For an OVC End Point at an ENNI and not in a VUNI, the PCP values are from S-Tag of the egress EI frames</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_cQabEjtFEeeCFfJ0S3qwlA" name="pcpValueList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cQabEztFEeeCFfJ0S3qwlA" annotatedElement="_cQabEjtFEeeCFfJ0S3qwlA">
+              <body>This attribute provides a list of PCP values that map to the Egress Equivalence Class Name.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cQabFDtFEeeCFfJ0S3qwlA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cQabFTtFEeeCFfJ0S3qwlA" value="8"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_cQUUcDtFEeeCFfJ0S3qwlA" name="SepEecIdPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cQUUcTtFEeeCFfJ0S3qwlA" annotatedElement="_cQUUcDtFEeeCFfJ0S3qwlA">
+            <body>The SepEecIdPac represents the Egress Equivalence Class Identifier that maps the EVC End Point or the OVC End Point to an Egress Equivalence Class Name.</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_VZKZ8DtGEeeCFfJ0S3qwlA" name="EgressMap">
+        <packagedElement xmi:type="uml:Class" xmi:id="_Ixo4wDtGEeeCFfJ0S3qwlA" name="CosNameAndColorToDeiPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Ixo4wTtGEeeCFfJ0S3qwlA" annotatedElement="_Ixo4wDtGEeeCFfJ0S3qwlA">
+            <body>The CosNameAndColorToDeiPac object class represents the Egress Map that maps from CoS Name and Ingress Color to DEI.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ixo4wjtGEeeCFfJ0S3qwlA" name="ingressCosName">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Ixo4wztGEeeCFfJ0S3qwlA" annotatedElement="_Ixo4wjtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the ingress CoS name.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ixo4xDtGEeeCFfJ0S3qwlA" name="ingressColor">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Ixo4xTtGEeeCFfJ0S3qwlA" annotatedElement="_Ixo4xDtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the ingress frame color as one of the determined factor for Egress Map. </body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_glA5MEeLEeWHAqNDvf1r-A"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ixo4xjtGEeeCFfJ0S3qwlA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ixo4xztGEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Ixo4yDtGEeeCFfJ0S3qwlA" name="deiValue">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Ixo4yTtGEeeCFfJ0S3qwlA" annotatedElement="_Ixo4yDtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the egress frame DEI value, mapped from ingress CoS Name and ingress frame color. </body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_0BjCMN8cEeW5q4lbqE_mvw"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IxiyIDtGEeeCFfJ0S3qwlA" name="CosNameAndColorToPcpPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IxiyITtGEeeCFfJ0S3qwlA" annotatedElement="_IxiyIDtGEeeCFfJ0S3qwlA">
+            <body>The CosNameAndColorToPcpPac object class represents the Egress Map that maps from CoS Name and Ingress Color to PCP.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxiyIjtGEeeCFfJ0S3qwlA" name="ingressCosName">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxiyIztGEeeCFfJ0S3qwlA" annotatedElement="_IxiyIjtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the ingress CoS name.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxiyJDtGEeeCFfJ0S3qwlA" name="ingressColor">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxiyJTtGEeeCFfJ0S3qwlA" annotatedElement="_IxiyJDtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the ingress frame color as one of the determined factor for Egress Map. </body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_glA5MEeLEeWHAqNDvf1r-A"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IxiyJjtGEeeCFfJ0S3qwlA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IxiyJztGEeeCFfJ0S3qwlA" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxiyKDtGEeeCFfJ0S3qwlA" name="pcpValue">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxiyKTtGEeeCFfJ0S3qwlA" annotatedElement="_IxiyKDtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the egress frame PCP value, mapped from ingress CoS name and ingress frame color. </body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_TJKgkNEeEeWSGOiCH6EQXQ"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IxnDkDtGEeeCFfJ0S3qwlA" name="CosNameToPcpPac">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDkTtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDkDtGEeeCFfJ0S3qwlA">
+            <body>The CosNameToPcpPac object class represents the Egress Map that maps from CoS Name to PCP.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxnDkjtGEeeCFfJ0S3qwlA" name="ingressCosName">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDkztGEeeCFfJ0S3qwlA" annotatedElement="_IxnDkjtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the ingress CoS name.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxnDlDtGEeeCFfJ0S3qwlA" name="pcpValue">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDlTtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDlDtGEeeCFfJ0S3qwlA">
+              <body>This attribute denotes the egress frame PCP value, mapped from ingress CoS Name and ingress frame color. </body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_TJKgkNEeEeWSGOiCH6EQXQ"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IxnDmTtGEeeCFfJ0S3qwlA" name="EgressMap">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDmjtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDmTtGEeeCFfJ0S3qwlA">
+            <body>The EgressMap object class represents the Egress Map that is a set of mappings that determine the content of the S-Tag or C-Tag of an egress EI Frame. It is associated with EvcEndPoint or OvcEndPoint.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxnDmztGEeeCFfJ0S3qwlA" name="egressMapType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDnDtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDmztGEeeCFfJ0S3qwlA">
+              <body>This attribute determines which form to take to apply for egress frame color indication, among CoS name and Ingress Color to C-Tag PCP, or CoS name and Ingress Color to S-Tag PCP, or CoS Name and Ingress Color to C-Tag DEI, or CoS Name and Ingress Color to S-Tag DEI, or CoS Name to C-Tag PCP, or CoS Name to S-Tag PCP.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_FTXTMPB_EeWpK_sr5bd0BQ"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxnDnTtGEeeCFfJ0S3qwlA" name="_cosNameAndColorToDeiPacList" type="_Ixo4wDtGEeeCFfJ0S3qwlA" aggregation="composite" association="_Ixl1cDtGEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDnjtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDnTtGEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EgressMap and the CosNameAndColorToDeiPac (representing the attribute set for using CoS Name and ingress color to egress DEI mapping).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IxnDnztGEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IxnDoDtGEeeCFfJ0S3qwlA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxnDoTtGEeeCFfJ0S3qwlA" name="_cosNameToPcpPacList" type="_IxnDkDtGEeeCFfJ0S3qwlA" aggregation="composite" association="_Ixl1dTtGEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDojtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDoTtGEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EgressMap and the CosNameToPcpPac (representing the attribute set for using CoS Name to egress PCP mapping).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IxnDoztGEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IxnDpDtGEeeCFfJ0S3qwlA" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IxnDpTtGEeeCFfJ0S3qwlA" name="_cosNameAndColorToPcpPacList" type="_IxiyIDtGEeeCFfJ0S3qwlA" aggregation="composite" association="_IxkAQztGEeeCFfJ0S3qwlA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_IxnDpjtGEeeCFfJ0S3qwlA" annotatedElement="_IxnDpTtGEeeCFfJ0S3qwlA">
+              <body>This attribute represents the relationship between the EgressMap and the CosNameAndColorToPcpPac (representing the attribute set for using CoS Name and ingress color to egress PCP mapping).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IxnDpztGEeeCFfJ0S3qwlA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IxnDqDtGEeeCFfJ0S3qwlA" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_uC-I0DGkEeeq8-o_3nsquA" name="Imports">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_tOWN8DGkEeeq8-o_3nsquA">
+        <importedPackage xmi:type="uml:Model" href="MEF_Types.uml#_BTq7kDAzEeeMUevANHuhog"/>
+      </packageImport>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_NIgxIDSdEeeucNvAKb8DdQ" name="Associations">
+      <packagedElement xmi:type="uml:Package" xmi:id="_2vqlQDs-EeeMwdt_5yKiiw" name="BWP">
+        <packagedElement xmi:type="uml:Association" xmi:id="_yIHMcNBXEeWuNf2VLdfDCg" name="BwpHasEnvelope" memberEnd="_yIHzgtBXEeWuNf2VLdfDCg _yIJosNBXEeWuNf2VLdfDCg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yIHzgNBXEeWuNf2VLdfDCg" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yIHzgdBXEeWuNf2VLdfDCg" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_yIHzgtBXEeWuNf2VLdfDCg" name="_bwpFlowList" type="_qMhCMM-DEeWZuobpkt7kiw" association="_yIHMcNBXEeWuNf2VLdfDCg">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_80vuQNBXEeWuNf2VLdfDCg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_80yxkNBXEeWuNf2VLdfDCg" value="*"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_gD378MDwEeimjatONtR4zA" memberEnd="_gD3788DwEeimjatONtR4zA _gD3798DwEeimjatONtR4zA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_gD378cDwEeimjatONtR4zA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_gD378sDwEeimjatONtR4zA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_gD3798DwEeimjatONtR4zA" name="orderedpair" type="_SK6O5Ts-EeeMwdt_5yKiiw" association="_gD378MDwEeimjatONtR4zA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_e2qh8MDwEeimjatONtR4zA" memberEnd="_e22vMMDwEeimjatONtR4zA _e22vNMDwEeimjatONtR4zA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_e2wokMDwEeimjatONtR4zA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_e2wokcDwEeimjatONtR4zA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_e22vNMDwEeimjatONtR4zA" name="orderedpair" type="_SK6O5Ts-EeeMwdt_5yKiiw" association="_e2qh8MDwEeimjatONtR4zA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_5TkFYDs-EeeMwdt_5yKiiw" name="SLS">
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLjIETs-EeeMwdt_5yKiiw" memberEnd="_SLEnBDs-EeeMwdt_5yKiiw _SLjIFDs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLjIEjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLjIEzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLjIFDs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLjIETs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLGcIDs-EeeMwdt_5yKiiw" memberEnd="_SLEnDDs-EeeMwdt_5yKiiw _SLGcIzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLGcITs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLGcIjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLGcIzs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLGcIDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLQ0Mzs-EeeMwdt_5yKiiw" memberEnd="_SLEnFDs-EeeMwdt_5yKiiw _SLQ0Njs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLQ0NDs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLQ0NTs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLQ0Njs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLQ0Mzs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLSpYTs-EeeMwdt_5yKiiw" memberEnd="_SLEnHDs-EeeMwdt_5yKiiw _SLSpZDs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLSpYjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLSpYzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLSpZDs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLSpYTs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SKyTEDs-EeeMwdt_5yKiiw" memberEnd="_SLEm-Ds-EeeMwdt_5yKiiw _SKyTEzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SKyTETs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SKyTEjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SKyTEzs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SKyTEDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLJfcDs-EeeMwdt_5yKiiw" memberEnd="_SLEnADs-EeeMwdt_5yKiiw _SLJfczs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLJfcTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLJfcjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLJfczs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLJfcDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK6O4Ds-EeeMwdt_5yKiiw" memberEnd="_SLEnEDs-EeeMwdt_5yKiiw _SK6O4zs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK6O4Ts-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK6O4js-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK6O4zs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SK6O4Ds-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK9SNTs-EeeMwdt_5yKiiw" memberEnd="_SLEnCDs-EeeMwdt_5yKiiw _SK9SODs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK9SNjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK9SNzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK9SODs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SK9SNTs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK-gVTs-EeeMwdt_5yKiiw" memberEnd="_SLEm_Ds-EeeMwdt_5yKiiw _SK-gWDs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK-gVjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK-gVzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK-gWDs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SK-gVTs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLbzUDs-EeeMwdt_5yKiiw" memberEnd="_SLEnGDs-EeeMwdt_5yKiiw _SLbzUzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLbzUTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLbzUjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLbzUzs-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLbzUDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLT3hTs-EeeMwdt_5yKiiw" memberEnd="_SJVhlDs-EeeMwdt_5yKiiw _SLT3iDs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLT3hjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLT3hzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLT3iDs-EeeMwdt_5yKiiw" name="onewayavpmpac" type="_SJVhkDs-EeeMwdt_5yKiiw" association="_SLT3hTs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLh58Ds-EeeMwdt_5yKiiw" memberEnd="_SLMi0Ts-EeeMwdt_5yKiiw _SLh58zs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLh58Ts-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLh58js-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLh58zs-EeeMwdt_5yKiiw" name="onewaychlipmpac" type="_SLMiyzs-EeeMwdt_5yKiiw" association="_SLh58Ds-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK3LkDs-EeeMwdt_5yKiiw" memberEnd="_SK7dEjs-EeeMwdt_5yKiiw _SK3Lkzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK3LkTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK3Lkjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK3Lkzs-EeeMwdt_5yKiiw" name="onewaycompositepmpac" type="_SK7dAjs-EeeMwdt_5yKiiw" association="_SK3LkDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLdBcDs-EeeMwdt_5yKiiw" memberEnd="_SK4Ztjs-EeeMwdt_5yKiiw _SLdBczs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLdBcTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLdBcjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLdBczs-EeeMwdt_5yKiiw" name="onewayfdpmpac" type="_SK4ZsDs-EeeMwdt_5yKiiw" association="_SLdBcDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK-gUDs-EeeMwdt_5yKiiw" memberEnd="_SLKtmjs-EeeMwdt_5yKiiw _SK-gUzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK-gUTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK-gUjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK-gUzs-EeeMwdt_5yKiiw" name="onewayfdrpmpac" type="_SLKtlDs-EeeMwdt_5yKiiw" association="_SK-gUDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLNw5Ds-EeeMwdt_5yKiiw" memberEnd="_SLPmJTs-EeeMwdt_5yKiiw _SLNw5zs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLNw5Ts-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLNw5js-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLNw5zs-EeeMwdt_5yKiiw" name="onewayflrpmpac" type="_SLPmITs-EeeMwdt_5yKiiw" association="_SLNw5Ds-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLk9RTs-EeeMwdt_5yKiiw" memberEnd="_SLMixDs-EeeMwdt_5yKiiw _SLk9SDs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLk9Rjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLk9Rzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLk9SDs-EeeMwdt_5yKiiw" name="onewayhlipmpac" type="_SLMiwDs-EeeMwdt_5yKiiw" association="_SLk9RTs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLT3gDs-EeeMwdt_5yKiiw" memberEnd="_SLJffTs-EeeMwdt_5yKiiw _SLT3gzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLT3gTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLT3gjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLT3gzs-EeeMwdt_5yKiiw" name="onewayifdvpmpac" type="_SLJfdTs-EeeMwdt_5yKiiw" association="_SLT3gDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK1WYDs-EeeMwdt_5yKiiw" memberEnd="_SLAVhDs-EeeMwdt_5yKiiw _SK1WYzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK1WYTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK1WYjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK1WYzs-EeeMwdt_5yKiiw" name="onewaymfdpmpac" type="_SLAVgDs-EeeMwdt_5yKiiw" association="_SK1WYDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLk9QDs-EeeMwdt_5yKiiw" memberEnd="_SLe2pDs-EeeMwdt_5yKiiw _SLk9Qzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLk9QTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLk9Qjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLk9Qzs-EeeMwdt_5yKiiw" name="setoforderedpairs" type="_SLe2ojs-EeeMwdt_5yKiiw" association="_SLk9QDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLh59Ts-EeeMwdt_5yKiiw" memberEnd="_SLgExjs-EeeMwdt_5yKiiw _SLh5-Ds-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLh59js-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLh59zs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLh5-Ds-EeeMwdt_5yKiiw" name="onewaygroupavpmpac" type="_SLgEwDs-EeeMwdt_5yKiiw" association="_SLh59Ts-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLHqVTs-EeeMwdt_5yKiiw" memberEnd="_SLdBezs-EeeMwdt_5yKiiw _SLHqWDs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLHqVjs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLHqVzs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLHqWDs-EeeMwdt_5yKiiw" name="ethernetservicelevelspecification" type="_SLdBdTs-EeeMwdt_5yKiiw" association="_SLHqVTs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SK0IQDs-EeeMwdt_5yKiiw" memberEnd="_SLHqSzs-EeeMwdt_5yKiiw _SK0IQzs-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SK0IQTs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SK0IQjs-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SK0IQzs-EeeMwdt_5yKiiw" name="pmcosnameentry" type="_SLHqQDs-EeeMwdt_5yKiiw" association="_SK0IQDs-EeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_SLgEzjs-EeeMwdt_5yKiiw" memberEnd="_SLEm9Ds-EeeMwdt_5yKiiw _SLgE0Ts-EeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SLgEzzs-EeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SLgE0Ds-EeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLgE0Ts-EeeMwdt_5yKiiw" name="pmmetric" type="_SLEm8Ds-EeeMwdt_5yKiiw" association="_SLgEzjs-EeeMwdt_5yKiiw"/>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_SLEm9Ds-EeeMwdt_5yKiiw" name="_slsReportList" type="_SLPmEDs-EeeMwdt_5yKiiw" aggregation="composite" association="_SLgEzjs-EeeMwdt_5yKiiw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_SLEm9Ts-EeeMwdt_5yKiiw" annotatedElement="_SLEm9Ds-EeeMwdt_5yKiiw">
+              <body>This attribute represents the relationship between the SlsObjectiveAndParameters and the SlsReport(s).</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SLEm9js-EeeMwdt_5yKiiw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SLEm9zs-EeeMwdt_5yKiiw" value="*"/>
+          </ownedEnd>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_naimoDtEEeeCFfJ0S3qwlA" name="ColorIdentifer">
+        <packagedElement xmi:type="uml:Association" xmi:id="_GNA8uztCEeeMwdt_5yKiiw" name="ColorIdentifierHasDscpColorIdPac" memberEnd="_GNCK5DtCEeeMwdt_5yKiiw _GNA8vjtCEeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GNA8vDtCEeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GNA8vTtCEeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_GNA8vjtCEeeMwdt_5yKiiw" name="coloridentifier" type="_GNCK1DtCEeeMwdt_5yKiiw" association="_GNA8uztCEeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_GNA8wDtCEeeMwdt_5yKiiw" name="ColorIdentiferHasDeiColorIdPac" memberEnd="_GNCK3DtCEeeMwdt_5yKiiw _GNA8wztCEeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GNA8wTtCEeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GNA8wjtCEeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_GNA8wztCEeeMwdt_5yKiiw" name="coloridentifier" type="_GNCK1DtCEeeMwdt_5yKiiw" association="_GNA8wDtCEeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_GNA8xTtCEeeMwdt_5yKiiw" name="ColorIdentifierHasPcpColorIdPac" memberEnd="_GNCK4DtCEeeMwdt_5yKiiw _GNA8yDtCEeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GNA8xjtCEeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GNA8xztCEeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_GNA8yDtCEeeMwdt_5yKiiw" name="coloridentifier" type="_GNCK1DtCEeeMwdt_5yKiiw" association="_GNA8xTtCEeeMwdt_5yKiiw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_GNA8tjtCEeeMwdt_5yKiiw" name="ColorIdentifierHasSepColorIdPac" visibility="private" memberEnd="_GNCK2DtCEeeMwdt_5yKiiw _GNA8uTtCEeeMwdt_5yKiiw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GNA8tztCEeeMwdt_5yKiiw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GNA8uDtCEeeMwdt_5yKiiw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_GNA8uTtCEeeMwdt_5yKiiw" name="coloridentifier" type="_GNCK1DtCEeeMwdt_5yKiiw" association="_GNA8tjtCEeeMwdt_5yKiiw"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_N3YgADtFEeeCFfJ0S3qwlA" name="CosIdentifier">
+        <packagedElement xmi:type="uml:Association" xmi:id="_DiUJoDtFEeeCFfJ0S3qwlA" name="CosIdentifierHasDscpCosIdPac" memberEnd="_DiYbHjtFEeeCFfJ0S3qwlA _DiUJpDtFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DiUJoTtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DiUJojtFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DiUJoztFEeeCFfJ0S3qwlA" annotatedElement="_DiUJoDtFEeeCFfJ0S3qwlA">
+            <body>Including IPv4 or IPv6, or both, or different DSCP values for IPv4 and IPv6 (by multiplicity of 2).</body>
+          </ownedComment>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_DiUJpDtFEeeCFfJ0S3qwlA" name="cosidentifier" type="_DiXNADtFEeeCFfJ0S3qwlA" association="_DiUJoDtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_DiUJpjtFEeeCFfJ0S3qwlA" name="CosIdentifierHasPcpCosIdPac" memberEnd="_DiYbGjtFEeeCFfJ0S3qwlA _DiUJqTtFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DiUJpztFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DiUJqDtFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_DiUJqTtFEeeCFfJ0S3qwlA" name="cosidentifier" type="_DiXNADtFEeeCFfJ0S3qwlA" association="_DiUJpjtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_DiXM-ztFEeeCFfJ0S3qwlA" name="CosIdentifierHasSepCosIdPac" memberEnd="_DiYbFjtFEeeCFfJ0S3qwlA _DiXM_jtFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DiXM_DtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DiXM_TtFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_DiXM_jtFEeeCFfJ0S3qwlA" name="cosidentifier" type="_DiXNADtFEeeCFfJ0S3qwlA" association="_DiXM-ztFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_DiVXyTtFEeeCFfJ0S3qwlA" name="CosIdentifierHasIngressBwpFlow" memberEnd="_DiYbIjtFEeeCFfJ0S3qwlA _DiVXzDtFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DiVXyjtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DiVXyztFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_DiVXzDtFEeeCFfJ0S3qwlA" name="cosidentifier" type="_DiXNADtFEeeCFfJ0S3qwlA" association="_DiVXyTtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_gjLQwDtFEeeCFfJ0S3qwlA" name="EecIdentifier">
+        <packagedElement xmi:type="uml:Association" xmi:id="_cQdeZTtFEeeCFfJ0S3qwlA" name="EecIdentifierHasDscpEecIdPac" memberEnd="_cQeskDtFEeeCFfJ0S3qwlA _cQdeaDtFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cQdeZjtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cQdeZztFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cQdeaDtFEeeCFfJ0S3qwlA" name="eecidentifier" type="_cQesgDtFEeeCFfJ0S3qwlA" association="_cQdeZTtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_cQdeYDtFEeeCFfJ0S3qwlA" name="EecIdentifierHasPcpEecIdPac" memberEnd="_cQesjDtFEeeCFfJ0S3qwlA _cQdeYztFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cQdeYTtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cQdeYjtFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cQdeYztFEeeCFfJ0S3qwlA" name="eecidentifier" type="_cQesgDtFEeeCFfJ0S3qwlA" association="_cQdeYDtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_cQSfQDtFEeeCFfJ0S3qwlA" name="EecIdentifierHasSepEecIdPac" memberEnd="_cQesiDtFEeeCFfJ0S3qwlA _cQSfQztFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cQSfQTtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cQSfQjtFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cQSfQztFEeeCFfJ0S3qwlA" name="eecidentifier" type="_cQesgDtFEeeCFfJ0S3qwlA" association="_cQSfQDtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_cQRRIDtFEeeCFfJ0S3qwlA" name="EecIdentifierHasEgressBwpPerEec" memberEnd="_cQeslDtFEeeCFfJ0S3qwlA _cQRRIztFEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_cQRRITtFEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_cQRRIjtFEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_cQRRIztFEeeCFfJ0S3qwlA" name="eecidentifier" type="_cQesgDtFEeeCFfJ0S3qwlA" association="_cQRRIDtFEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_RX0EYDtGEeeCFfJ0S3qwlA" name="EgressMap">
+        <packagedElement xmi:type="uml:Association" xmi:id="_Ixl1cDtGEeeCFfJ0S3qwlA" name="EgressMapHasCosNameAndColorToDeiPac" memberEnd="_IxnDnTtGEeeCFfJ0S3qwlA _Ixl1cztGEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ixl1cTtGEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ixl1cjtGEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_Ixl1cztGEeeCFfJ0S3qwlA" name="egressmap" type="_IxnDmTtGEeeCFfJ0S3qwlA" association="_Ixl1cDtGEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_IxkAQztGEeeCFfJ0S3qwlA" name="EgressMapHasCosNameAndColorToPcpPac" memberEnd="_IxnDpTtGEeeCFfJ0S3qwlA _IxkARjtGEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IxkARDtGEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IxkARTtGEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_IxkARjtGEeeCFfJ0S3qwlA" name="egressmap" type="_IxnDmTtGEeeCFfJ0S3qwlA" association="_IxkAQztGEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_Ixl1dTtGEeeCFfJ0S3qwlA" name="EgressMapHasCosNameToPcpPac" memberEnd="_IxnDoTtGEeeCFfJ0S3qwlA _Ixl1eDtGEeeCFfJ0S3qwlA">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ixl1djtGEeeCFfJ0S3qwlA" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ixl1dztGEeeCFfJ0S3qwlA" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_Ixl1eDtGEeeCFfJ0S3qwlA" name="egressmap" type="_IxnDmTtGEeeCFfJ0S3qwlA" association="_Ixl1dTtGEeeCFfJ0S3qwlA"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_-uPAUDsoEeegMcfuywP9HQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GhYuQLwQEeiJxuW5GuVNNw" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GhYuQbwQEeiJxuW5GuVNNw" key="Version" value="0.2.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GhYuQrwQEeiJxuW5GuVNNw" key="Comment" value="New stereotype OpenModelStatement added. It contains the generic information of the model and extends the Metaclass &quot;Model&quot;."/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GhYuQ7wQEeiJxuW5GuVNNw" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GhYuRLwQEeiJxuW5GuVNNw" key="Date" value="2018-04-13"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GhYuRbwQEeiJxuW5GuVNNw" key="Author" value="IISOMI"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-uQOcDsoEeegMcfuywP9HQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Model>
+  <OpenModel_Profile:OpenModelClass xmi:id="_-uQOcTsoEeegMcfuywP9HQ" base_Class="_qMhCMM-DEeWZuobpkt7kiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uSDoDsoEeegMcfuywP9HQ" base_StructuralFeature="_veTOAEeqEeagooSm58To6w" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uSDoTsoEeegMcfuywP9HQ" base_StructuralFeature="_-UIKQEeHEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRwDsoEeegMcfuywP9HQ" base_StructuralFeature="_BWAm4EeIEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRwTsoEeegMcfuywP9HQ" base_StructuralFeature="_JUXkkEeIEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRwjsoEeegMcfuywP9HQ" base_StructuralFeature="_EnSxcEeIEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRwzsoEeegMcfuywP9HQ" base_StructuralFeature="_HQwHAEeIEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRxDsoEeegMcfuywP9HQ" base_StructuralFeature="_X4lW0M-OEeWZuobpkt7kiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRxTsoEeegMcfuywP9HQ" base_StructuralFeature="_Ti_UsEeIEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRxjsoEeegMcfuywP9HQ" base_StructuralFeature="_O0-GYEeIEeWHAqNDvf1r-A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uTRxzsoEeegMcfuywP9HQ" base_StructuralFeature="_Wxa7AMFXEeWJxZBDtAhHMw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uVG8DsoEeegMcfuywP9HQ" base_StructuralFeature="_yIJosNBXEeWuNf2VLdfDCg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_-uVG8TsoEeegMcfuywP9HQ" base_Class="_TyICUM-PEeWZuobpkt7kiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uVG8jsoEeegMcfuywP9HQ" base_StructuralFeature="_2L6Z0EqkEeWslOhmT__Dhw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uVG8zsoEeegMcfuywP9HQ" base_StructuralFeature="_Bb9xwEqlEeWslOhmT__Dhw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-uVG9DsoEeegMcfuywP9HQ" base_StructuralFeature="_yIHzgtBXEeWuNf2VLdfDCg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SJVhmDs-EeeMwdt_5yKiiw" base_Class="_SJVhkDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SJWvsDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SJVhkjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SJWvsTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SJVhlDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SKyTFDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SKyTEzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK0IRDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK0IQzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK1WZDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK1WYzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK3LlDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK3Lkzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SK4Zujs-EeeMwdt_5yKiiw" base_Class="_SK4ZsDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK4Zuzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK4Zsjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK4ZvDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK4ZtDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK4ZvTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK4Ztjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK6O5Ds-EeeMwdt_5yKiiw" base_StructuralFeature="_SK6O4zs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SK6O6zs-EeeMwdt_5yKiiw" base_Class="_SK6O5Ts-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SK7dFjs-EeeMwdt_5yKiiw" base_Class="_SK7dAjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK7dFzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dBDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK7dGDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dBjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK7dGTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dCDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK9SMDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dCjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK9SMTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dDDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK9SMjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dDjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK9SMzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dEDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK9SNDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK7dEjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK9SOTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK9SODs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK-gVDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK-gUzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SK-gWTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SK-gWDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLAViDs-EeeMwdt_5yKiiw" base_Class="_SLAVgDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLAViTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLAVgjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLBjoDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLAVhDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLEnIDs-EeeMwdt_5yKiiw" base_Class="_SLEm8Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnITs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEm8js-EeeMwdt_5yKiiw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnIjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEm9Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnIzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEm-Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnJDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEm_Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnJTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnADs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnJjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnBDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnJzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnCDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnKDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnDDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnKTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnEDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnKjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnFDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnKzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnGDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLEnLDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLEnHDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLGcJDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLGcIzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLHqTzs-EeeMwdt_5yKiiw" base_Class="_SLHqQDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLHqUDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLHqQjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLHqUTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLHqRDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLHqUjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLHqRjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLHqUzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLHqSTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLHqVDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLHqSzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLHqWTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLHqWDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLJfdDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLJfczs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLJfgTs-EeeMwdt_5yKiiw" base_Class="_SLJfdTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtkDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLJfdzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtkTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLJfeTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtkjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLJfezs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtkzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLJffTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLKtnjs-EeeMwdt_5yKiiw" base_Class="_SLKtlDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtnzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLKtljs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtoDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLKtmDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLKtoTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLKtmjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLMiyDs-EeeMwdt_5yKiiw" base_Class="_SLMiwDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLMiyTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLMiwjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLMiyjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLMixDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLNw4Ds-EeeMwdt_5yKiiw" base_Class="_SLMiyzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLNw4Ts-EeeMwdt_5yKiiw" base_StructuralFeature="_SLMizTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLNw4js-EeeMwdt_5yKiiw" base_StructuralFeature="_SLMizzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLNw4zs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLMi0Ts-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLNw6Ds-EeeMwdt_5yKiiw" base_StructuralFeature="_SLNw5zs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLPmHDs-EeeMwdt_5yKiiw" base_Class="_SLPmEDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLPmHTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLPmEjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLPmHjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLPmFDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLPmHzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLPmFjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLPmIDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLPmGDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLQ0MDs-EeeMwdt_5yKiiw" base_Class="_SLPmITs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLQ0MTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLPmIzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLQ0Mjs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLPmJTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLQ0Nzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLQ0Njs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLSpZTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLSpZDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLT3hDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLT3gzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLT3iTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLT3iDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLbzVDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLbzUzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLdBdDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLdBczs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLdBfzs-EeeMwdt_5yKiiw" base_Class="_SLdBdTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLdBgDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLdBdzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLe2oDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLdBeTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLe2oTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLdBezs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLe2qDs-EeeMwdt_5yKiiw" base_Class="_SLe2ojs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLe2qTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLe2pDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SLgEyjs-EeeMwdt_5yKiiw" base_Class="_SLgEwDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLgEyzs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLgEwjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLgEzDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLgExDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLgEzTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLgExjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLgE0js-EeeMwdt_5yKiiw" base_StructuralFeature="_SLgE0Ts-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLh59Ds-EeeMwdt_5yKiiw" base_StructuralFeature="_SLh58zs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLjIEDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLh5-Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLjIFTs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLjIFDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLk9RDs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLk9Qzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_SLk9STs-EeeMwdt_5yKiiw" base_StructuralFeature="_SLk9SDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_mQ-I7Ts_EeeMwdt_5yKiiw" base_Class="_mQ-IwDs_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mQ_W4Ds_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-Iwjs_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mQ_W4Ts_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-IxTs_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mQ_W4js_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-Ixzs_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mQ_W4zs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-Iyzs_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mQ_W5Ds_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-IzTs_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMEDs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I0Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMETs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I1Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMEjs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I2Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMEzs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I3Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMFDs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I4Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMFTs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I5Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mRBMFjs_EeeMwdt_5yKiiw" base_StructuralFeature="_mQ-I6Ts_EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_GNA8tDtCEeeMwdt_5yKiiw" base_Class="_GNA8sDtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNA8tTtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA8sjtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNA8ujtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA8uTtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNA8vztCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA8vjtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNA8xDtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA8wztCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNA8yTtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA8yDtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_GNA8zDtCEeeMwdt_5yKiiw" base_Class="_GNA8yjtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_GNCK0DtCEeeMwdt_5yKiiw" base_Class="_GNA8zTtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK0TtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA8zztCEeeMwdt_5yKiiw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK0jtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA80TtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK0ztCEeeMwdt_5yKiiw" base_StructuralFeature="_GNA81TtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_GNCK6DtCEeeMwdt_5yKiiw" base_Class="_GNCK1DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK6TtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK1jtCEeeMwdt_5yKiiw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK6jtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK2DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK6ztCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK3DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK7DtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK4DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK7TtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK5DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_GNCK-DtCEeeMwdt_5yKiiw" base_Class="_GNCK7jtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK-TtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK8DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GNCK-jtCEeeMwdt_5yKiiw" base_StructuralFeature="_GNCK9DtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_DiSUcDtFEeeCFfJ0S3qwlA" base_Class="_DiRGUDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiSUcTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiRGUjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiSUcjtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiRGVjtFEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiUJpTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiUJpDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiUJqjtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiUJqTtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiVXzTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiVXzDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_DiXM9jtFEeeCFfJ0S3qwlA" base_Class="_DiXM8DtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiXM9ztFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiXM8jtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_DiXM-jtFEeeCFfJ0S3qwlA" base_Class="_DiXM-DtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiXM_ztFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiXM_jtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_DiYbJjtFEeeCFfJ0S3qwlA" base_Class="_DiXNADtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiYbJztFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiYbEDtFEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiYbKDtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiYbEjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiYbKTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiYbFjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiYbKjtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiYbGjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiYbKztFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiYbHjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DiYbLDtFEeeCFfJ0S3qwlA" base_StructuralFeature="_DiYbIjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQRRJDtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQRRIztFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQSfRDtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQSfQztFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_cQUUcjtFEeeCFfJ0S3qwlA" base_Class="_cQUUcDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_cQabFjtFEeeCFfJ0S3qwlA" base_Class="_cQabEDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQabFztFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQabEjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_cQbpODtFEeeCFfJ0S3qwlA" base_Class="_cQbpMDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQbpOTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQbpMjtFEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQbpOjtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQbpNDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQdeZDtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQdeYztFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQdeaTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQdeaDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_cQesmDtFEeeCFfJ0S3qwlA" base_Class="_cQesgDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQesmTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQesgjtFEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQesmjtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQeshDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQesmztFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQesiDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQghsDtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQesjDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQghsTtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQeskDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cQghsjtFEeeCFfJ0S3qwlA" base_StructuralFeature="_cQeslDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_IxiyKjtGEeeCFfJ0S3qwlA" base_Class="_IxiyIDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxkAQDtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxiyIjtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxkAQTtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxiyJDtGEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxkAQjtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxiyKDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxkARztGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxkARjtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Ixl1dDtGEeeCFfJ0S3qwlA" base_StructuralFeature="_Ixl1cztGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Ixl1eTtGEeeCFfJ0S3qwlA" base_StructuralFeature="_Ixl1eDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_IxnDljtGEeeCFfJ0S3qwlA" base_Class="_IxnDkDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxnDlztGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxnDkjtGEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxnDmDtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxnDlDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_IxnDqTtGEeeCFfJ0S3qwlA" base_Class="_IxnDmTtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxnDqjtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxnDmztGEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxnDqztGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxnDnTtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxnDrDtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxnDoTtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_IxnDrTtGEeeCFfJ0S3qwlA" base_StructuralFeature="_IxnDpTtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_Ixo4yjtGEeeCFfJ0S3qwlA" base_Class="_Ixo4wDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Ixo4yztGEeeCFfJ0S3qwlA" base_StructuralFeature="_Ixo4wjtGEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Ixo4zDtGEeeCFfJ0S3qwlA" base_StructuralFeature="_Ixo4xDtGEeeCFfJ0S3qwlA" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Ixo4zTtGEeeCFfJ0S3qwlA" base_StructuralFeature="_Ixo4yDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_t279IEUaEee0segBb4Kwjw" base_StructuralFeature="_t2450EUaEee0segBb4Kwjw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_94VnUEXiEee0segBb4Kwjw" base_StructuralFeature="_94VAQEXiEee0segBb4Kwjw" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelStatement xmi:id="_GhVD4LwQEeiJxuW5GuVNNw" base_Model="_wAkcEDAyEeeMUevANHuhog"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_Qe-5cMDqEeimjatONtR4zA" base_Association="_GNA8wDtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_RhxMIMDqEeimjatONtR4zA" base_Association="_GNA8tjtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_SswYkMDqEeimjatONtR4zA" base_Association="_GNA8uztCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_TzeJAMDqEeimjatONtR4zA" base_Association="_GNA8xTtCEeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_ZqveYMDqEeimjatONtR4zA" base_Association="_DiXM-ztFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_atWK4MDqEeimjatONtR4zA" base_Association="_DiUJpjtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_btqYYMDqEeimjatONtR4zA" base_Association="_DiUJoDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_cqInsMDqEeimjatONtR4zA" base_Association="_DiVXyTtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_kUUsMMDqEeimjatONtR4zA" base_Association="_cQSfQDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_lLkdQMDqEeimjatONtR4zA" base_Association="_cQdeYDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_mG0kkMDqEeimjatONtR4zA" base_Association="_cQdeZTtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_nFzVUMDqEeimjatONtR4zA" base_Association="_cQRRIDtFEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_sqGEUMDqEeimjatONtR4zA" base_Association="_Ixl1dTtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_ubphgMDqEeimjatONtR4zA" base_Association="_Ixl1cDtGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_vZwIgMDqEeimjatONtR4zA" base_Association="_IxkAQztGEeeCFfJ0S3qwlA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_efACIMDrEeimjatONtR4zA" base_Association="_SLHqVTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_fiiiwMDrEeimjatONtR4zA" base_Association="_SK0IQDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_lZnD0MDrEeimjatONtR4zA" base_Association="_SKyTEDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_maM-IMDrEeimjatONtR4zA" base_Association="_SLbzUDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_n4YMUMDrEeimjatONtR4zA" base_Association="_SK-gVTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_o6l3QMDrEeimjatONtR4zA" base_Association="_SLJfcDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_qiN8YMDrEeimjatONtR4zA" base_Association="_SLjIETs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_rct1wMDrEeimjatONtR4zA" base_Association="_SK9SNTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_tHFs4MDrEeimjatONtR4zA" base_Association="_SLGcIDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_uSX0QMDrEeimjatONtR4zA" base_Association="_SLQ0Mzs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_vfd5gMDrEeimjatONtR4zA" base_Association="_SK6O4Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_3r1zIMDtEeimjatONtR4zA" base_Association="_yIHMcNBXEeWuNf2VLdfDCg"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_C5pIUMDuEeimjatONtR4zA" base_Association="_SK-gUDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_D60RcMDuEeimjatONtR4zA" base_Association="_SK1WYDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_E9mkIMDuEeimjatONtR4zA" base_Association="_SLNw5Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_GA1iwMDuEeimjatONtR4zA" base_Association="_SLT3hTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_HIfHUMDuEeimjatONtR4zA" base_Association="_SLk9RTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_IMh-QMDuEeimjatONtR4zA" base_Association="_SLh58Ds-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_JQdgcMDuEeimjatONtR4zA" base_Association="_SK3LkDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_KdRR0MDuEeimjatONtR4zA" base_Association="_SLk9QDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_LfBCsMDuEeimjatONtR4zA" base_Association="_SLh59Ts-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_DEuhgMDvEeimjatONtR4zA" base_Association="_SLT3gDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_MGyX4MDvEeimjatONtR4zA" base_Association="_SLSpYTs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_PsR34MDvEeimjatONtR4zA" base_Association="_SLdBcDs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_WUBA4MDvEeimjatONtR4zA" base_Association="_SLgEzjs-EeeMwdt_5yKiiw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_e22vMcDwEeimjatONtR4zA" base_StructuralFeature="_e22vMMDwEeimjatONtR4zA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_e22vNcDwEeimjatONtR4zA" base_StructuralFeature="_e22vNMDwEeimjatONtR4zA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_gD379MDwEeimjatONtR4zA" base_StructuralFeature="_gD3788DwEeimjatONtR4zA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_gD37-MDwEeimjatONtR4zA" base_StructuralFeature="_gD3798DwEeimjatONtR4zA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_mq7IcMDwEeimjatONtR4zA" base_Association="_e2qh8MDwEeimjatONtR4zA"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_oRxKcMDwEeimjatONtR4zA" base_Association="_gD378MDwEeimjatONtR4zA"/>
+</xmi:XMI>
