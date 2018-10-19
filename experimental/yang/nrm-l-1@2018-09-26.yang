@@ -1,0 +1,1065 @@
+module nrm-l-1 {
+    namespace "urn:mef:yang:nrm-l-1";
+    prefix nrm-l-1;
+    import tapi-common {
+        prefix tapi-common;
+    }
+    import tapi-connectivity {
+        prefix tapi-connectivity;
+    }
+    organization "MEF";
+    contact "Web URL: http://mef.net/ 
+            E-mail:  namespace@mef.net 
+            Postal:  MEFForum 
+            6033 W. Century Boulevard, Suite 1107 
+            Los Angeles, CA 90045 
+            U.S.A. 
+            Phone:   +1 310-642-2800 
+            Fax:     +1 310-642-2808";
+    description "none";
+    revision 2018-09-26 {
+        description "MEF NRM OAM Initial draft";
+        reference "
+            MEF Network Resource Model (MEF-59), 
+            MEF Network Resource Provisioning (MEF-60), 
+            MEF Network Resource Model - OAM (NRM-OAM), 
+            MEF PRESTO Service OAM (PRESTO-SOAM)";
+    }
+    augment "/tapi-common:context/tapi-connectivity:connectivity-context/tapi-connectivity:connectivity-service" {
+        container l-1-connectivity-resource {
+            uses l-1-connectivity-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-connectivity:connectivity-context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point" {
+        container l-1-connectivity-end-point-resource {
+            uses l-1-connectivity-end-point-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-common:service-interface-point" {
+        container l-1-uni-nresource {
+            uses l-1-uni-nresource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-common:service-interface-point" {
+        container l-1-inni-nresource {
+            uses l-1-inni-nresource;
+            description "none";
+        }
+        description "none";
+    }
+    /***********************
+    * package object-classes
+    **********************/ 
+        grouping l-1-connectivity-resource {
+            leaf layer-1-vc-id {
+                type string;
+                description "MEF 63:
+                    [R17] The Subscriber L1VC ID MUST be unique across all the Service Provider’s Subscriber L1VCs.
+                    [R18] The Subscriber L1VC ID MUST contain no more than 45 characters. 
+                    [R19] The Subscriber L1VC ID MUST be a non-null RFC 2579 DisplayString but not contain the characters 0x00 through 0x1f.
+                    ";
+            }
+            description "MEF 63: A Layer 1 Service is connectivity service which delivers Layer 1 Characteristic Information that is specified using Service Attributes as defined in a MEF Specification.
+                A fundamental aspect of a Subscriber L1 Service is the Subscriber L1VC, L1 Virtual Connection: An association of two Layer 1 Virtual Connection End Points that limits the transport of Layer 1 Characteristic Information between those Layer 1 Virtual Connection End Points.
+                A Subscriber L1 Service has the following basic characteristics:
+                1) Topology: Only point-to-point.
+                2) UNI: Both UNIs have the same rate. The physical layer at both UNIs is optical.
+                3) Rate: Only full port speed of the UNIs.
+                4) Client protocol: Ethernet, Fibre Channel, SONET, SDH.
+                5) Transparency: The client protocol data (L1CI) is transported bit identical from the ingress UNI to egress UNI at the same frequency (aka timing transparent).
+                6) Performance metrics (SLS)
+                An instance of a Subscriber L1 Service has:
+                1) The same client protocol at both UNIs (i.e., one of: Ethernet, Fibre Channel, SONET, SDH).
+                2) The physical ports at both UNIs have the same rate and same coding function (e.g., 8B/10B).
+                3) The physical port at each UNI may have a different optical interface function (e.g., long reach or extended reach).
+                4) A single service instance per UNI (i.e., no service multiplexing).";
+        }
+        grouping l-1-connectivity-end-point-resource {
+            leaf layer-1-end-point-id {
+                type string;
+                description "MEF 63:
+                    [R36] The Subscriber L1VC End Point ID MUST be unique across all the Service Provider’s Subscriber L1VC End Points. 
+                    [R37] The Subscriber L1VC End Point ID MUST contain no more than 45 charac-ters.  
+                    [R38] The Subscriber L1VC End Point ID MUST be a non-null RFC 2579 DisplayString but not contain the characters 0x00 through 0x1f. 
+                    ";
+            }
+            description "MEF 63: Subscriber Layer 1 Virtual Connection End Point represents the logical attachment of a Subscriber Layer 1 Virtual Connection to a L1 UNI.";
+        }
+        grouping l-1-uni-nresource {
+            leaf layer-1-coding-function {
+                type l-1-coding-function;
+                description "none";
+            }
+            leaf layer-1-optical-interface-function {
+                type l-1-optical-interface-function;
+                description "none";
+            }
+            leaf layer-1-uni-id {
+                type string;
+                description "MEF 63:
+                    [R3] The UNI ID MUST be unique among all the Service Provider’s UNIs.
+                    [R4] The UNI ID MUST contain no more than 45 characters. 
+                    [R5] The UNI ID MUST be a non-null RFC 2579 DisplayString but not contain the characters 0x00 through 0x1f.
+                    ";
+            }
+            description "MEF 63: Layer 1 User Network Interface.";
+        }
+        grouping l-1-inni-nresource {
+            leaf layer-1-inni-id {
+                type string;
+                description "none";
+            }
+            description "none";
+        }
+        grouping sls-1w-unavailable-second-performance-metric {
+            leaf unavailable-second-objective {
+                type uint64;
+                description "MEF 63: The value of the One-way Unavailable Second Performance Metric, integer >=0";
+            }
+            leaf-list ordered-pair {
+                type leafref {
+                    path '/tapi-common:context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point/tapi-connectivity:local-id';
+                }
+                min-elements 2;
+                max-elements 2;
+                description "MEF 63: Ordered pair of Subscriber L1VC EPs.";
+            }
+            description "MEF 63: An Unavailable Second (UAS) is defined as a second during Unavailable Time (UAT).
+                [R33] The SLS MUST define the One-way Unavailable Second Performance Metric Objective as met over T-l for a PM entry if and only if measured Unavailable Seconds PM <= unavailableSecondObjective";
+        }
+        grouping l-1-service-level-specification {
+            leaf start-time {
+                type tapi-common:date-and-time;
+                description "MEF 63:  t-start is a time that represents the date and time for the start of the SLS.
+                    [R22] t-start MUST be specified to the nearest second.";
+            }
+            container duration {
+                uses tapi-common:time-period;
+                description "MEF 63: T is a duration that is used in conjunction with ts to specify a contiguous sequence of time intervals for determining when performance objectives are met. The units for T are not constrained.
+                    For example, a calendar month is an allowable value. Since the duration of a month varies it could be specified as, e.g. from midnight on the 10th of one month up to but not including midnight on the 10th of the following month. 
+                    [R23] T MUST contain an integer number of seconds.
+                    ";
+            }
+            list sls-1wdelayperformancemetric {
+                uses sls-1w-delay-performance-metric;
+                description "none";
+            }
+            list sls-1werroredsecondperformancemetric {
+                max-elements 2;
+                uses sls-1w-errored-second-performance-metric;
+                description "none";
+            }
+            list sls-1wseverelyerroredsecondperformancemetric {
+                max-elements 2;
+                uses sls-1w-severely-errored-second-performance-metric;
+                description "none";
+            }
+            list sls-1wunavailablesecondperformancemetric {
+                max-elements 2;
+                uses sls-1w-unavailable-second-performance-metric;
+                description "none";
+            }
+            list sls-1wavailabilityperformancemetric {
+                max-elements 2;
+                uses sls-1w-availability-performance-metric;
+                description "none";
+            }
+            description "The Subscriber L1VC Service Level Specification (SLS) Service Attribute is the technical specification of aspects of the service performance agreed to by the Service Provider and the Sub-scriber. For any given SLS, a given Performance Metric may or may not be specified.
+                The value of the Subscriber L1VC SLS Service Attribute is either None or a 3-tuple of the form (t-s, T, PM) where:
+                1) t-s is a time that represents the date and time for the start of the SLS.
+                2) T is a duration that is used in conjunction with t-s to specify a contiguous sequence of time intervals for determining when performance objectives are met. The units for T are not constrained. For example, a calendar month is an allowable value. Since the duration of a month varies it could be specified as, e.g. from midnight on the 10th of one month up to but not including midnight on the 10th of the following month. 
+                3) PM is a list where each element in the list consists of a Performance Metric Name, a list of parameter values specific to the definition of the Performance Metric, and Performance Metric Objective.
+                ";
+        }
+        grouping sls-1w-delay-performance-metric {
+            leaf percentile {
+                type uint64;
+                description "MEF 63: the Pd-percentile allows the One-way Delay Performance Metric Objective to be met although different delays may occur following a protection switch.
+                    To place an upper bound on any longer delays a second One-way Delay Performance Metric Objective for a higher Pd_percentile value (e.g., 100th) may be specified.
+                    range of type : (0,100]";
+            }
+            container delay-objective {
+                uses tapi-common:time-period;
+                description "MEF 63: The value of the One-way Delay Performance Metric, time units>0";
+            }
+            leaf-list ordered-pair {
+                type leafref {
+                    path '/tapi-common:context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point/tapi-connectivity:local-id';
+                }
+                min-elements 2;
+                max-elements 2;
+                description "MEF 63: Ordered pair of Subscriber L1VC EPs.";
+            }
+            description "MEF 63:
+                The One-way Delay for the L1CI that ingresses at UNI 1 and that egresses at UNI 2 is defined as the time elapsed from the reception of the first bit of the ingress L1CI at UNI 1 until the reception of that first bit of the corresponding L1CI egressing at UNI 2.
+                [R27] The SLS MUST define the One-way Delay Performance Metric Objective as met during Available Time over T-l for a PM entry if and only if measured delay D <= delayObjective.";
+        }
+        grouping sls-1w-availability-performance-metric {
+            leaf availability-objective {
+                type uint64;
+                description "MEF 63: The value of the One-way Availability Performance Metric, percentage > 0
+                    range of type : (0,100]";
+            }
+            leaf-list ordered-pair {
+                type leafref {
+                    path '/tapi-common:context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point/tapi-connectivity:local-id';
+                }
+                min-elements 2;
+                max-elements 2;
+                description "MEF 63: Ordered pair of Subscriber L1VC EPs.";
+            }
+            description "MEF 63: Availability is defined as the percentage of Available Time over a given interval T-l which does not include Maintenance Interval Time (MIT).
+                [R35] The SLS MUST define the One-way Availability Performance Metric Objective as met over T-l for a PM entry if and only if measured Availability PM >= availabilityObjective";
+        }
+        grouping sls-1w-severely-errored-second-performance-metric {
+            leaf severely-errored-second-objective {
+                type uint64;
+                description "MEF 63: The value of the One-way Severely Errored Second Performance Metric, integer >=0";
+            }
+            leaf-list ordered-pair {
+                type leafref {
+                    path '/tapi-common:context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point/tapi-connectivity:local-id';
+                }
+                min-elements 2;
+                max-elements 2;
+                description "MEF 63: Ordered pair of Subscriber L1VC EPs.";
+            }
+            description "MEF 63: A Severely Errored Second (SES) is defined as: 
+                - One second sigma-k which contains >= 15% errored L1CI , or 
+                - One second sigma-k which contains a defect (e.g., loss of signal), where a defect on ingress to (client protocol specific), or within the Service Provider’s network (transport technology specific) may result in the insertion of a replacement signal (transport technology specific). Note that if a replacement signal is not inserted, a defect (such as a loss of signal) may propagate to the egress UNI. 
+                Note that a SES is not counted as a ES. 
+                [R31] The SLS MUST define the One-way Severely Errored Second Performance Metric Objective as met during Available Time over T-l for a PM entry if and only if measured Severely Errored Second PM <= severelyErroredSecondObjective.";
+        }
+        grouping sls-1w-errored-second-performance-metric {
+            leaf errored-second-objective {
+                type uint64;
+                description "MEF 63: The value of the One-way Errored Second Performance Metric, integer >=0";
+            }
+            leaf-list ordered-pair {
+                type leafref {
+                    path '/tapi-common:context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point/tapi-connectivity:local-id';
+                }
+                min-elements 2;
+                max-elements 2;
+                description "MEF 63: Ordered pair of Subscriber L1VC EPs.";
+            }
+            description "MEF 63: An errored second (ES) is defined as one second sigma-k in Available Time with at least one errored block (EB) and is not a SES.
+                An EB is defined as a block in which one or more bits are in error.  In this specification the L1CI corresponds to a block.
+                [R29] The SLS MUST define the One-way Errored Second Performance Metric Objective as met during Available Time over T-l for a PM entry if and only if measured Errored Second PM <= erroredSecondObjective.";
+        }
+
+    /***********************
+    * package type-definitions
+    **********************/ 
+        identity L_1_CODING_FUNCTION {
+            description "none";
+        }
+        identity L_1_CODING_FUNCTION_1000BASE-X {
+            base L_1_CODING_FUNCTION;
+            description "IEEE Std 802.3: PCS clause 36 coding function";
+        }
+        identity L_1_CODING_FUNCTION_10GBASE-W {
+            base L_1_CODING_FUNCTION;
+            description "IEEE Std 802.3: PCS clause 49 and WIS clause 50 coding function
+                (WAN PHY)";
+        }
+        identity L_1_CODING_FUNCTION_10GBASE-R {
+            base L_1_CODING_FUNCTION;
+            description "IEEE Std 802.3: PCS clause 49 coding function
+                (LAN PHY)";
+        }
+        identity L_1_CODING_FUNCTION_40GBASE-R {
+            base L_1_CODING_FUNCTION;
+            description "IEEE Std 802.3: PCS clause 82 coding function";
+        }
+        identity L_1_CODING_FUNCTION_100GBASE-R {
+            base L_1_CODING_FUNCTION;
+            description "IEEE Std 802.3: PCS clause 82 coding function";
+        }
+        identity L_1_CODING_FUNCTION_FC-100 {
+            base L_1_CODING_FUNCTION;
+            description "ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (1.0625 Gb/s)
+                ";
+        }
+        identity L_1_CODING_FUNCTION_FC-200 {
+            base L_1_CODING_FUNCTION;
+            description "ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (2.125 Gb/s)";
+        }
+        identity L_1_CODING_FUNCTION_FC-400 {
+            base L_1_CODING_FUNCTION;
+            description "ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (4.250 Gb/s)";
+        }
+        identity L_1_CODING_FUNCTION_FC-800 {
+            base L_1_CODING_FUNCTION;
+            description "ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (8.500 Gb/s)";
+        }
+        identity L_1_CODING_FUNCTION_FC-1200 {
+            base L_1_CODING_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 364-2003, November 2003: FC-10GFC clause 13 FC-1 coding function
+                (10.51875 Gb/s)";
+        }
+        identity L_1_CODING_FUNCTION_FC-1600 {
+            base L_1_CODING_FUNCTION;
+            description "ANSI INCITS 470-2011, December 2011: FC-FS-3 clause 5 FC-1 64B/66B coding function
+                (14.025 Gb/s)";
+        }
+        identity L_1_CODING_FUNCTION_FC-3200 {
+            base L_1_CODING_FUNCTION;
+            description "ANSI INCITS 488-2016, December 2016: FC-FS-4 clause 5 FC-1 64B/66B coding function plus 256B/257B transcoding and FEC encoding
+                (28.05 Gb/s)";
+        }
+        identity L_1_CODING_FUNCTION_STM-1 {
+            base L_1_CODING_FUNCTION;
+            description "ITU-T G.707/Y.1322 January 2007: framer, N=1";
+        }
+        identity L_1_CODING_FUNCTION_STM-4 {
+            base L_1_CODING_FUNCTION;
+            description "ITU-T G.707/Y.1322 January 2007: framer, N=4";
+        }
+        identity L_1_CODING_FUNCTION_STM-16 {
+            base L_1_CODING_FUNCTION;
+            description "ITU-T G.707/Y.1322 January 2007: framer, N=16";
+        }
+        identity L_1_CODING_FUNCTION_STM-64 {
+            base L_1_CODING_FUNCTION;
+            description "ITU-T G.707/Y.1322 January 2007: framer, N=64";
+        }
+        identity L_1_CODING_FUNCTION_STM-256 {
+            base L_1_CODING_FUNCTION;
+            description "ITU-T G.707/Y.1322 January 2007: framer, N=256";
+        }
+        identity L_1_CODING_FUNCTION_OC-3 {
+            base L_1_CODING_FUNCTION;
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=3";
+        }
+        identity L_1_CODING_FUNCTION_OC-12 {
+            base L_1_CODING_FUNCTION;
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=12";
+        }
+        identity L_1_CODING_FUNCTION_OC-48 {
+            base L_1_CODING_FUNCTION;
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=48";
+        }
+        identity L_1_CODING_FUNCTION_OC-192 {
+            base L_1_CODING_FUNCTION;
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=192";
+        }
+        identity L_1_CODING_FUNCTION_OC-768 {
+            base L_1_CODING_FUNCTION;
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=768";
+        }
+        identity L_1_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION_SX-PMD {
+            base ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 38";
+        }
+        identity ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION_LX-PMD {
+            base ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 38";
+        }
+        identity ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION_LX10-PMD {
+            base ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 59";
+        }
+        identity ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION_BX10-PMD {
+            base ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 59";
+        }
+        identity ETH_10_GBASE_WOPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity ETH_10_GBASE_WOPTICAL_INTERFACE_FUNCTION_LW-PMD {
+            base ETH_10_GBASE_WOPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 52";
+        }
+        identity ETH_10_GBASE_WOPTICAL_INTERFACE_FUNCTION_EW-PMD {
+            base ETH_10_GBASE_WOPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 52";
+        }
+        identity ETH_10_GBASE_ROPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity ETH_10_GBASE_ROPTICAL_INTERFACE_FUNCTION_LR-PMD {
+            base ETH_10_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 52";
+        }
+        identity ETH_10_GBASE_ROPTICAL_INTERFACE_FUNCTION_ER-PMD {
+            base ETH_10_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 52";
+        }
+        identity ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION_LR4-PMD {
+            base ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 87";
+        }
+        identity ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION_ER4-PMD {
+            base ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 87";
+        }
+        identity ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION_FR-PMD {
+            base ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 89";
+        }
+        identity ETH_100_GBASE_ROPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity ETH_100_GBASE_ROPTICAL_INTERFACE_FUNCTION_LR4-PMD {
+            base ETH_100_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 88";
+        }
+        identity ETH_100_GBASE_ROPTICAL_INTERFACE_FUNCTION_ER4-PMD {
+            base ETH_100_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            description "IEEE Std 802.3: clause 88";
+        }
+        identity FC_100_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_100_OPTICAL_INTERFACE_FUNCTION_FC-PI-2-100-SM-LC-L {
+            base FC_100_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 404-2006, August 2006: FC-PI-2 clause 6.3 FC-0 100-SM-LC-L";
+        }
+        identity FC_200_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_200_OPTICAL_INTERFACE_FUNCTION_FC-PI-2-200-SM-LC-L {
+            base FC_200_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 404-2006, August 2006: FC-PI-2 clause 6.3 FC-0 200-SM-LC-L";
+        }
+        identity FC_400_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_400_OPTICAL_INTERFACE_FUNCTION_FC-PI-5-400-SM-LC-L {
+            base FC_400_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 400-SM-LC-L";
+        }
+        identity FC_400_OPTICAL_INTERFACE_FUNCTION_FC-PI-5-400-SM-LC-M {
+            base FC_400_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 400-SM-LC-M";
+        }
+        identity FC_800_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_800_OPTICAL_INTERFACE_FUNCTION_FC-PI-5-800-SM-LC-L {
+            base FC_800_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 800-SM-LC-L";
+        }
+        identity FC_800_OPTICAL_INTERFACE_FUNCTION_FC-PI-5-800-SM-LC-I {
+            base FC_800_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 800-SM-LC-I";
+        }
+        identity FC_1200_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_1200_OPTICAL_INTERFACE_FUNCTION_FC-10GFC-1200-SM-LL-L {
+            base FC_1200_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 364-2003, November 2003: FC-10GFC clause 6.4 FC-0: 1200-SM-LL-L";
+        }
+        identity FC_1600_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_1600_OPTICAL_INTERFACE_FUNCTION_FC-PI-5-1600-SM-LC-L {
+            base FC_1600_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 1600-SM-LC-L";
+        }
+        identity FC_1600_OPTICAL_INTERFACE_FUNCTION_FC-PI-5-1600-SM-LZ-I {
+            base FC_1600_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 1600-SM-LZ-I";
+        }
+        identity FC_3200_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity FC_3200_OPTICAL_INTERFACE_FUNCTION_FC-PI-6-3200-SM-LC-L {
+            base FC_3200_OPTICAL_INTERFACE_FUNCTION;
+            description "MEF 63:
+                ANSI INCITS 512-2015, January 2015: FC-PI-6 clause 5.3 FC-0: 3200-SM-LC-L";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION_I-1 {
+            base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-1";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION_S-1.1 {
+            base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-1.1";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION_S-1.2 {
+            base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-1.2";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION_L-1.1 {
+            base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-1.1";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION_L-1.2 {
+            base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-1.2";
+        }
+        identity STM_1_OPTICAL_INTERFACE_FUNCTION_L-1.3 {
+            base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-1.3";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION_I-4 {
+            base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-4";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION_S-4.1 {
+            base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-4.1 ";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION_S-4.2 {
+            base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-4.2";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION_L-4.1 {
+            base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-4.1";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION_L-4.2 {
+            base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-4.2";
+        }
+        identity STM_4_OPTICAL_INTERFACE_FUNCTION_L-4.3 {
+            base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-4.3";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION_I-16 {
+            base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-16";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION_S-16.1 {
+            base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-16.1";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION_S-16.2 {
+            base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-16.2";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION_L-16.1 {
+            base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-16.1";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION_L-16.2 {
+            base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-16.2";
+        }
+        identity STM_16_OPTICAL_INTERFACE_FUNCTION_L-16.3 {
+            base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-16.3";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_I-64.lr {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-64.lr";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_I-64.l {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-64.l";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_I-64.2r {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-64.2r";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_I-64.2 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-64.2";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_I-64.3 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-64.3";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_I-64.5 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: I-64.5";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_S-64.1 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-64.1";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_S-64.2 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-64.2";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_S-64.3 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-64.3";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_S-64.5 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: S-64.5";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_L-64.1 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-64.1";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_L-64.2 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-64.2";
+        }
+        identity STM_64_OPTICAL_INTERFACE_FUNCTION_L-64.3 {
+            base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.957, March 2006: L-64.3";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3R1 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3R1";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3R2 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3R2";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3R3 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3R3";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3R5 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3R5";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3M1 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3M1";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3M2 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3M1";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3M3 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3M3";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3M5 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3M5";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3H2 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3H2";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3H3 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3H3";
+        }
+        identity STM_256_OPTICAL_INTERFACE_FUNCTION_VSR2000-3H5 {
+            base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            description "ITU-T G.693, November 2009: VSR2000-3H5";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_SR-1 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_IR-1 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_IR-2 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_LR-1 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_LR-2 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_LR-3 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_VR-1 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-1";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_VR-2 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_VR-3 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-3";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_UR-2 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-2";
+        }
+        identity OC_12_OPTICAL_INTERFACE_FUNCTION_UR-3 {
+            base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-3";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION_SR-1 {
+            base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION_IR-1 {
+            base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION_IR-2 {
+            base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION_LR-1 {
+            base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION_LR-2 {
+            base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2";
+        }
+        identity OC_3_OPTICAL_INTERFACE_FUNCTION_LR-3 {
+            base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_SR-1 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_IR-1 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_IR-2 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_LR-1 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_LR-2 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_LR-3 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_VR-2 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_VR-3 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-3";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_UR-2 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-2";
+        }
+        identity OC_48_OPTICAL_INTERFACE_FUNCTION_UR-3 {
+            base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-3";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_SR-1 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_SR-2 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-2";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_IR-1 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_IR-2 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_IR-3 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-3";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_LR-1 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_LR-2 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_LR-2a {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2a";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_LR-2b {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2b";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_LR-2c {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2c";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_LR-3 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_VR-2a {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2a";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_VR-2b {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2b";
+        }
+        identity OC_192_OPTICAL_INTERFACE_FUNCTION_VR-3 {
+            base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-3";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION {
+            description "none";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_SR-1 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_SR-2 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-2";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_IR-1 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_IR-2 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_IR-3 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-3";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_LR-1 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_LR-2 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2";
+        }
+        identity OC_768_OPTICAL_INTERFACE_FUNCTION_LR-3 {
+            base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            description "Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3";
+        }
+        typedef l-1-coding-function {
+            type identityref {
+                base L_1_CODING_FUNCTION;
+            }
+            description "MEF 63 Coding Function <c>, functionality which encodes bits for transmission and the corresponding decode upon reception. ";
+        }
+        typedef l-1-optical-interface-function {
+            type identityref {
+                base L_1_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63 Optical Interface Function <o>, functionality which converts encoded electrical bits into an optical signal(s) and the corresponding conversion into electrical format upon reception.";
+        }
+        typedef eth-1000-base-xoptical-interface-function {
+            type identityref {
+                base ETH_1000_BASE_XOPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                IEEE Std 802.3: 1000BASE-X PCS clause 36 coding function";
+        }
+        typedef eth-10-gbase-woptical-interface-function {
+            type identityref {
+                base ETH_10_GBASE_WOPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                IEEE Std 802.3: 10GBASE-W (WAN PHY) PCS clause 49 and WIS clause 50 coding function
+                ";
+        }
+        typedef eth-10-gbase-roptical-interface-function {
+            type identityref {
+                base ETH_10_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                IEEE Std 802.3: 10GBASE-R (LAN PHY) PCS clause 49 coding function
+                ";
+        }
+        typedef eth-40-gbase-roptical-interface-function {
+            type identityref {
+                base ETH_40_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                IEEE Std 802.3: 40GBASE-R PCS clause 82 coding function
+                ";
+        }
+        typedef eth-100-gbase-roptical-interface-function {
+            type identityref {
+                base ETH_100_GBASE_ROPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                IEEE Std 802.3: 100GBASE-R PCS clause 82 coding function
+                ";
+        }
+        typedef fc-100-optical-interface-function {
+            type identityref {
+                base FC_100_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 424-2007[R2012], February 2007: FC-100 FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (1.0625 Gb/s)";
+        }
+        typedef fc-200-optical-interface-function {
+            type identityref {
+                base FC_200_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 424-2007[R2012], February 2007: FC-200 FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (2.125 Gb/s)";
+        }
+        typedef fc-400-optical-interface-function {
+            type identityref {
+                base FC_400_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 424-2007[R2012], February 2007: FC-400 FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (4.250 Gb/s)";
+        }
+        typedef fc-800-optical-interface-function {
+            type identityref {
+                base FC_800_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 424-2007[R2012], February 2007: FC-800 FC-FS-2 clause 5 FC-1 8B/10B coding function
+                (8.500 Gb/s)";
+        }
+        typedef fc-1200-optical-interface-function {
+            type identityref {
+                base FC_1200_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 364-2003, November 2003: FC-1200 (10.51875 Gb/s) FC-10GFC clause 13 FC-1 coding function
+                (10.51875 Gb/s)";
+        }
+        typedef fc-1600-optical-interface-function {
+            type identityref {
+                base FC_1600_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 470-2011, December 2011: FC-FS-3 clause 5 FC-1 64B/66B coding function
+                (14.025 Gb/s)";
+        }
+        typedef fc-3200-optical-interface-function {
+            type identityref {
+                base FC_3200_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "MEF 63:
+                ANSI INCITS 488-2016, December 2016: FC-FS-4 clause 5 FC-1 64B/66B coding function plus 256B/257B transcoding and FEC encoding
+                (28.05 Gb/s)";
+        }
+        typedef stm-1-optical-interface-function {
+            type identityref {
+                base STM_1_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "ITU-T G.707/Y.1322, January 2007: framer, N=1";
+        }
+        typedef stm-4-optical-interface-function {
+            type identityref {
+                base STM_4_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "ITU-T G.707/Y.1322, January 2007: framer, N=4";
+        }
+        typedef stm-16-optical-interface-function {
+            type identityref {
+                base STM_16_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "ITU-T G.707/Y.1322, January 2007: framer, N=16";
+        }
+        typedef stm-64-optical-interface-function {
+            type identityref {
+                base STM_64_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "ITU-T G.707/Y.1322, January 2007: framer, N=64";
+        }
+        typedef stm-256-optical-interface-function {
+            type identityref {
+                base STM_256_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "ITU-T G.707/Y.1322, January 2007: framer, N=256";
+        }
+        typedef oc-12-optical-interface-function {
+            type identityref {
+                base OC_12_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=12";
+        }
+        typedef oc-3-optical-interface-function {
+            type identityref {
+                base OC_3_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=3";
+        }
+        typedef oc-48-optical-interface-function {
+            type identityref {
+                base OC_48_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=48";
+        }
+        typedef oc-192-optical-interface-function {
+            type identityref {
+                base OC_192_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=192";
+        }
+        typedef oc-768-optical-interface-function {
+            type identityref {
+                base OC_768_OPTICAL_INTERFACE_FUNCTION;
+            }
+            description "Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=768";
+        }
+
+}
