@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 ../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
   <uml:Package xmi:id="_4PGK8LlwEeWThfpUfUgfAw" name="NRM_Connectivity">
     <packagedElement xmi:type="uml:Package" xmi:id="_Gx08UMXtEeWD-ti4RxNzCQ" name="Main">
       <packagedElement xmi:type="uml:Package" xmi:id="_KG9sIMXtEeWD-ti4RxNzCQ" name="ObjectClasses">
@@ -538,6 +538,12 @@ TAPI ConnectivityServiceEndPoint is augmented by CarrierEthConnectivityEndPointR
         <references xmi:type="ecore:EPackage" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lf1tINL-EeiDCZ93dVwnIQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lf27QNL-EeiDCZ93dVwnIQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
     </profileApplication>
   </uml:Package>
   <OpenModel_Profile:OpenModelClass xmi:id="_M7QfsDspEeegMcfuywP9HQ" base_Class="_EFFdgNvLEeW_M-JLVGfOJQ"/>
