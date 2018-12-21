@@ -14,8 +14,8 @@ There are several ways for you to run through the steps in this tutorial:
 The tutorial assumes that the Presto SDK demo VM is running OpenDaylight Unimgr and mininet.
 The VM can be downloaded from the following locations: 
 
-* Presto-SDK.zip (https://metroethernetforum.box.com/s/h5j78genqwx2y4z7msho6119wxqnpffe)
-* Presto-SDK.z01 (https://metroethernetforum.box.com/s/2rhbl3ct3wqkszm06ootbe31frjhyhps)
+* Presto-SDK.zip (https://mef.box.com/s/h5j78genqwx2y4z7msho6119wxqnpffe)
+* Presto-SDK.z01 (https://mef.box.com/s/2rhbl3ct3wqkszm06ootbe31frjhyhps)
 
 Login: mef-dev
 Password: mef-dev
