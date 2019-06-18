@@ -1,4 +1,4 @@
-# MEF LSO Presto SDK
+# MEF-LSO-Presto-SDK (R3)
 
 This repository contains the MEF LSO Presto SDK. 
 
