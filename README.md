@@ -38,7 +38,7 @@ The SDK contains the following items:
 * COPYRIGHT - Copyright 2018 MEF Forum
 * LICENSE - Contains a copy of the Apache 2.0 license
 * api 
-  * [swagger](published/swagger/README.md) - Contains the MEF NRP Swagger specifications.
+  * [swagger](api/swagger/README.md) - Contains the MEF NRP Swagger specifications.
   * yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
     which the MEF NRP API is based.
 * documentation - MEF specifications
