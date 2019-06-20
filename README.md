@@ -30,21 +30,21 @@ More information about the LSO Presto API reference point can be found here:
 
 https://wiki.mef.net/display/CESG/LSO+Presto+SDK
 
-[ Define wider context of MEF Lifecycle Service Orchestration architecture ]
-
 ## Contents
 
-This SDK contains the following items:
+This is the SDK for the MEF LSO Presto API reference point. 
+The SDK contains the following items:
 
 * COPYRIGHT - Copyright 2018 MEF Forum
 * LICENSE - Contains a copy of the Apache 2.0 license
-* experimental - SDK content for unpublished MEF specifications
-* published - SDK content for published MEF specifications ([MEF 60](https://www.mef.net/Assets/Technical_Specifications/PDF/MEF_60.pdf))
+* api 
+  * [swagger](published/swagger/README.md) - Contains the MEF NRP Swagger specifications.
   * yang - Contains the MEF NRP YANG modules, including the ONF Transport API yang modules on
     which the MEF NRP API is based.
-  * [swagger](published/swagger/README.md) - Contains the MEF NRP Swagger specifications.
-  * [examples](published/examples/README.md) - Contains example JSON API requests and Postman collections.
-  * [tutorial](published/tutorial/README.md) - A guide for getting started with the MEF LSO Presto SDK & a packaged demo VM running OpenDaylight Unimgr and mininet.
+* documentation - MEF specifications
+  * [examples](documentation/examples/README.md) - Contains example JSON API requests and Postman collections.
+  * [tutorial](documentation/tutorial/README.md) - A guide for getting started with the MEF LSO Presto SDK & a packaged demo VM running OpenDaylight Unimgr and mininet.
+* uml - Contains UML models for MEF Network Resource Model
 
 ## Reference Implementations
 
@@ -56,7 +56,7 @@ This SDK contains the following items:
 
    An instance of the Unimgr project is provided in MEFnet for MEF members to undertake integration testing. Please see the MEFnet Terms of Use.
 
-   https://wiki.mef.net/display/CTO/MEFnet
+   https://wiki.mef.net/display/CESG/MEFnet
 
    https://mef.net/TOU
 
