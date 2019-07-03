@@ -1,0 +1,740 @@
+
+module: nrm-oam
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-lm-performance-data:
+    +--ro carrier-eth-oam-pm-slm-resource
+       +--ro slm-frames-fw-tx?                  mef-types:positive-integer
+       +--ro slm-frames-fw-rx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-tx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-rx?                  mef-types:positive-integer
+       +--ro available-intervals-fw?            mef-types:positive-integer
+       +--ro available-intervals-bw?            mef-types:positive-integer
+       +--ro unavailable-intervals-fw?          mef-types:positive-integer
+       +--ro unavailable-intervals-bw?          mef-types:positive-integer
+       +--ro hli-count-fw?                      mef-types:positive-integer
+       +--ro hli-count-bw?                      mef-types:positive-integer
+       +--ro chli-count-fw?                     mef-types:positive-integer
+       +--ro chli-count-bw?                     mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-flr-resource
+       |  +--ro flr-1-fw-min?    decimal64
+       |  +--ro flr-1-fw-max?    decimal64
+       |  +--ro flr-1-fw-mean?   decimal64
+       |  +--ro flr-1-bk-min?    decimal64
+       |  +--ro flr-1-bk-max?    decimal64
+       |  +--ro flr-1-bk-mean?   decimal64
+       +--ro soam-pm-frames-tx?                 mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                 mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-lm-performance-data:
+    +--ro carrier-eth-oam-pm-slm-resource
+       +--ro slm-frames-fw-tx?                  mef-types:positive-integer
+       +--ro slm-frames-fw-rx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-tx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-rx?                  mef-types:positive-integer
+       +--ro available-intervals-fw?            mef-types:positive-integer
+       +--ro available-intervals-bw?            mef-types:positive-integer
+       +--ro unavailable-intervals-fw?          mef-types:positive-integer
+       +--ro unavailable-intervals-bw?          mef-types:positive-integer
+       +--ro hli-count-fw?                      mef-types:positive-integer
+       +--ro hli-count-bw?                      mef-types:positive-integer
+       +--ro chli-count-fw?                     mef-types:positive-integer
+       +--ro chli-count-bw?                     mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-flr-resource
+       |  +--ro flr-1-fw-min?    decimal64
+       |  +--ro flr-1-fw-max?    decimal64
+       |  +--ro flr-1-fw-mean?   decimal64
+       |  +--ro flr-1-bk-min?    decimal64
+       |  +--ro flr-1-bk-max?    decimal64
+       |  +--ro flr-1-bk-mean?   decimal64
+       +--ro soam-pm-frames-tx?                 mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                 mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-lm-performance-data:
+    +--ro carrier-eth-oam-pm-lm-resource
+       +--ro all-frames-fw-tx?    mef-types:positive-integer
+       +--ro all-frames-fw-rx?    mef-types:positive-integer
+       +--ro all-frames-bk-tx?    mef-types:positive-integer
+       +--ro all-frames-bk-rx?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-lm-performance-data:
+    +--ro carrier-eth-oam-pm-lm-resource
+       +--ro all-frames-fw-tx?    mef-types:positive-integer
+       +--ro all-frames-fw-rx?    mef-types:positive-integer
+       +--ro all-frames-bk-tx?    mef-types:positive-integer
+       +--ro all-frames-bk-rx?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-1-dm-performance-data:
+    +--ro carrier-eth-oam-pm-2-fd-resource
+       +--ro ifdv-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-mean?                              mef-types:positive-integer
+       +--ro ifdv-1-max?                               mef-types:positive-integer
+       +--ro fdr-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-mean?                               mef-types:positive-integer
+       +--ro fdr-1-max?                                mef-types:positive-integer
+       +--ro fd-1-min?                                 mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-fd-synch-resource
+       |  +--ro fd-1-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-mean?   mef-types:positive-integer
+       |  +--ro fd-1-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                        mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                        mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-service:
+    +--rw carrier-eth-oam-srv-resource
+       +--rw client-primary-vlan-id-and-mel* [mel]
+       |  +--rw primary-vlan-id
+       |  |  +--rw vlan-id?   positive-integer
+       |  +--rw mel                available-meg-level
+       +--rw primary-vlan-id
+       |  +--rw vlan-id?   positive-integer
+       +--rw primary-vlan-type?                mef-types:vlan-tag
+       +--rw dmm-frame-size?                   uint64
+       +--rw dm-frame-size?                    uint64
+       +--rw slm-frame-size?                   uint64
+       +--rw sl-frame-size?                    uint64
+       +--rw selection-offset-for-ifdv?        uint64
+       +--rw flr-availability-delta-time?      uint64
+       +--rw flr-availability-samples?         uint64
+       +--rw flr-availability-threshold?       decimal64
+       +--rw number-of-hli-for-chli?           uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-service/tapi-oam:end-point:
+    +--rw carrier-eth-oam-sep-resource
+       +--ro network-interface-monitoring?   boolean
+       +--rw enable-ais-insertion?           boolean
+       +--rw ais-priority?                   uint64
+       +--rw ais-period?                     tapi-eth:oam-period
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-bin-data:
+    +--rw carrier-eth-oam-fd-bins-resource
+       +--rw bin* [bin-index]
+          +--rw bin-index      uint64
+          +--rw lower-bound?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-bin-data:
+    +--rw carrier-eth-oam-ifdv-bins-resource
+       +--rw bin* [bin-index]
+          +--rw bin-index      uint64
+          +--rw lower-bound?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-loopback-job:
+    +--rw carrier-eth-oam-job-loopback-resource
+       +--rw lbr-timeout?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-test-job:
+    +--rw carrier-eth-oam-job-test-resource
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-loopback-result-data:
+    +--ro carrier-eth-oam-job-loopback-result-resource
+       +--ro percentage-of-lost-responses?      uint64
+       +--ro round-trip-time-min
+       |  +--ro value?   uint64
+       |  +--ro unit?    time-unit
+       +--ro round-trip-time-max
+       |  +--ro value?   uint64
+       |  +--ro unit?    time-unit
+       +--ro round-trip-time-average
+       |  +--ro value?   uint64
+       |  +--ro unit?    time-unit
+       +--ro sent-lbr-from-responding-mp?       uint64
+       +--ro received-lbm-from-responding-mp?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-lm-performance-data:
+    +--ro carrier-eth-oam-pm-slm-resource
+       +--ro slm-frames-fw-tx?                  mef-types:positive-integer
+       +--ro slm-frames-fw-rx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-tx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-rx?                  mef-types:positive-integer
+       +--ro available-intervals-fw?            mef-types:positive-integer
+       +--ro available-intervals-bw?            mef-types:positive-integer
+       +--ro unavailable-intervals-fw?          mef-types:positive-integer
+       +--ro unavailable-intervals-bw?          mef-types:positive-integer
+       +--ro hli-count-fw?                      mef-types:positive-integer
+       +--ro hli-count-bw?                      mef-types:positive-integer
+       +--ro chli-count-fw?                     mef-types:positive-integer
+       +--ro chli-count-bw?                     mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-flr-resource
+       |  +--ro flr-1-fw-min?    decimal64
+       |  +--ro flr-1-fw-max?    decimal64
+       |  +--ro flr-1-fw-mean?   decimal64
+       |  +--ro flr-1-bk-min?    decimal64
+       |  +--ro flr-1-bk-max?    decimal64
+       |  +--ro flr-1-bk-mean?   decimal64
+       +--ro soam-pm-frames-tx?                 mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                 mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-lm-performance-data:
+    +--ro carrier-eth-oam-pm-slm-resource
+       +--ro slm-frames-fw-tx?                  mef-types:positive-integer
+       +--ro slm-frames-fw-rx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-tx?                  mef-types:positive-integer
+       +--ro slr-frames-bk-rx?                  mef-types:positive-integer
+       +--ro available-intervals-fw?            mef-types:positive-integer
+       +--ro available-intervals-bw?            mef-types:positive-integer
+       +--ro unavailable-intervals-fw?          mef-types:positive-integer
+       +--ro unavailable-intervals-bw?          mef-types:positive-integer
+       +--ro hli-count-fw?                      mef-types:positive-integer
+       +--ro hli-count-bw?                      mef-types:positive-integer
+       +--ro chli-count-fw?                     mef-types:positive-integer
+       +--ro chli-count-bw?                     mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-flr-resource
+       |  +--ro flr-1-fw-min?    decimal64
+       |  +--ro flr-1-fw-max?    decimal64
+       |  +--ro flr-1-fw-mean?   decimal64
+       |  +--ro flr-1-bk-min?    decimal64
+       |  +--ro flr-1-bk-max?    decimal64
+       |  +--ro flr-1-bk-mean?   decimal64
+       +--ro soam-pm-frames-tx?                 mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                 mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-lm-performance-data:
+    +--ro carrier-eth-oam-pm-lm-resource
+       +--ro all-frames-fw-tx?    mef-types:positive-integer
+       +--ro all-frames-fw-rx?    mef-types:positive-integer
+       +--ro all-frames-bk-tx?    mef-types:positive-integer
+       +--ro all-frames-bk-rx?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-lm-performance-data:
+    +--ro carrier-eth-oam-pm-lm-resource
+       +--ro all-frames-fw-tx?    mef-types:positive-integer
+       +--ro all-frames-fw-rx?    mef-types:positive-integer
+       +--ro all-frames-bk-tx?    mef-types:positive-integer
+       +--ro all-frames-bk-rx?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-dm-performance-data:
+    +--ro carrier-eth-oam-pm-fd-resource
+       +--ro fd-2-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fd-2-mean?                              mef-types:positive-integer
+       +--ro fd-2-min?                               mef-types:positive-integer
+       +--ro fd-2-max?                               mef-types:positive-integer
+       +--ro ifdv-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-fw-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-fw-max?                          mef-types:positive-integer
+       +--ro ifdv-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-bk-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-bk-max?                          mef-types:positive-integer
+       +--ro fdr-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-fw-mean?                          mef-types:positive-integer
+       +--ro fdr-1-fw-max?                           mef-types:positive-integer
+       +--ro fdr-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-bk-mean?                          mef-types:positive-integer
+       +--ro fdr-1-bk-max?                           mef-types:positive-integer
+       +--ro fd-1-fw-min?                            mef-types:positive-integer
+       +--ro fd-1-bk-min?                            mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-fd-synch-resource
+       |  +--ro fd-1-fw-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-fw-mean?   mef-types:positive-integer
+       |  +--ro fd-1-fw-max?    mef-types:positive-integer
+       |  +--ro fd-1-bk-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-bk-mean?   mef-types:positive-integer
+       |  +--ro fd-1-bk-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                      mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                      mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-1-lm-performance-data:
+    +--ro carrier-eth-oam-pm-2-slm-resource
+       +--ro available-intervals?                 mef-types:positive-integer
+       +--ro unavailable-intervals?               mef-types:positive-integer
+       +--ro hli-count?                           mef-types:positive-integer
+       +--ro chli-count?                          mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-flr-resource
+       |  +--ro flr-1-min?    decimal64
+       |  +--ro flr-1-max?    decimal64
+       |  +--ro flr-1-mean?   decimal64
+       +--ro soam-pm-frames-tx?                   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-1-lm-performance-data:
+    +--ro carrier-eth-oam-pm-2-slm-resource
+       +--ro available-intervals?                 mef-types:positive-integer
+       +--ro unavailable-intervals?               mef-types:positive-integer
+       +--ro hli-count?                           mef-types:positive-integer
+       +--ro chli-count?                          mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-flr-resource
+       |  +--ro flr-1-min?    decimal64
+       |  +--ro flr-1-max?    decimal64
+       |  +--ro flr-1-mean?   decimal64
+       +--ro soam-pm-frames-tx?                   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-threshold-data:
+    +--rw carrier-eth-oam-tca-thrs-resource
+       +--rw carrier-eth-oam-counter-thrs-resource* [counter-threshold-type]
+       |  +--rw counter-threshold-type           carrier-ethernet-counter-threshold-types
+       |  +--rw set-threshold-counter-value?     mef-types:positive-integer
+       |  +--rw clear-threshold-counter-value?   mef-types:positive-integer
+       |  +--ro observed-counter-value?          mef-types:positive-integer
+       +--rw carrier-eth-oam-bin-thrs-resource* [bin-threshold-type]
+          +--rw bin-threshold-type           carrier-ethernet-bin-threshold-types
+          +--rw set-threshold-bin-value
+          |  +--rw k?   mef-types:positive-integer
+          |  +--rw n?   mef-types:positive-integer
+          +--rw clear-threshold-bin-value
+          |  +--rw k?   mef-types:positive-integer
+          |  +--rw n?   mef-types:positive-integer
+          +--ro observed-bin-value
+             +--ro k?   mef-types:positive-integer
+             +--ro n?   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-dm-performance-data:
+    +--ro carrier-eth-oam-pm-fd-resource
+       +--ro fd-2-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fd-2-mean?                              mef-types:positive-integer
+       +--ro fd-2-min?                               mef-types:positive-integer
+       +--ro fd-2-max?                               mef-types:positive-integer
+       +--ro ifdv-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-fw-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-fw-max?                          mef-types:positive-integer
+       +--ro ifdv-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-bk-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-bk-max?                          mef-types:positive-integer
+       +--ro fdr-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-fw-mean?                          mef-types:positive-integer
+       +--ro fdr-1-fw-max?                           mef-types:positive-integer
+       +--ro fdr-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-bk-mean?                          mef-types:positive-integer
+       +--ro fdr-1-bk-max?                           mef-types:positive-integer
+       +--ro fd-1-fw-min?                            mef-types:positive-integer
+       +--ro fd-1-bk-min?                            mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-fd-synch-resource
+       |  +--ro fd-1-fw-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-fw-mean?   mef-types:positive-integer
+       |  +--ro fd-1-fw-max?    mef-types:positive-integer
+       |  +--ro fd-1-bk-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-bk-mean?   mef-types:positive-integer
+       |  +--ro fd-1-bk-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                      mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                      mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-dm-performance-data:
+    +--ro carrier-eth-oam-pm-fd-resource
+       +--ro fd-2-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fd-2-mean?                              mef-types:positive-integer
+       +--ro fd-2-min?                               mef-types:positive-integer
+       +--ro fd-2-max?                               mef-types:positive-integer
+       +--ro ifdv-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-fw-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-fw-max?                          mef-types:positive-integer
+       +--ro ifdv-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-bk-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-bk-max?                          mef-types:positive-integer
+       +--ro fdr-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-fw-mean?                          mef-types:positive-integer
+       +--ro fdr-1-fw-max?                           mef-types:positive-integer
+       +--ro fdr-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-bk-mean?                          mef-types:positive-integer
+       +--ro fdr-1-bk-max?                           mef-types:positive-integer
+       +--ro fd-1-fw-min?                            mef-types:positive-integer
+       +--ro fd-1-bk-min?                            mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-fd-synch-resource
+       |  +--ro fd-1-fw-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-fw-mean?   mef-types:positive-integer
+       |  +--ro fd-1-fw-max?    mef-types:positive-integer
+       |  +--ro fd-1-bk-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-bk-mean?   mef-types:positive-integer
+       |  +--ro fd-1-bk-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                      mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                      mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-dm-performance-data:
+    +--ro carrier-eth-oam-pm-fd-resource
+       +--ro fd-2-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fd-2-mean?                              mef-types:positive-integer
+       +--ro fd-2-min?                               mef-types:positive-integer
+       +--ro fd-2-max?                               mef-types:positive-integer
+       +--ro ifdv-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-fw-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-fw-max?                          mef-types:positive-integer
+       +--ro ifdv-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-bk-mean?                         mef-types:positive-integer
+       +--ro ifdv-1-bk-max?                          mef-types:positive-integer
+       +--ro fdr-1-fw-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-fw-mean?                          mef-types:positive-integer
+       +--ro fdr-1-fw-max?                           mef-types:positive-integer
+       +--ro fdr-1-bk-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-bk-mean?                          mef-types:positive-integer
+       +--ro fdr-1-bk-max?                           mef-types:positive-integer
+       +--ro fd-1-fw-min?                            mef-types:positive-integer
+       +--ro fd-1-bk-min?                            mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-fd-synch-resource
+       |  +--ro fd-1-fw-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-fw-mean?   mef-types:positive-integer
+       |  +--ro fd-1-fw-max?    mef-types:positive-integer
+       |  +--ro fd-1-bk-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-bk-mean?   mef-types:positive-integer
+       |  +--ro fd-1-bk-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                      mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                      mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-1-lm-performance-data:
+    +--ro carrier-eth-oam-pm-2-slm-resource
+       +--ro available-intervals?                 mef-types:positive-integer
+       +--ro unavailable-intervals?               mef-types:positive-integer
+       +--ro hli-count?                           mef-types:positive-integer
+       +--ro chli-count?                          mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-flr-resource
+       |  +--ro flr-1-min?    decimal64
+       |  +--ro flr-1-max?    decimal64
+       |  +--ro flr-1-mean?   decimal64
+       +--ro soam-pm-frames-tx?                   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-1-lm-performance-data:
+    +--ro carrier-eth-oam-pm-2-slm-resource
+       +--ro available-intervals?                 mef-types:positive-integer
+       +--ro unavailable-intervals?               mef-types:positive-integer
+       +--ro hli-count?                           mef-types:positive-integer
+       +--ro chli-count?                          mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-flr-resource
+       |  +--ro flr-1-min?    decimal64
+       |  +--ro flr-1-max?    decimal64
+       |  +--ro flr-1-mean?   decimal64
+       +--ro soam-pm-frames-tx?                   mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                   mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-1-dm-performance-data:
+    +--ro carrier-eth-oam-pm-2-fd-resource
+       +--ro ifdv-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-mean?                              mef-types:positive-integer
+       +--ro ifdv-1-max?                               mef-types:positive-integer
+       +--ro fdr-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-mean?                               mef-types:positive-integer
+       +--ro fdr-1-max?                                mef-types:positive-integer
+       +--ro fd-1-min?                                 mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-fd-synch-resource
+       |  +--ro fd-1-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-mean?   mef-types:positive-integer
+       |  +--ro fd-1-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                        mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                        mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-1-dm-performance-data:
+    +--ro carrier-eth-oam-pm-2-fd-resource
+       +--ro ifdv-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-mean?                              mef-types:positive-integer
+       +--ro ifdv-1-max?                               mef-types:positive-integer
+       +--ro fdr-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-mean?                               mef-types:positive-integer
+       +--ro fdr-1-max?                                mef-types:positive-integer
+       +--ro fd-1-min?                                 mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-fd-synch-resource
+       |  +--ro fd-1-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-mean?   mef-types:positive-integer
+       |  +--ro fd-1-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                        mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                        mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-1-dm-performance-data:
+    +--ro carrier-eth-oam-pm-2-fd-resource
+       +--ro ifdv-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro ifdv-1-mean?                              mef-types:positive-integer
+       +--ro ifdv-1-max?                               mef-types:positive-integer
+       +--ro fdr-1-bin* []
+       |  +--ro metric?      mef-types:positive-integer
+       |  +--ro bin-index?   mef-types:positive-integer
+       +--ro fdr-1-mean?                               mef-types:positive-integer
+       +--ro fdr-1-max?                                mef-types:positive-integer
+       +--ro fd-1-min?                                 mef-types:positive-integer
+       +--ro carrier-eth-oam-pm-2-fd-synch-resource
+       |  +--ro fd-1-bin* []
+       |  |  +--ro metric?      mef-types:positive-integer
+       |  |  +--ro bin-index?   mef-types:positive-integer
+       |  +--ro fd-1-mean?   mef-types:positive-integer
+       |  +--ro fd-1-max?    mef-types:positive-integer
+       +--ro soam-pm-frames-tx?                        mef-types:positive-integer
+       +--ro soam-pm-frames-rx?                        mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-bin-data:
+    +--rw carrier-eth-oam-fdr-bins-resource
+       +--rw bin* [bin-index]
+          +--rw bin-index      uint64
+          +--rw lower-bound?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-link-trace-job:
+    +--rw carrier-eth-oam-job-link-trace-resource
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-link-trace-result-data:
+    +--ro carrier-eth-oam-job-link-trace-result-resource
+       +--ro sent-ltm-from-initiating-mp?       uint64
+       +--ro received-ltr-from-initiating-mp?   uint64
+       +--ro sent-ltr-from-responding-mp?       uint64
+       +--ro received-ltm-from-responding-mp?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-test-result-data:
+    +--ro carrier-eth-oam-job-test-result-resource
+  augment /tapi-oam:create-oam-service/tapi-oam:input:
+    +---w carrier-eth-oam-srv-resource
+       +---w client-primary-vlan-id-and-mel* [mel]
+       |  +---w primary-vlan-id
+       |  |  +---w vlan-id?   positive-integer
+       |  +---w mel                available-meg-level
+       +---w primary-vlan-id
+       |  +---w vlan-id?   positive-integer
+       +---w primary-vlan-type?                mef-types:vlan-tag
+       +---w dmm-frame-size?                   uint64
+       +---w dm-frame-size?                    uint64
+       +---w slm-frame-size?                   uint64
+       +---w sl-frame-size?                    uint64
+       +---w selection-offset-for-ifdv?        uint64
+       +---w flr-availability-delta-time?      uint64
+       +---w flr-availability-samples?         uint64
+       +---w flr-availability-threshold?       decimal64
+       +---w number-of-hli-for-chli?           uint64
+  augment /tapi-oam:update-oam-service/tapi-oam:input:
+    +---w carrier-eth-oam-srv-resource
+       +---w client-primary-vlan-id-and-mel* [mel]
+       |  +---w primary-vlan-id
+       |  |  +---w vlan-id?   positive-integer
+       |  +---w mel                available-meg-level
+       +---w primary-vlan-id
+       |  +---w vlan-id?   positive-integer
+       +---w primary-vlan-type?                mef-types:vlan-tag
+       +---w dmm-frame-size?                   uint64
+       +---w dm-frame-size?                    uint64
+       +---w slm-frame-size?                   uint64
+       +---w sl-frame-size?                    uint64
+       +---w selection-offset-for-ifdv?        uint64
+       +---w flr-availability-delta-time?      uint64
+       +---w flr-availability-samples?         uint64
+       +---w flr-availability-threshold?       decimal64
+       +---w number-of-hli-for-chli?           uint64
+  augment /tapi-oam:create-oam-service/tapi-oam:output/tapi-oam:service:
+    +-- carrier-eth-oam-srv-resource
+       +-- client-primary-vlan-id-and-mel* [mel]
+       |  +-- primary-vlan-id
+       |  |  +-- vlan-id?   positive-integer
+       |  +-- mel                available-meg-level
+       +-- primary-vlan-id
+       |  +-- vlan-id?   positive-integer
+       +-- primary-vlan-type?                mef-types:vlan-tag
+       +-- dmm-frame-size?                   uint64
+       +-- dm-frame-size?                    uint64
+       +-- slm-frame-size?                   uint64
+       +-- sl-frame-size?                    uint64
+       +-- selection-offset-for-ifdv?        uint64
+       +-- flr-availability-delta-time?      uint64
+       +-- flr-availability-samples?         uint64
+       +-- flr-availability-threshold?       decimal64
+       +-- number-of-hli-for-chli?           uint64
+  augment /tapi-oam:update-oam-service/tapi-oam:output/tapi-oam:service:
+    +-- carrier-eth-oam-srv-resource
+       +-- client-primary-vlan-id-and-mel* [mel]
+       |  +-- primary-vlan-id
+       |  |  +-- vlan-id?   positive-integer
+       |  +-- mel                available-meg-level
+       +-- primary-vlan-id
+       |  +-- vlan-id?   positive-integer
+       +-- primary-vlan-type?                mef-types:vlan-tag
+       +-- dmm-frame-size?                   uint64
+       +-- dm-frame-size?                    uint64
+       +-- slm-frame-size?                   uint64
+       +-- sl-frame-size?                    uint64
+       +-- selection-offset-for-ifdv?        uint64
+       +-- flr-availability-delta-time?      uint64
+       +-- flr-availability-samples?         uint64
+       +-- flr-availability-threshold?       decimal64
+       +-- number-of-hli-for-chli?           uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-1way-measurement-job:
+    +--rw carrier-eth-pro-act-dual-end-delay-pm-function-resource
+       +--rw selection-offset-for-ifdv?   uint64
+       +--rw dm-frame-size?               uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-2way-measurement-job:
+    +--rw carrier-eth-pro-act-single-end-delay-pm-function-resource
+       +--rw selection-offset-for-ifdv?   uint64
+       +--rw dmm-frame-size?              uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-1way-measurement-job:
+    +--rw carrier-eth-on-dmd-dual-end-delay-pm-function-resource
+       +--rw selection-offset-for-ifdv?   uint64
+       +--rw dm-frame-size?               uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-2way-measurement-job:
+    +--rw carrier-eth-on-dmd-single-end-loss-pm-function-resource
+       +--rw flr-availability-delta-time?   uint64
+  augment /tapi-oam:create-oam-service-end-point/tapi-oam:input:
+    +---w carrier-eth-oam-sep-resource
+       +---w network-interface-monitoring?   boolean
+       +---w enable-ais-insertion?           boolean
+       +---w ais-priority?                   uint64
+       +---w ais-period?                     tapi-eth:oam-period
+  augment /tapi-oam:update-oam-service-end-point/tapi-oam:input:
+    +---w carrier-eth-oam-sep-resource
+       +---w network-interface-monitoring?   boolean
+       +---w enable-ais-insertion?           boolean
+       +---w ais-priority?                   uint64
+       +---w ais-period?                     tapi-eth:oam-period
+  augment /tapi-oam:create-oam-service/tapi-oam:output/tapi-oam:service/tapi-oam:end-point:
+    +-- carrier-eth-oam-sep-resource
+       +--ro network-interface-monitoring?   boolean
+       +-- enable-ais-insertion?           boolean
+       +-- ais-priority?                   uint64
+       +-- ais-period?                     tapi-eth:oam-period
+  augment /tapi-oam:update-oam-service/tapi-oam:output/tapi-oam:service/tapi-oam:end-point:
+    +-- carrier-eth-oam-sep-resource
+       +--ro network-interface-monitoring?   boolean
+       +-- enable-ais-insertion?           boolean
+       +-- ais-priority?                   uint64
+       +-- ais-period?                     tapi-eth:oam-period
+  augment /tapi-oam:create-oam-job/tapi-oam:input:
+    +---w carrier-eth-pro-act-dual-end-delay-pm-function-resource
+       +---w selection-offset-for-ifdv?   uint64
+       +---w dm-frame-size?               uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:input:
+    +---w carrier-eth-pro-act-single-end-delay-pm-function-resource
+       +---w selection-offset-for-ifdv?   uint64
+       +---w dmm-frame-size?              uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:input:
+    +---w carrier-eth-on-dmd-dual-end-delay-pm-function-resource
+       +---w selection-offset-for-ifdv?   uint64
+       +---w dm-frame-size?               uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:input:
+    +---w carrier-eth-on-dmd-single-end-loss-pm-function-resource
+       +---w flr-availability-delta-time?   uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:input:
+    +---w carrier-eth-pro-act-dual-end-delay-pm-function-resource
+       +---w selection-offset-for-ifdv?   uint64
+       +---w dm-frame-size?               uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:input:
+    +---w carrier-eth-pro-act-single-end-delay-pm-function-resource
+       +---w selection-offset-for-ifdv?   uint64
+       +---w dmm-frame-size?              uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:input:
+    +---w carrier-eth-on-dmd-dual-end-delay-pm-function-resource
+       +---w selection-offset-for-ifdv?   uint64
+       +---w dm-frame-size?               uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:input:
+    +---w carrier-eth-on-dmd-single-end-loss-pm-function-resource
+       +---w flr-availability-delta-time?   uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-pro-act-dual-end-delay-pm-function-resource
+       +-- selection-offset-for-ifdv?   uint64
+       +-- dm-frame-size?               uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-pro-act-single-end-delay-pm-function-resource
+       +-- selection-offset-for-ifdv?   uint64
+       +-- dmm-frame-size?              uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-on-dmd-dual-end-delay-pm-function-resource
+       +-- selection-offset-for-ifdv?   uint64
+       +-- dm-frame-size?               uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-on-dmd-single-end-loss-pm-function-resource
+       +-- flr-availability-delta-time?   uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-on-dmd-dual-end-delay-pm-function-resource
+       +-- selection-offset-for-ifdv?   uint64
+       +-- dm-frame-size?               uint64
+  augment /tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-on-dmd-single-end-loss-pm-function-resource
+       +-- flr-availability-delta-time?   uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-pro-act-single-end-delay-pm-function-resource
+       +-- selection-offset-for-ifdv?   uint64
+       +-- dmm-frame-size?              uint64
+  augment /tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job:
+    +-- carrier-eth-pro-act-dual-end-delay-pm-function-resource
+       +-- selection-offset-for-ifdv?   uint64
+       +-- dm-frame-size?               uint64
+  augment /tapi-common:context/tapi-notification:notification-context/tapi-notification:notification/tapi-notification:tca-info:
+    +--ro carrier-eth-oam-bin-thrs-resource
+       +--ro bin-threshold-type?          carrier-ethernet-bin-threshold-types
+       +--ro set-threshold-bin-value
+       |  +--ro k?   mef-types:positive-integer
+       |  +--ro n?   mef-types:positive-integer
+       +--ro clear-threshold-bin-value
+       |  +--ro k?   mef-types:positive-integer
+       |  +--ro n?   mef-types:positive-integer
+       +--ro observed-bin-value
+          +--ro k?   mef-types:positive-integer
+          +--ro n?   mef-types:positive-integer
+  augment /tapi-common:context/tapi-notification:notification-context/tapi-notification:notification/tapi-notification:tca-info:
+    +--ro carrier-eth-oam-counter-thrs-resource
+       +--ro counter-threshold-type?          carrier-ethernet-counter-threshold-types
+       +--ro set-threshold-counter-value?     mef-types:positive-integer
+       +--ro clear-threshold-counter-value?   mef-types:positive-integer
+       +--ro observed-counter-value?          mef-types:positive-integer
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-2way-measurement-job:
+    +--rw carrier-eth-pro-act-single-end-loss-pm-function-resource
+       +--rw flr-availability-delta-time?   uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-2way-measurement-job:
+    +--rw carrier-eth-pro-act-single-end-synt-loss-pm-function-resource
+       +--rw slm-frame-size?                uint64
+       +--rw flr-availability-delta-time?   uint64
+       +--rw flr-availability-samples?      uint64
+       +--rw flr-availability-threshold?    decimal64
+       +--rw number-of-hli-for-chli?        uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-2way-measurement-job:
+    +--rw carrier-eth-on-dmd-single-end-delay-pm-function-resource
+       +--rw selection-offset-for-ifdv?   uint64
+       +--rw dmm-frame-size?              uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-2way-measurement-job:
+    +--rw carrier-eth-on-dmd-single-end-synt-loss-pm-function-resource
+       +--rw slm-frame-size?                uint64
+       +--rw flr-availability-delta-time?   uint64
+       +--rw flr-availability-samples?      uint64
+       +--rw flr-availability-threshold?    decimal64
+       +--rw number-of-hli-for-chli?        uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-1way-measurement-job:
+    +--rw carrier-eth-pro-act-dual-end-synt-loss-pm-function-resource
+       +--rw sl-frame-size?                 uint64
+       +--rw flr-availability-delta-time?   uint64
+       +--rw flr-availability-samples?      uint64
+       +--rw flr-availability-threshold?    decimal64
+       +--rw number-of-hli-for-chli?        uint64
+  augment /tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-1way-measurement-job:
+    +--rw carrier-eth-on-dmd-dual-end-synt-loss-pm-function-resource
+       +--rw sl-frame-size?                 uint64
+       +--rw flr-availability-delta-time?   uint64
+       +--rw flr-availability-samples?      uint64
+       +--rw flr-availability-threshold?    decimal64
+       +--rw number-of-hli-for-chli?        uint64

@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenInterfaceModel_Profile="http:///schemas/OpenInterfaceModel_Profile/_3NKYsD78EeiIisB6uOvKFA/8" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenInterfaceModel_Profile/_3NKYsD78EeiIisB6uOvKFA/8 ../TAPI/UML/UmlProfiles/OpenInterfaceModelProfile/OpenInterfaceModel_Profile.profile.uml#_3NPRMD78EeiIisB6uOvKFA http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 /MEF-Common-Model/TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
+  <uml:Model xmi:id="_Hpts8MviEei689z5AJy22A" name="NRM_L1">
+    <packagedElement xmi:type="uml:Package" xmi:id="_eNeYUMvjEei689z5AJy22A" name="ObjectClasses">
+      <packagedElement xmi:type="uml:Class" xmi:id="_0L3-wMviEei689z5AJy22A" name="L1ConnectivityResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_pLhzQNIjEeiOXPERXrWTXw" annotatedElement="_0L3-wMviEei689z5AJy22A">
+          <body>MEF 63: A Layer 1 Service is connectivity service which delivers Layer 1 Characteristic Information that is specified using Service Attributes as defined in a MEF Specification.&#xD;
+A fundamental aspect of a Subscriber L1 Service is the Subscriber L1VC, L1 Virtual Connection: An association of two Layer 1 Virtual Connection End Points that limits the transport of Layer 1 Characteristic Information between those Layer 1 Virtual Connection End Points.&#xD;
+A Subscriber L1 Service has the following basic characteristics:&#xD;
+1) Topology: Only point-to-point.&#xD;
+2) UNI: Both UNIs have the same rate. The physical layer at both UNIs is optical.&#xD;
+3) Rate: Only full port speed of the UNIs.&#xD;
+4) Client protocol: Ethernet, Fibre Channel, SONET, SDH.&#xD;
+5) Transparency: The client protocol data (L1CI) is transported bit identical from the ingress UNI to egress UNI at the same frequency (aka timing transparent).&#xD;
+6) Performance metrics (SLS)&#xD;
+An instance of a Subscriber L1 Service has:&#xD;
+1) The same client protocol at both UNIs (i.e., one of: Ethernet, Fibre Channel, SONET, SDH).&#xD;
+2) The physical ports at both UNIs have the same rate and same coding function (e.g., 8B/10B).&#xD;
+3) The physical port at each UNI may have a different optical interface function (e.g., long reach or extended reach).&#xD;
+4) A single service instance per UNI (i.e., no service multiplexing).</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5tGVMNDQEeiMlpwpEYedFA" name="layer1VcId">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MYmLANDREeiMlpwpEYedFA" annotatedElement="_5tGVMNDQEeiMlpwpEYedFA">
+            <body>MEF 63:&#xD;
+[R17] The Subscriber L1VC ID MUST be unique across all the Service Provider’s Subscriber L1VCs.&#xD;
+[R18] The Subscriber L1VC ID MUST contain no more than 45 characters. &#xD;
+[R19] The Subscriber L1VC ID MUST be a non-null RFC 2579 DisplayString but not contain the characters 0x00 through 0x1f.&#xD;
+</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0nx3oMviEei689z5AJy22A" name="L1ConnectivityEndPointResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_FXUMMNInEeiOXPERXrWTXw" annotatedElement="_0nx3oMviEei689z5AJy22A">
+          <body>MEF 63: Subscriber Layer 1 Virtual Connection End Point represents the logical attachment of a Subscriber Layer 1 Virtual Connection to a L1 UNI.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_fR3zkNDQEeiMlpwpEYedFA" name="layer1EndPointId">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_shyxgNDQEeiMlpwpEYedFA" annotatedElement="_fR3zkNDQEeiMlpwpEYedFA">
+            <body>MEF 63:&#xD;
+[R36] The Subscriber L1VC End Point ID MUST be unique across all the Service Provider’s Subscriber L1VC End Points. &#xD;
+[R37] The Subscriber L1VC End Point ID MUST contain no more than 45 charac-ters.  &#xD;
+[R38] The Subscriber L1VC End Point ID MUST be a non-null RFC 2579 DisplayString but not contain the characters 0x00 through 0x1f. &#xD;
+</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_09dMsMviEei689z5AJy22A" name="L1UniNResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_A8fxQNIoEeiOXPERXrWTXw" annotatedElement="_09dMsMviEei689z5AJy22A">
+          <body>MEF 63: Layer 1 User Network Interface.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_54MuwNDMEeiMlpwpEYedFA" name="layer1CodingFunction" type="_sfkykM1wEein-9bKLx5r3g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_QYpc4NDNEeiMlpwpEYedFA" name="layer1OpticalInterfaceFunction" type="_fulKENCWEeiQlow2bYuzuw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-bWpgNDPEeiMlpwpEYedFA" name="layer1UniId">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_KqZZQNDQEeiMlpwpEYedFA" annotatedElement="_-bWpgNDPEeiMlpwpEYedFA">
+            <body>MEF 63:&#xD;
+[R3] The UNI ID MUST be unique among all the Service Provider’s UNIs.&#xD;
+[R4] The UNI ID MUST contain no more than 45 characters. &#xD;
+[R5] The UNI ID MUST be a non-null RFC 2579 DisplayString but not contain the characters 0x00 through 0x1f.&#xD;
+</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QW0xkMvjEei689z5AJy22A" name="L1InniNResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_vjWeANDQEeiMlpwpEYedFA" name="layer1InniId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_auOB4NIzEeiOXPERXrWTXw" name="Sls1wUnavailableSecondPerformanceMetric">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_auOB4dIzEeiOXPERXrWTXw" annotatedElement="_auOB4NIzEeiOXPERXrWTXw">
+          <body>MEF 63: An Unavailable Second (UAS) is defined as a second during Unavailable Time (UAT).&#xD;
+[R33] The SLS MUST define the One-way Unavailable Second Performance Metric Objective as met over T-l for a PM entry if and only if measured Unavailable Seconds PM &lt;= unavailableSecondObjective</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auOB4tIzEeiOXPERXrWTXw" name="unavailableSecondObjective">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auOB49IzEeiOXPERXrWTXw" annotatedElement="_auOB4tIzEeiOXPERXrWTXw">
+            <body>MEF 63: The value of the One-way Unavailable Second Performance Metric, integer >=0</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auOB5NIzEeiOXPERXrWTXw" name="orderedPair">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auOB5dIzEeiOXPERXrWTXw" annotatedElement="_auOB5NIzEeiOXPERXrWTXw">
+            <body>MEF 63: Ordered pair of Subscriber L1VC EPs.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_MIWTIGh5EeWZEqTYAF8eqA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auOB5tIzEeiOXPERXrWTXw" value="2"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auOB59IzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_auUIgNIzEeiOXPERXrWTXw" name="L1ServiceLevelSpecification">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_auUIgdIzEeiOXPERXrWTXw" annotatedElement="_auUIgNIzEeiOXPERXrWTXw">
+          <body>The Subscriber L1VC Service Level Specification (SLS) Service Attribute is the technical specification of aspects of the service performance agreed to by the Service Provider and the Sub-scriber. For any given SLS, a given Performance Metric may or may not be specified.&#xD;
+The value of the Subscriber L1VC SLS Service Attribute is either None or a 3-tuple of the form (t-s, T, PM) where:&#xD;
+1) t-s is a time that represents the date and time for the start of the SLS.&#xD;
+2) T is a duration that is used in conjunction with t-s to specify a contiguous sequence of time intervals for determining when performance objectives are met. The units for T are not constrained. For example, a calendar month is an allowable value. Since the duration of a month varies it could be specified as, e.g. from midnight on the 10th of one month up to but not including midnight on the 10th of the following month. &#xD;
+3) PM is a list where each element in the list consists of a Performance Metric Name, a list of parameter values specific to the definition of the Performance Metric, and Performance Metric Objective.&#xD;
+</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIgtIzEeiOXPERXrWTXw" name="startTime">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auUIg9IzEeiOXPERXrWTXw" annotatedElement="_auUIgtIzEeiOXPERXrWTXw">
+            <body>MEF 63:  t-start is a time that represents the date and time for the start of the SLS.&#xD;
+[R22] t-start MUST be specified to the nearest second.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="../TAPI/UML/TapiCommon.uml#_6iCS8O-fEeWLlrwIF3w0vA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIhNIzEeiOXPERXrWTXw" name="duration">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auUIhdIzEeiOXPERXrWTXw" annotatedElement="_auUIhNIzEeiOXPERXrWTXw">
+            <body>MEF 63: T is a duration that is used in conjunction with ts to specify a contiguous sequence of time intervals for determining when performance objectives are met. The units for T are not constrained.&#xD;
+For example, a calendar month is an allowable value. Since the duration of a month varies it could be specified as, e.g. from midnight on the 10th of one month up to but not including midnight on the 10th of the following month. &#xD;
+[R23] T MUST contain an integer number of seconds.&#xD;
+</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="../TAPI/UML/TapiCommon.uml#_Ay2V0F6UEeitO-Stqhyn1g"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIhtIzEeiOXPERXrWTXw" name="sls1wdelayperformancemetric " type="_auXy4NIzEeiOXPERXrWTXw" aggregation="composite" association="_aua2MNIzEeiOXPERXrWTXw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auUIh9IzEeiOXPERXrWTXw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auUIiNIzEeiOXPERXrWTXw" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIidIzEeiOXPERXrWTXw" name="sls1werroredsecondperformancemetric " type="_aubdQNIzEeiOXPERXrWTXw" aggregation="composite" association="_auXL0NIzEeiOXPERXrWTXw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auUIitIzEeiOXPERXrWTXw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auUIi9IzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIjNIzEeiOXPERXrWTXw" name="sls1wseverelyerroredsecondperformancemetric " type="_auZoENIzEeiOXPERXrWTXw" aggregation="composite" association="_auSTUNIzEeiOXPERXrWTXw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auUIjdIzEeiOXPERXrWTXw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auUIjtIzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIj9IzEeiOXPERXrWTXw" name="sls1wunavailablesecondperformancemetric" type="_auOB4NIzEeiOXPERXrWTXw" aggregation="composite" association="_aucrYNIzEeiOXPERXrWTXw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auUIkNIzEeiOXPERXrWTXw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auUIkdIzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auUIktIzEeiOXPERXrWTXw" name="sls1wavailabilityperformancemetric" type="_auRFMNIzEeiOXPERXrWTXw" aggregation="composite" association="_audScNIzEeiOXPERXrWTXw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auUIk9IzEeiOXPERXrWTXw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auUIlNIzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_auXy4NIzEeiOXPERXrWTXw" name="Sls1wDelayPerformanceMetric">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_auXy4dIzEeiOXPERXrWTXw" annotatedElement="_auXy4NIzEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+The One-way Delay for the L1CI that ingresses at UNI 1 and that egresses at UNI 2 is defined as the time elapsed from the reception of the first bit of the ingress L1CI at UNI 1 until the reception of that first bit of the corresponding L1CI egressing at UNI 2.&#xD;
+[R27] The SLS MUST define the One-way Delay Performance Metric Objective as met during Available Time over T-l for a PM entry if and only if measured delay D &lt;= delayObjective.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auXy4tIzEeiOXPERXrWTXw" name="percentile">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auXy49IzEeiOXPERXrWTXw" annotatedElement="_auXy4tIzEeiOXPERXrWTXw">
+            <body>MEF 63: the Pd-percentile allows the One-way Delay Performance Metric Objective to be met although different delays may occur following a protection switch.&#xD;
+To place an upper bound on any longer delays a second One-way Delay Performance Metric Objective for a higher Pd_percentile value (e.g., 100th) may be specified.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auXy5NIzEeiOXPERXrWTXw" name="delayObjective">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auXy5dIzEeiOXPERXrWTXw" annotatedElement="_auXy5NIzEeiOXPERXrWTXw">
+            <body>MEF 63: The value of the One-way Delay Performance Metric, time units>0</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="../TAPI/UML/TapiCommon.uml#_Ay2V0F6UEeitO-Stqhyn1g"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auXy5tIzEeiOXPERXrWTXw" name="orderedPair">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auXy59IzEeiOXPERXrWTXw" annotatedElement="_auXy5tIzEeiOXPERXrWTXw">
+            <body>MEF 63: Ordered pair of Subscriber L1VC EPs.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_MIWTIGh5EeWZEqTYAF8eqA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auXy6NIzEeiOXPERXrWTXw" value="2"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auXy6dIzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_auRFMNIzEeiOXPERXrWTXw" name="Sls1wAvailabilityPerformanceMetric">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_auRFMdIzEeiOXPERXrWTXw" annotatedElement="_auRFMNIzEeiOXPERXrWTXw">
+          <body>MEF 63: Availability is defined as the percentage of Available Time over a given interval T-l which does not include Maintenance Interval Time (MIT).&#xD;
+[R35] The SLS MUST define the One-way Availability Performance Metric Objective as met over T-l for a PM entry if and only if measured Availability PM >= availabilityObjective</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auRFMtIzEeiOXPERXrWTXw" name="availabilityObjective">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auRFM9IzEeiOXPERXrWTXw" annotatedElement="_auRFMtIzEeiOXPERXrWTXw">
+            <body>MEF 63: The value of the One-way Availability Performance Metric, percentage > 0</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auRFNNIzEeiOXPERXrWTXw" name="orderedPair">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auRFNdIzEeiOXPERXrWTXw" annotatedElement="_auRFNNIzEeiOXPERXrWTXw">
+            <body>MEF 63: Ordered pair of Subscriber L1VC EPs.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_MIWTIGh5EeWZEqTYAF8eqA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auRFNtIzEeiOXPERXrWTXw" value="2"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auRFN9IzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_auZoENIzEeiOXPERXrWTXw" name="Sls1wSeverelyErroredSecondPerformanceMetric">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_auZoEdIzEeiOXPERXrWTXw" annotatedElement="_auZoENIzEeiOXPERXrWTXw">
+          <body>MEF 63: A Severely Errored Second (SES) is defined as: &#xD;
+- One second sigma-k which contains >= 15% errored L1CI , or &#xD;
+- One second sigma-k which contains a defect (e.g., loss of signal), where a defect on ingress to (client protocol specific), or within the Service Provider’s network (transport technology specific) may result in the insertion of a replacement signal (transport technology specific). Note that if a replacement signal is not inserted, a defect (such as a loss of signal) may propagate to the egress UNI. &#xD;
+Note that a SES is not counted as a ES. &#xD;
+[R31] The SLS MUST define the One-way Severely Errored Second Performance Metric Objective as met during Available Time over T-l for a PM entry if and only if measured Severely Errored Second PM &lt;= severelyErroredSecondObjective.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auZoEtIzEeiOXPERXrWTXw" name="severelyErroredSecondObjective">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auZoE9IzEeiOXPERXrWTXw" annotatedElement="_auZoEtIzEeiOXPERXrWTXw">
+            <body>MEF 63: The value of the One-way Severely Errored Second Performance Metric, integer >=0</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_auZoFNIzEeiOXPERXrWTXw" name="orderedPair">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_auZoFdIzEeiOXPERXrWTXw" annotatedElement="_auZoFNIzEeiOXPERXrWTXw">
+            <body>MEF 63: Ordered pair of Subscriber L1VC EPs.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_MIWTIGh5EeWZEqTYAF8eqA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_auZoFtIzEeiOXPERXrWTXw" value="2"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_auZoF9IzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aubdQNIzEeiOXPERXrWTXw" name="Sls1wErroredSecondPerformanceMetric">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_aubdQdIzEeiOXPERXrWTXw" annotatedElement="_aubdQNIzEeiOXPERXrWTXw">
+          <body>MEF 63: An errored second (ES) is defined as one second sigma-k in Available Time with at least one errored block (EB) and is not a SES.&#xD;
+An EB is defined as a block in which one or more bits are in error.  In this specification the L1CI corresponds to a block.&#xD;
+[R29] The SLS MUST define the One-way Errored Second Performance Metric Objective as met during Available Time over T-l for a PM entry if and only if measured Errored Second PM &lt;= erroredSecondObjective.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_aubdQtIzEeiOXPERXrWTXw" name="erroredSecondObjective">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_aubdQ9IzEeiOXPERXrWTXw" annotatedElement="_aubdQtIzEeiOXPERXrWTXw">
+            <body>MEF 63: The value of the One-way Errored Second Performance Metric, integer >=0</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_aubdRNIzEeiOXPERXrWTXw" name="orderedPair">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_aubdRdIzEeiOXPERXrWTXw" annotatedElement="_aubdRNIzEeiOXPERXrWTXw">
+            <body>MEF 63: Ordered pair of Subscriber L1VC EPs.</body>
+          </ownedComment>
+          <type xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_MIWTIGh5EeWZEqTYAF8eqA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aubdRtIzEeiOXPERXrWTXw" value="2"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aubdR9IzEeiOXPERXrWTXw" value="2"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_jCBscMvjEei689z5AJy22A" name="Diagrams">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_jz3fcNDNEeiMlpwpEYedFA">
+        <body>MEF NRM L1 Classes</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_x_q20NDNEeiMlpwpEYedFA">
+        <body>ONF TAPI Connectivity Classes</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_YQdRMNDOEeiMlpwpEYedFA">
+        <body>ONF TAPI Topology Classes</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_mKmm8MvjEei689z5AJy22A" name="TypeDefinitions">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_sfkykM1wEein-9bKLx5r3g" name="L1CodingFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_687mMNCgEeiMlpwpEYedFA" annotatedElement="_sfkykM1wEein-9bKLx5r3g">
+          <body>MEF 63 Coding Function &lt;c>, functionality which encodes bits for transmission and the corresponding decode upon reception. </body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pZfV8M1xEein-9bKLx5r3g" name="1000BASE-X">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pZfV8c1xEein-9bKLx5r3g" annotatedElement="_pZfV8M1xEein-9bKLx5r3g">
+            <body>IEEE Std 802.3: PCS clause 36 coding function</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zpTeANCUEeiQlow2bYuzuw" name="10GBASE-W">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_YLb9MNCgEeiMlpwpEYedFA" annotatedElement="_zpTeANCUEeiQlow2bYuzuw">
+            <body>IEEE Std 802.3: PCS clause 49 and WIS clause 50 coding function&#xD;
+(WAN PHY)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2rHpMNCUEeiQlow2bYuzuw" name="10GBASE-R">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eWvo4NCgEeiMlpwpEYedFA" annotatedElement="_2rHpMNCUEeiQlow2bYuzuw">
+            <body>IEEE Std 802.3: PCS clause 49 coding function&#xD;
+(LAN PHY)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7_lzgNCUEeiQlow2bYuzuw" name="40GBASE-R">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fhXB4NCgEeiMlpwpEYedFA" annotatedElement="_7_lzgNCUEeiQlow2bYuzuw">
+            <body>IEEE Std 802.3: PCS clause 82 coding function</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-xn2QNCUEeiQlow2bYuzuw" name="100GBASE-R">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gm6UsNCgEeiMlpwpEYedFA" annotatedElement="_-xn2QNCUEeiQlow2bYuzuw">
+            <body>IEEE Std 802.3: PCS clause 82 coding function</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O2P6ANChEeiMlpwpEYedFA" name="FC-100">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_O2P6AdChEeiMlpwpEYedFA" annotatedElement="_O2P6ANChEeiMlpwpEYedFA">
+            <body>ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(1.0625 Gb/s)&#xD;
+</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VNo54NChEeiMlpwpEYedFA" name="FC-200">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Zj_PENChEeiMlpwpEYedFA" annotatedElement="_VNo54NChEeiMlpwpEYedFA">
+            <body>ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(2.125 Gb/s)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_cfR7gNChEeiMlpwpEYedFA" name="FC-400">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cfR7gdChEeiMlpwpEYedFA" annotatedElement="_cfR7gNChEeiMlpwpEYedFA">
+            <body>ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(4.250 Gb/s)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_e6ahMNChEeiMlpwpEYedFA" name="FC-800">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_e6ahMdChEeiMlpwpEYedFA" annotatedElement="_e6ahMNChEeiMlpwpEYedFA">
+            <body>ANSI INCITS 424-2007[R2012], February 2007: FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(8.500 Gb/s)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_lnuGsNChEeiMlpwpEYedFA" name="FC-1200">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lnuGsdChEeiMlpwpEYedFA" annotatedElement="_lnuGsNChEeiMlpwpEYedFA">
+            <body>MEF 63:&#xD;
+ANSI INCITS 364-2003, November 2003: FC-10GFC clause 13 FC-1 coding function&#xD;
+(10.51875 Gb/s)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uqRsUNChEeiMlpwpEYedFA" name="FC-1600">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uqRsUdChEeiMlpwpEYedFA" annotatedElement="_uqRsUNChEeiMlpwpEYedFA">
+            <body>ANSI INCITS 470-2011, December 2011: FC-FS-3 clause 5 FC-1 64B/66B coding function&#xD;
+(14.025 Gb/s)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zZzWgNChEeiMlpwpEYedFA" name="FC-3200">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zZzWgdChEeiMlpwpEYedFA" annotatedElement="_zZzWgNChEeiMlpwpEYedFA">
+            <body>ANSI INCITS 488-2016, December 2016: FC-FS-4 clause 5 FC-1 64B/66B coding function plus 256B/257B transcoding and FEC encoding&#xD;
+(28.05 Gb/s)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_smxOkNDEEeiMlpwpEYedFA" name="STM-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_smxOkdDEEeiMlpwpEYedFA" annotatedElement="_smxOkNDEEeiMlpwpEYedFA">
+            <body>ITU-T G.707/Y.1322 January 2007: framer, N=1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2C3VkNDEEeiMlpwpEYedFA" name="STM-4">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_2C3VkdDEEeiMlpwpEYedFA" annotatedElement="_2C3VkNDEEeiMlpwpEYedFA">
+            <body>ITU-T G.707/Y.1322 January 2007: framer, N=4</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5QtKkNDEEeiMlpwpEYedFA" name="STM-16">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5QtKkdDEEeiMlpwpEYedFA" annotatedElement="_5QtKkNDEEeiMlpwpEYedFA">
+            <body>ITU-T G.707/Y.1322 January 2007: framer, N=16</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9b1uQNDEEeiMlpwpEYedFA" name="STM-64">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9b1uQdDEEeiMlpwpEYedFA" annotatedElement="_9b1uQNDEEeiMlpwpEYedFA">
+            <body>ITU-T G.707/Y.1322 January 2007: framer, N=64</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BvSgcNDFEeiMlpwpEYedFA" name="STM-256">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BvSgcdDFEeiMlpwpEYedFA" annotatedElement="_BvSgcNDFEeiMlpwpEYedFA">
+            <body>ITU-T G.707/Y.1322 January 2007: framer, N=256</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VLG_8NDFEeiMlpwpEYedFA" name="OC-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VLG_8dDFEeiMlpwpEYedFA" annotatedElement="_VLG_8NDFEeiMlpwpEYedFA">
+            <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XoV3YNDFEeiMlpwpEYedFA" name="OC-12">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XoV3YdDFEeiMlpwpEYedFA" annotatedElement="_XoV3YNDFEeiMlpwpEYedFA">
+            <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=12</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aY1CANDFEeiMlpwpEYedFA" name="OC-48">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_aY1CAdDFEeiMlpwpEYedFA" annotatedElement="_aY1CANDFEeiMlpwpEYedFA">
+            <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=48</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_dpN0sNDFEeiMlpwpEYedFA" name="OC-192">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dpN0sdDFEeiMlpwpEYedFA" annotatedElement="_dpN0sNDFEeiMlpwpEYedFA">
+            <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=192</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mmbAQNDFEeiMlpwpEYedFA" name="OC-768">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mmbAQdDFEeiMlpwpEYedFA" annotatedElement="_mmbAQNDFEeiMlpwpEYedFA">
+            <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=768</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_fulKENCWEeiQlow2bYuzuw" name="L1OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_B50DMNIqEeiOXPERXrWTXw" annotatedElement="_fulKENCWEeiQlow2bYuzuw">
+          <body>MEF 63 Optical Interface Function &lt;o>, functionality which converts encoded electrical bits into an optical signal(s) and the corresponding conversion into electrical format upon reception.</body>
+        </ownedComment>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_o4RScNCWEeiQlow2bYuzuw" name="Eth1000BaseXOpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9cfC4NGSEeiOXPERXrWTXw" annotatedElement="_o4RScNCWEeiQlow2bYuzuw">
+          <body>MEF 63:&#xD;
+IEEE Std 802.3: 1000BASE-X PCS clause 36 coding function</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vV_GgNDHEeiMlpwpEYedFA" name="SX-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vWAUoNDHEeiMlpwpEYedFA" annotatedElement="_vV_GgNDHEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 38</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2ceBANDHEeiMlpwpEYedFA" name="LX-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_60ntANDHEeiMlpwpEYedFA" annotatedElement="_2ceBANDHEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 38</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__QL5YNDHEeiMlpwpEYedFA" name="LX10-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__QL5YdDHEeiMlpwpEYedFA" annotatedElement="__QL5YNDHEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 59</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CPBpENDIEeiMlpwpEYedFA" name="BX10-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CPBpEdDIEeiMlpwpEYedFA" annotatedElement="_CPBpENDIEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 59</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_dVJh0NDIEeiMlpwpEYedFA" name="Eth10GBaseWOpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_FgwbUNGTEeiOXPERXrWTXw" annotatedElement="_dVJh0NDIEeiMlpwpEYedFA">
+          <body>MEF 63:&#xD;
+IEEE Std 802.3: 10GBASE-W (WAN PHY) PCS clause 49 and WIS clause 50 coding function&#xD;
+</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ktH08NDIEeiMlpwpEYedFA" name="LW-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rkkN4NDIEeiMlpwpEYedFA" annotatedElement="_ktH08NDIEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 52</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vGutENDIEeiMlpwpEYedFA" name="EW-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vGutEdDIEeiMlpwpEYedFA" annotatedElement="_vGutENDIEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 52</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_5mIEINDIEeiMlpwpEYedFA" name="Eth10GBaseROpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_GaGeINGTEeiOXPERXrWTXw" annotatedElement="_5mIEINDIEeiMlpwpEYedFA">
+          <body>MEF 63:&#xD;
+IEEE Std 802.3: 10GBASE-R (LAN PHY) PCS clause 49 coding function&#xD;
+</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CPZAANDJEeiMlpwpEYedFA" name="LR-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CPZAAdDJEeiMlpwpEYedFA" annotatedElement="_CPZAANDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 52</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EV1vINDJEeiMlpwpEYedFA" name="ER-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EV1vIdDJEeiMlpwpEYedFA" annotatedElement="_EV1vINDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 52</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Hcxq4NDJEeiMlpwpEYedFA" name="Eth40GBaseROpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_HM-FgNGTEeiOXPERXrWTXw" annotatedElement="_Hcxq4NDJEeiMlpwpEYedFA">
+          <body>MEF 63:&#xD;
+IEEE Std 802.3: 40GBASE-R PCS clause 82 coding function&#xD;
+</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_S0ETQNDJEeiMlpwpEYedFA" name="LR4-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_S0ETQdDJEeiMlpwpEYedFA" annotatedElement="_S0ETQNDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 87</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VSNwsNDJEeiMlpwpEYedFA" name="ER4-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VSNwsdDJEeiMlpwpEYedFA" annotatedElement="_VSNwsNDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 87</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZQPFcNDJEeiMlpwpEYedFA" name="FR-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZQPFcdDJEeiMlpwpEYedFA" annotatedElement="_ZQPFcNDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 89</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_d3Zd0NDJEeiMlpwpEYedFA" name="Eth100GBaseROpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_H8_NMNGTEeiOXPERXrWTXw" annotatedElement="_d3Zd0NDJEeiMlpwpEYedFA">
+          <body>MEF 63:&#xD;
+IEEE Std 802.3: 100GBASE-R PCS clause 82 coding function&#xD;
+</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_oh2OUNDJEeiMlpwpEYedFA" name="LR4-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_oh2OUdDJEeiMlpwpEYedFA" annotatedElement="_oh2OUNDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 88</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_q7MrUNDJEeiMlpwpEYedFA" name="ER4-PMD">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_q7MrUdDJEeiMlpwpEYedFA" annotatedElement="_q7MrUNDJEeiMlpwpEYedFA">
+            <body>IEEE Std 802.3: clause 88</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Cbf3YNGPEeiOXPERXrWTXw" name="Fc100OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_1sqQcNGSEeiOXPERXrWTXw" annotatedElement="_Cbf3YNGPEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 424-2007[R2012], February 2007: FC-100 FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(1.0625 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-q9doNGREeiOXPERXrWTXw" name="FC-PI-2-100-SM-LC-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-q9dodGREeiOXPERXrWTXw" annotatedElement="_-q9doNGREeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 404-2006, August 2006: FC-PI-2 clause 6.3 FC-0 100-SM-LC-L</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_AjfFgNGSEeiOXPERXrWTXw" name="Fc200OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_o4XpINGTEeiOXPERXrWTXw" annotatedElement="_AjfFgNGSEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 424-2007[R2012], February 2007: FC-200 FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(2.125 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_G7z5gNGSEeiOXPERXrWTXw" name="FC-PI-2-200-SM-LC-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_G7z5gdGSEeiOXPERXrWTXw" annotatedElement="_G7z5gNGSEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 404-2006, August 2006: FC-PI-2 clause 6.3 FC-0 200-SM-LC-L</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_MxMYgNGSEeiOXPERXrWTXw" name="Fc400OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0OkFUNGTEeiOXPERXrWTXw" annotatedElement="_MxMYgNGSEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 424-2007[R2012], February 2007: FC-400 FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(4.250 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ga90cNGSEeiOXPERXrWTXw" name="FC-PI-5-400-SM-LC-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ga90cdGSEeiOXPERXrWTXw" annotatedElement="_ga90cNGSEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 400-SM-LC-L</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6rlrwNGWEeiOXPERXrWTXw" name="FC-PI-5-400-SM-LC-M">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6rlrwdGWEeiOXPERXrWTXw" annotatedElement="_6rlrwNGWEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 400-SM-LC-M</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_1Uz7sNGTEeiOXPERXrWTXw" name="Fc800OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9GRs4NGTEeiOXPERXrWTXw" annotatedElement="_1Uz7sNGTEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 424-2007[R2012], February 2007: FC-800 FC-FS-2 clause 5 FC-1 8B/10B coding function&#xD;
+(8.500 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HR66INGXEeiOXPERXrWTXw" name="FC-PI-5-800-SM-LC-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HR66IdGXEeiOXPERXrWTXw" annotatedElement="_HR66INGXEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 800-SM-LC-L</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Os3BsNGXEeiOXPERXrWTXw" name="FC-PI-5-800-SM-LC-I">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Os3BsdGXEeiOXPERXrWTXw" annotatedElement="_Os3BsNGXEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 800-SM-LC-I</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_9zuBsNGTEeiOXPERXrWTXw" name="Fc1200OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_LDMTsNGUEeiOXPERXrWTXw" annotatedElement="_9zuBsNGTEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 364-2003, November 2003: FC-1200 (10.51875 Gb/s) FC-10GFC clause 13 FC-1 coding function&#xD;
+(10.51875 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jihB8NGXEeiOXPERXrWTXw" name="FC-10GFC-1200-SM-LL-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jihB8dGXEeiOXPERXrWTXw" annotatedElement="_jihB8NGXEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 364-2003, November 2003: FC-10GFC clause 6.4 FC-0: 1200-SM-LL-L</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_owTc0NGUEeiOXPERXrWTXw" name="Fc1600OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_tnqNUNGUEeiOXPERXrWTXw" annotatedElement="_owTc0NGUEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 470-2011, December 2011: FC-FS-3 clause 5 FC-1 64B/66B coding function&#xD;
+(14.025 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_04xjINGXEeiOXPERXrWTXw" name="FC-PI-5-1600-SM-LC-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_04xjIdGXEeiOXPERXrWTXw" annotatedElement="_04xjINGXEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 1600-SM-LC-L</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_8kbAMNGXEeiOXPERXrWTXw" name="FC-PI-5-1600-SM-LZ-I">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8kbAMdGXEeiOXPERXrWTXw" annotatedElement="_8kbAMNGXEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 479-2011, November 2011: FC-PI-5 clause 6.3 FC-0: 1600-SM-LZ-I</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_vHAgMNGUEeiOXPERXrWTXw" name="Fc3200OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_28pmwNGUEeiOXPERXrWTXw" annotatedElement="_vHAgMNGUEeiOXPERXrWTXw">
+          <body>MEF 63:&#xD;
+ANSI INCITS 488-2016, December 2016: FC-FS-4 clause 5 FC-1 64B/66B coding function plus 256B/257B transcoding and FEC encoding&#xD;
+(28.05 Gb/s)</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Rl-ucNGYEeiOXPERXrWTXw" name="FC-PI-6-3200-SM-LC-L">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Rl-ucdGYEeiOXPERXrWTXw" annotatedElement="_Rl-ucNGYEeiOXPERXrWTXw">
+            <body>MEF 63:&#xD;
+ANSI INCITS 512-2015, January 2015: FC-PI-6 clause 5.3 FC-0: 3200-SM-LC-L</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_pOmwINGZEeiOXPERXrWTXw" name="Stm1OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PfJS4NGaEeiOXPERXrWTXw" annotatedElement="_pOmwINGZEeiOXPERXrWTXw">
+          <body>ITU-T G.707/Y.1322, January 2007: framer, N=1</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="__BxsENGaEeiOXPERXrWTXw" name="I-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__BxsEdGaEeiOXPERXrWTXw" annotatedElement="__BxsENGaEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CEi5gNGbEeiOXPERXrWTXw" name="S-1.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CEi5gdGbEeiOXPERXrWTXw" annotatedElement="_CEi5gNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-1.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DWd0YNGbEeiOXPERXrWTXw" name="S-1.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DWd0YdGbEeiOXPERXrWTXw" annotatedElement="_DWd0YNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-1.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EnBdUNGbEeiOXPERXrWTXw" name="L-1.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EnBdUdGbEeiOXPERXrWTXw" annotatedElement="_EnBdUNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-1.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_F6VfUNGbEeiOXPERXrWTXw" name="L-1.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_F6VfUdGbEeiOXPERXrWTXw" annotatedElement="_F6VfUNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-1.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_IYF7MNGbEeiOXPERXrWTXw" name="L-1.3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IYF7MdGbEeiOXPERXrWTXw" annotatedElement="_IYF7MNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-1.3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_qIXCoNGZEeiOXPERXrWTXw" name="Stm4OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_R5fOYNGaEeiOXPERXrWTXw" annotatedElement="_qIXCoNGZEeiOXPERXrWTXw">
+          <body>ITU-T G.707/Y.1322, January 2007: framer, N=4</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qG5YINGbEeiOXPERXrWTXw" name="I-4">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qG5YIdGbEeiOXPERXrWTXw" annotatedElement="_qG5YINGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-4</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rftlMNGbEeiOXPERXrWTXw" name="S-4.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rftlMdGbEeiOXPERXrWTXw" annotatedElement="_rftlMNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-4.1 </body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_su4uENGbEeiOXPERXrWTXw" name="S-4.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_su4uEdGbEeiOXPERXrWTXw" annotatedElement="_su4uENGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-4.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_t-fUwNGbEeiOXPERXrWTXw" name="L-4.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_t-fUwdGbEeiOXPERXrWTXw" annotatedElement="_t-fUwNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-4.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vcVLwNGbEeiOXPERXrWTXw" name="L-4.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vcVLwdGbEeiOXPERXrWTXw" annotatedElement="_vcVLwNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-4.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yW6GgNGbEeiOXPERXrWTXw" name="L-4.3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_yW6GgdGbEeiOXPERXrWTXw" annotatedElement="_yW6GgNGbEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-4.3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_qq02gNGZEeiOXPERXrWTXw" name="Stm16OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_T6XhANGaEeiOXPERXrWTXw" annotatedElement="_qq02gNGZEeiOXPERXrWTXw">
+          <body>ITU-T G.707/Y.1322, January 2007: framer, N=16</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KvRq0NHkEeiOXPERXrWTXw" name="I-16">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_KvRq0dHkEeiOXPERXrWTXw" annotatedElement="_KvRq0NHkEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-16</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MKPM8NHkEeiOXPERXrWTXw" name="S-16.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_MKPM8dHkEeiOXPERXrWTXw" annotatedElement="_MKPM8NHkEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-16.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_NgJP8NHkEeiOXPERXrWTXw" name="S-16.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_NgJP8dHkEeiOXPERXrWTXw" annotatedElement="_NgJP8NHkEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-16.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OrJDcNHkEeiOXPERXrWTXw" name="L-16.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_OrJDcdHkEeiOXPERXrWTXw" annotatedElement="_OrJDcNHkEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-16.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XfkGcNHkEeiOXPERXrWTXw" name="L-16.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XfkGcdHkEeiOXPERXrWTXw" annotatedElement="_XfkGcNHkEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-16.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_lISl8NHkEeiOXPERXrWTXw" name="L-16.3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lISl8dHkEeiOXPERXrWTXw" annotatedElement="_lISl8NHkEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-16.3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_rsmckNGZEeiOXPERXrWTXw" name="Stm64OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_V4aiENGaEeiOXPERXrWTXw" annotatedElement="_rsmckNGZEeiOXPERXrWTXw">
+          <body>ITU-T G.707/Y.1322, January 2007: framer, N=64</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mG4qQNHmEeiOXPERXrWTXw" name="I-64.lr">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mG4qQdHmEeiOXPERXrWTXw" annotatedElement="_mG4qQNHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-64.lr</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pgj70NHmEeiOXPERXrWTXw" name="I-64.l">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pgj70dHmEeiOXPERXrWTXw" annotatedElement="_pgj70NHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-64.l</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qkKt4NHmEeiOXPERXrWTXw" name="I-64.2r">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qkKt4dHmEeiOXPERXrWTXw" annotatedElement="_qkKt4NHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-64.2r</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rw18YNHmEeiOXPERXrWTXw" name="I-64.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rw18YdHmEeiOXPERXrWTXw" annotatedElement="_rw18YNHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-64.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_tGaBINHmEeiOXPERXrWTXw" name="I-64.3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_tGaBIdHmEeiOXPERXrWTXw" annotatedElement="_tGaBINHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-64.3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uaJg8NHmEeiOXPERXrWTXw" name="I-64.5">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uaJg8dHmEeiOXPERXrWTXw" annotatedElement="_uaJg8NHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: I-64.5</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vYnUUNHmEeiOXPERXrWTXw" name="S-64.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vYnUUdHmEeiOXPERXrWTXw" annotatedElement="_vYnUUNHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-64.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wbY_8NHmEeiOXPERXrWTXw" name="S-64.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_wbY_8dHmEeiOXPERXrWTXw" annotatedElement="_wbY_8NHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-64.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xamaMNHmEeiOXPERXrWTXw" name="S-64.3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xamaMdHmEeiOXPERXrWTXw" annotatedElement="_xamaMNHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-64.3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ysDbANHmEeiOXPERXrWTXw" name="S-64.5">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ysDbAdHmEeiOXPERXrWTXw" annotatedElement="_ysDbANHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: S-64.5</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zu70UNHmEeiOXPERXrWTXw" name="L-64.1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zu70UdHmEeiOXPERXrWTXw" annotatedElement="_zu70UNHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-64.1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_24Rj0NHmEeiOXPERXrWTXw" name="L-64.2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_24Rj0dHmEeiOXPERXrWTXw" annotatedElement="_24Rj0NHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-64.2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_32s68NHmEeiOXPERXrWTXw" name="L-64.3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_32s68dHmEeiOXPERXrWTXw" annotatedElement="_32s68NHmEeiOXPERXrWTXw">
+            <body>ITU-T G.957, March 2006: L-64.3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_r8Wv0NGZEeiOXPERXrWTXw" name="Stm256OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_YCi3UNGaEeiOXPERXrWTXw" annotatedElement="_r8Wv0NGZEeiOXPERXrWTXw">
+          <body>ITU-T G.707/Y.1322, January 2007: framer, N=256</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_r77VkNHnEeiOXPERXrWTXw" name="VSR2000-3R1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_r77VkdHnEeiOXPERXrWTXw" annotatedElement="_r77VkNHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3R1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_v2uXMNHnEeiOXPERXrWTXw" name="VSR2000-3R2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_v2uXMdHnEeiOXPERXrWTXw" annotatedElement="_v2uXMNHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3R2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xADWwNHnEeiOXPERXrWTXw" name="VSR2000-3R3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xADWwdHnEeiOXPERXrWTXw" annotatedElement="_xADWwNHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3R3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yFUVsNHnEeiOXPERXrWTXw" name="VSR2000-3R5">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_yFUVsdHnEeiOXPERXrWTXw" annotatedElement="_yFUVsNHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3R5</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zHRh8NHnEeiOXPERXrWTXw" name="VSR2000-3M1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zHRh8dHnEeiOXPERXrWTXw" annotatedElement="_zHRh8NHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3M1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0ImcENHnEeiOXPERXrWTXw" name="VSR2000-3M2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_0ImcEdHnEeiOXPERXrWTXw" annotatedElement="_0ImcENHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3M1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1SfcUNHnEeiOXPERXrWTXw" name="VSR2000-3M3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1SfcUdHnEeiOXPERXrWTXw" annotatedElement="_1SfcUNHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3M3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_2URpcNHnEeiOXPERXrWTXw" name="VSR2000-3M5">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_2URpcdHnEeiOXPERXrWTXw" annotatedElement="_2URpcNHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3M5</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4IVoENHnEeiOXPERXrWTXw" name="VSR2000-3H2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4IVoEdHnEeiOXPERXrWTXw" annotatedElement="_4IVoENHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3H2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_5DXs8NHnEeiOXPERXrWTXw" name="VSR2000-3H3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5DXs8dHnEeiOXPERXrWTXw" annotatedElement="_5DXs8NHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3H3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6AGa8NHnEeiOXPERXrWTXw" name="VSR2000-3H5">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6AGa8dHnEeiOXPERXrWTXw" annotatedElement="_6AGa8NHnEeiOXPERXrWTXw">
+            <body>ITU-T G.693, November 2009: VSR2000-3H5</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_3Jqj4NHoEeiOXPERXrWTXw" name="Oc12OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9ev2oNHoEeiOXPERXrWTXw" annotatedElement="_3Jqj4NHoEeiOXPERXrWTXw">
+          <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=12</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HjCtoNILEeiOXPERXrWTXw" name="SR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HjCtodILEeiOXPERXrWTXw" annotatedElement="_HjCtoNILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LrZqINILEeiOXPERXrWTXw" name="IR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LrZqIdILEeiOXPERXrWTXw" annotatedElement="_LrZqINILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Q7EM8NILEeiOXPERXrWTXw" name="IR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Q7EM8dILEeiOXPERXrWTXw" annotatedElement="_Q7EM8NILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VZRdoNILEeiOXPERXrWTXw" name="LR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VZRdodILEeiOXPERXrWTXw" annotatedElement="_VZRdoNILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_btGMINILEeiOXPERXrWTXw" name="LR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_btGMIdILEeiOXPERXrWTXw" annotatedElement="_btGMINILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eFVO0NILEeiOXPERXrWTXw" name="LR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eFVO0dILEeiOXPERXrWTXw" annotatedElement="_eFVO0NILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g7uNINILEeiOXPERXrWTXw" name="VR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g7uNIdILEeiOXPERXrWTXw" annotatedElement="_g7uNINILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_keAoINILEeiOXPERXrWTXw" name="VR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_keAoIdILEeiOXPERXrWTXw" annotatedElement="_keAoINILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_nbj-YNILEeiOXPERXrWTXw" name="VR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_nbj-YdILEeiOXPERXrWTXw" annotatedElement="_nbj-YNILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rt8ZkNILEeiOXPERXrWTXw" name="UR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rt8ZkdILEeiOXPERXrWTXw" annotatedElement="_rt8ZkNILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_uaL9YNILEeiOXPERXrWTXw" name="UR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uaL9YdILEeiOXPERXrWTXw" annotatedElement="_uaL9YNILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_3Z1G0NHoEeiOXPERXrWTXw" name="Oc3OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Q4jj8NHpEeiOXPERXrWTXw" annotatedElement="_3Z1G0NHoEeiOXPERXrWTXw">
+          <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=3</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6wsnENILEeiOXPERXrWTXw" name="SR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6wsnEdILEeiOXPERXrWTXw" annotatedElement="_6wsnENILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-aWOUNILEeiOXPERXrWTXw" name="IR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-aWOUdILEeiOXPERXrWTXw" annotatedElement="_-aWOUNILEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AvhV8NIMEeiOXPERXrWTXw" name="IR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_AvhV8dIMEeiOXPERXrWTXw" annotatedElement="_AvhV8NIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DTvmMNIMEeiOXPERXrWTXw" name="LR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DTvmMdIMEeiOXPERXrWTXw" annotatedElement="_DTvmMNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FqTN4NIMEeiOXPERXrWTXw" name="LR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FqTN4dIMEeiOXPERXrWTXw" annotatedElement="_FqTN4NIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_IdtwsNIMEeiOXPERXrWTXw" name="LR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IdtwsdIMEeiOXPERXrWTXw" annotatedElement="_IdtwsNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_3nMNYNHoEeiOXPERXrWTXw" name="Oc48OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_VFrEoNHpEeiOXPERXrWTXw" annotatedElement="_3nMNYNHoEeiOXPERXrWTXw">
+          <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=48</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ow60INIMEeiOXPERXrWTXw" name="SR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Ow60IdIMEeiOXPERXrWTXw" annotatedElement="_Ow60INIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_R7_B8NIMEeiOXPERXrWTXw" name="IR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_R7_B8dIMEeiOXPERXrWTXw" annotatedElement="_R7_B8NIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_UBjnUNIMEeiOXPERXrWTXw" name="IR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_UBjnUdIMEeiOXPERXrWTXw" annotatedElement="_UBjnUNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XFq4kNIMEeiOXPERXrWTXw" name="LR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XFq4kdIMEeiOXPERXrWTXw" annotatedElement="_XFq4kNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZB-0QNIMEeiOXPERXrWTXw" name="LR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZB-0QdIMEeiOXPERXrWTXw" annotatedElement="_ZB-0QNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_cauRsNIMEeiOXPERXrWTXw" name="LR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_cauRsdIMEeiOXPERXrWTXw" annotatedElement="_cauRsNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fMAtkNIMEeiOXPERXrWTXw" name="VR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fMAtkdIMEeiOXPERXrWTXw" annotatedElement="_fMAtkNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hZAwoNIMEeiOXPERXrWTXw" name="VR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_hZAwodIMEeiOXPERXrWTXw" annotatedElement="_hZAwoNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_kYININIMEeiOXPERXrWTXw" name="UR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_kYINIdIMEeiOXPERXrWTXw" annotatedElement="_kYININIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ndkUENIMEeiOXPERXrWTXw" name="UR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ndkUEdIMEeiOXPERXrWTXw" annotatedElement="_ndkUENIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: UR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_30V4kNHoEeiOXPERXrWTXw" name="Oc192OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_WwTacNHpEeiOXPERXrWTXw" annotatedElement="_30V4kNHoEeiOXPERXrWTXw">
+          <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=192</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pzJEUNIMEeiOXPERXrWTXw" name="SR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pzJEUdIMEeiOXPERXrWTXw" annotatedElement="_pzJEUNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_sXAIMNIMEeiOXPERXrWTXw" name="SR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sXAIMdIMEeiOXPERXrWTXw" annotatedElement="_sXAIMNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u7bz0NIMEeiOXPERXrWTXw" name="IR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_u7bz0dIMEeiOXPERXrWTXw" annotatedElement="_u7bz0NIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_w-6ugNIMEeiOXPERXrWTXw" name="IR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_w-6ugdIMEeiOXPERXrWTXw" annotatedElement="_w-6ugNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-tUYMNIMEeiOXPERXrWTXw" name="IR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-tUYMdIMEeiOXPERXrWTXw" annotatedElement="_-tUYMNIMEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_C7yjwNINEeiOXPERXrWTXw" name="LR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C7yjwdINEeiOXPERXrWTXw" annotatedElement="_C7yjwNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fh_J8NINEeiOXPERXrWTXw" name="LR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Fh_J8dINEeiOXPERXrWTXw" annotatedElement="_Fh_J8NINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ICy50NINEeiOXPERXrWTXw" name="LR-2a">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ICy50dINEeiOXPERXrWTXw" annotatedElement="_ICy50NINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2a</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KZKUQNINEeiOXPERXrWTXw" name="LR-2b">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_KZKUQdINEeiOXPERXrWTXw" annotatedElement="_KZKUQNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2b</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Mgw58NINEeiOXPERXrWTXw" name="LR-2c">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Mgw58dINEeiOXPERXrWTXw" annotatedElement="_Mgw58NINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2c</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_O33UMNINEeiOXPERXrWTXw" name="LR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_O33UMdINEeiOXPERXrWTXw" annotatedElement="_O33UMNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_TAYBsNINEeiOXPERXrWTXw" name="VR-2a">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TAYBsdINEeiOXPERXrWTXw" annotatedElement="_TAYBsNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2a</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VRP4ININEeiOXPERXrWTXw" name="VR-2b">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VRP4IdINEeiOXPERXrWTXw" annotatedElement="_VRP4ININEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-2b</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Xz4M8NINEeiOXPERXrWTXw" name="VR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Xz4M8dINEeiOXPERXrWTXw" annotatedElement="_Xz4M8NINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: VR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_4EOHoNHoEeiOXPERXrWTXw" name="Oc768OpticalInterfaceFunction">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ZHhwgNHpEeiOXPERXrWTXw" annotatedElement="_4EOHoNHoEeiOXPERXrWTXw">
+          <body>Telcordia GR-253-CORE Issue 5, October 2009:  framer, N=768</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bYx3ENINEeiOXPERXrWTXw" name="SR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_bYx3EdINEeiOXPERXrWTXw" annotatedElement="_bYx3ENINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_dPN0QNINEeiOXPERXrWTXw" name="SR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dPN0QdINEeiOXPERXrWTXw" annotatedElement="_dPN0QNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: SR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_gODj8NINEeiOXPERXrWTXw" name="IR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_gODj8dINEeiOXPERXrWTXw" annotatedElement="_gODj8NINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_iV5aMNINEeiOXPERXrWTXw" name="IR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_iV5aMdINEeiOXPERXrWTXw" annotatedElement="_iV5aMNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_kKZdsNINEeiOXPERXrWTXw" name="IR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_kKZdsdINEeiOXPERXrWTXw" annotatedElement="_kKZdsNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: IR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mkh90NINEeiOXPERXrWTXw" name="LR-1">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mkh90dINEeiOXPERXrWTXw" annotatedElement="_mkh90NINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-1</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_pUSvsNINEeiOXPERXrWTXw" name="LR-2">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pUSvsdINEeiOXPERXrWTXw" annotatedElement="_pUSvsNINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-2</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rj7QANINEeiOXPERXrWTXw" name="LR-3">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rj7QAdINEeiOXPERXrWTXw" annotatedElement="_rj7QANINEeiOXPERXrWTXw">
+            <body>Telcordia GR-253-CORE, Issue 5, October 2009, clause 4.1: LR-3</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_p4J2wMvjEei689z5AJy22A" name="Associations">
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="__0jnMMvkEei689z5AJy22A" client="_0L3-wMviEei689z5AJy22A">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_kuDzQEHaEeWqPKyD1j6LMg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_AVOrUMvlEei689z5AJy22A" client="_0nx3oMviEei689z5AJy22A">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiConnectivity.uml#_MIWTIGh5EeWZEqTYAF8eqA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_A09UQMvlEei689z5AJy22A" client="_09dMsMviEei689z5AJy22A">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiCommon.uml#_It0sYEG-EeWMO5szP8dKiA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_s5eLUMvmEei689z5AJy22A" client="_QW0xkMvjEei689z5AJy22A">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiCommon.uml#_It0sYEG-EeWMO5szP8dKiA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_uNUrkNCWEeiQlow2bYuzuw" client="_o4RScNCWEeiQlow2bYuzuw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_yfPhANDIEeiMlpwpEYedFA" client="_dVJh0NDIEeiMlpwpEYedFA" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_tuSeANDJEeiMlpwpEYedFA" client="_5mIEINDIEeiMlpwpEYedFA" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_wI77gNDJEeiMlpwpEYedFA" client="_Hcxq4NDJEeiMlpwpEYedFA" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_xIAL0NDJEeiMlpwpEYedFA" client="_d3Zd0NDJEeiMlpwpEYedFA" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_PbBksNGWEeiOXPERXrWTXw" client="_Cbf3YNGPEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_RsDzMNGWEeiOXPERXrWTXw" client="_AjfFgNGSEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_TCzjsNGWEeiOXPERXrWTXw" client="_MxMYgNGSEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_VhMRsNGWEeiOXPERXrWTXw" client="_1Uz7sNGTEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Wud9INGWEeiOXPERXrWTXw" client="_9zuBsNGTEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_X8iSwNGWEeiOXPERXrWTXw" client="_vHAgMNGUEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Zli38NGWEeiOXPERXrWTXw" client="_owTc0NGUEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_ZcnP4NIOEeiOXPERXrWTXw" client="_pOmwINGZEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Z970QNIOEeiOXPERXrWTXw" client="_qIXCoNGZEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_adyZANIOEeiOXPERXrWTXw" client="_qq02gNGZEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_bJ87cNIOEeiOXPERXrWTXw" client="_rsmckNGZEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_bohGwNIOEeiOXPERXrWTXw" client="_r8Wv0NGZEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_cHp50NIOEeiOXPERXrWTXw" client="_4EOHoNHoEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_chvNwNIOEeiOXPERXrWTXw" client="_30V4kNHoEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_dGp4sNIOEeiOXPERXrWTXw" client="_3nMNYNHoEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_dlVYwNIOEeiOXPERXrWTXw" client="_3Jqj4NHoEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_eFs64NIOEeiOXPERXrWTXw" client="_3Z1G0NHoEeiOXPERXrWTXw" supplier="_fulKENCWEeiQlow2bYuzuw"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_auSTUNIzEeiOXPERXrWTXw" name="l1ServiceLevelSpecificationHasSls1wSeverelyErroredSecondPerformanceMetric " memberEnd="_auUIjNIzEeiOXPERXrWTXw _auSTU9IzEeiOXPERXrWTXw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_auSTUdIzEeiOXPERXrWTXw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_auSTUtIzEeiOXPERXrWTXw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_auSTU9IzEeiOXPERXrWTXw" name="l1servicelevelspecification" type="_auUIgNIzEeiOXPERXrWTXw" association="_auSTUNIzEeiOXPERXrWTXw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_auXL0NIzEeiOXPERXrWTXw" name="l1ServiceLevelSpecificationHasSls1wErroredSecondPerformanceMetric " memberEnd="_auUIidIzEeiOXPERXrWTXw _auXL09IzEeiOXPERXrWTXw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_auXL0dIzEeiOXPERXrWTXw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_auXL0tIzEeiOXPERXrWTXw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_auXL09IzEeiOXPERXrWTXw" name="l1servicelevelspecification" type="_auUIgNIzEeiOXPERXrWTXw" association="_auXL0NIzEeiOXPERXrWTXw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_aua2MNIzEeiOXPERXrWTXw" name="l1ServiceLevelSpecificationHasSls1wDelayPerformanceMetrics " memberEnd="_auUIhtIzEeiOXPERXrWTXw _aua2M9IzEeiOXPERXrWTXw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aua2MdIzEeiOXPERXrWTXw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aua2MtIzEeiOXPERXrWTXw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_aua2M9IzEeiOXPERXrWTXw" name="l1servicelevelspecification" type="_auUIgNIzEeiOXPERXrWTXw" association="_aua2MNIzEeiOXPERXrWTXw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_aucrYNIzEeiOXPERXrWTXw" name="l1ServiceLevelSpecificationHasSls1wUnavailableSecondPerformanceMetric" memberEnd="_auUIj9IzEeiOXPERXrWTXw _aucrY9IzEeiOXPERXrWTXw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aucrYdIzEeiOXPERXrWTXw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aucrYtIzEeiOXPERXrWTXw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_aucrY9IzEeiOXPERXrWTXw" name="l1servicelevelspecification" type="_auUIgNIzEeiOXPERXrWTXw" association="_aucrYNIzEeiOXPERXrWTXw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_audScNIzEeiOXPERXrWTXw" name="l1ServiceLevelSpecificationHasSls1wAvailabilityPerformanceMetric" memberEnd="_auUIktIzEeiOXPERXrWTXw _audSc9IzEeiOXPERXrWTXw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_audScdIzEeiOXPERXrWTXw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_audSctIzEeiOXPERXrWTXw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_audSc9IzEeiOXPERXrWTXw" name="l1servicelevelspecification" type="_auUIgNIzEeiOXPERXrWTXw" association="_audScNIzEeiOXPERXrWTXw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_9fx9oMvjEei689z5AJy22A" name="Imports">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_kX5dwMvkEei689z5AJy22A">
+        <importedPackage xmi:type="uml:Model" href="../TAPI/UML/TapiCommon.uml#_cOw5UDA4Eea4fKwSGMr6CA"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_kaeQoMvkEei689z5AJy22A">
+        <importedPackage xmi:type="uml:Model" href="../TAPI/UML/TapiConnectivity.uml#_6fxZsDA4Eea4fKwSGMr6CA"/>
+      </packageImport>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_ApIUMMvkEei689z5AJy22A" name="Interfaces"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_RmhUUMviEei689z5AJy22A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RuN3wMviEei689z5AJy22A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RuN3wcviEei689z5AJy22A" key="Version" value="0.0.9"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RuN3wsviEei689z5AJy22A" key="Comment" value="BITS encoding and bitsDefinition property added."/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RuN3w8viEei689z5AJy22A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RuN3xMviEei689z5AJy22A" key="Date" value="2018-04-13"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RuN3xcviEei689z5AJy22A" key="Author" value="IISOMI"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RuMpoMviEei689z5AJy22A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TAPI/UML/UmlProfiles/OpenInterfaceModelProfile/OpenInterfaceModel_Profile.profile.uml#_3NPRMD78EeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TAPI/UML/UmlProfiles/OpenInterfaceModelProfile/OpenInterfaceModel_Profile.profile.uml#_UbM6ILbyEeaufdfMFhfy_A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_oiMl4MviEei689z5AJy22A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oiQQQMviEei689z5AJy22A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oiQQQcviEei689z5AJy22A" key="Version" value="0.2.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oiQQQsviEei689z5AJy22A" key="Comment" value="New stereotype OpenModelStatement added. It contains the generic information of the model and extends the Metaclass &quot;Model&quot;."/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oiQQQ8viEei689z5AJy22A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oiQQRMviEei689z5AJy22A" key="Date" value="2018-04-13"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oiQQRcviEei689z5AJy22A" key="Author" value="IISOMI"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oiN0AMviEei689z5AJy22A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/MEF-Common-Model/TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/MEF-Common-Model/TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Model>
+  <OpenModel_Profile:OpenModelStatement xmi:id="_oiPCIMviEei689z5AJy22A" base_Model="_Hpts8MviEei689z5AJy22A"/>
+  <OpenModel_Profile:Specify xmi:id="_GLFEYMvlEei689z5AJy22A" base_Abstraction="__0jnMMvkEei689z5AJy22A">
+    <target>/TapiCommon:Context:_context/TapiConnectivity:ConnectivityContext:_connectivityContext/TapiConnectivity:ConnectivityContext:_connectivityService</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_e13jIMvlEei689z5AJy22A" base_Abstraction="_AVOrUMvlEei689z5AJy22A">
+    <target>/TapiCommon:Context:_context/TapiConnectivity:ConnectivityContext:_connectivityContext/TapiConnectivity:ConnectivityContext:_connectivityService/TapiConnectivity:ConnectivityService:_endPoint</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_cVzksMvmEei689z5AJy22A" base_Abstraction="_A09UQMvlEei689z5AJy22A">
+    <target>/TapiCommon:Context:_context/TapiCommon:Context:_serviceInterfacePoint</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_vQqsMMvmEei689z5AJy22A" base_Abstraction="_s5eLUMvmEei689z5AJy22A">
+    <target>/TapiCommon:Context:_context/TapiCommon:Context:_serviceInterfacePoint</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_y7wwoNCWEeiQlow2bYuzuw" base_Abstraction="_uNUrkNCWEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:Specify xmi:id="_zk5hgNDIEeiMlpwpEYedFA" base_Abstraction="_yfPhANDIEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:Specify xmi:id="__1rhMNDJEeiMlpwpEYedFA" base_Abstraction="_tuSeANDJEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:Specify xmi:id="_BkOtsNDKEeiMlpwpEYedFA" base_Abstraction="_wI77gNDJEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:Specify xmi:id="_C-pdQNDKEeiMlpwpEYedFA" base_Abstraction="_xIAL0NDJEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_54MuwdDMEeiMlpwpEYedFA" base_StructuralFeature="_54MuwNDMEeiMlpwpEYedFA"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_54N84NDMEeiMlpwpEYedFA" base_Property="_54MuwNDMEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_QYpc4dDNEeiMlpwpEYedFA" base_StructuralFeature="_QYpc4NDNEeiMlpwpEYedFA" condition=""/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_QYqD8NDNEeiMlpwpEYedFA" base_Property="_QYpc4NDNEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_-bXQkNDPEeiMlpwpEYedFA" base_StructuralFeature="_-bWpgNDPEeiMlpwpEYedFA"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_-bYesNDPEeiMlpwpEYedFA" base_Property="_-bWpgNDPEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_fR3zkdDQEeiMlpwpEYedFA" base_StructuralFeature="_fR3zkNDQEeiMlpwpEYedFA"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_fR4aoNDQEeiMlpwpEYedFA" base_Property="_fR3zkNDQEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_vjWeAdDQEeiMlpwpEYedFA" base_StructuralFeature="_vjWeANDQEeiMlpwpEYedFA"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_vjXFENDQEeiMlpwpEYedFA" base_Property="_vjWeANDQEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_5tGVMdDQEeiMlpwpEYedFA" base_StructuralFeature="_5tGVMNDQEeiMlpwpEYedFA"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_5tG8QNDQEeiMlpwpEYedFA" base_Property="_5tGVMNDQEeiMlpwpEYedFA"/>
+  <OpenModel_Profile:Specify xmi:id="_ROOAoNGWEeiOXPERXrWTXw" base_Abstraction="_PbBksNGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_SYgpgNGWEeiOXPERXrWTXw" base_Abstraction="_RsDzMNGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_T_sCsNGWEeiOXPERXrWTXw" base_Abstraction="_TCzjsNGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_WQCUsNGWEeiOXPERXrWTXw" base_Abstraction="_VhMRsNGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_XiZUcNGWEeiOXPERXrWTXw" base_Abstraction="_Wud9INGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_YuiXcNGWEeiOXPERXrWTXw" base_Abstraction="_X8iSwNGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_aXjjsNGWEeiOXPERXrWTXw" base_Abstraction="_Zli38NGWEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_2ZnKsNIOEeiOXPERXrWTXw" base_Abstraction="_ZcnP4NIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_3W0Z0NIOEeiOXPERXrWTXw" base_Abstraction="_Z970QNIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_4Pj_sNIOEeiOXPERXrWTXw" base_Abstraction="_adyZANIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_5LHB8NIOEeiOXPERXrWTXw" base_Abstraction="_bJ87cNIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_5_MKQNIOEeiOXPERXrWTXw" base_Abstraction="_bohGwNIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_7Fg5INIOEeiOXPERXrWTXw" base_Abstraction="_cHp50NIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_8AXX0NIOEeiOXPERXrWTXw" base_Abstraction="_chvNwNIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="__ExkANIOEeiOXPERXrWTXw" base_Abstraction="_dGp4sNIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_AeqvINIPEeiOXPERXrWTXw" base_Abstraction="_dlVYwNIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:Specify xmi:id="_DKCwQNIPEeiOXPERXrWTXw" base_Abstraction="_eFs64NIOEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_auOo8NIzEeiOXPERXrWTXw" base_Class="_auOB4NIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_auPQANIzEeiOXPERXrWTXw" base_Class="_auOB4NIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auPQAdIzEeiOXPERXrWTXw" base_Property="_auOB4tIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auP3ENIzEeiOXPERXrWTXw" base_StructuralFeature="_auOB4tIzEeiOXPERXrWTXw" counter="COUNTER"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auP3EdIzEeiOXPERXrWTXw" base_Property="_auOB5NIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auP3EtIzEeiOXPERXrWTXw" base_StructuralFeature="_auOB5NIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_auRFONIzEeiOXPERXrWTXw" base_Class="_auRFMNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_auRFOdIzEeiOXPERXrWTXw" base_Class="_auRFMNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auRFOtIzEeiOXPERXrWTXw" base_Property="_auRFMtIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auRsQNIzEeiOXPERXrWTXw" base_StructuralFeature="_auRFMtIzEeiOXPERXrWTXw" valueRange="(0,100]"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auRsQdIzEeiOXPERXrWTXw" base_Property="_auRFNNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auRsQtIzEeiOXPERXrWTXw" base_StructuralFeature="_auRFNNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auSTVNIzEeiOXPERXrWTXw" base_Property="_auSTU9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auSTVdIzEeiOXPERXrWTXw" base_StructuralFeature="_auSTU9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_auUvkNIzEeiOXPERXrWTXw" base_Class="_auUIgNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_auUvkdIzEeiOXPERXrWTXw" base_Class="_auUIgNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auUvktIzEeiOXPERXrWTXw" base_Property="_auUIgtIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auVWoNIzEeiOXPERXrWTXw" base_StructuralFeature="_auUIgtIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auVWodIzEeiOXPERXrWTXw" base_Property="_auUIhNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auVWotIzEeiOXPERXrWTXw" base_StructuralFeature="_auUIhNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auVWo9IzEeiOXPERXrWTXw" base_Property="_auUIhtIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auV9sNIzEeiOXPERXrWTXw" base_StructuralFeature="_auUIhtIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auV9sdIzEeiOXPERXrWTXw" base_Property="_auUIidIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auV9stIzEeiOXPERXrWTXw" base_StructuralFeature="_auUIidIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auV9s9IzEeiOXPERXrWTXw" base_Property="_auUIjNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auV9tNIzEeiOXPERXrWTXw" base_StructuralFeature="_auUIjNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auWkwNIzEeiOXPERXrWTXw" base_Property="_auUIj9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auWkwdIzEeiOXPERXrWTXw" base_StructuralFeature="_auUIj9IzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auWkwtIzEeiOXPERXrWTXw" base_Property="_auUIktIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auWkw9IzEeiOXPERXrWTXw" base_StructuralFeature="_auUIktIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auXL1NIzEeiOXPERXrWTXw" base_Property="_auXL09IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auXL1dIzEeiOXPERXrWTXw" base_StructuralFeature="_auXL09IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_auXy6tIzEeiOXPERXrWTXw" base_Class="_auXy4NIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_auYZ8NIzEeiOXPERXrWTXw" base_Class="_auXy4NIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auYZ8dIzEeiOXPERXrWTXw" base_Property="_auXy4tIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auYZ8tIzEeiOXPERXrWTXw" base_StructuralFeature="_auXy4tIzEeiOXPERXrWTXw" valueRange="(0,100]"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auYZ89IzEeiOXPERXrWTXw" base_Property="_auXy5NIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auYZ9NIzEeiOXPERXrWTXw" base_StructuralFeature="_auXy5NIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auYZ9dIzEeiOXPERXrWTXw" base_Property="_auXy5tIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auZBANIzEeiOXPERXrWTXw" base_StructuralFeature="_auXy5tIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_auZoGNIzEeiOXPERXrWTXw" base_Class="_auZoENIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_auZoGdIzEeiOXPERXrWTXw" base_Class="_auZoENIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auaPINIzEeiOXPERXrWTXw" base_Property="_auZoEtIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auaPIdIzEeiOXPERXrWTXw" base_StructuralFeature="_auZoEtIzEeiOXPERXrWTXw" counter="COUNTER"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_auaPItIzEeiOXPERXrWTXw" base_Property="_auZoFNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_auaPI9IzEeiOXPERXrWTXw" base_StructuralFeature="_auZoFNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_aua2NNIzEeiOXPERXrWTXw" base_Property="_aua2M9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_aua2NdIzEeiOXPERXrWTXw" base_StructuralFeature="_aua2M9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_aubdSNIzEeiOXPERXrWTXw" base_Class="_aubdQNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_aubdSdIzEeiOXPERXrWTXw" base_Class="_aubdQNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_aubdStIzEeiOXPERXrWTXw" base_Property="_aubdQtIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_aucEUNIzEeiOXPERXrWTXw" base_StructuralFeature="_aubdQtIzEeiOXPERXrWTXw" counter="COUNTER"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_aucEUdIzEeiOXPERXrWTXw" base_Property="_aubdRNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_aucEUtIzEeiOXPERXrWTXw" base_StructuralFeature="_aubdRNIzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_aucrZNIzEeiOXPERXrWTXw" base_Property="_aucrY9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_aucrZdIzEeiOXPERXrWTXw" base_StructuralFeature="_aucrY9IzEeiOXPERXrWTXw"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelAttribute xmi:id="_audSdNIzEeiOXPERXrWTXw" base_Property="_audSc9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_aud5gNIzEeiOXPERXrWTXw" base_StructuralFeature="_audSc9IzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_auw0cNIzEeiOXPERXrWTXw" base_Association="_auSTUNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_auw0cdIzEeiOXPERXrWTXw" base_Association="_aua2MNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_au2UANIzEeiOXPERXrWTXw" base_Association="_aucrYNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_au27ENIzEeiOXPERXrWTXw" base_Association="_auXL0NIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_au6lcNIzEeiOXPERXrWTXw" base_Association="_audScNIzEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_0L5z8MviEei689z5AJy22A" base_Class="_0L3-wMviEei689z5AJy22A"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_0L5M4MviEei689z5AJy22A" base_Class="_0L3-wMviEei689z5AJy22A"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_0nzFwMviEei689z5AJy22A" base_Class="_0nx3oMviEei689z5AJy22A"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_0nyesMviEei689z5AJy22A" base_Class="_0nx3oMviEei689z5AJy22A"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_09dzwcviEei689z5AJy22A" base_Class="_09dMsMviEei689z5AJy22A"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_09dzwMviEei689z5AJy22A" base_Class="_09dMsMviEei689z5AJy22A"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_QW1YocvjEei689z5AJy22A" base_Class="_QW0xkMvjEei689z5AJy22A"/>
+  <OpenInterfaceModel_Profile:OpenInterfaceModelClass xmi:id="_QW1YoMvjEei689z5AJy22A" base_Class="_QW0xkMvjEei689z5AJy22A"/>
+</xmi:XMI>

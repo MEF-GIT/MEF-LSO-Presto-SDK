@@ -1,0 +1,16 @@
+
+module: nrm-l-1
+  augment /tapi-common:context/tapi-connectivity:connectivity-context/tapi-connectivity:connectivity-service:
+    +--rw l-1-connectivity-resource
+       +--rw layer-1-vc-id?   string
+  augment /tapi-common:context/tapi-connectivity:connectivity-context/tapi-connectivity:connectivity-service/tapi-connectivity:end-point:
+    +--rw l-1-connectivity-end-point-resource
+       +--rw layer-1-end-point-id?   string
+  augment /tapi-common:context/tapi-common:service-interface-point:
+    +--rw l-1-uni-nresource
+       +--rw layer-1-coding-function?              l-1-coding-function
+       +--rw layer-1-optical-interface-function?   l-1-optical-interface-function
+       +--rw layer-1-uni-id?                       string
+  augment /tapi-common:context/tapi-common:service-interface-point:
+    +--rw l-1-inni-nresource
+       +--rw layer-1-inni-id?   string

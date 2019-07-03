@@ -1,0 +1,1694 @@
+module nrm-oam {
+    namespace "urn:mef:yang:nrm-oam";
+    prefix nrm-oam;
+    import mef-types {
+        prefix mef-types;
+    }
+    import tapi-oam {
+        prefix tapi-oam;
+    }
+    import tapi-eth {
+        prefix tapi-eth;
+    }
+    import tapi-common {
+        prefix tapi-common;
+    }
+    import tapi-notification {
+        prefix tapi-notification;
+    }
+    organization "MEF";
+    contact "Web URL: http://mef.net/ 
+            E-mail:  namespace@mef.net 
+            Postal:  MEFForum 
+            6033 W. Century Boulevard, Suite 1107 
+            Los Angeles, CA 90045 
+            U.S.A. 
+            Phone:   +1 310-642-2800 
+            Fax:     +1 310-642-2808";
+    description "none";
+    revision 2018-09-26 {
+        description "MEF NRM OAM Initial draft";
+        reference "
+            MEF Network Resource Model (MEF-59), 
+            MEF Network Resource Provisioning (MEF-60), 
+            MEF Network Resource Model - OAM (NRM-OAM), 
+            MEF PRESTO Service OAM (PRESTO-SOAM)";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-lm-performance-data" {
+        container carrier-eth-oam-pm-slm-resource {
+            uses carrier-eth-oam-pm-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-lm-performance-data" {
+        container carrier-eth-oam-pm-slm-resource {
+            uses carrier-eth-oam-pm-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-lm-performance-data" {
+        container carrier-eth-oam-pm-lm-resource {
+            uses carrier-eth-oam-pm-lm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-lm-performance-data" {
+        container carrier-eth-oam-pm-lm-resource {
+            uses carrier-eth-oam-pm-lm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-1-dm-performance-data" {
+        container carrier-eth-oam-pm-2-fd-resource {
+            uses carrier-eth-oam-pm-2-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-service" {
+        container carrier-eth-oam-srv-resource {
+            uses carrier-eth-oam-srv-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-service/tapi-oam:end-point" {
+        container carrier-eth-oam-sep-resource {
+            uses carrier-eth-oam-sep-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-bin-data" {
+        container carrier-eth-oam-fd-bins-resource {
+            uses carrier-eth-oam-fd-bins-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-bin-data" {
+        container carrier-eth-oam-ifdv-bins-resource {
+            uses carrier-eth-oam-ifdv-bins-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-loopback-job" {
+        container carrier-eth-oam-job-loopback-resource {
+            uses carrier-eth-oam-job-loopback-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-test-job" {
+        container carrier-eth-oam-job-test-resource {
+            uses carrier-eth-oam-job-test-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-loopback-result-data" {
+        container carrier-eth-oam-job-loopback-result-resource {
+            uses carrier-eth-oam-job-loopback-result-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-lm-performance-data" {
+        container carrier-eth-oam-pm-slm-resource {
+            uses carrier-eth-oam-pm-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-lm-performance-data" {
+        container carrier-eth-oam-pm-slm-resource {
+            uses carrier-eth-oam-pm-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-lm-performance-data" {
+        container carrier-eth-oam-pm-lm-resource {
+            uses carrier-eth-oam-pm-lm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-lm-performance-data" {
+        container carrier-eth-oam-pm-lm-resource {
+            uses carrier-eth-oam-pm-lm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-dm-performance-data" {
+        container carrier-eth-oam-pm-fd-resource {
+            uses carrier-eth-oam-pm-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-1-lm-performance-data" {
+        container carrier-eth-oam-pm-2-slm-resource {
+            uses carrier-eth-oam-pm-2-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-1-lm-performance-data" {
+        container carrier-eth-oam-pm-2-slm-resource {
+            uses carrier-eth-oam-pm-2-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-threshold-data" {
+        container carrier-eth-oam-tca-thrs-resource {
+            uses carrier-eth-oam-tca-thrs-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-dm-performance-data" {
+        container carrier-eth-oam-pm-fd-resource {
+            uses carrier-eth-oam-pm-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-dm-performance-data" {
+        container carrier-eth-oam-pm-fd-resource {
+            uses carrier-eth-oam-pm-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-dm-performance-data" {
+        container carrier-eth-oam-pm-fd-resource {
+            uses carrier-eth-oam-pm-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-1-lm-performance-data" {
+        container carrier-eth-oam-pm-2-slm-resource {
+            uses carrier-eth-oam-pm-2-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-on-demand-1-lm-performance-data" {
+        container carrier-eth-oam-pm-2-slm-resource {
+            uses carrier-eth-oam-pm-2-slm-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-on-demand-1-dm-performance-data" {
+        container carrier-eth-oam-pm-2-fd-resource {
+            uses carrier-eth-oam-pm-2-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-oam:pm-history-data/tapi-eth:eth-pro-active-1-dm-performance-data" {
+        container carrier-eth-oam-pm-2-fd-resource {
+            uses carrier-eth-oam-pm-2-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-pro-active-1-dm-performance-data" {
+        container carrier-eth-oam-pm-2-fd-resource {
+            uses carrier-eth-oam-pm-2-fd-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-profile/tapi-oam:pm-bin-data" {
+        container carrier-eth-oam-fdr-bins-resource {
+            uses carrier-eth-oam-fdr-bins-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-link-trace-job" {
+        container carrier-eth-oam-job-link-trace-resource {
+            uses carrier-eth-oam-job-link-trace-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-link-trace-result-data" {
+        container carrier-eth-oam-job-link-trace-result-resource {
+            uses carrier-eth-oam-job-link-trace-result-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-oam:pm-current-data/tapi-eth:eth-test-result-data" {
+        container carrier-eth-oam-job-test-result-resource {
+            uses carrier-eth-oam-job-test-result-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-service/tapi-oam:input" {
+        container carrier-eth-oam-srv-resource {
+            uses carrier-eth-oam-srv-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-service/tapi-oam:input" {
+        container carrier-eth-oam-srv-resource {
+            uses carrier-eth-oam-srv-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-service/tapi-oam:output/tapi-oam:service" {
+        container carrier-eth-oam-srv-resource {
+            uses carrier-eth-oam-srv-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-service/tapi-oam:output/tapi-oam:service" {
+        container carrier-eth-oam-srv-resource {
+            uses carrier-eth-oam-srv-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-1way-measurement-job" {
+        container carrier-eth-pro-act-dual-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-2way-measurement-job" {
+        container carrier-eth-pro-act-single-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-1way-measurement-job" {
+        container carrier-eth-on-dmd-dual-end-delay-pm-function-resource {
+            uses carrier-eth-on-dmd-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-2way-measurement-job" {
+        container carrier-eth-on-dmd-single-end-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-service-end-point/tapi-oam:input" {
+        container carrier-eth-oam-sep-resource {
+            uses carrier-eth-oam-sep-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-service-end-point/tapi-oam:input" {
+        container carrier-eth-oam-sep-resource {
+            uses carrier-eth-oam-sep-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-service/tapi-oam:output/tapi-oam:service/tapi-oam:end-point" {
+        container carrier-eth-oam-sep-resource {
+            uses carrier-eth-oam-sep-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-service/tapi-oam:output/tapi-oam:service/tapi-oam:end-point" {
+        container carrier-eth-oam-sep-resource {
+            uses carrier-eth-oam-sep-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:input" {
+        container carrier-eth-pro-act-dual-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:input" {
+        container carrier-eth-pro-act-single-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:input" {
+        container carrier-eth-on-dmd-dual-end-delay-pm-function-resource {
+            uses carrier-eth-on-dmd-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:input" {
+        container carrier-eth-on-dmd-single-end-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:input" {
+        container carrier-eth-pro-act-dual-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:input" {
+        container carrier-eth-pro-act-single-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:input" {
+        container carrier-eth-on-dmd-dual-end-delay-pm-function-resource {
+            uses carrier-eth-on-dmd-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:input" {
+        container carrier-eth-on-dmd-single-end-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-pro-act-dual-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-pro-act-single-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-on-dmd-dual-end-delay-pm-function-resource {
+            uses carrier-eth-on-dmd-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-on-dmd-single-end-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-on-dmd-dual-end-delay-pm-function-resource {
+            uses carrier-eth-on-dmd-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:create-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-on-dmd-single-end-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-pro-act-single-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-oam:update-oam-job/tapi-oam:output/tapi-oam:oam-job" {
+        container carrier-eth-pro-act-dual-end-delay-pm-function-resource {
+            uses carrier-eth-pro-act-dual-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-notification:notification-context/tapi-notification:notification/tapi-notification:tca-info" {
+        container carrier-eth-oam-bin-thrs-resource {
+            uses carrier-eth-oam-bin-thrs-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-notification:notification-context/tapi-notification:notification/tapi-notification:tca-info" {
+        container carrier-eth-oam-counter-thrs-resource {
+            uses carrier-eth-oam-counter-thrs-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-2way-measurement-job" {
+        container carrier-eth-pro-act-single-end-loss-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-2way-measurement-job" {
+        container carrier-eth-pro-act-single-end-synt-loss-pm-function-resource {
+            uses carrier-eth-pro-act-single-end-synt-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-2way-measurement-job" {
+        container carrier-eth-on-dmd-single-end-delay-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-delay-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-2way-measurement-job" {
+        container carrier-eth-on-dmd-single-end-synt-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-single-end-synt-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-pro-active-1way-measurement-job" {
+        container carrier-eth-pro-act-dual-end-synt-loss-pm-function-resource {
+            uses carrier-eth-pro-act-dual-end-synt-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    augment "/tapi-common:context/tapi-oam:oam-context/tapi-oam:oam-job/tapi-eth:eth-on-demand-1way-measurement-job" {
+        container carrier-eth-on-dmd-dual-end-synt-loss-pm-function-resource {
+            uses carrier-eth-on-dmd-dual-end-synt-loss-pm-function-resource;
+            description "none";
+        }
+        description "none";
+    }
+    /***********************
+    * package object-classes
+    **********************/ 
+        grouping carrier-eth-oam-sep-resource {
+            leaf network-interface-monitoring {
+                type boolean;
+                config false;
+                description "If true, the Monitoring Point is a Down MEP on UNI/ENNI/INNI base, i.e. monitoring reachability regardless tags and including possible LAG scheme
+                    (which is different from LAG Link MEG, which is used to monitor an individual LAG link).
+                    MEF 30.1: The UNI MEG allows monitoring the connectivity between the UNI-C and the UNI-N. The ENNI MEG allows monitoring the connectivity between adjacent ENNI-Ns.";
+            }
+            leaf enable-ais-insertion {
+                type boolean;
+                description "none";
+            }
+            leaf ais-priority {
+                type uint64;
+                default "7";
+                description "This attribute models the MI_AIS_Pri signal defined in G.8021 and configured as specified in G8051. It is the priority at which the AIS messages should be sent.";
+            }
+            leaf ais-period {
+                type tapi-eth:oam-period;
+                description "This attribute models the MI_AIS_Period signal defined in G.8021 and configured as specified in G8051. It is the frequency at which the AIS messages should be sent.
+                    MEF 30.1:
+                    [CD6] [D66] The default value for the AIS PDU transmission period SHOULD be 1 second.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-srv-resource {
+            list client-primary-vlan-id-and-mel {
+                key 'mel';
+                uses mef-types:primary-vlan-id-and-mel;
+                description "MEF 30.1: If the client MEG does not have a MEP on the same interface as the injecting MEP, i.e., it has a MIP or has no MP at all, then injecting an AIS involves transmitting an AIS PDU at the client MEG Level, with the appropriate VLAN tags for the client MEG, in the opposite direction to that in which the MEP normally sends CFM frames (that is, an Up MEP would send AIS PDUs out towards the wire, and a Down MEP would send AIS PDUs in towards the bridging function).
+                    Note that in this case, the injecting MEP requires knowledge (e.g., by configuration) of the MEG Level and (where the client MEGs have additional VLAN tags) the primary VID for each client MEG.";
+            }
+            container primary-vlan-id {
+                uses mef-types:vlan-id;
+                description "none";
+            }
+            leaf primary-vlan-type {
+                type mef-types:vlan-tag;
+                description "none";
+            }
+            leaf dmm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [R63] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for DMM frame transmission.
+                    [R64] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [D22] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [D23] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            leaf dm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [CR32] [O6] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for 1DM frame transmission. 
+                    Note: The frame size does not need to be configured at the Sink MEP.
+                    [CR33] [O6] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [CD6] [O6] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [CD7] [O6] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            leaf slm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [R76] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for SLM frame transmission.
+                    [R77] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [D29] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [D30] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            leaf sl-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [CR56] [O8] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for 1SL frame transmission.
+                    Note: The frame size does not need to be configured at the Sink MEP.
+                    [CR57] [O8] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [CD14] [O8] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [CD15] [O8] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.
+                    ";
+            }
+            leaf selection-offset-for-ifdv {
+                type uint64;
+                default "1";
+                description "MEF 35.1: 
+                    [O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. 
+                    [CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.
+                    [D24]/[CD8] The default selection offset for IFDV SHOULD be 1.";
+            }
+            uses carrier-eth-common-synt-loss-pm-function-resource;
+            description "none";
+        }
+        grouping carrier-eth-oam-pm-resource {
+            leaf soam-pm-frames-tx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of SOAM PM Frames sent.";
+            }
+            leaf soam-pm-frames-rx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of SOAM PM Frames received.";
+            }
+            description "MEF 35.1: Common Counters";
+        }
+        grouping carrier-eth-oam-pm-fd-synch-resource {
+            list fd-1-fw-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Forward direction that fall within the configured bin.";
+            }
+            leaf fd-1-fw-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEf 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FD measurement in the Forward direction in microseconds.";
+            }
+            leaf fd-1-fw-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way FD measurement in the Forward direction in microseconds.";
+            }
+            list fd-1-bk-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Backward direction that fall within the configured bin.";
+            }
+            leaf fd-1-bk-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FD measurement in the Backward direction in microseconds.";
+            }
+            leaf fd-1-bk-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way FD measurement in the Backward direction in microseconds.";
+            }
+            description "MEF 35.1: Mandatory Single-Ended Delay Data Set with Clock Synchronization (PM-1 Solution)";
+        }
+        grouping carrier-eth-oam-pm-fd-resource {
+            list fd-2-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FD measurements that fall within the configured range.";
+            }
+            leaf fd-2-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) Two-way FD measurement in microseconds.";
+            }
+            leaf fd-2-min {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the minimum Two-way FD measurement in microseconds.";
+            }
+            leaf fd-2-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum Two-way FD measurement in microseconds.";
+            }
+            list ifdv-1-fw-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of IFDV measurements (i.e., each instance of |Di – Dj| in the Forward direction) that fall within a configured bin.";
+            }
+            leaf ifdv-1-fw-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way IFDV measurement in the Forward direction in microseconds.";
+            }
+            leaf ifdv-1-fw-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way IFDV measurement in the Forward direction in microseconds.";
+            }
+            list ifdv-1-bk-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of IFDV measurements in the Backward direction that fall within a configured bin.";
+            }
+            leaf ifdv-1-bk-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way IFDV measurement in the Backward direction in microseconds.";
+            }
+            leaf ifdv-1-bk-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way IFDV measurement in the Backward direction in microseconds.";
+            }
+            list fdr-1-fw-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Forward direction that fall within a configured bin.";
+            }
+            leaf fdr-1-fw-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FDR measurement in the Forward direction in microseconds.";
+            }
+            leaf fdr-1-fw-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way FDR measurement in the Forward direction in microseconds.";
+            }
+            list fdr-1-bk-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Backward direction that fall within a configured bin.";
+            }
+            leaf fdr-1-bk-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FDR measurement in the Backward direction in microsecond.";
+            }
+            leaf fdr-1-bk-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way FDR measurement in the Backward direction in microseconds.";
+            }
+            leaf fd-1-fw-min {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the minimum One-way FD measurement in the Forward direction in microseconds.";
+            }
+            leaf fd-1-bk-min {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the minimum One-way FD measurement in the Backward direction in microseconds.";
+            }
+            container carrier-eth-oam-pm-fd-synch-resource {
+                config false;
+                uses carrier-eth-oam-pm-fd-synch-resource;
+                description "none";
+            }
+            uses carrier-eth-oam-pm-resource;
+            description "MEF 35.1: Mandatory Single-Ended Delay Data Set (PM-1 Solution)";
+        }
+        grouping carrier-eth-oam-pm-slm-resource {
+            leaf slm-frames-fw-tx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of SLM frames transmitted in the Forward direction.";
+            }
+            leaf slm-frames-fw-rx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of SLM frames received in the Forward direction.";
+            }
+            leaf slr-frames-bk-tx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of SLR frames transmitted in the Backward direction.";
+            }
+            leaf slr-frames-bk-rx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of SLR frames received in the Backward direction.";
+            }
+            leaf available-intervals-fw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Available in the Forward direction (i.e., for which A<Controller, Responder>(delta-t) = 1).";
+            }
+            leaf available-intervals-bw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Available in the Backward direction (i.e., for which A< Responder, Controller>(delta-t) = 1).";
+            }
+            leaf unavailable-intervals-fw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Unavailable in the Forward direction (i.e., for which A<Controller, Responder>(delta-t) = 0).";
+            }
+            leaf unavailable-intervals-bw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Unavailable in the Backward direction (i.e., for which A< Responder, Controller>(delta-t) = 0).";
+            }
+            leaf hli-count-fw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: Count of HLIs in the Forward direction during the Measurement Interval.";
+            }
+            leaf hli-count-bw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: Count of HLIs in the Backward direction during the Measurement Interval.";
+            }
+            leaf chli-count-fw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: Count of CHLIs in the Forward direction during the Measurement Interval.";
+            }
+            leaf chli-count-bw {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: Count of CHLIs in the Backward direction during the Measurement Interval.";
+            }
+            container carrier-eth-oam-pm-flr-resource {
+                config false;
+                uses carrier-eth-oam-pm-flr-resource;
+                description "none";
+            }
+            uses carrier-eth-oam-pm-resource;
+            description "MEF 35.1: Mandatory Single-Ended Synthetic Loss Data Set (PM-1 Solution)";
+        }
+        grouping carrier-eth-oam-pm-flr-resource {
+            leaf flr-1-fw-min {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The minimum One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-fw-max {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The maximum One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-fw-mean {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The average (arithmetic mean) One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-bk-min {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The minimum One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-bk-max {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The maximum One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-bk-mean {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The average (arithmetic mean) One-way Availability flr measurement during this Measurement Interval.";
+            }
+            description "MEF 35.1: Optional Single-Ended Synthetic Loss Data Set (PM-1 Solution)";
+        }
+        grouping carrier-eth-oam-pm-lm-resource {
+            leaf all-frames-fw-tx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 64-bit counter reflecting the number of frames transmitted in the Forward direction.";
+            }
+            leaf all-frames-fw-rx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 64-bit counter reflecting the number of frames received in the Forward direction.";
+            }
+            leaf all-frames-bk-tx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 64-bit counter reflecting the number of frames transmitted in the Backward direction.";
+            }
+            leaf all-frames-bk-rx {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 64-bit counter reflecting the number of frames received in the Backward direction.";
+            }
+            uses carrier-eth-oam-pm-resource;
+            description "MEF 35.1: Mandatory Single-Ended Service Loss Data Set (PM-3 Solution)";
+        }
+        grouping carrier-eth-oam-pm-2-fd-resource {
+            list ifdv-1-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of IFDV measurements that fall within the configured bin.";
+            }
+            leaf ifdv-1-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way IFDV measurement in microseconds.";
+            }
+            leaf ifdv-1-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way IFDV measurement in microseconds.";
+            }
+            list fdr-1-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FDR measurements that fall within a configured bin.";
+            }
+            leaf fdr-1-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FDR measurement in microseconds.";
+            }
+            leaf fdr-1-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way FDR measurement in microseconds.";
+            }
+            leaf fd-1-min {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the minimum One-way FD measurement in microseconds.";
+            }
+            container carrier-eth-oam-pm-2-fd-synch-resource {
+                config false;
+                uses carrier-eth-oam-pm-2-fd-synch-resource;
+                description "none";
+            }
+            uses carrier-eth-oam-pm-resource;
+            description "MEF 35.1: Mandatory Dual-Ended Delay Data Set (PM-2 Solution)";
+        }
+        grouping carrier-eth-oam-pm-2-fd-synch-resource {
+            list fd-1-bin {
+                config false;
+                min-elements 1;
+                uses metric-per-bin;
+                description "MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements that fall within the configured bin.";
+            }
+            leaf fd-1-mean {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FD measurement in microseconds.";
+            }
+            leaf fd-1-max {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit integer reflecting the maximum One-way FD measurement in microseconds.";
+            }
+            description "MEF 35.1: Mandatory Dual-Ended Delay Data Set with Clock Synchronization (PM-2 Solution)";
+        }
+        grouping carrier-eth-oam-pm-2-slm-resource {
+            leaf available-intervals {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Available (i.e., for which A<Controller, Sink>(delta-t) = 1).";
+            }
+            leaf unavailable-intervals {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Unavailable (i.e., for which A<Controller, Sink>(delta-t) = 0).";
+            }
+            leaf hli-count {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: Count of HLIs during the Measurement Interval.";
+            }
+            leaf chli-count {
+                type mef-types:positive-integer;
+                config false;
+                description "MEF 35.1: Count of CHLIs during the Measurement Interval.";
+            }
+            container carrier-eth-oam-pm-2-flr-resource {
+                config false;
+                uses carrier-eth-oam-pm-2-flr-resource;
+                description "none";
+            }
+            uses carrier-eth-oam-pm-resource;
+            description "MEF 35.1: Mandatory Dual-Ended Synthetic Loss Data Set (PM-4 Solution)";
+        }
+        grouping carrier-eth-oam-pm-2-flr-resource {
+            leaf flr-1-min {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The minimum One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-max {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The maximum One-way Availability flr measurement during this Measurement Interval.";
+            }
+            leaf flr-1-mean {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                config false;
+                description "MEF 35.1: The average (arithmetic mean) One-way Availability flr measurement during this Measurement Interval.";
+            }
+            description "MEF 35.1: Optional Dual-Ended Synthetic Loss Data Set (PM-4 Solution)";
+        }
+        grouping carrier-eth-oam-fd-bins-resource {
+            list bin {
+                key 'bin-index';
+                uses bin-idand-lower-bound;
+                description "none";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-fdr-bins-resource {
+            list bin {
+                key 'bin-index';
+                uses bin-idand-lower-bound;
+                description "none";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-ifdv-bins-resource {
+            list bin {
+                key 'bin-index';
+                uses bin-idand-lower-bound;
+                description "none";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-tca-thr-resource {
+            leaf stateful {
+                type boolean;
+                description "MEF 35.1: The stateless TCA reporting treats each Measurement Interval separately.  When using stateless TCA reporting, each TCA Function has a single configured threshold.  As soon as the threshold is reached or crossed in a Measurement Interval for a given performance metric, a TCA is generated.
+                    Stateful TCA reporting is another option for how TCAs are generated, that can reduce the total number of TCAs.  The intent is to provide a notification when a degradation is first encountered, followed by another when the problem is resolved.  This contrasts with stateless TCA reporting, in which TCAs are generated continuously for as long as the degradation lasts.";
+            }
+            container fd-1-fw-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: One-way FD in the Forward direction.
+                    Threshold Crossing Detection: UBC(k) >= Forward One-way N(FD) 
+                    ";
+            }
+            container fd-1-fw-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way Maximum FD in the Forward direction.
+                    Threshold Crossing Detection: Max FD >= Forward One-way V(max(FD))
+                    ";
+            }
+            container fdr-1-fw-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: One-way FDR in the Forward direction.
+                    Threshold Crossing Detection: UBC(k) >= Forward One-way N(FDR)
+                    ";
+            }
+            container fdr-1-fw-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way Maximum FDR in the Forward direction.
+                    Threshold Crossing Detection: Max FDR >= Forward One-way V(max(FDR))";
+            }
+            container ifdv-1-fw-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: One-way IFDV in the Forward direction.
+                    Threshold Crossing Detection: UBC(k) >= Forward One-way N(IFDV)";
+            }
+            container ifdv-1-fw-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way Maximum IFDV in the Forward direction.
+                    Threshold Crossing Detection: Max IFDV >= Forward One-way V(max(IFDV))";
+            }
+            container hli-1-fw-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way HLI in the Forward direction.
+                    Threshold Crossing Detection: HLI count >= Forward One-way N(HLI)";
+            }
+            container chli-1-fw-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way CHLI in the Forward direction.
+                    Threshold Crossing Detection: CHLI count >= Forward One-way N(CHLI)";
+            }
+            container fd-1-bk-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: One-way FD in the Backward direction.
+                    Threshold Crossing Detection: UBC(k) >= Backward One-way N(FD)";
+            }
+            container fd-1-bk-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way Maximum FD in the Backward direction.
+                    Threshold Crossing Detection: Max FD >= Backward One-way V(max(FD))";
+            }
+            container fdr-1-bk-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: One-way FDR in the Backward direction.
+                    Threshold Crossing Detection: UBC(k) >= Backward One-way N(FDR)";
+            }
+            container fdr-1-bk-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way Maximum FDR in the Backward direction.
+                    Threshold Crossing Detection: Max FDR >= Backward One-way V(max(FDR))";
+            }
+            container ifdv-1-bk-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: One-way IFDV in the Backward direction.
+                    Threshold Crossing Detection: UBC(k) >= Backward One-way N(IFDV)";
+            }
+            container ifdv-1-bk-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way Maximum IFDV in the Backward direction.
+                    Threshold Crossing Detection: Max IFDV >= Backward One-way V(max(IFDV))";
+            }
+            container hli-1-bk-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way HLI in the Backward direction.
+                    Threshold Crossing Detection: HLI count >= Backward One-way N(HLI)";
+            }
+            container chli-1-bk-thr-max {
+                uses thr-values;
+                description "MEF 35.1: One-way CHLI in the Backward direction.
+                    Threshold Crossing Detection: CHLI count >= Backward One-way N(CHLI)
+                    ";
+            }
+            container fd-2-bin-thr {
+                uses upper-bin-count-thr-values;
+                description "MEF 35.1: Two-way FD.
+                    Threshold Crossing Detection: UBC(k) >= Two-way N(FD)";
+            }
+            container fd-2-thr-max {
+                uses thr-values;
+                description "MEF 35.1: Two-way Maximum FD.
+                    Threshold Crossing Detection: Max FD >= Two-way V(max(FD))";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-job-loopback-resource {
+            leaf lbr-timeout {
+                type uint64;
+                default "5";
+                description "MEF 30.1: [D48] For each LB session, the timeout for an expected LBR result after a LBM transmission SHOULD be configurable.
+                    [D49] The default value of the LBR timeout SHOULD be 5 seconds.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-job-link-trace-resource {
+            description "none";
+        }
+        grouping carrier-eth-oam-job-test-resource {
+            description "none";
+        }
+        grouping carrier-eth-oam-job-loopback-result-resource {
+            leaf percentage-of-lost-responses {
+                type uint64;
+                config false;
+                description "MEF 30.1: [D57] For an LB Session, the initiating MEP SHOULD be able to report the percent-age of responses lost (timed out).";
+            }
+            container round-trip-time-min {
+                config false;
+                uses tapi-common:time-period;
+                description "MEF 30.1: [D58]    For an LB session, the round trip time (RTT) min/max/average statistics SHOULD be supported by the initiating MEP.";
+            }
+            container round-trip-time-max {
+                config false;
+                uses tapi-common:time-period;
+                description "MEF 30.1: [D58]    For an LB session, the round trip time (RTT) min/max/average statistics SHOULD be supported by the initiating MEP.";
+            }
+            container round-trip-time-average {
+                config false;
+                uses tapi-common:time-period;
+                description "MEF 30.1: [D58]    For an LB session, the round trip time (RTT) min/max/average statistics SHOULD be supported by the initiating MEP.";
+            }
+            leaf sent-lbr-from-responding-mp {
+                type uint64;
+                config false;
+                description "MEF 30.1: [D59] A responding MP SHOULD be able to report the aggregate number of LBMs received and the aggregate number of LBRs transmitted during a time period.";
+            }
+            leaf received-lbm-from-responding-mp {
+                type uint64;
+                config false;
+                description "MEF 30.1: [D59] A responding MP SHOULD be able to report the aggregate number of LBMs received and the aggregate number of LBRs transmitted during a time period.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-job-link-trace-result-resource {
+            leaf sent-ltm-from-initiating-mp {
+                type uint64;
+                config false;
+                description "MEF 30.1: [R47] An initiating MEP MUST be able to report the number of LTMs transmitted and the number of LTRs received.";
+            }
+            leaf received-ltr-from-initiating-mp {
+                type uint64;
+                config false;
+                description "MEF 30.1: [R47] An initiating MEP MUST be able to report the number of LTMs transmitted and the number of LTRs received.";
+            }
+            leaf sent-ltr-from-responding-mp {
+                type uint64;
+                config false;
+                description "MEF 30.1: [D65] A responding MP SHOULD be able to report the number of LTMs received and the number of LTRs transmitted.";
+            }
+            leaf received-ltm-from-responding-mp {
+                type uint64;
+                config false;
+                description "MEF 30.1: [D65] A responding MP SHOULD be able to report the number of LTMs received and the number of LTRs transmitted.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-job-test-result-resource {
+            description "none";
+        }
+        grouping carrier-eth-oam-bin-thrs-resource {
+            leaf bin-threshold-type {
+                type carrier-ethernet-bin-threshold-types;
+                description "none";
+            }
+            container set-threshold-bin-value {
+                uses upper-bin-count;
+                description "MEF 35.1:
+                    When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold (defined in this attribute) and a CLEAR threshold. 
+                    These may be the same, or the CLEAR threshold may be lower than the SET threshold.
+                    When using stateless TCA reporting, each TCA Function has a single configured threshold (defined in this attribute).";
+            }
+            container clear-threshold-bin-value {
+                uses upper-bin-count;
+                description "MEF 35.1:
+                    When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold and a CLEAR threshold (defined in this attribute). 
+                    These may be the same, or the CLEAR threshold may be lower than the SET threshold.
+                    When using stateless TCA reporting, each TCA Function has a single configured threshold (this attribute is not considered / ignored).";
+            }
+            container observed-bin-value {
+                config false;
+                uses upper-bin-count;
+                description "none";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-counter-thrs-resource {
+            leaf counter-threshold-type {
+                type carrier-ethernet-counter-threshold-types;
+                description "none";
+            }
+            leaf set-threshold-counter-value {
+                type mef-types:positive-integer;
+                description "MEF 35.1:
+                    When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold (defined in this attribute) and a CLEAR threshold. 
+                    These may be the same, or the CLEAR threshold may be lower than the SET threshold.
+                    When using stateless TCA reporting, each TCA Function has a single configured threshold (defined in this attribute).";
+            }
+            leaf clear-threshold-counter-value {
+                type mef-types:positive-integer;
+                description "MEF 35.1:
+                    When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold and a CLEAR threshold (defined in this attribute). 
+                    These may be the same, or the CLEAR threshold may be lower than the SET threshold.
+                    When using stateless TCA reporting, each TCA Function has a single configured threshold (this attribute is not considered / ignored).";
+            }
+            leaf observed-counter-value {
+                type mef-types:positive-integer;
+                config false;
+                description "none";
+            }
+            description "none";
+        }
+        grouping carrier-eth-oam-tca-thrs-resource {
+            list carrier-eth-oam-counter-thrs-resource {
+                key 'counter-threshold-type';
+                uses carrier-eth-oam-counter-thrs-resource;
+                description "none";
+            }
+            list carrier-eth-oam-bin-thrs-resource {
+                key 'bin-threshold-type';
+                uses carrier-eth-oam-bin-thrs-resource;
+                description "none";
+            }
+            description "none";
+        }
+        grouping carrier-eth-pro-act-dual-end-delay-pm-function-resource {
+            leaf selection-offset-for-ifdv {
+                type uint64;
+                default "1";
+                description "MEF 35.1: 
+                    [O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. 
+                    [CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.
+                    [D24]/[CD8] The default selection offset for IFDV SHOULD be 1.";
+            }
+            leaf dm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [CR32] [O6] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for 1DM frame transmission. 
+                    Note: The frame size does not need to be configured at the Sink MEP.
+                    [CR33] [O6] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [CD6] [O6] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [CD7] [O6] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-pro-act-single-end-delay-pm-function-resource {
+            leaf selection-offset-for-ifdv {
+                type uint64;
+                default "1";
+                description "MEF 35.1: 
+                    [O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. 
+                    [CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.
+                    [D24]/[CD8] The default selection offset for IFDV SHOULD be 1.";
+            }
+            leaf dmm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [R63] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for DMM frame transmission.
+                    [R64] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [D22] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [D23] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-on-dmd-dual-end-delay-pm-function-resource {
+            leaf selection-offset-for-ifdv {
+                type uint64;
+                default "1";
+                description "MEF 35.1: 
+                    [O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. 
+                    [CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.
+                    [D24]/[CD8] The default selection offset for IFDV SHOULD be 1.";
+            }
+            leaf dm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [CR32] [O6] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for 1DM frame transmission. 
+                    Note: The frame size does not need to be configured at the Sink MEP.
+                    [CR33] [O6] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [CD6] [O6] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [CD7] [O6] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-on-dmd-single-end-loss-pm-function-resource {
+            leaf flr-availability-delta-time {
+                type uint64;
+                default "1";
+                description "MEF 35.1:
+                    [R78]/[CR58] [O8] A SOAM PM Implementation MUST support a configurable parameter for the length of time over which each Availability flr value is calculated, with a range of 1s – 300s.  This parameter is equivalent to delta-t as specified by MEF 10.3.
+                    [R79]/[CR59] [O8] The length of time over which each Availability flr value is calculated (delta-t) MUST be an integer multiple of the interval between each SLM/1SL frame transmission.
+                    [D31]/[CD16] [O8] The default length of time over which each Availability flr value is calculated SHOULD be 1s.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-on-dmd-single-end-synt-loss-pm-function-resource {
+            leaf slm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [R76] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for SLM frame transmission.
+                    [R77] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [D29] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [D30] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            uses carrier-eth-common-synt-loss-pm-function-resource;
+            description "none";
+        }
+        grouping carrier-eth-pro-act-single-end-loss-pm-function-resource {
+            leaf flr-availability-delta-time {
+                type uint64;
+                default "1";
+                description "MEF 35.1:
+                    [R78]/[CR58] [O8] A SOAM PM Implementation MUST support a configurable parameter for the length of time over which each Availability flr value is calculated, with a range of 1s – 300s.  This parameter is equivalent to delta-t as specified by MEF 10.3.
+                    [R79]/[CR59] [O8] The length of time over which each Availability flr value is calculated (delta-t) MUST be an integer multiple of the interval between each SLM/1SL frame transmission.
+                    [D31]/[CD16] [O8] The default length of time over which each Availability flr value is calculated SHOULD be 1s.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-pro-act-single-end-synt-loss-pm-function-resource {
+            leaf slm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [R76] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for SLM frame transmission.
+                    [R77] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [D29] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [D30] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            uses carrier-eth-common-synt-loss-pm-function-resource;
+            description "none";
+        }
+        grouping carrier-eth-on-dmd-single-end-delay-pm-function-resource {
+            leaf selection-offset-for-ifdv {
+                type uint64;
+                default "1";
+                description "MEF 35.1: 
+                    [O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. 
+                    [CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.
+                    A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.
+                    [D24]/[CD8] The default selection offset for IFDV SHOULD be 1.";
+            }
+            leaf dmm-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [R63] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for DMM frame transmission.
+                    [R64] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [D22] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [D23] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            description "none";
+        }
+        grouping carrier-eth-pro-act-dual-end-synt-loss-pm-function-resource {
+            leaf sl-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [CR56] [O8] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for 1SL frame transmission.
+                    Note: The frame size does not need to be configured at the Sink MEP.
+                    [CR57] [O8] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [CD14] [O8] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [CD15] [O8] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            uses carrier-eth-common-synt-loss-pm-function-resource;
+            description "none";
+        }
+        grouping carrier-eth-on-dmd-dual-end-synt-loss-pm-function-resource {
+            leaf sl-frame-size {
+                type uint64;
+                default "64";
+                description "Frame size, in octets.
+                    MEF 35.1:
+                    [CR56] [O8] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for 1SL frame transmission.
+                    Note: The frame size does not need to be configured at the Sink MEP.
+                    [CR57] [O8] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.
+                    [CD14] [O8] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.
+                    [CD15] [O8] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.";
+            }
+            uses carrier-eth-common-synt-loss-pm-function-resource;
+            description "none";
+        }
+        grouping carrier-eth-common-synt-loss-pm-function-resource {
+            leaf flr-availability-delta-time {
+                type uint64;
+                default "1";
+                description "MEF 35.1:
+                    [R78]/[CR58] [O8] A SOAM PM Implementation MUST support a configurable parameter for the length of time over which each Availability flr value is calculated, with a range of 1s – 300s.  This parameter is equivalent to delta-t as specified by MEF 10.3.
+                    [R79]/[CR59] [O8] The length of time over which each Availability flr value is calculated (delta-t) MUST be an integer multiple of the interval between each SLM/1SL frame transmission.
+                    [D31]/[CD16] [O8] The default length of time over which each Availability flr value is calculated SHOULD be 1s.";
+            }
+            leaf flr-availability-samples {
+                type uint64;
+                default "10";
+                description "MEF 35.1:
+                    [R80]/[CR60] [O8] The number range of 1 through 10 MUST be supported for the configurable number of consecutive Availability flr measurements to be used to determine Available/Unavailable state transitions.
+                    This parameter is equivalent to the Availability parameter of n as specified by MEF 10.3.
+                    [D32]/[CD17] [O8] The default number of n for Availability SHOULD be 10.";
+            }
+            leaf flr-availability-threshold {
+                type decimal64 {
+                    fraction-digits 7;
+                }
+                default "0.1";
+                description "MEF 35.1:
+                    [R81]/[CR61] A SOAM PM Implementation MUST support a configurable Availability frame loss ratio threshold to be used in evaluating the Available/Unavailable state of each delta-t interval per MEF 10.3
+                    [R82]/[CR62] The Availability frame loss ratio threshold range of 0.00 through 1.00 MUST be supported in increments of 0.01.
+                    [D33]/[CD18] [O8] The default Availability frame loss ratio threshold SHOULD be 0.1.";
+            }
+            leaf number-of-hli-for-chli {
+                type uint64;
+                default "5";
+                description "MEF 35.1: The number of HLIs (High Loss Interval) that constitute a CHLI (Consecutive High Loss Interval).
+                    MEF 10.3: A High Loss Interval (HLI) is a small time interval contained in T (having the same duration as the interval delta-t) with a high frame loss ratio.
+                    When sufficient HLIs are adjacent, the interval is designated as a Consecutive High Loss Interval (CHLI). 
+                    [R86]/[CR66] A SOAM PM Implementation MUST support a configurable parameter to indicate the number of HLIs that constitute a CHLI.  This is equivalent to p in MEF 10.3.
+                    [D34]/[CD19] The default value for the number of HLIs that constitute a CHLI SHOULD be 5.";
+            }
+            description "none";
+        }
+
+    /***********************
+    * package diagrams
+    **********************/ 
+
+    /***********************
+    * package types
+    **********************/ 
+        grouping bin-idand-lower-bound {
+            leaf bin-index {
+                type uint64;
+                description "Index or Id of the BIN, natural number 1,2,3, ...";
+            }
+            leaf lower-bound {
+                type uint64;
+                description "none";
+            }
+            description "MEF 35.1: Each bin is associated with a specific range of observed delay, IFDV or FDR (frame delay, inter-frame delay variation, and frame delay range).  Bins are defined to be contiguous, and each is configured with its lower bound. 
+                Because the bins are contiguous, it is only necessary to configure the lower bound of each bin. 
+                Furthermore, the lowest bin is assumed to always have a lower bound of 0, and the highest bin is assumed to have an upper bound of infinite.";
+        }
+        grouping metric-per-bin {
+            leaf metric {
+                type mef-types:positive-integer;
+                description "none";
+            }
+            leaf bin-index {
+                type mef-types:positive-integer;
+                description "none";
+            }
+            description "MEF 35.1: [metric property represents] the number of measurements that fall within a configured bin.
+                The configured bin is identified by the metric type of the attribute (FD/FDR/IFDV) plus the bin index [binIndex property].";
+        }
+        grouping bandwidth-report {
+            leaf source-mac-address {
+                type string;
+                description "none";
+            }
+            leaf port-id {
+                type uint64;
+                description "none";
+            }
+            leaf nominal-bandwidth {
+                type uint64;
+                description "none";
+            }
+            leaf current-bandwidth {
+                type uint64;
+                description "none";
+            }
+            description "none";
+        }
+        grouping upper-bin-count {
+            leaf k {
+                type mef-types:positive-integer;
+                description "none";
+            }
+            leaf n {
+                type mef-types:positive-integer;
+                description "none";
+            }
+            description "MEF 35.1: For performance metrics that use Measurement Bins, thresholds are defined in terms of an Upper Bin Count (UBC). 
+                The Upper Bin Count of bin k is the total of the counts for bins k and above, i.e. UBC(k) = count of bin (k) + count of bin (k+1) + ... + count of bin (n), where n is the last bin.
+                To configure a threshold, both the bin number, k, and the total count, N, need to be specified - this is represented as (N, k).  A threshold (N, k) is considered to have been crossed when UBC(k) >= N.
+                ";
+        }
+        grouping upper-bin-count-thr-values {
+            container upper-bin-count-thr-set {
+                uses upper-bin-count;
+                description "none";
+            }
+            container upper-bin-count-thr-clear {
+                uses upper-bin-count;
+                description "none";
+            }
+            description "MEF 35.1: For performance metrics that use Measurement Bins, thresholds are defined in terms of an Upper Bin Count (UBC). 
+                The Upper Bin Count of bin k is the total of the counts for bins k and above, i.e. UBC(k) = count of bin (k) + count of bin (k+1) + ... + count of bin (n), where n is the last bin.
+                To configure a threshold, both the bin number, k, and the total count, N, need to be specified - this is represented as (N, k).  A threshold (N, k) is considered to have been crossed when UBC(k) >= N.
+                [O4] A SOAM PM implementation MUST support a single configurable parameter for the threshold value for each TCA Function that uses stateless TCA reporting.
+                [CR6]<[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MUST support the CLEAR threshold being equal to the SET threshold.
+                [CO1]<[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MAY support the CLEAR threshold being different to the SET threshold.
+                For thresholds defined using bins, a CLEAR threshold (Nc, kc) is defined to be less than or equal to a SET threshold (Ns, ks) if kc = ks and Nc <= Ns.";
+        }
+        grouping thr-values {
+            leaf thr-set-value {
+                type mef-types:positive-integer;
+                description "none";
+            }
+            leaf thr-clear-value {
+                type mef-types:positive-integer;
+                description "none";
+            }
+            description "[O4] A SOAM PM implementation MUST support a single configurable parameter for the threshold value for each TCA Function that uses stateless TCA reporting.
+                [CR6]<[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MUST support the CLEAR threshold being equal to the SET threshold.
+                [CO1]<[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MAY support the CLEAR threshold being different to the SET threshold.";
+        }
+        typedef carrier-ethernet-counter-threshold-types {
+            type enumeration {
+                enum fd1FwMaxThrs {
+                    description "MEF 35.1: One-way Maximum FD in the Forward direction.
+                        A 32-bit integer reflecting the maximum One-way FD measurement in the Forward direction in microseconds.
+                        Threshold Crossing Detection: Max FD >= Forward One-way V(max(FD))";
+                }
+                enum fdr1FwMaxThrs {
+                    description "MEF 35.1: One-way Maximum FDR in the Forward direction.
+                        A 32-bit integer reflecting the maximum One-way FDR measurement in the Forward direction in microseconds.
+                        Threshold Crossing Detection: Max FDR >= Forward One-way V(max(FDR))";
+                }
+                enum ifdv1FwMaxThrs {
+                    description "MEF 35.1: One-way Maximum IFDV in the Forward direction.
+                        A 32-bit integer reflecting the maximum One-way IFDV measurement in the Forward direction in microseconds.
+                        Threshold Crossing Detection: Max IFDV >= Forward One-way V(max(IFDV))";
+                }
+                enum hli1FwMaxThrs {
+                    description "MEF 35.1: One-way HLI in the Forward direction.
+                        Count of HLIs in the Forward direction during the Measurement Interval.
+                        Threshold Crossing Detection: HLI count >= Forward One-way N(HLI)";
+                }
+                enum chli1FwMaxThrs {
+                    description "MEF 35.1: One-way CHLI in the Forward direction.
+                        Count of CHLIs in the Forward direction during the Measurement Interval.
+                        Threshold Crossing Detection: CHLI count >= Forward One-way N(CHLI)";
+                }
+                enum fd1BkMaxThrs {
+                    description "MEF 35.1: One-way Maximum FD in the Backward direction.
+                        A 32-bit integer reflecting the maximum One-way FD measurement in the Backward direction in microseconds.
+                        Threshold Crossing Detection: Max FD >= Backward One-way V(max(FD))";
+                }
+                enum fdr1BkMaxThrs {
+                    description "MEF 35.1: One-way Maximum FDR in the Backward direction.
+                        A 32-bit integer reflecting the maximum One-way FDR measurement in the Backward direction in microseconds.
+                        Threshold Crossing Detection: Max FDR >= Backward One-way V(max(FDR))";
+                }
+                enum ifdv1BkMaxThrs {
+                    description "MEF 35.1: One-way Maximum IFDV in the Backward direction.
+                        A 32-bit integer reflecting the maximum One-way IFDV measurement in the Backward direction in microseconds.
+                        Threshold Crossing Detection: Max IFDV >= Backward One-way V(max(IFDV))";
+                }
+                enum hli1BkMaxThrs {
+                    description "MEF 35.1: One-way HLI in the Backward direction.
+                        Count of HLIs in the Backward direction during the Measurement Interval.
+                        Threshold Crossing Detection: HLI count >= Backward One-way N(HLI)";
+                }
+                enum chli1BkMaxThrs {
+                    description "MEF 35.1: One-way CHLI in the Backward direction.
+                        Count of CHLIs in the Backward direction during the Measurement Interval.
+                        Threshold Crossing Detection: CHLI count >= Backward One-way N(CHLI)";
+                }
+                enum fd2MaxThrs {
+                    description "MEF 35.1: Two-way Maximum FD.
+                        A 32-bit integer reflecting the maximum Two-way FD measurement in microseconds.
+                        Threshold Crossing Detection: Max FD >= Two-way V(max(FD))";
+                }
+            }
+            description "none";
+        }
+        typedef carrier-ethernet-bin-threshold-types {
+            type enumeration {
+                enum fd1FwBinThrs {
+                    description "MEF 35.1: One-way FD in the Forward direction.
+                        A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Forward direction that fall within the configured bin.
+                        Threshold Crossing Detection: UBC(k) >= Forward One-way N(FD) ";
+                }
+                enum fdr1FwBinThrs {
+                    description "MEF 35.1: One-way FDR in the Forward direction.
+                        A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Forward direction that fall within a configured bin.
+                        Threshold Crossing Detection: UBC(k) >= Forward One-way N(FDR)";
+                }
+                enum ifdv1FwBinThrs {
+                    description "MEF 35.1: One-way IFDV in the Forward direction.
+                        A 32-bit counter per Measurement Bin that counts the number of IFDV measurements (i.e., each instance of |Di – Dj| in the Forward direction) that fall within a configured bin.
+                        Threshold Crossing Detection: UBC(k) >= Forward One-way N(IFDV)";
+                }
+                enum fd1BkBinThrs {
+                    description "MEF 35.1: One-way FD in the Backward direction.
+                        A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Backward direction that fall within the configured bin.
+                        Threshold Crossing Detection: UBC(k) >= Backward One-way N(FD)";
+                }
+                enum fdr1BkBinThrs {
+                    description "MEF 35.1: One-way FDR in the Backward direction.
+                        A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Backward direction that fall within a configured bin.
+                        Threshold Crossing Detection: UBC(k) >= Backward One-way N(FDR)";
+                }
+                enum ifdv1BkBinThrs {
+                    description "MEF 35.1: One-way IFDV in the Backward direction.
+                        A 32-bit counter per Measurement Bin that counts the number of IFDV measurements in the Backward direction that fall within a configured bin.
+                        Threshold Crossing Detection: UBC(k) >= Backward One-way N(IFDV)";
+                }
+                enum fd2BinThrs {
+                    description "MEF 35.1: Two-way FD.
+                        A 32-bit counter per Measurement Bin that counts the number of FD measurements that fall within the configured range.
+                        Threshold Crossing Detection: UBC(k) >= Two-way N(FD)";
+                }
+            }
+            description "none";
+        }
+
+}

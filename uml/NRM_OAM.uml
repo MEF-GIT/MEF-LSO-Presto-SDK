@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 ../TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
+  <uml:Model xmi:id="_1XX9gPN9EeaCAKUww6qx7Q" name="NRM_OAM">
+    <packagedElement xmi:type="uml:Package" xmi:id="_5m-FoPPZEeaM1tUPy-C-ow" name="ObjectClasses">
+      <packagedElement xmi:type="uml:Class" xmi:id="_WA0x8G5XEeiYrIad_YkIyg" name="CarrierEthOamSepResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_qgNBgH4AEeiqyqSVRuW60g" name="networkInterfaceMonitoring" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-t-iYH4AEeiqyqSVRuW60g" annotatedElement="_qgNBgH4AEeiqyqSVRuW60g">
+            <body>If true, the Monitoring Point is a Down MEP on UNI/ENNI/INNI base, i.e. monitoring reachability regardless tags and including possible LAG scheme&#xD;
+(which is different from LAG Link MEG, which is used to monitor an individual LAG link).&#xD;
+MEF 30.1: The UNI MEG allows monitoring the connectivity between the UNI-C and the UNI-N. The ENNI MEG allows monitoring the connectivity between adjacent ENNI-Ns.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xxu_EH6oEeiqyqSVRuW60g" name="enableAisInsertion">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_gkG8wM_6EeiQlow2bYuzuw" name="aisPriority">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_k5Tl8M_7EeiQlow2bYuzuw" annotatedElement="_gkG8wM_6EeiQlow2bYuzuw">
+            <body>This attribute models the MI_AIS_Pri signal defined in G.8021 and configured as specified in G8051. It is the priority at which the AIS messages should be sent.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_lp6Y8M_6EeiQlow2bYuzuw" value="7"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_hEKV0M_6EeiQlow2bYuzuw" name="aisPeriod">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_E-ICwM_7EeiQlow2bYuzuw" annotatedElement="_hEKV0M_6EeiQlow2bYuzuw">
+            <body>This attribute models the MI_AIS_Period signal defined in G.8021 and configured as specified in G8051. It is the frequency at which the AIS messages should be sent.&#xD;
+MEF 30.1:&#xD;
+[CD6] [D66] The default value for the AIS PDU transmission period SHOULD be 1 second.</body>
+          </ownedComment>
+          <type xmi:type="uml:Enumeration" href="../TAPI/UML/TapiEth.uml#_XmBCIHmuEd2GobjTM4neEA"/>
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_IYc_IM_8EeiQlow2bYuzuw">
+            <type xmi:type="uml:Enumeration" href="../TAPI/UML/TapiEth.uml#_XmBCIHmuEd2GobjTM4neEA"/>
+            <instance xmi:type="uml:EnumerationLiteral" href="../TAPI/UML/TapiEth.uml#_e6NogHmuEd2GobjTM4neEA"/>
+          </defaultValue>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_MCUZMH30EeiqyqSVRuW60g" name="CarrierEthOamSrvResource">
+        <generalization xmi:type="uml:Generalization" xmi:id="_OIJ1QNJfEeiOXPERXrWTXw" general="_A95P4NJeEeiOXPERXrWTXw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_dF1bMH4NEeiqyqSVRuW60g" name="clientPrimaryVlanIdAndMEL">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_OrZb0H4WEeiqyqSVRuW60g" annotatedElement="_dF1bMH4NEeiqyqSVRuW60g">
+            <body>MEF 30.1: If the client MEG does not have a MEP on the same interface as the injecting MEP, i.e., it has a MIP or has no MP at all, then injecting an AIS involves transmitting an AIS PDU at the client MEG Level, with the appropriate VLAN tags for the client MEG, in the opposite direction to that in which the MEP normally sends CFM frames (that is, an Up MEP would send AIS PDUs out towards the wire, and a Down MEP would send AIS PDUs in towards the bridging function).&#xD;
+Note that in this case, the injecting MEP requires knowledge (e.g., by configuration) of the MEG Level and (where the client MEGs have additional VLAN tags) the primary VID for each client MEG.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_jDWYsH6gEeiqyqSVRuW60g"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e8GfYH60EeiqyqSVRuW60g"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e8QQYH60EeiqyqSVRuW60g" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B6l4AH60EeiqyqSVRuW60g" name="primaryVlanId">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#__yzNwE3UEeW8nr4xP1Jhmg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_He_UsH60EeiqyqSVRuW60g" name="primaryVlanType">
+          <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_vjkIsNAuEeWuNf2VLdfDCg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_l__ooM80EeiQlow2bYuzuw" name="dmmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BWxMgM81EeiQlow2bYuzuw" annotatedElement="_l__ooM80EeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[R63] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for DMM frame transmission.&#xD;
+[R64] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[D22] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[D23] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_dfDQYM82EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mwgqIM81EeiQlow2bYuzuw" name="1dmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6I3l8M81EeiQlow2bYuzuw" annotatedElement="_mwgqIM81EeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[CR32] [O6] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for 1DM frame transmission. &#xD;
+Note: The frame size does not need to be configured at the Sink MEP.&#xD;
+[CR33] [O6] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[CD6] [O6] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[CD7] [O6] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_R88fIM82EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_hGMWMM82EeiQlow2bYuzuw" name="slmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_snM7QM82EeiQlow2bYuzuw" annotatedElement="_hGMWMM82EeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[R76] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for SLM frame transmission.&#xD;
+[R77] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[D29] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[D30] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_1_A_MM82EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_U2jzgM_ZEeiQlow2bYuzuw" name="1slFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_iKa2QM_ZEeiQlow2bYuzuw" annotatedElement="_U2jzgM_ZEeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[CR56] [O8] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for 1SL frame transmission.&#xD;
+Note: The frame size does not need to be configured at the Sink MEP.&#xD;
+[CR57] [O8] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[CD14] [O8] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[CD15] [O8] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.&#xD;
+</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Z5GPkM_1EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_62WhkM82EeiQlow2bYuzuw" name="selectionOffsetForIfdv">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CgKLkM83EeiQlow2bYuzuw" annotatedElement="_62WhkM82EeiQlow2bYuzuw">
+            <body>MEF 35.1: &#xD;
+[O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. &#xD;
+[CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.&#xD;
+[D24]/[CD8] The default selection offset for IFDV SHOULD be 1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_9myB0M82EeiQlow2bYuzuw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_R8NOoH39EeiqyqSVRuW60g" name="CarrierEthOamPmResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_gJiIsH-tEeiIS5sA2ssQOQ" annotatedElement="_R8NOoH39EeiqyqSVRuW60g">
+          <body>MEF 35.1: Common Counters</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_01_Q4H7BEeiIS5sA2ssQOQ" name="soamPmFramesTx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lvCbsH7IEeiIS5sA2ssQOQ" annotatedElement="_01_Q4H7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of SOAM PM Frames sent.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_1W7awH7BEeiIS5sA2ssQOQ" name="soamPmFramesRx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DLZMAH7JEeiIS5sA2ssQOQ" annotatedElement="_1W7awH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of SOAM PM Frames received.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_CISmsH69EeiIS5sA2ssQOQ" name="CarrierEthOamPmFdSynchResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_VCZ1kH7kEeiIS5sA2ssQOQ" annotatedElement="_CISmsH69EeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Single-Ended Delay Data Set with Clock Synchronization (PM-1 Solution)</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2io_8H7BEeiIS5sA2ssQOQ" name="fd1FwBin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_d5nrgIEhEeiNuZsz-QLKsQ" annotatedElement="_2io_8H7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Forward direction that fall within the configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M6ai8IEiEeiNuZsz-QLKsQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M6iewIEiEeiNuZsz-QLKsQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_25uqQH7BEeiIS5sA2ssQOQ" name="fd1FwMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C4t_EIEjEeiNuZsz-QLKsQ" annotatedElement="_25uqQH7BEeiIS5sA2ssQOQ">
+            <body>MEf 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FD measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3Npr0H7BEeiIS5sA2ssQOQ" name="fd1FwMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_F9glwIEjEeiNuZsz-QLKsQ" annotatedElement="_3Npr0H7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way FD measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3gnrIH7BEeiIS5sA2ssQOQ" name="fd1BkBin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_L9_hgIEjEeiNuZsz-QLKsQ" annotatedElement="_3gnrIH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Backward direction that fall within the configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ki5nEIEkEeiNuZsz-QLKsQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ki8qYIEkEeiNuZsz-QLKsQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_308VUH7BEeiIS5sA2ssQOQ" name="fd1BkMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PwHvUIEjEeiNuZsz-QLKsQ" annotatedElement="_308VUH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FD measurement in the Backward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4J5RoH7BEeiIS5sA2ssQOQ" name="fd1BkMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_UtZhoIEjEeiNuZsz-QLKsQ" annotatedElement="_4J5RoH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way FD measurement in the Backward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_CthasH69EeiIS5sA2ssQOQ" name="CarrierEthOamPmFdResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_n8_swH7jEeiIS5sA2ssQOQ" annotatedElement="_CthasH69EeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Single-Ended Delay Data Set (PM-1 Solution)</body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_PF1XAH7EEeiIS5sA2ssQOQ" general="_R8NOoH39EeiqyqSVRuW60g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_5_s8sH7BEeiIS5sA2ssQOQ" name="fd2Bin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Mmp-0IE1EeiNuZsz-QLKsQ" annotatedElement="_5_s8sH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FD measurements that fall within the configured range.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SUky4ICQEeiQxOzi78lY-g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SUvyAICQEeiQxOzi78lY-g" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6VF94H7BEeiIS5sA2ssQOQ" name="fd2Mean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9uyvwICREeiQxOzi78lY-g" annotatedElement="_6VF94H7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) Two-way FD measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6kuVUH7BEeiIS5sA2ssQOQ" name="fd2Min" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PpWGQICREeiQxOzi78lY-g" annotatedElement="_6kuVUH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the minimum Two-way FD measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_60VeoH7BEeiIS5sA2ssQOQ" name="fd2Max" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TLRU4ICREeiQxOzi78lY-g" annotatedElement="_60VeoH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum Two-way FD measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7HUsEH7BEeiIS5sA2ssQOQ" name="ifdv1FwBin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dmdhYICREeiQxOzi78lY-g" annotatedElement="_7HUsEH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of IFDV measurements (i.e., each instance of |Di – Dj| in the Forward direction) that fall within a configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_kRl8oICREeiQxOzi78lY-g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kRpnAICREeiQxOzi78lY-g" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7ewUoH7BEeiIS5sA2ssQOQ" name="ifdv1FwMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rqAUoICREeiQxOzi78lY-g" annotatedElement="_7ewUoH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way IFDV measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7zM6oH7BEeiIS5sA2ssQOQ" name="ifdv1FwMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_G-UaYICSEeiQxOzi78lY-g" annotatedElement="_7zM6oH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way IFDV measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8Ji-EH7BEeiIS5sA2ssQOQ" name="ifdv1BkBin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PBK2gICSEeiQxOzi78lY-g" annotatedElement="_8Ji-EH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of IFDV measurements in the Backward direction that fall within a configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KH-S8ICSEeiQxOzi78lY-g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KIFAoICSEeiQxOzi78lY-g" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8dktUH7BEeiIS5sA2ssQOQ" name="ifdv1BkMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TinBYICSEeiQxOzi78lY-g" annotatedElement="_8dktUH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way IFDV measurement in the Backward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8vFUEH7BEeiIS5sA2ssQOQ" name="ifdv1BkMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZsqI0ICSEeiQxOzi78lY-g" annotatedElement="_8vFUEH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way IFDV measurement in the Backward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9AAE8H7BEeiIS5sA2ssQOQ" name="fdr1FwBin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fKqCkICSEeiQxOzi78lY-g" annotatedElement="_9AAE8H7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Forward direction that fall within a configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hUXhEICSEeiQxOzi78lY-g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hUcZkICSEeiQxOzi78lY-g" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9RT3YH7BEeiIS5sA2ssQOQ" name="fdr1FwMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_mmbQkICSEeiQxOzi78lY-g" annotatedElement="_9RT3YH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FDR measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9gPEMH7BEeiIS5sA2ssQOQ" name="fdr1FwMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qCkAQICSEeiQxOzi78lY-g" annotatedElement="_9gPEMH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way FDR measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9yZLMH7BEeiIS5sA2ssQOQ" name="fdr1BkBin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xHATYICSEeiQxOzi78lY-g" annotatedElement="_9yZLMH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Backward direction that fall within a configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uLKNUICSEeiQxOzi78lY-g" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uLNQoICSEeiQxOzi78lY-g" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-CwicH7BEeiIS5sA2ssQOQ" name="fdr1BkMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-HPPgICSEeiQxOzi78lY-g" annotatedElement="_-CwicH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FDR measurement in the Backward direction in microsecond.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-Xv7AH7BEeiIS5sA2ssQOQ" name="fdr1BkMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Dj-lAICTEeiQxOzi78lY-g" annotatedElement="_-Xv7AH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way FDR measurement in the Backward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-mxOcH7BEeiIS5sA2ssQOQ" name="fd1FwMin" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HRAQYICTEeiQxOzi78lY-g" annotatedElement="_-mxOcH7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the minimum One-way FD measurement in the Forward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-4iT4H7BEeiIS5sA2ssQOQ" name="fd1BkMin" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PpGjwICTEeiQxOzi78lY-g" annotatedElement="_-4iT4H7BEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the minimum One-way FD measurement in the Backward direction in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0i1rUn-FEeiIS5sA2ssQOQ" name="_carrierEthOamPmFdSynchResource" type="_CISmsH69EeiIS5sA2ssQOQ" isReadOnly="true" aggregation="composite" association="_0i1EQH-FEeiIS5sA2ssQOQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_187qwH-FEeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_19DmkH-FEeiIS5sA2ssQOQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DEyrMH69EeiIS5sA2ssQOQ" name="CarrierEthOamPmSlmResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="__z0_AH7jEeiIS5sA2ssQOQ" annotatedElement="_DEyrMH69EeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Single-Ended Synthetic Loss Data Set (PM-1 Solution)</body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_OVKIAH7EEeiIS5sA2ssQOQ" general="_R8NOoH39EeiqyqSVRuW60g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_AlTXsH7CEeiIS5sA2ssQOQ" name="slmFramesFwTx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-JwlkIByEeiQxOzi78lY-g" annotatedElement="_AlTXsH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of SLM frames transmitted in the Forward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BGR90H7CEeiIS5sA2ssQOQ" name="slmFramesFwRx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_KBclQIBzEeiQxOzi78lY-g" annotatedElement="_BGR90H7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of SLM frames received in the Forward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BTaa4H7CEeiIS5sA2ssQOQ" name="slrFramesBkTx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_REZqoIBzEeiQxOzi78lY-g" annotatedElement="_BTaa4H7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of SLR frames transmitted in the Backward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BgvsQH7CEeiIS5sA2ssQOQ" name="slrFramesBkRx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_VIBREIBzEeiQxOzi78lY-g" annotatedElement="_BgvsQH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of SLR frames received in the Backward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BwBeYH7CEeiIS5sA2ssQOQ" name="availableIntervalsFw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_lNuJUIBzEeiQxOzi78lY-g" annotatedElement="_BwBeYH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Available in the Forward direction (i.e., for which A&lt;Controller, Responder>(delta-t) = 1).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_B93GEH7CEeiIS5sA2ssQOQ" name="availableIntervalsBw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qKSJ8IBzEeiQxOzi78lY-g" annotatedElement="_B93GEH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Available in the Backward direction (i.e., for which A&lt; Responder, Controller>(delta-t) = 1).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CLvKAH7CEeiIS5sA2ssQOQ" name="unavailableIntervalsFw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_whfjoIBzEeiQxOzi78lY-g" annotatedElement="_CLvKAH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Unavailable in the Forward direction (i.e., for which A&lt;Controller, Responder>(delta-t) = 0).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Ce26UH7CEeiIS5sA2ssQOQ" name="unavailableIntervalsBw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zzcckIBzEeiQxOzi78lY-g" annotatedElement="_Ce26UH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Unavailable in the Backward direction (i.e., for which A&lt; Responder, Controller>(delta-t) = 0).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CtHYwH7CEeiIS5sA2ssQOQ" name="hliCountFw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_59C4EIBzEeiQxOzi78lY-g" annotatedElement="_CtHYwH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Count of HLIs in the Forward direction during the Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_C9J_4H7CEeiIS5sA2ssQOQ" name="hliCountBw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_9Wwl4IBzEeiQxOzi78lY-g" annotatedElement="_C9J_4H7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Count of HLIs in the Backward direction during the Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DLNqAH7CEeiIS5sA2ssQOQ" name="chliCountFw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_C2HxkIB0EeiQxOzi78lY-g" annotatedElement="_DLNqAH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Count of CHLIs in the Forward direction during the Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DYhGMH7CEeiIS5sA2ssQOQ" name="chliCountBw" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HwEjEIB0EeiQxOzi78lY-g" annotatedElement="_DYhGMH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Count of CHLIs in the Backward direction during the Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9S_AYn-HEeiIS5sA2ssQOQ" name="_carrierEthOamPmFlrResource" type="_Dbes4H69EeiIS5sA2ssQOQ" isReadOnly="true" aggregation="composite" association="_9S-ZUH-HEeiIS5sA2ssQOQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G12dwH-IEeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_G18kYH-IEeiIS5sA2ssQOQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Dbes4H69EeiIS5sA2ssQOQ" name="CarrierEthOamPmFlrResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_uOs7YH7jEeiIS5sA2ssQOQ" annotatedElement="_Dbes4H69EeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Optional Single-Ended Synthetic Loss Data Set (PM-1 Solution)</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GNg9YH7CEeiIS5sA2ssQOQ" name="flr1FwMin" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_D468QIB9EeiQxOzi78lY-g" annotatedElement="_GNg9YH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The minimum One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GdGRgH7CEeiIS5sA2ssQOQ" name="flr1FwMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HuT5cIB9EeiQxOzi78lY-g" annotatedElement="_GdGRgH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The maximum One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GsnUMH7CEeiIS5sA2ssQOQ" name="flr1FwMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LFqPwIB9EeiQxOzi78lY-g" annotatedElement="_GsnUMH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The average (arithmetic mean) One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_G4E9UH7CEeiIS5sA2ssQOQ" name="flr1BkMin" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_OoonQIB9EeiQxOzi78lY-g" annotatedElement="_G4E9UH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The minimum One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_HEkhMH7CEeiIS5sA2ssQOQ" name="flr1BkMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_R3yq4IB9EeiQxOzi78lY-g" annotatedElement="_HEkhMH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The maximum One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_HRvagH7CEeiIS5sA2ssQOQ" name="flr1BkMean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Umd3oIB9EeiQxOzi78lY-g" annotatedElement="_HRvagH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The average (arithmetic mean) One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DsCRYH69EeiIS5sA2ssQOQ" name="CarrierEthOamPmLmResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ZhrdQH7kEeiIS5sA2ssQOQ" annotatedElement="_DsCRYH69EeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Single-Ended Service Loss Data Set (PM-3 Solution)</body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_GB54YH7EEeiIS5sA2ssQOQ" general="_R8NOoH39EeiqyqSVRuW60g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_D_KPcH7CEeiIS5sA2ssQOQ" name="AllFramesFwTx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_kEoxYIEjEeiNuZsz-QLKsQ" annotatedElement="_D_KPcH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 64-bit counter reflecting the number of frames transmitted in the Forward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_EbowEH7CEeiIS5sA2ssQOQ" name="AllFramesFwRx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pUm2MIEjEeiNuZsz-QLKsQ" annotatedElement="_EbowEH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 64-bit counter reflecting the number of frames received in the Forward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_EoEpkH7CEeiIS5sA2ssQOQ" name="AllFramesBkTx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sOM5gIEjEeiNuZsz-QLKsQ" annotatedElement="_EoEpkH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 64-bit counter reflecting the number of frames transmitted in the Backward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Ez9wgH7CEeiIS5sA2ssQOQ" name="AllFramesBkRx" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ybUjEIEjEeiNuZsz-QLKsQ" annotatedElement="_Ez9wgH7CEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 64-bit counter reflecting the number of frames received in the Backward direction.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="__H70cH8GEeiIS5sA2ssQOQ" name="CarrierEthOamPm2FdResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_8SAo0H8JEeiIS5sA2ssQOQ" annotatedElement="__H70cH8GEeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Dual-Ended Delay Data Set (PM-2 Solution)</body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_82MeEH-EEeiIS5sA2ssQOQ" general="_R8NOoH39EeiqyqSVRuW60g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YpaDkH8HEeiIS5sA2ssQOQ" name="ifdv1Bin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GSY0IIEkEeiNuZsz-QLKsQ" annotatedElement="_YpaDkH8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of IFDV measurements that fall within the configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IEkjcIEkEeiNuZsz-QLKsQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IEo04IEkEeiNuZsz-QLKsQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Y76I0H8HEeiIS5sA2ssQOQ" name="ifdv1Mean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Q3oUgIEkEeiNuZsz-QLKsQ" annotatedElement="_Y76I0H8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way IFDV measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZMW_oH8HEeiIS5sA2ssQOQ" name="ifdv1Max" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_UbCw4IEkEeiNuZsz-QLKsQ" annotatedElement="_ZMW_oH8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way IFDV measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZdcIkH8HEeiIS5sA2ssQOQ" name="fdr1Bin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZXTPgIEkEeiNuZsz-QLKsQ" annotatedElement="_ZdcIkH8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of FDR measurements that fall within a configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ww-GcIEkEeiNuZsz-QLKsQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WxBw0IEkEeiNuZsz-QLKsQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZxY_UH8HEeiIS5sA2ssQOQ" name="fdr1Mean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_c2RQwIEkEeiNuZsz-QLKsQ" annotatedElement="_ZxY_UH8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FDR measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_afdmQH8HEeiIS5sA2ssQOQ" name="fdr1Max" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g-N9kIEkEeiNuZsz-QLKsQ" annotatedElement="_afdmQH8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way FDR measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bkTHYH8HEeiIS5sA2ssQOQ" name="fd1Min" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_krBmgIEkEeiNuZsz-QLKsQ" annotatedElement="_bkTHYH8HEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the minimum One-way FD measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Ohk6sn-FEeiIS5sA2ssQOQ" name="_carrierEthOamPm2FdSynchResource" type="_0_eAkH8PEeiIS5sA2ssQOQ" isReadOnly="true" aggregation="composite" association="_OhiecH-FEeiIS5sA2ssQOQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TOJXgH-FEeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TOVkwH-FEeiIS5sA2ssQOQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_0_eAkH8PEeiIS5sA2ssQOQ" name="CarrierEthOamPm2FdSynchResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_O1SIAH8QEeiIS5sA2ssQOQ" annotatedElement="_0_eAkH8PEeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Dual-Ended Delay Data Set with Clock Synchronization (PM-2 Solution)</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-p10IH8PEeiIS5sA2ssQOQ" name="fd1Bin" type="_841qEICPEeiQxOzi78lY-g" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sAn7EIEkEeiNuZsz-QLKsQ" annotatedElement="_-p10IH8PEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements that fall within the configured bin.</body>
+          </ownedComment>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_o_oPQIEkEeiNuZsz-QLKsQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o_rSkIEkEeiNuZsz-QLKsQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_--cyMH8PEeiIS5sA2ssQOQ" name="fd1Mean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_vEWx0IEkEeiNuZsz-QLKsQ" annotatedElement="_--cyMH8PEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the average (arithmetic mean) One-way FD measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="__NmogH8PEeiIS5sA2ssQOQ" name="fd1Max" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_z07k4IEkEeiNuZsz-QLKsQ" annotatedElement="__NmogH8PEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit integer reflecting the maximum One-way FD measurement in microseconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_X9ZJUH-PEeiIS5sA2ssQOQ" name="CarrierEthOamPm2SlmResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jjRnUH-PEeiIS5sA2ssQOQ" annotatedElement="_X9ZJUH-PEeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Mandatory Dual-Ended Synthetic Loss Data Set (PM-4 Solution)</body>
+        </ownedComment>
+        <generalization xmi:type="uml:Generalization" xmi:id="_xH_JgH-PEeiIS5sA2ssQOQ" general="_R8NOoH39EeiqyqSVRuW60g"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_L6KykH-QEeiIS5sA2ssQOQ" name="availableIntervals" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CTPzIIEmEeiNuZsz-QLKsQ" annotatedElement="_L6KykH-QEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Available (i.e., for which A&lt;Controller, Sink>(delta-t) = 1).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MWce4H-QEeiIS5sA2ssQOQ" name="unavailableIntervals" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GwQJ8IEmEeiNuZsz-QLKsQ" annotatedElement="_MWce4H-QEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: A 32-bit counter reflecting the number of delta-t intervals evaluated as Unavailable (i.e., for which A&lt;Controller, Sink>(delta-t) = 0).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NDNeQH-QEeiIS5sA2ssQOQ" name="hliCount" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JUoLMIEmEeiNuZsz-QLKsQ" annotatedElement="_NDNeQH-QEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Count of HLIs during the Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_NZ8jQH-QEeiIS5sA2ssQOQ" name="chliCount" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_OA5tEIEmEeiNuZsz-QLKsQ" annotatedElement="_NZ8jQH-QEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Count of CHLIs during the Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_u-6HsX-QEeiIS5sA2ssQOQ" name="_carrierEthOamPm2FlrResource" type="_kpM4IH-QEeiIS5sA2ssQOQ" isReadOnly="true" aggregation="composite" association="_u-4SgH-QEeiIS5sA2ssQOQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AAag4H-REeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ABCzAH-REeiIS5sA2ssQOQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kpM4IH-QEeiIS5sA2ssQOQ" name="CarrierEthOamPm2FlrResource">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_E-_6wH-REeiIS5sA2ssQOQ" annotatedElement="_kpM4IH-QEeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Optional Dual-Ended Synthetic Loss Data Set (PM-4 Solution)</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_LE1QkH-REeiIS5sA2ssQOQ" name="flr1Min" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Z8cugIElEeiNuZsz-QLKsQ" annotatedElement="_LE1QkH-REeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The minimum One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Le3hMH-REeiIS5sA2ssQOQ" name="flr1Max" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eYQygIElEeiNuZsz-QLKsQ" annotatedElement="_Le3hMH-REeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The maximum One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_L0DHAH-REeiIS5sA2ssQOQ" name="flr1Mean" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_g11oMIElEeiNuZsz-QLKsQ" annotatedElement="_L0DHAH-REeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The average (arithmetic mean) One-way Availability flr measurement during this Measurement Interval.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9dlGMH_cEeiIS5sA2ssQOQ" name="CarrierEthOamFdBinsResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_UcEbMH_dEeiIS5sA2ssQOQ" name="bin" type="_j3q7oH_fEeiIS5sA2ssQOQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Xr-FsH_dEeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XsMIIH_dEeiIS5sA2ssQOQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_93kTgH_cEeiIS5sA2ssQOQ" name="CarrierEthOamFdrBinsResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_3yMl0H_eEeiIS5sA2ssQOQ" name="bin" type="_j3q7oH_fEeiIS5sA2ssQOQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rRVQ0H_fEeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rRiFIH_fEeiIS5sA2ssQOQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_-JslUH_cEeiIS5sA2ssQOQ" name="CarrierEthOamIfdvBinsResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4G8GwH_eEeiIS5sA2ssQOQ" name="bin" type="_j3q7oH_fEeiIS5sA2ssQOQ" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_sPPqkH_fEeiIS5sA2ssQOQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sPfiMH_fEeiIS5sA2ssQOQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_nYrPIH_dEeiIS5sA2ssQOQ" name="CarrierEthOamTcaThrResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_wsVy4H_dEeiIS5sA2ssQOQ" name="Stateful">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_RAUfAIE7EeiNuZsz-QLKsQ" annotatedElement="_wsVy4H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: The stateless TCA reporting treats each Measurement Interval separately.  When using stateless TCA reporting, each TCA Function has a single configured threshold.  As soon as the threshold is reached or crossed in a Measurement Interval for a given performance metric, a TCA is generated.&#xD;
+Stateful TCA reporting is another option for how TCAs are generated, that can reduce the total number of TCAs.  The intent is to provide a notification when a degradation is first encountered, followed by another when the problem is resolved.  This contrasts with stateless TCA reporting, in which TCAs are generated continuously for as long as the degradation lasts.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4qxCAH_dEeiIS5sA2ssQOQ" name="fd1FwBinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_49svUIFBEeiNuZsz-QLKsQ" annotatedElement="_4qxCAH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way FD in the Forward direction.&#xD;
+Threshold Crossing Detection: UBC(k) >= Forward One-way N(FD) &#xD;
+&#xD;
+</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6qJf0H_dEeiIS5sA2ssQOQ" name="fd1FwThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_n0iuoIFEEeiNuZsz-QLKsQ" annotatedElement="_6qJf0H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way Maximum FD in the Forward direction.&#xD;
+Threshold Crossing Detection: Max FD >= Forward One-way V(max(FD))&#xD;
+</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7BUCoH_dEeiIS5sA2ssQOQ" name="fdr1FwBinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_82cbIIFEEeiNuZsz-QLKsQ" annotatedElement="_7BUCoH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way FDR in the Forward direction.&#xD;
+Threshold Crossing Detection: UBC(k) >= Forward One-way N(FDR)&#xD;
+</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7SD0YH_dEeiIS5sA2ssQOQ" name="fdr1FwThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="__oBx8IFEEeiNuZsz-QLKsQ" annotatedElement="_7SD0YH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way Maximum FDR in the Forward direction.&#xD;
+Threshold Crossing Detection: Max FDR >= Forward One-way V(max(FDR))</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7gcOoH_dEeiIS5sA2ssQOQ" name="ifdv1FwBinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_AhvBIIFFEeiNuZsz-QLKsQ" annotatedElement="_7gcOoH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way IFDV in the Forward direction.&#xD;
+Threshold Crossing Detection: UBC(k) >= Forward One-way N(IFDV)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_7wCw4H_dEeiIS5sA2ssQOQ" name="ifdv1FwThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BjGXgIFFEeiNuZsz-QLKsQ" annotatedElement="_7wCw4H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way Maximum IFDV in the Forward direction.&#xD;
+Threshold Crossing Detection: Max IFDV >= Forward One-way V(max(IFDV))</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8CE8EH_dEeiIS5sA2ssQOQ" name="hli1FwThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_CZMSAIFFEeiNuZsz-QLKsQ" annotatedElement="_8CE8EH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way HLI in the Forward direction.&#xD;
+Threshold Crossing Detection: HLI count >= Forward One-way N(HLI)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8SsK8H_dEeiIS5sA2ssQOQ" name="chli1FwThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_DOgJYIFFEeiNuZsz-QLKsQ" annotatedElement="_8SsK8H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way CHLI in the Forward direction.&#xD;
+Threshold Crossing Detection: CHLI count >= Forward One-way N(CHLI)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8jPvcH_dEeiIS5sA2ssQOQ" name="fd1BkBinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EBZl8IFFEeiNuZsz-QLKsQ" annotatedElement="_8jPvcH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way FD in the Backward direction.&#xD;
+Threshold Crossing Detection: UBC(k) >= Backward One-way N(FD)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_81PeYH_dEeiIS5sA2ssQOQ" name="fd1BkThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EyRpQIFFEeiNuZsz-QLKsQ" annotatedElement="_81PeYH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way Maximum FD in the Backward direction.&#xD;
+Threshold Crossing Detection: Max FD >= Backward One-way V(max(FD))</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9PaR4H_dEeiIS5sA2ssQOQ" name="fdr1BkBinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FjPMIIFFEeiNuZsz-QLKsQ" annotatedElement="_9PaR4H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way FDR in the Backward direction.&#xD;
+Threshold Crossing Detection: UBC(k) >= Backward One-way N(FDR)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9fCpUH_dEeiIS5sA2ssQOQ" name="fdr1BkThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_GaYPgIFFEeiNuZsz-QLKsQ" annotatedElement="_9fCpUH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way Maximum FDR in the Backward direction.&#xD;
+Threshold Crossing Detection: Max FDR >= Backward One-way V(max(FDR))</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_9w0V0H_dEeiIS5sA2ssQOQ" name="ifdv1BkBinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_HNBNYIFFEeiNuZsz-QLKsQ" annotatedElement="_9w0V0H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way IFDV in the Backward direction.&#xD;
+Threshold Crossing Detection: UBC(k) >= Backward One-way N(IFDV)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-A1u0H_dEeiIS5sA2ssQOQ" name="ifdv1BkThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IFiJwIFFEeiNuZsz-QLKsQ" annotatedElement="_-A1u0H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way Maximum IFDV in the Backward direction.&#xD;
+Threshold Crossing Detection: Max IFDV >= Backward One-way V(max(IFDV))</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-QTuMH_dEeiIS5sA2ssQOQ" name="hli1BkThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_I8qmEIFFEeiNuZsz-QLKsQ" annotatedElement="_-QTuMH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way HLI in the Backward direction.&#xD;
+Threshold Crossing Detection: HLI count >= Backward One-way N(HLI)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-g5u8H_dEeiIS5sA2ssQOQ" name="chli1BkThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Jy1ZEIFFEeiNuZsz-QLKsQ" annotatedElement="_-g5u8H_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: One-way CHLI in the Backward direction.&#xD;
+Threshold Crossing Detection: CHLI count >= Backward One-way N(CHLI)&#xD;
+</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-wtFgH_dEeiIS5sA2ssQOQ" name="fd2BinThr" type="_a9iyMI-WEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Kf23IIFFEeiNuZsz-QLKsQ" annotatedElement="_-wtFgH_dEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Two-way FD.&#xD;
+Threshold Crossing Detection: UBC(k) >= Two-way N(FD)</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_glXS0H_eEeiIS5sA2ssQOQ" name="fd2ThrMax" type="_PQax0I-YEeif_K-NzYvdow">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_LZsCIIFFEeiNuZsz-QLKsQ" annotatedElement="_glXS0H_eEeiIS5sA2ssQOQ">
+            <body>MEF 35.1: Two-way Maximum FD.&#xD;
+Threshold Crossing Detection: Max FD >= Two-way V(max(FD))</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_GMcq8Is6Eeiox5rjjThfhQ" name="CarrierEthOamJobLoopbackResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_HV6JMItBEeiox5rjjThfhQ" name="lbrTimeout">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uhwdoItBEeiox5rjjThfhQ" annotatedElement="_HV6JMItBEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D48] For each LB session, the timeout for an expected LBR result after a LBM transmission SHOULD be configurable.&#xD;
+[D49] The default value of the LBR timeout SHOULD be 5 seconds.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_aW2qkItBEeiox5rjjThfhQ" value="5"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Osag4Is6Eeiox5rjjThfhQ" name="CarrierEthOamJobLinkTraceResource"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SROEYIs6Eeiox5rjjThfhQ" name="CarrierEthOamJobTestResource"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_QkEcsItTEeiox5rjjThfhQ" name="CarrierEthOamJobLoopbackResultResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_i8tn8ItTEeiox5rjjThfhQ" name="percentageOfLostResponses" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_navScItTEeiox5rjjThfhQ" annotatedElement="_i8tn8ItTEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D57] For an LB Session, the initiating MEP SHOULD be able to report the percent-age of responses lost (timed out).</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ul54oItTEeiox5rjjThfhQ" name="roundTripTimeMin" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_z_ArUItTEeiox5rjjThfhQ" annotatedElement="_ul54oItTEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D58]	For an LB session, the round trip time (RTT) min/max/average statistics SHOULD be supported by the initiating MEP.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="../TAPI/UML/TapiCommon.uml#_Ay2V0F6UEeitO-Stqhyn1g"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2dW9EItTEeiox5rjjThfhQ" name="roundTripTimeMax" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4M62MItTEeiox5rjjThfhQ" annotatedElement="_2dW9EItTEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D58]	For an LB session, the round trip time (RTT) min/max/average statistics SHOULD be supported by the initiating MEP.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="../TAPI/UML/TapiCommon.uml#_Ay2V0F6UEeitO-Stqhyn1g"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_28besItTEeiox5rjjThfhQ" name="roundTripTimeAverage" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5QQigItTEeiox5rjjThfhQ" annotatedElement="_28besItTEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D58]	For an LB session, the round trip time (RTT) min/max/average statistics SHOULD be supported by the initiating MEP.</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="../TAPI/UML/TapiCommon.uml#_Ay2V0F6UEeitO-Stqhyn1g"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_MNx8cItUEeiox5rjjThfhQ" name="sentLbrFromRespondingMp" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Yhz54ItUEeiox5rjjThfhQ" annotatedElement="_MNx8cItUEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D59] A responding MP SHOULD be able to report the aggregate number of LBMs received and the aggregate number of LBRs transmitted during a time period.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZP1dgItUEeiox5rjjThfhQ" name="receivedLbmFromRespondingMp" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_btytsItUEeiox5rjjThfhQ" annotatedElement="_ZP1dgItUEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D59] A responding MP SHOULD be able to report the aggregate number of LBMs received and the aggregate number of LBRs transmitted during a time period.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eRLSoItjEeiox5rjjThfhQ" name="CarrierEthOamJobLinkTraceResultResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Fd9bMItkEeiox5rjjThfhQ" name="sentLtmFromInitiatingMp" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fcfZwItkEeiox5rjjThfhQ" annotatedElement="_Fd9bMItkEeiox5rjjThfhQ">
+            <body>MEF 30.1: [R47] An initiating MEP MUST be able to report the number of LTMs transmitted and the number of LTRs received.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_F0ym0ItkEeiox5rjjThfhQ" name="receivedLtrFromInitiatingMp" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_iaYHMItkEeiox5rjjThfhQ" annotatedElement="_F0ym0ItkEeiox5rjjThfhQ">
+            <body>MEF 30.1: [R47] An initiating MEP MUST be able to report the number of LTMs transmitted and the number of LTRs received.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_GKysAItkEeiox5rjjThfhQ" name="sentLtrFromRespondingMp" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_m3Wo0ItkEeiox5rjjThfhQ" annotatedElement="_GKysAItkEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D65] A responding MP SHOULD be able to report the number of LTMs received and the number of LTRs transmitted.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Gi5qAItkEeiox5rjjThfhQ" name="receivedLtmFromRespondingMp" isReadOnly="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_nyOVoItkEeiox5rjjThfhQ" annotatedElement="_Gi5qAItkEeiox5rjjThfhQ">
+            <body>MEF 30.1: [D65] A responding MP SHOULD be able to report the number of LTMs received and the number of LTRs transmitted.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_u3bYUIwVEeiOpaAXWYLV6w" name="CarrierEthOamJobTestResultResource"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_StUwAI-4Eeif_K-NzYvdow" name="CarrierEthOamBinThrsResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_c9A8gMzUEeiKRKRmVModyg" name="binThresholdType" type="_hHPooMzREeiKRKRmVModyg"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lk8WQI-4Eeif_K-NzYvdow" name="setThresholdBinValue" type="_s_FdsIFAEeiNuZsz-QLKsQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_XO5kcNK5EeiOXPERXrWTXw" annotatedElement="_lk8WQI-4Eeif_K-NzYvdow">
+            <body>MEF 35.1:&#xD;
+When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold (defined in this attribute) and a CLEAR threshold. &#xD;
+These may be the same, or the CLEAR threshold may be lower than the SET threshold.&#xD;
+When using stateless TCA reporting, each TCA Function has a single configured threshold (defined in this attribute).</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mP3ikI-4Eeif_K-NzYvdow" name="clearThresholdBinValue" type="_s_FdsIFAEeiNuZsz-QLKsQ">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Z2ZLINK5EeiOXPERXrWTXw" annotatedElement="_mP3ikI-4Eeif_K-NzYvdow">
+            <body>MEF 35.1:&#xD;
+When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold and a CLEAR threshold (defined in this attribute). &#xD;
+These may be the same, or the CLEAR threshold may be lower than the SET threshold.&#xD;
+When using stateless TCA reporting, each TCA Function has a single configured threshold (this attribute is not considered / ignored).</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mv0N8I-4Eeif_K-NzYvdow" name="observedBinValue" type="_s_FdsIFAEeiNuZsz-QLKsQ" isReadOnly="true"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_THTWQI-4Eeif_K-NzYvdow" name="CarrierEthOamCounterThrsResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CBcw8MyzEeiKRKRmVModyg" name="counterThresholdType" type="_JLFCsMyKEeiKRKRmVModyg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZcbNoMyzEeiKRKRmVModyg" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZcgtMMyzEeiKRKRmVModyg" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RE49II-5Eeif_K-NzYvdow" name="setThresholdCounterValue">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IAuxINK5EeiOXPERXrWTXw" annotatedElement="_RE49II-5Eeif_K-NzYvdow">
+            <body>MEF 35.1:&#xD;
+When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold (defined in this attribute) and a CLEAR threshold. &#xD;
+These may be the same, or the CLEAR threshold may be lower than the SET threshold.&#xD;
+When using stateless TCA reporting, each TCA Function has a single configured threshold (defined in this attribute).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_RefI4I-5Eeif_K-NzYvdow" name="clearThresholdCounterValue">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Ur7RYNK5EeiOXPERXrWTXw" annotatedElement="_RefI4I-5Eeif_K-NzYvdow">
+            <body>MEF 35.1:&#xD;
+When using stateful TCA reporting, each TCA Function has two configured thresholds: a SET threshold and a CLEAR threshold (defined in this attribute). &#xD;
+These may be the same, or the CLEAR threshold may be lower than the SET threshold.&#xD;
+When using stateless TCA reporting, each TCA Function has a single configured threshold (this attribute is not considered / ignored).</body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Rzl2MI-5Eeif_K-NzYvdow" name="observedCounterValue" isReadOnly="true">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_d4hD0I-9Eeif_K-NzYvdow" name="CarrierEthOamTcaThrsResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_y3vKYMyzEeiKRKRmVModyg" name="_carrierEthOamCounterThrsResource" type="_THTWQI-4Eeif_K-NzYvdow" aggregation="composite" association="_y3n1oMyzEeiKRKRmVModyg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IUj4UMy0EeiKRKRmVModyg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IU52kMy0EeiKRKRmVModyg" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_rat8MczUEeiKRKRmVModyg" name="_carrierEthOamBinThrsResource" type="_StUwAI-4Eeif_K-NzYvdow" aggregation="composite" association="_rasuEMzUEeiKRKRmVModyg">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vbd00MzUEeiKRKRmVModyg"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vbg4IMzUEeiKRKRmVModyg" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_D2dJsMsREeidCYTlzANolg" name="CarrierEthProActDualEndDelayPmFunctionResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cuZ5wM86EeiQlow2bYuzuw" name="selectionOffsetForIfdv">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jgGQAM86EeiQlow2bYuzuw" annotatedElement="_cuZ5wM86EeiQlow2bYuzuw">
+            <body>MEF 35.1: &#xD;
+[O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. &#xD;
+[CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.&#xD;
+[D24]/[CD8] The default selection offset for IFDV SHOULD be 1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_e49s0M86EeiQlow2bYuzuw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nBX-YM86EeiQlow2bYuzuw" name="1dmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pGhtAM86EeiQlow2bYuzuw" annotatedElement="_nBX-YM86EeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[CR32] [O6] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for 1DM frame transmission. &#xD;
+Note: The frame size does not need to be configured at the Sink MEP.&#xD;
+[CR33] [O6] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[CD6] [O6] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[CD7] [O6] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_tUVKMM86EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kJ3msMsREeidCYTlzANolg" name="CarrierEthProActSingleEndDelayPmFunctionResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8zg1AM86EeiQlow2bYuzuw" name="selectionOffsetForIfdv">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_KeIK4M87EeiQlow2bYuzuw" annotatedElement="_8zg1AM86EeiQlow2bYuzuw">
+            <body>MEF 35.1: &#xD;
+[O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. &#xD;
+[CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.&#xD;
+[D24]/[CD8] The default selection offset for IFDV SHOULD be 1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="__HV40M86EeiQlow2bYuzuw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ecBrcM81EeiQlow2bYuzuw" name="dmmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fuOTIM81EeiQlow2bYuzuw" annotatedElement="_ecBrcM81EeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[R63] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for DMM frame transmission.&#xD;
+[R64] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[D22] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[D23] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_4YpzQM86EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mf2moMsREeidCYTlzANolg" name="CarrierEthOnDmdDualEndDelayPmFunctionResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_j4rF0NJgEeiOXPERXrWTXw" name="selectionOffsetForIfdv">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PtEn0NJjEeiOXPERXrWTXw" annotatedElement="_j4rF0NJgEeiOXPERXrWTXw">
+            <body>MEF 35.1: &#xD;
+[O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. &#xD;
+[CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.&#xD;
+[D24]/[CD8] The default selection offset for IFDV SHOULD be 1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Rz9b0NJjEeiOXPERXrWTXw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_kZIukNJgEeiOXPERXrWTXw" name="1dmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dnkz0NJjEeiOXPERXrWTXw" annotatedElement="_kZIukNJgEeiOXPERXrWTXw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[CR32] [O6] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for 1DM frame transmission. &#xD;
+Note: The frame size does not need to be configured at the Sink MEP.&#xD;
+[CR33] [O6] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[CD6] [O6] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[CD7] [O6] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_fs13MNJjEeiOXPERXrWTXw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_rI7DgMsREeidCYTlzANolg" name="CarrierEthOnDmdSingleEndLossPmFunctionResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_duOVwNJgEeiOXPERXrWTXw" name="flrAvailabilityDeltaTime">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_JZCTYNJiEeiOXPERXrWTXw" annotatedElement="_duOVwNJgEeiOXPERXrWTXw">
+            <body>MEF 35.1:&#xD;
+[R78]/[CR58] [O8] A SOAM PM Implementation MUST support a configurable parameter for the length of time over which each Availability flr value is calculated, with a range of 1s – 300s.  This parameter is equivalent to delta-t as specified by MEF 10.3.&#xD;
+[R79]/[CR59] [O8] The length of time over which each Availability flr value is calculated (delta-t) MUST be an integer multiple of the interval between each SLM/1SL frame transmission.&#xD;
+[D31]/[CD16] [O8] The default length of time over which each Availability flr value is calculated SHOULD be 1s.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_OW2RMNJiEeiOXPERXrWTXw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kXMXQM8SEeiQlow2bYuzuw" name="CarrierEthOnDmdSingleEndSyntLossPmFunctionResource">
+        <generalization xmi:type="uml:Generalization" xmi:id="_pCVm8NJjEeiOXPERXrWTXw" general="_A95P4NJeEeiOXPERXrWTXw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ecWnENJgEeiOXPERXrWTXw" name="slmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_W9jBQNJiEeiOXPERXrWTXw" annotatedElement="_ecWnENJgEeiOXPERXrWTXw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[R76] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for SLM frame transmission.&#xD;
+[R77] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[D29] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[D30] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_S_yyQNJiEeiOXPERXrWTXw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_JcfskM8sEeiQlow2bYuzuw" name="CarrierEthProActSingleEndLossPmFunctionResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_hZwZIM87EeiQlow2bYuzuw" name="flrAvailabilityDeltaTime">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qpW8QM87EeiQlow2bYuzuw" annotatedElement="_hZwZIM87EeiQlow2bYuzuw">
+            <body>MEF 35.1:&#xD;
+[R78]/[CR58] [O8] A SOAM PM Implementation MUST support a configurable parameter for the length of time over which each Availability flr value is calculated, with a range of 1s – 300s.  This parameter is equivalent to delta-t as specified by MEF 10.3.&#xD;
+[R79]/[CR59] [O8] The length of time over which each Availability flr value is calculated (delta-t) MUST be an integer multiple of the interval between each SLM/1SL frame transmission.&#xD;
+[D31]/[CD16] [O8] The default length of time over which each Availability flr value is calculated SHOULD be 1s.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_lPulIM87EeiQlow2bYuzuw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_XixDsM8sEeiQlow2bYuzuw" name="CarrierEthProActSingleEndSyntLossPmFunctionResource">
+        <generalization xmi:type="uml:Generalization" xmi:id="_sAEgMNJfEeiOXPERXrWTXw" general="_A95P4NJeEeiOXPERXrWTXw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_tLYJoM_WEeiQlow2bYuzuw" name="slmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_E1AQ4M_YEeiQlow2bYuzuw" annotatedElement="_tLYJoM_WEeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[R76] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for SLM frame transmission.&#xD;
+[R77] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[D29] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[D30] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_IqRSQM_YEeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_EaBNAM8zEeiQlow2bYuzuw" name="CarrierEthOnDmdSingleEndDelayPmFunctionResource">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cMIQ4NJgEeiOXPERXrWTXw" name="selectionOffsetForIfdv">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_yxyPINJgEeiOXPERXrWTXw" annotatedElement="_cMIQ4NJgEeiOXPERXrWTXw">
+            <body>MEF 35.1: &#xD;
+[O5] A SOAM PM Implementation MAY support the configurable selection of DMR frame pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control DMR PDU pair selection, where n is the selection offset.  Given a sequence of received periodic DMR frames, the set of DMR frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}. &#xD;
+[CO3] [O6] A SOAM PM Implementation MAY support the configurable selection of received 1DM PDU pairs for IFDV measurement purposes.&#xD;
+A parameter, n, is used to control 1DM PDU pair selection, where n is the selection offset.  Given a sequence of received periodic 1DM frames, the set of 1DM frame pairs can be expressed as { {f1, f1+n}, {f2, f2+n}, {f3, f3+n}, …}.&#xD;
+[D24]/[CD8] The default selection offset for IFDV SHOULD be 1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_q-DNENJgEeiOXPERXrWTXw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_cu_GUNJgEeiOXPERXrWTXw" name="dmmFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_xoa94NJhEeiOXPERXrWTXw" annotatedElement="_cu_GUNJgEeiOXPERXrWTXw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[R63] A SOAM PM Implementation on the Controller MEP MUST support a configurable frame size for DMM frame transmission.&#xD;
+[R64] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[D22] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[D23] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="__kQmoNJhEeiOXPERXrWTXw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_wc2PgM_YEeiQlow2bYuzuw" name="CarrierEthProActDualEndSyntLossPmFunctionResource">
+        <generalization xmi:type="uml:Generalization" xmi:id="_YTbWcNJfEeiOXPERXrWTXw" general="_A95P4NJeEeiOXPERXrWTXw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BCaTkM_ZEeiQlow2bYuzuw" name="1slFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BzsgYM_2EeiQlow2bYuzuw" annotatedElement="_BCaTkM_ZEeiQlow2bYuzuw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[CR56] [O8] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for 1SL frame transmission.&#xD;
+Note: The frame size does not need to be configured at the Sink MEP.&#xD;
+[CR57] [O8] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[CD14] [O8] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[CD15] [O8] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_mqhToM_1EeiQlow2bYuzuw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Ga0AAM_3EeiQlow2bYuzuw" name="CarrierEthOnDmdDualEndSyntLossPmFunctionResource">
+        <generalization xmi:type="uml:Generalization" xmi:id="_qn52kNJjEeiOXPERXrWTXw" general="_A95P4NJeEeiOXPERXrWTXw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_lmw_UNJgEeiOXPERXrWTXw" name="1slFrameSize">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_kAKtkNJjEeiOXPERXrWTXw" annotatedElement="_lmw_UNJgEeiOXPERXrWTXw">
+            <body>Frame size, in octets.&#xD;
+MEF 35.1:&#xD;
+[CR56] [O8] A SOAM PM Implementation of the Controller MEP MUST support a configurable frame size for 1SL frame transmission.&#xD;
+Note: The frame size does not need to be configured at the Sink MEP.&#xD;
+[CR57] [O8] The range of Ethernet frame sizes from 64 through 2000 octets MUST be supported.&#xD;
+[CD14] [O8] The range of Ethernet frame sizes from 2001 through 9600 octets SHOULD be supported.&#xD;
+[CD15] [O8] The default frame size SHOULD be 64 octets, which is the minimum valid Ethernet frame size.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_l6JG8NJjEeiOXPERXrWTXw" value="64"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_A95P4NJeEeiOXPERXrWTXw" name="CarrierEthCommonSyntLossPmFunctionResource" isAbstract="true">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DcSk8NJeEeiOXPERXrWTXw" name="flrAvailabilityDeltaTime">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_QA4t8NJeEeiOXPERXrWTXw" annotatedElement="_DcSk8NJeEeiOXPERXrWTXw">
+            <body>MEF 35.1:&#xD;
+[R78]/[CR58] [O8] A SOAM PM Implementation MUST support a configurable parameter for the length of time over which each Availability flr value is calculated, with a range of 1s – 300s.  This parameter is equivalent to delta-t as specified by MEF 10.3.&#xD;
+[R79]/[CR59] [O8] The length of time over which each Availability flr value is calculated (delta-t) MUST be an integer multiple of the interval between each SLM/1SL frame transmission.&#xD;
+[D31]/[CD16] [O8] The default length of time over which each Availability flr value is calculated SHOULD be 1s.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_McD8UNJeEeiOXPERXrWTXw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_D5UfMNJeEeiOXPERXrWTXw" name="flrAvailabilitySamples">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_TPXcINJeEeiOXPERXrWTXw" annotatedElement="_D5UfMNJeEeiOXPERXrWTXw">
+            <body>MEF 35.1:&#xD;
+[R80]/[CR60] [O8] The number range of 1 through 10 MUST be supported for the configurable number of consecutive Availability flr measurements to be used to determine Available/Unavailable state transitions.&#xD;
+This parameter is equivalent to the Availability parameter of n as specified by MEF 10.3.&#xD;
+[D32]/[CD17] [O8] The default number of n for Availability SHOULD be 10.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_XuFDINJeEeiOXPERXrWTXw" value="10"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_EVoAsNJeEeiOXPERXrWTXw" name="flrAvailabilityThreshold">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_f1aWoNJeEeiOXPERXrWTXw" annotatedElement="_EVoAsNJeEeiOXPERXrWTXw">
+            <body>MEF 35.1:&#xD;
+[R81]/[CR61] A SOAM PM Implementation MUST support a configurable Availability frame loss ratio threshold to be used in evaluating the Available/Unavailable state of each delta-t interval per MEF 10.3&#xD;
+[R82]/[CR62] The Availability frame loss ratio threshold range of 0.00 through 1.00 MUST be supported in increments of 0.01.&#xD;
+[D33]/[CD18] [O8] The default Availability frame loss ratio threshold SHOULD be 0.1.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+          <defaultValue xmi:type="uml:LiteralReal" xmi:id="_cxmAUNJeEeiOXPERXrWTXw" value="0.1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_E2IFsNJeEeiOXPERXrWTXw" name="numberOfHliForChli">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_iLGboNJeEeiOXPERXrWTXw" annotatedElement="_E2IFsNJeEeiOXPERXrWTXw">
+            <body>MEF 35.1: The number of HLIs (High Loss Interval) that constitute a CHLI (Consecutive High Loss Interval).&#xD;
+MEF 10.3: A High Loss Interval (HLI) is a small time interval contained in T (having the same duration as the interval delta-t) with a high frame loss ratio.&#xD;
+When sufficient HLIs are adjacent, the interval is designated as a Consecutive High Loss Interval (CHLI). &#xD;
+[R86]/[CR66] A SOAM PM Implementation MUST support a configurable parameter to indicate the number of HLIs that constitute a CHLI.  This is equivalent to p in MEF 10.3.&#xD;
+[D34]/[CD19] The default value for the number of HLIs that constitute a CHLI SHOULD be 5.</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_lyNsQNJeEeiOXPERXrWTXw" value="5"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Mu9uAPOJEeaKlM70mQaLRw" name="Diagrams">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nlOVMNMSEeicjasJBk9H2A">
+        <body>MEF NRM OAM Classes</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_oP9UQNMSEeicjasJBk9H2A">
+        <body>ONF TAPI OAM Interfaces</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_tW28oNMSEeicjasJBk9H2A">
+        <body>MEF NRM OAM Classes</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_5ljHENMSEeicjasJBk9H2A">
+        <body>ONF TAPI OAM Interfaces</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_BLj4sIEuEeiNuZsz-QLKsQ" name="Comments">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7Z23gPdmEeaXI6483XIKNQ">
+          <body>MEF NRM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_zCJekNnXEeeLF__rrYTWuQ">
+          <body>ONF TAPI Connectivity and Common Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_BJD5cNnZEeeLF__rrYTWuQ">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_X7Ty4NqBEeelQ5xS42jCuQ">
+          <body>ITU-T</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ZVuicNqBEeelQ5xS42jCuQ">
+          <body>IEEE</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_id6XgNqYEeelQ5xS42jCuQ">
+          <body>MEF Presto OAM</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7Dd3kAEREeib2J2cJwIl6w">
+          <body>MEF NRM OAM</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-s5awH30EeiqyqSVRuW60g">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Ex-ioH31EeiqyqSVRuW60g">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_JZkY0H31EeiqyqSVRuW60g">
+          <body>MEF NRM OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jSOyEIRaEeilPpKJd7RMOw">
+          <body>MEF NRM OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_noyioIRaEeilPpKJd7RMOw">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_5_V70IRdEeilPpKJd7RMOw">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_5_Wi4IRdEeilPpKJd7RMOw">
+          <body>MEF NRM OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_VdiWUIReEeilPpKJd7RMOw">
+          <body>ONF TAPI Ethernet Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_uQM-sIReEeilPpKJd7RMOw">
+          <body>ONF TAPI Ethernet Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_2fWn4IbDEei1mYN87nC6Ww">
+          <body>ONF TAPI Ethernet Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3gix8IwPEeiOpaAXWYLV6w">
+          <body>ONF TAPI Ethernet Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7s3ocIwPEeiOpaAXWYLV6w">
+          <body>MEF NRM OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_7s5doIwPEeiOpaAXWYLV6w">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PxxBAI-8Eeif_K-NzYvdow">
+          <body>ONF TAPI OAM Classes</body>
+        </ownedComment>
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Px0rYI-8Eeif_K-NzYvdow">
+          <body>MEF NRM OAM Classes</body>
+        </ownedComment>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_QGviIPOJEeaKlM70mQaLRw" name="Associations">
+      <packagedElement xmi:type="uml:Association" xmi:id="_u-4SgH-QEeiIS5sA2ssQOQ" name="CarrierEthOamPm2SlmResourceHasAvailabilityData" memberEnd="_u-6HsX-QEeiIS5sA2ssQOQ _u-_AMH-QEeiIS5sA2ssQOQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_u-5goH-QEeiIS5sA2ssQOQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_u-6HsH-QEeiIS5sA2ssQOQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_u-_AMH-QEeiIS5sA2ssQOQ" name="carrierethoampm2slmresource" type="_X9ZJUH-PEeiIS5sA2ssQOQ" association="_u-4SgH-QEeiIS5sA2ssQOQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_d9xoIH9zEeiIS5sA2ssQOQ" client="_DEyrMH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_n4NGYLFVEd2MOdzuQUV2bQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_enhvwH9zEeiIS5sA2ssQOQ" client="_DEyrMH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_u10QcFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_XJ7q4H91EeiIS5sA2ssQOQ" client="_DsCRYH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_u10QcFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_X2yJ0H91EeiIS5sA2ssQOQ" client="_DsCRYH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_n4NGYLFVEd2MOdzuQUV2bQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_1Br_8H-EEeiIS5sA2ssQOQ" client="__H70cH8GEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_vqsqAFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_OhiecH-FEeiIS5sA2ssQOQ" name="CarrierEthOamPm2FdResourceHasClockSynch" memberEnd="_Ohk6sn-FEeiIS5sA2ssQOQ _OholEH-FEeiIS5sA2ssQOQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ohk6sH-FEeiIS5sA2ssQOQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ohk6sX-FEeiIS5sA2ssQOQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_OholEH-FEeiIS5sA2ssQOQ" name="carrierethoampm2fdresource" type="__H70cH8GEeiIS5sA2ssQOQ" association="_OhiecH-FEeiIS5sA2ssQOQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_0i1EQH-FEeiIS5sA2ssQOQ" name="CarrierEthOamPmFdResourceHasClockSynch" memberEnd="_0i1rUn-FEeiIS5sA2ssQOQ _0i6j0H-FEeiIS5sA2ssQOQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0i1rUH-FEeiIS5sA2ssQOQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0i1rUX-FEeiIS5sA2ssQOQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_0i6j0H-FEeiIS5sA2ssQOQ" name="carrierethoampmfdresource" type="_CthasH69EeiIS5sA2ssQOQ" association="_0i1EQH-FEeiIS5sA2ssQOQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_9S-ZUH-HEeiIS5sA2ssQOQ" name="CarrierEthOamPmSlmResourceHasAvailabilityData" memberEnd="_9S_AYn-HEeiIS5sA2ssQOQ _9TD44H-HEeiIS5sA2ssQOQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9S_AYH-HEeiIS5sA2ssQOQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9S_AYX-HEeiIS5sA2ssQOQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_9TD44H-HEeiIS5sA2ssQOQ" name="carrierethoampmslmresource" type="_DEyrMH69EeiIS5sA2ssQOQ" association="_9S-ZUH-HEeiIS5sA2ssQOQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_s9w3sIlGEeiwweZkMSHQGA" client="_9dlGMH_cEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../../TapiModel/TapiOam.uml#_QU5KEIbmEeil5oKL3Vgl-g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_wVMGgIlGEeiwweZkMSHQGA" client="_-JslUH_cEeiIS5sA2ssQOQ" supplier="_Mu9uAPOJEeaKlM70mQaLRw"/>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_x2s8kIlGEeiwweZkMSHQGA" client="_93kTgH_cEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../../TapiModel/TapiOam.uml#_QU5KEIbmEeil5oKL3Vgl-g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_5j-xUIlGEeiwweZkMSHQGA" client="_nYrPIH_dEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../../TapiModel/TapiOam.uml#_CD5qQIUxEeiYFOBVMQg1QQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Il7vIImrEeiox5rjjThfhQ" client="_MCUZMH30EeiqyqSVRuW60g">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_NgYmEOxFEeaTUPmcu3rLwA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_L95wgImrEeiox5rjjThfhQ" client="_WA0x8G5XEeiYrIad_YkIyg">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_W48McBP7EeepnPPr_BcZKg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_WLhZQInmEeiox5rjjThfhQ" client="_nYrPIH_dEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_CD5qQIUxEeiYFOBVMQg1QQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_fbvncInmEeiox5rjjThfhQ" client="_9dlGMH_cEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_QU5KEIbmEeil5oKL3Vgl-g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_hSUukInmEeiox5rjjThfhQ" client="_-JslUH_cEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_QU5KEIbmEeil5oKL3Vgl-g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_P0cBkIw6EeiOpaAXWYLV6w" client="_GMcq8Is6Eeiox5rjjThfhQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_noRbAE-xEeitY7qZgkO_XQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_RiGdQIw6EeiOpaAXWYLV6w" client="_SROEYIs6Eeiox5rjjThfhQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_oj4vsFSIEeitkMFXBYQFcg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_SMGcgIw6EeiOpaAXWYLV6w" client="_QkEcsItTEeiox5rjjThfhQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_c_7tQIqfEeiT7s5en7ligw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_6fv2cJAfEeif_K-NzYvdow" client="_d4hD0I-9Eeif_K-NzYvdow">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_CD5qQIUxEeiYFOBVMQg1QQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Zp0bALz9EeigbqghS2smLg" client="_DEyrMH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_u10QcFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_1sg0QLz-EeigbqghS2smLg" client="_DEyrMH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_n4NGYLFVEd2MOdzuQUV2bQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_DiYkoL0PEeigbqghS2smLg" client="_DsCRYH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_n4NGYLFVEd2MOdzuQUV2bQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_QCBVIL0PEeigbqghS2smLg" client="_DsCRYH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_u10QcFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_eyRdYL0PEeigbqghS2smLg" client="_CthasH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_OUb0kLF-Ed2MOdzuQUV2bQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_-IYkoL0PEeigbqghS2smLg" client="_X9ZJUH-PEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_6gIJAERfEeKsbYfVW3kmQQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_cjv64L0QEeigbqghS2smLg" client="_X9ZJUH-PEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_w8GAcFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_OVx68MHfEeiH7bxV9WLpOA" client="_d4hD0I-9Eeif_K-NzYvdow">
+        <supplier xmi:type="uml:Class" href="../../TapiModel/TapiOam.uml#_CD5qQIUxEeiYFOBVMQg1QQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_eEvRsMHgEeiH7bxV9WLpOA" client="_CthasH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_OUb0kLF-Ed2MOdzuQUV2bQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_vm79IMHgEeiH7bxV9WLpOA" client="_CthasH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_tDn6EFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_5fldQMHgEeiH7bxV9WLpOA" client="_CthasH69EeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_tDn6EFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_Bz6GcMI6EeiH7bxV9WLpOA" client="_X9ZJUH-PEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_6gIJAERfEeKsbYfVW3kmQQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_O4eI8MI6EeiH7bxV9WLpOA" client="_X9ZJUH-PEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_w8GAcFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_iBK4IMI6EeiH7bxV9WLpOA" client="__H70cH8GEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_vqsqAFesEeiqWMdX2ZZi3w"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_xqTJIMI6EeiH7bxV9WLpOA" client="__H70cH8GEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_1D9goERyEeKsbYfVW3kmQQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_6QN2EMI6EeiH7bxV9WLpOA" client="__H70cH8GEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_1D9goERyEeKsbYfVW3kmQQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_CTQC8MI8EeiH7bxV9WLpOA" client="_93kTgH_cEeiIS5sA2ssQOQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiOam.uml#_QU5KEIbmEeil5oKL3Vgl-g"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_fbsYwMI8EeiH7bxV9WLpOA" client="_Osag4Is6Eeiox5rjjThfhQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_HfynMFSJEeitkMFXBYQFcg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_rQ66UMI8EeiH7bxV9WLpOA" client="_eRLSoItjEeiox5rjjThfhQ">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_3iNz8IqxEeiT7s5en7ligw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_0TfHAMI8EeiH7bxV9WLpOA" client="_u3bYUIwVEeiOpaAXWYLV6w">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_4uNtAIqxEeiT7s5en7ligw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_4XLi0MjHEeidCYTlzANolg" client="_MCUZMH30EeiqyqSVRuW60g">
+        <supplier xmi:type="uml:Operation" href="../TAPI/UML/TapiOam.uml#_r-PDAMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_c0brEMyOEeiKRKRmVModyg" client="_MCUZMH30EeiqyqSVRuW60g">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_FHkjAE4wEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_3iPxgMyOEeiKRKRmVModyg" client="_MCUZMH30EeiqyqSVRuW60g">
+        <supplier xmi:type="uml:Operation" href="../TAPI/UML/TapiOam.uml#_r-PDAMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_gItCwMyPEeiKRKRmVModyg" client="_MCUZMH30EeiqyqSVRuW60g">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_FHkjAE4wEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_K5nN8MsSEeidCYTlzANolg" client="_D2dJsMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_J1lZwFiCEei2nODetmeP6A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_LmStwMsSEeidCYTlzANolg" client="_kJ3msMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_c43ZEFhkEeiYiLRYKaTpTw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_MXRewMsSEeidCYTlzANolg" client="_mf2moMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_c7CKwGBQEeiBxvDM8HEDKw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_NKu8AMsSEeidCYTlzANolg" client="_rI7DgMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_NOPhwGBQEeiBxvDM8HEDKw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_rasuEMzUEeiKRKRmVModyg" name="CarrierEthOamTcaThrsResourceHasBinThresholds" memberEnd="_rat8MczUEeiKRKRmVModyg _ravKUMzUEeiKRKRmVModyg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ratVIMzUEeiKRKRmVModyg" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rat8MMzUEeiKRKRmVModyg" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_ravKUMzUEeiKRKRmVModyg" name="carrierethoamtcathrsresource" type="_d4hD0I-9Eeif_K-NzYvdow" association="_rasuEMzUEeiKRKRmVModyg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_y3n1oMyzEeiKRKRmVModyg" name="CarrierEthOamTcaThrsResourceHasCounterThresholds" memberEnd="_y3vKYMyzEeiKRKRmVModyg _y3xmoMyzEeiKRKRmVModyg">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_y3suIMyzEeiKRKRmVModyg" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_y3tVMMyzEeiKRKRmVModyg" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_y3xmoMyzEeiKRKRmVModyg" name="carrierethoamtcathrsresource" type="_d4hD0I-9Eeif_K-NzYvdow" association="_y3n1oMyzEeiKRKRmVModyg"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_XQIDEMyQEeiKRKRmVModyg" client="_WA0x8G5XEeiYrIad_YkIyg">
+        <supplier xmi:type="uml:Operation" href="../TAPI/UML/TapiOam.uml#_CXyBUE5DEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_jKI-AMyQEeiKRKRmVModyg" client="_WA0x8G5XEeiYrIad_YkIyg">
+        <supplier xmi:type="uml:Operation" href="../TAPI/UML/TapiOam.uml#_JRx_AE5DEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_rzSlIMyQEeiKRKRmVModyg" client="_WA0x8G5XEeiYrIad_YkIyg">
+        <supplier xmi:type="uml:Operation" href="../TAPI/UML/TapiOam.uml#_CXyBUE5DEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_ykJN4MyQEeiKRKRmVModyg" client="_WA0x8G5XEeiYrIad_YkIyg">
+        <supplier xmi:type="uml:Operation" href="../TAPI/UML/TapiOam.uml#_JRx_AE5DEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_1C7SkMySEeiKRKRmVModyg" client="_D2dJsMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_B7KwUMyTEeiKRKRmVModyg" client="_kJ3msMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_FYucUMyTEeiKRKRmVModyg" client="_mf2moMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_IfAQwMyTEeiKRKRmVModyg" client="_rI7DgMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_N-95YMyTEeiKRKRmVModyg" client="_D2dJsMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_TGksYMyTEeiKRKRmVModyg" client="_kJ3msMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_WIY3kMyTEeiKRKRmVModyg" client="_mf2moMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_YfhHAMyTEeiKRKRmVModyg" client="_rI7DgMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_hnibcMyTEeiKRKRmVModyg" client="_D2dJsMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_vbbpIMyTEeiKRKRmVModyg" client="_kJ3msMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_zFm00MyTEeiKRKRmVModyg" client="_mf2moMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_475SwMyTEeiKRKRmVModyg" client="_rI7DgMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_cBC3kMyUEeiKRKRmVModyg" client="_mf2moMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_hJ2kcMyUEeiKRKRmVModyg" client="_rI7DgMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_mF1sQMOdEeaFfJxGCRaf4A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_nP2SUMyUEeiKRKRmVModyg" client="_kJ3msMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_rUB5cMyUEeiKRKRmVModyg" client="_D2dJsMsREeidCYTlzANolg">
+        <supplier xmi:type="uml:Operation" href="../../TapiModel/TapiOam.uml#_5HQ4ME5CEeiMYveOdt1-rQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_7M0GgMzVEeiKRKRmVModyg" client="_StUwAI-4Eeif_K-NzYvdow">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiNotification.uml#_MQft0CCCEeeWCKlkirNtnw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_7x_3MMzVEeiKRKRmVModyg" client="_THTWQI-4Eeif_K-NzYvdow">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiNotification.uml#_MQft0CCCEeeWCKlkirNtnw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_eyi_8M8zEeiQlow2bYuzuw" client="_JcfskM8sEeiQlow2bYuzuw">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_c43ZEFhkEeiYiLRYKaTpTw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_iv0GwM8zEeiQlow2bYuzuw" client="_XixDsM8sEeiQlow2bYuzuw">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_c43ZEFhkEeiYiLRYKaTpTw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_oxpGUM8zEeiQlow2bYuzuw" client="_EaBNAM8zEeiQlow2bYuzuw">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_NOPhwGBQEeiBxvDM8HEDKw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_rTleoM8zEeiQlow2bYuzuw" client="_kXMXQM8SEeiQlow2bYuzuw">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_NOPhwGBQEeiBxvDM8HEDKw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_VkSWAM_2EeiQlow2bYuzuw" client="_wc2PgM_YEeiQlow2bYuzuw">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_J1lZwFiCEei2nODetmeP6A"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Abstraction" xmi:id="_PfjW8M_3EeiQlow2bYuzuw" client="_Ga0AAM_3EeiQlow2bYuzuw">
+        <supplier xmi:type="uml:Class" href="../TAPI/UML/TapiEth.uml#_c7CKwGBQEeiBxvDM8HEDKw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_D8nO0ICQEeiQxOzi78lY-g" name="Types">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_j3q7oH_fEeiIS5sA2ssQOQ" name="BinIdandLowerBound">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_RO0RcICgEeicB4FfFe3jdw" annotatedElement="_j3q7oH_fEeiIS5sA2ssQOQ">
+          <body>MEF 35.1: Each bin is associated with a specific range of observed delay, IFDV or FDR (frame delay, inter-frame delay variation, and frame delay range).  Bins are defined to be contiguous, and each is configured with its lower bound. &#xD;
+Because the bins are contiguous, it is only necessary to configure the lower bound of each bin. &#xD;
+Furthermore, the lowest bin is assumed to always have a lower bound of 0, and the highest bin is assumed to have an upper bound of infinite.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2WiDoH_fEeiIS5sA2ssQOQ" name="binIndex">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fbirUICfEeicB4FfFe3jdw" annotatedElement="_2WiDoH_fEeiIS5sA2ssQOQ">
+            <body>Index or Id of the BIN, natural number 1,2,3, ...</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_j3q7oX_fEeiIS5sA2ssQOQ" name="lowerBound">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_841qEICPEeiQxOzi78lY-g" name="MetricPerBin">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QYR1kIChEeicB4FfFe3jdw" annotatedElement="_841qEICPEeiQxOzi78lY-g">
+          <body>MEF 35.1: [metric property represents] the number of measurements that fall within a configured bin.&#xD;
+The configured bin is identified by the metric type of the attribute (FD/FDR/IFDV) plus the bin index [binIndex property].</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_841qEYCPEeiQxOzi78lY-g" name="metric">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_62o5EICgEeicB4FfFe3jdw" annotatedElement="_841qEYCPEeiQxOzi78lY-g">
+            <body></body>
+          </ownedComment>
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_841qEoCPEeiQxOzi78lY-g" name="binIndex">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_YQ0eUPfAEeaBCtgIsZHvDQ" name="BandwidthReport">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_fyQPcPfAEeaBCtgIsZHvDQ" name="sourceMacAddress"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_inpIMPfAEeaBCtgIsZHvDQ" name="portId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nbTEcPfAEeaBCtgIsZHvDQ" name="nominalBandwidth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_qWzMQPfAEeaBCtgIsZHvDQ" name="currentBandwidth">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_s_FdsIFAEeiNuZsz-QLKsQ" name="UpperBinCount">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_QKjs8IFBEeiNuZsz-QLKsQ" annotatedElement="_s_FdsIFAEeiNuZsz-QLKsQ">
+          <body>MEF 35.1: For performance metrics that use Measurement Bins, thresholds are defined in terms of an Upper Bin Count (UBC). &#xD;
+The Upper Bin Count of bin k is the total of the counts for bins k and above, i.e. UBC(k) = count of bin (k) + count of bin (k+1) + ... + count of bin (n), where n is the last bin.&#xD;
+To configure a threshold, both the bin number, k, and the total count, N, need to be specified - this is represented as (N, k).  A threshold (N, k) is considered to have been crossed when UBC(k) >= N.&#xD;
+</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_DF3uoIFBEeiNuZsz-QLKsQ" name="k">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FtNkUIFBEeiNuZsz-QLKsQ" name="N">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_a9iyMI-WEeif_K-NzYvdow" name="UpperBinCountThrValues">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_qMu5MI-WEeif_K-NzYvdow" annotatedElement="_a9iyMI-WEeif_K-NzYvdow">
+          <body>MEF 35.1: For performance metrics that use Measurement Bins, thresholds are defined in terms of an Upper Bin Count (UBC). &#xD;
+The Upper Bin Count of bin k is the total of the counts for bins k and above, i.e. UBC(k) = count of bin (k) + count of bin (k+1) + ... + count of bin (n), where n is the last bin.&#xD;
+To configure a threshold, both the bin number, k, and the total count, N, need to be specified - this is represented as (N, k).  A threshold (N, k) is considered to have been crossed when UBC(k) >= N.&#xD;
+[O4] A SOAM PM implementation MUST support a single configurable parameter for the threshold value for each TCA Function that uses stateless TCA reporting.&#xD;
+[CR6]&lt;[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MUST support the CLEAR threshold being equal to the SET threshold.&#xD;
+[CO1]&lt;[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MAY support the CLEAR threshold being different to the SET threshold.&#xD;
+For thresholds defined using bins, a CLEAR threshold (Nc, kc) is defined to be less than or equal to a SET threshold (Ns, ks) if kc = ks and Nc &lt;= Ns.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xS2nUI-WEeif_K-NzYvdow" name="upperBinCountThrSet" type="_s_FdsIFAEeiNuZsz-QLKsQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0fVxcI-WEeif_K-NzYvdow" name="upperBinCountThrClear" type="_s_FdsIFAEeiNuZsz-QLKsQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_PQax0I-YEeif_K-NzYvdow" name="ThrValues">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_PQax0Y-YEeif_K-NzYvdow" annotatedElement="_PQax0I-YEeif_K-NzYvdow">
+          <body>[O4] A SOAM PM implementation MUST support a single configurable parameter for the threshold value for each TCA Function that uses stateless TCA reporting.&#xD;
+[CR6]&lt;[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MUST support the CLEAR threshold being equal to the SET threshold.&#xD;
+[CO1]&lt;[O4], [CD1] If a SOAM PM Implementation supports stateful TCA reporting, it MAY support the CLEAR threshold being different to the SET threshold.</body>
+        </ownedComment>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PQax0o-YEeif_K-NzYvdow" name="thrSetValue">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_PQax04-YEeif_K-NzYvdow" name="thrClearValue">
+          <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_JLFCsMyKEeiKRKRmVModyg" name="CarrierEthernetCounterThresholdTypes" isLeaf="true">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ZJ-IUMyKEeiKRKRmVModyg" name="fd1FwMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_i-BcUMyKEeiKRKRmVModyg" annotatedElement="_ZJ-IUMyKEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way Maximum FD in the Forward direction.&#xD;
+A 32-bit integer reflecting the maximum One-way FD measurement in the Forward direction in microseconds.&#xD;
+Threshold Crossing Detection: Max FD >= Forward One-way V(max(FD))</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9MbNcMyLEeiKRKRmVModyg" name="fdr1FwMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_EgmlsMyMEeiKRKRmVModyg" annotatedElement="_9MbNcMyLEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way Maximum FDR in the Forward direction.&#xD;
+A 32-bit integer reflecting the maximum One-way FDR measurement in the Forward direction in microseconds.&#xD;
+Threshold Crossing Detection: Max FDR >= Forward One-way V(max(FDR))</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ryw_UMyMEeiKRKRmVModyg" name="ifdv1FwMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_WTQH8MyMEeiKRKRmVModyg" annotatedElement="_Ryw_UMyMEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way Maximum IFDV in the Forward direction.&#xD;
+A 32-bit integer reflecting the maximum One-way IFDV measurement in the Forward direction in microseconds.&#xD;
+Threshold Crossing Detection: Max IFDV >= Forward One-way V(max(IFDV))</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_G6KJIMyvEeiKRKRmVModyg" name="hli1FwMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_G6KJIcyvEeiKRKRmVModyg" annotatedElement="_G6KJIMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way HLI in the Forward direction.&#xD;
+Count of HLIs in the Forward direction during the Measurement Interval.&#xD;
+Threshold Crossing Detection: HLI count >= Forward One-way N(HLI)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_NU2UoMyvEeiKRKRmVModyg" name="chli1FwMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_NU2UocyvEeiKRKRmVModyg" annotatedElement="_NU2UoMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way CHLI in the Forward direction.&#xD;
+Count of CHLIs in the Forward direction during the Measurement Interval.&#xD;
+Threshold Crossing Detection: CHLI count >= Forward One-way N(CHLI)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eDBiIMyvEeiKRKRmVModyg" name="fd1BkMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eDBiIcyvEeiKRKRmVModyg" annotatedElement="_eDBiIMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way Maximum FD in the Backward direction.&#xD;
+A 32-bit integer reflecting the maximum One-way FD measurement in the Backward direction in microseconds.&#xD;
+Threshold Crossing Detection: Max FD >= Backward One-way V(max(FD))</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_j-c-wMyvEeiKRKRmVModyg" name="fdr1BkMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_j-c-wcyvEeiKRKRmVModyg" annotatedElement="_j-c-wMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way Maximum FDR in the Backward direction.&#xD;
+A 32-bit integer reflecting the maximum One-way FDR measurement in the Backward direction in microseconds.&#xD;
+Threshold Crossing Detection: Max FDR >= Backward One-way V(max(FDR))</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_q97SUMyvEeiKRKRmVModyg" name="ifdv1BkMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_q97SUcyvEeiKRKRmVModyg" annotatedElement="_q97SUMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way Maximum IFDV in the Backward direction.&#xD;
+A 32-bit integer reflecting the maximum One-way IFDV measurement in the Backward direction in microseconds.&#xD;
+Threshold Crossing Detection: Max IFDV >= Backward One-way V(max(IFDV))</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3Ii1EMyvEeiKRKRmVModyg" name="hli1BkMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_3Ii1EcyvEeiKRKRmVModyg" annotatedElement="_3Ii1EMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way HLI in the Backward direction.&#xD;
+Count of HLIs in the Backward direction during the Measurement Interval.&#xD;
+Threshold Crossing Detection: HLI count >= Backward One-way N(HLI)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_81FhIMyvEeiKRKRmVModyg" name="chli1BkMaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_81FhIcyvEeiKRKRmVModyg" annotatedElement="_81FhIMyvEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way CHLI in the Backward direction.&#xD;
+Count of CHLIs in the Backward direction during the Measurement Interval.&#xD;
+Threshold Crossing Detection: CHLI count >= Backward One-way N(CHLI)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fkv_8MywEeiKRKRmVModyg" name="fd2MaxThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Fkv_8cywEeiKRKRmVModyg" annotatedElement="_Fkv_8MywEeiKRKRmVModyg">
+            <body>MEF 35.1: Two-way Maximum FD.&#xD;
+A 32-bit integer reflecting the maximum Two-way FD measurement in microseconds.&#xD;
+Threshold Crossing Detection: Max FD >= Two-way V(max(FD))</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_hHPooMzREeiKRKRmVModyg" name="CarrierEthernetBinThresholdTypes" isLeaf="true">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PaYTYMzTEeiKRKRmVModyg" name="fd1FwBinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PaYTYczTEeiKRKRmVModyg" annotatedElement="_PaYTYMzTEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way FD in the Forward direction.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Forward direction that fall within the configured bin.&#xD;
+Threshold Crossing Detection: UBC(k) >= Forward One-way N(FD) </body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_WlBVIMzTEeiKRKRmVModyg" name="fdr1FwBinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_WlBVIczTEeiKRKRmVModyg" annotatedElement="_WlBVIMzTEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way FDR in the Forward direction.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Forward direction that fall within a configured bin.&#xD;
+Threshold Crossing Detection: UBC(k) >= Forward One-way N(FDR)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eE3K0MzTEeiKRKRmVModyg" name="ifdv1FwBinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_eE3K0czTEeiKRKRmVModyg" annotatedElement="_eE3K0MzTEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way IFDV in the Forward direction.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of IFDV measurements (i.e., each instance of |Di – Dj| in the Forward direction) that fall within a configured bin.&#xD;
+Threshold Crossing Detection: UBC(k) >= Forward One-way N(IFDV)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_nSbGkMzTEeiKRKRmVModyg" name="fd1BkBinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_nSbGkczTEeiKRKRmVModyg" annotatedElement="_nSbGkMzTEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way FD in the Backward direction.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of One-way FD measurements in the Backward direction that fall within the configured bin.&#xD;
+Threshold Crossing Detection: UBC(k) >= Backward One-way N(FD)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_u7DE0MzTEeiKRKRmVModyg" name="fdr1BkBinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_u7DE0czTEeiKRKRmVModyg" annotatedElement="_u7DE0MzTEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way FDR in the Backward direction.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of FDR measurements in the Backward direction that fall within a configured bin.&#xD;
+Threshold Crossing Detection: UBC(k) >= Backward One-way N(FDR)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1SMNEMzTEeiKRKRmVModyg" name="ifdv1BkBinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1SMNEczTEeiKRKRmVModyg" annotatedElement="_1SMNEMzTEeiKRKRmVModyg">
+            <body>MEF 35.1: One-way IFDV in the Backward direction.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of IFDV measurements in the Backward direction that fall within a configured bin.&#xD;
+Threshold Crossing Detection: UBC(k) >= Backward One-way N(IFDV)</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_G9M2QMzUEeiKRKRmVModyg" name="fd2BinThrs">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_G9M2QczUEeiKRKRmVModyg" annotatedElement="_G9M2QMzUEeiKRKRmVModyg">
+            <body>MEF 35.1: Two-way FD.&#xD;
+A 32-bit counter per Measurement Bin that counts the number of FD measurements that fall within the configured range.&#xD;
+Threshold Crossing Detection: UBC(k) >= Two-way N(FD)</body>
+          </ownedComment>
+        </ownedLiteral>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_vjd_8NnREeeLF__rrYTWuQ" name="Imports">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_oQiugLwmEeigbqghS2smLg">
+        <importedPackage xmi:type="uml:Model" href="MEF_Types.uml#_BTq7kDAzEeeMUevANHuhog"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_1xmfwLwmEeigbqghS2smLg">
+        <importedPackage xmi:type="uml:Model" href="../TAPI/UML/TapiOam.uml#_pYBToLwlEeSpn78DYJKtkA"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_McoGMLwnEeigbqghS2smLg">
+        <importedPackage xmi:type="uml:Model" href="../TAPI/UML/TapiEth.uml#_FOdHAJKmEdybINoKQq_hfQ"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_BCxi8LwwEeigbqghS2smLg">
+        <importedPackage xmi:type="uml:Model" href="../TAPI/UML/TapiCommon.uml#_cOw5UDA4Eea4fKwSGMr6CA"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_YgUdIMGvEeiMoqRbOOr-Fg">
+        <importedPackage xmi:type="uml:Model" href="../TAPI/UML/TapiNotification.uml#_R72poDA5Eea4fKwSGMr6CA"/>
+      </packageImport>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_8OBgQMjBEeidCYTlzANolg" name="Interfaces"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_gPVhANCGEeiQlow2bYuzuw" name="Rules">
+      <ownedRule xmi:type="uml:Constraint" xmi:id="_LoNsANCGEeiQlow2bYuzuw" name="ConstraintCarrierEthProActSingleEndLossPmFunctionResource" constrainedElement="_eyi_8M8zEeiQlow2bYuzuw">
+        <specification xmi:type="uml:LiteralString" xmi:id="_LoQvUNCGEeiQlow2bYuzuw" name="WHEN" value="oamJobType=EthOamJobType:ETH_LM_LMM"/>
+      </ownedRule>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_F5HKcITzEeihEoLajNqWsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oHHHQIlFEeiwweZkMSHQGA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHHHQYlFEeiwweZkMSHQGA" key="Version" value="0.2.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHHHQolFEeiwweZkMSHQGA" key="Comment" value="New stereotype OpenModelStatement added. It contains the generic information of the model and extends the Metaclass &quot;Model&quot;."/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHHHQ4lFEeiwweZkMSHQGA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHHHRIlFEeiwweZkMSHQGA" key="Date" value="2018-04-13"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHHHRYlFEeiwweZkMSHQGA" key="Author" value="IISOMI"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F5IYkITzEeihEoLajNqWsg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_F5zuAITzEeihEoLajNqWsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oHN08IlFEeiwweZkMSHQGA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHN08YlFEeiwweZkMSHQGA" key="Version" value="0.0.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHN08olFEeiwweZkMSHQGA" key="Comment" value="Metaclasses Property and Stereotype added via &lt;Element Import>."/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHN084lFEeiwweZkMSHQGA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHN09IlFEeiwweZkMSHQGA" key="Date" value="2017-08-08"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oHN09YlFEeiwweZkMSHQGA" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F50VEITzEeihEoLajNqWsg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TAPI/UML/UmlProfiles/ProfileLifecycleProfile/ProfileLifecycle_Profile.profile.uml#_AL3HsHweEee8oZaf2rRQlg"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TAPI/UML/UmlProfiles/ProfileLifecycleProfile/ProfileLifecycle_Profile.profile.uml#_CBpGoEdZEearpawF38eisA"/>
+    </profileApplication>
+  </uml:Model>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5bTgoTzEeihEoLajNqWsg" base_Class="_WA0x8G5XEeiYrIad_YkIyg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5bTg4TzEeihEoLajNqWsg" base_StructuralFeature="_qgNBgH4AEeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5bThITzEeihEoLajNqWsg" base_StructuralFeature="_xxu_EH6oEeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5chpITzEeihEoLajNqWsg" base_Class="_MCUZMH30EeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5chpYTzEeihEoLajNqWsg" base_StructuralFeature="_dF1bMH4NEeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5dIsITzEeihEoLajNqWsg" base_StructuralFeature="_B6l4AH60EeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5dIsYTzEeihEoLajNqWsg" base_StructuralFeature="_He_UsH60EeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5dIs4TzEeihEoLajNqWsg" base_Class="_R8NOoH39EeiqyqSVRuW60g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5dvwITzEeihEoLajNqWsg" base_StructuralFeature="_01_Q4H7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5dvwYTzEeihEoLajNqWsg" base_StructuralFeature="_1W7awH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5dvwoTzEeihEoLajNqWsg" base_Class="_CISmsH69EeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5dvw4TzEeihEoLajNqWsg" base_StructuralFeature="_2io_8H7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5eW0ITzEeihEoLajNqWsg" base_StructuralFeature="_25uqQH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5eW0YTzEeihEoLajNqWsg" base_StructuralFeature="_3Npr0H7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5eW0oTzEeihEoLajNqWsg" base_StructuralFeature="_3gnrIH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5eW04TzEeihEoLajNqWsg" base_StructuralFeature="_308VUH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5eW1ITzEeihEoLajNqWsg" base_StructuralFeature="_4J5RoH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5e94ITzEeihEoLajNqWsg" base_Class="_CthasH69EeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5e94YTzEeihEoLajNqWsg" base_StructuralFeature="_5_s8sH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5e94oTzEeihEoLajNqWsg" base_StructuralFeature="_6VF94H7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5e944TzEeihEoLajNqWsg" base_StructuralFeature="_6kuVUH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5e95ITzEeihEoLajNqWsg" base_StructuralFeature="_60VeoH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5fk8ITzEeihEoLajNqWsg" base_StructuralFeature="_7HUsEH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5fk8YTzEeihEoLajNqWsg" base_StructuralFeature="_7ewUoH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5fk8oTzEeihEoLajNqWsg" base_StructuralFeature="_7zM6oH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5fk84TzEeihEoLajNqWsg" base_StructuralFeature="_8Ji-EH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5fk9ITzEeihEoLajNqWsg" base_StructuralFeature="_8dktUH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMAITzEeihEoLajNqWsg" base_StructuralFeature="_8vFUEH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMAYTzEeihEoLajNqWsg" base_StructuralFeature="_9AAE8H7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMAoTzEeihEoLajNqWsg" base_StructuralFeature="_9RT3YH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMA4TzEeihEoLajNqWsg" base_StructuralFeature="_9gPEMH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMBITzEeihEoLajNqWsg" base_StructuralFeature="_9yZLMH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMBYTzEeihEoLajNqWsg" base_StructuralFeature="_-CwicH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gMBoTzEeihEoLajNqWsg" base_StructuralFeature="_-Xv7AH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gzEITzEeihEoLajNqWsg" base_StructuralFeature="_-mxOcH7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gzEYTzEeihEoLajNqWsg" base_StructuralFeature="_-4iT4H7BEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gzEoTzEeihEoLajNqWsg" base_StructuralFeature="_0i1rUn-FEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5gzE4TzEeihEoLajNqWsg" base_Class="_DEyrMH69EeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gzFITzEeihEoLajNqWsg" base_StructuralFeature="_AlTXsH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5gzFYTzEeihEoLajNqWsg" base_StructuralFeature="_BGR90H7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haIITzEeihEoLajNqWsg" base_StructuralFeature="_BTaa4H7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haIYTzEeihEoLajNqWsg" base_StructuralFeature="_BgvsQH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haIoTzEeihEoLajNqWsg" base_StructuralFeature="_BwBeYH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haI4TzEeihEoLajNqWsg" base_StructuralFeature="_B93GEH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haJITzEeihEoLajNqWsg" base_StructuralFeature="_CLvKAH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haJYTzEeihEoLajNqWsg" base_StructuralFeature="_Ce26UH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5haJoTzEeihEoLajNqWsg" base_StructuralFeature="_CtHYwH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5iBMITzEeihEoLajNqWsg" base_StructuralFeature="_C9J_4H7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5iBMYTzEeihEoLajNqWsg" base_StructuralFeature="_DLNqAH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5iBMoTzEeihEoLajNqWsg" base_StructuralFeature="_DYhGMH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5iBM4TzEeihEoLajNqWsg" base_StructuralFeature="_9S_AYn-HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5iBNITzEeihEoLajNqWsg" base_Class="_Dbes4H69EeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ioQITzEeihEoLajNqWsg" base_StructuralFeature="_GNg9YH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ioQYTzEeihEoLajNqWsg" base_StructuralFeature="_GdGRgH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ioQoTzEeihEoLajNqWsg" base_StructuralFeature="_GsnUMH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ioQ4TzEeihEoLajNqWsg" base_StructuralFeature="_G4E9UH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ioRITzEeihEoLajNqWsg" base_StructuralFeature="_HEkhMH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ioRYTzEeihEoLajNqWsg" base_StructuralFeature="_HRvagH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5jPUITzEeihEoLajNqWsg" base_Class="_DsCRYH69EeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5jPUYTzEeihEoLajNqWsg" base_StructuralFeature="_D_KPcH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5jPUoTzEeihEoLajNqWsg" base_StructuralFeature="_EbowEH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5jPU4TzEeihEoLajNqWsg" base_StructuralFeature="_EoEpkH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5jPVITzEeihEoLajNqWsg" base_StructuralFeature="_Ez9wgH7CEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5jPVYTzEeihEoLajNqWsg" base_Class="__H70cH8GEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2YITzEeihEoLajNqWsg" base_StructuralFeature="_YpaDkH8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2YYTzEeihEoLajNqWsg" base_StructuralFeature="_Y76I0H8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2YoTzEeihEoLajNqWsg" base_StructuralFeature="_ZMW_oH8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2Y4TzEeihEoLajNqWsg" base_StructuralFeature="_ZdcIkH8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2ZITzEeihEoLajNqWsg" base_StructuralFeature="_ZxY_UH8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2ZYTzEeihEoLajNqWsg" base_StructuralFeature="_afdmQH8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5j2ZoTzEeihEoLajNqWsg" base_StructuralFeature="_bkTHYH8HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5kdcITzEeihEoLajNqWsg" base_StructuralFeature="_Ohk6sn-FEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5kdcYTzEeihEoLajNqWsg" base_Class="_0_eAkH8PEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5kdcoTzEeihEoLajNqWsg" base_StructuralFeature="_-p10IH8PEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5kdc4TzEeihEoLajNqWsg" base_StructuralFeature="_--cyMH8PEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5kddITzEeihEoLajNqWsg" base_StructuralFeature="__NmogH8PEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5kddYTzEeihEoLajNqWsg" base_Class="_X9ZJUH-PEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lEgITzEeihEoLajNqWsg" base_StructuralFeature="_L6KykH-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lEgYTzEeihEoLajNqWsg" base_StructuralFeature="_MWce4H-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lEgoTzEeihEoLajNqWsg" base_StructuralFeature="_NDNeQH-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lEg4TzEeihEoLajNqWsg" base_StructuralFeature="_NZ8jQH-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lEhITzEeihEoLajNqWsg" base_StructuralFeature="_u-6HsX-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5lEhYTzEeihEoLajNqWsg" base_Class="_kpM4IH-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lrkITzEeihEoLajNqWsg" base_StructuralFeature="_LE1QkH-REeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lrkYTzEeihEoLajNqWsg" base_StructuralFeature="_Le3hMH-REeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lrkoTzEeihEoLajNqWsg" base_StructuralFeature="_L0DHAH-REeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5lrk4TzEeihEoLajNqWsg" base_Class="_9dlGMH_cEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5lrlITzEeihEoLajNqWsg" base_StructuralFeature="_UcEbMH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5lrlYTzEeihEoLajNqWsg" base_Class="_93kTgH_cEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5mSoITzEeihEoLajNqWsg" base_StructuralFeature="_3yMl0H_eEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5mSoYTzEeihEoLajNqWsg" base_Class="_-JslUH_cEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5mSooTzEeihEoLajNqWsg" base_StructuralFeature="_4G8GwH_eEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_F5mSo4TzEeihEoLajNqWsg" base_Class="_nYrPIH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5mSpITzEeihEoLajNqWsg" base_StructuralFeature="_wsVy4H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5mSpYTzEeihEoLajNqWsg" base_StructuralFeature="_4qxCAH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5m5sITzEeihEoLajNqWsg" base_StructuralFeature="_6qJf0H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5m5sYTzEeihEoLajNqWsg" base_StructuralFeature="_7BUCoH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5m5soTzEeihEoLajNqWsg" base_StructuralFeature="_7SD0YH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5m5s4TzEeihEoLajNqWsg" base_StructuralFeature="_7gcOoH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5m5tITzEeihEoLajNqWsg" base_StructuralFeature="_7wCw4H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5m5tYTzEeihEoLajNqWsg" base_StructuralFeature="_8CE8EH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ngwITzEeihEoLajNqWsg" base_StructuralFeature="_8SsK8H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ngwYTzEeihEoLajNqWsg" base_StructuralFeature="_8jPvcH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ngwoTzEeihEoLajNqWsg" base_StructuralFeature="_81PeYH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ngw4TzEeihEoLajNqWsg" base_StructuralFeature="_9PaR4H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH0ITzEeihEoLajNqWsg" base_StructuralFeature="_9fCpUH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH0YTzEeihEoLajNqWsg" base_StructuralFeature="_9w0V0H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH0oTzEeihEoLajNqWsg" base_StructuralFeature="_-A1u0H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH04TzEeihEoLajNqWsg" base_StructuralFeature="_-QTuMH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH1ITzEeihEoLajNqWsg" base_StructuralFeature="_-g5u8H_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH1YTzEeihEoLajNqWsg" base_StructuralFeature="_-wtFgH_dEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5oH1oTzEeihEoLajNqWsg" base_StructuralFeature="_glXS0H_eEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5pV84TzEeihEoLajNqWsg" base_StructuralFeature="_u-_AMH-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5pV9ITzEeihEoLajNqWsg" base_StructuralFeature="_OholEH-FEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5pV9YTzEeihEoLajNqWsg" base_StructuralFeature="_0i6j0H-FEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5p9AITzEeihEoLajNqWsg" base_StructuralFeature="_9TD44H-HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5qkFITzEeihEoLajNqWsg" base_StructuralFeature="_2WiDoH_fEeiIS5sA2ssQOQ" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5qkFYTzEeihEoLajNqWsg" base_StructuralFeature="_j3q7oX_fEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLIITzEeihEoLajNqWsg" base_StructuralFeature="_841qEYCPEeiQxOzi78lY-g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLIYTzEeihEoLajNqWsg" base_StructuralFeature="_841qEoCPEeiQxOzi78lY-g"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLIoTzEeihEoLajNqWsg" base_StructuralFeature="_fyQPcPfAEeaBCtgIsZHvDQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLI4TzEeihEoLajNqWsg" base_StructuralFeature="_inpIMPfAEeaBCtgIsZHvDQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLJITzEeihEoLajNqWsg" base_StructuralFeature="_nbTEcPfAEeaBCtgIsZHvDQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLJYTzEeihEoLajNqWsg" base_StructuralFeature="_qWzMQPfAEeaBCtgIsZHvDQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5rLJoTzEeihEoLajNqWsg" base_StructuralFeature="_DF3uoIFBEeiNuZsz-QLKsQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F5ryMITzEeihEoLajNqWsg" base_StructuralFeature="_FtNkUIFBEeiNuZsz-QLKsQ"/>
+  <OpenModel_Profile:Specify xmi:id="_r9tdwIUFEeirk9KeEOeaMA" base_Abstraction="_enhvwH9zEeiIS5sA2ssQOQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthOnDemandLmPerformanceData:_ethOnDemandLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_tDdk4IUFEeirk9KeEOeaMA" base_Abstraction="_d9xoIH9zEeiIS5sA2ssQOQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthProActiveLmPerformanceData:_ethProActiveLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_uNgWIIUFEeirk9KeEOeaMA" base_Abstraction="_XJ7q4H91EeiIS5sA2ssQOQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthOnDemandLmPerformanceData:_ethOnDemandLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_vS8UMIUFEeirk9KeEOeaMA" base_Abstraction="_X2yJ0H91EeiIS5sA2ssQOQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthProActiveLmPerformanceData:_ethProActiveLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_6F2dIIUFEeirk9KeEOeaMA" base_Abstraction="_1Br_8H-EEeiIS5sA2ssQOQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthOnDemand1DmPerformanceData:_ethOnDemand1DmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelStatement xmi:id="_oG8IIIlFEeiwweZkMSHQGA" base_Model="_1XX9gPN9EeaCAKUww6qx7Q"/>
+  <OpenModel_Profile:Specify xmi:id="_vAEtsIlGEeiwweZkMSHQGA" base_Abstraction="_s9w3sIlGEeiwweZkMSHQGA"/>
+  <OpenModel_Profile:Specify xmi:id="_y-cAsIlGEeiwweZkMSHQGA" base_Abstraction="_x2s8kIlGEeiwweZkMSHQGA"/>
+  <OpenModel_Profile:Specify xmi:id="_2DGEgIlGEeiwweZkMSHQGA" base_Abstraction="_wVMGgIlGEeiwweZkMSHQGA"/>
+  <OpenModel_Profile:Specify xmi:id="_6jVVgIlGEeiwweZkMSHQGA" base_Abstraction="_5j-xUIlGEeiwweZkMSHQGA"/>
+  <OpenModel_Profile:Specify xmi:id="_J8xmQImrEeiox5rjjThfhQ" base_Abstraction="_Il7vIImrEeiox5rjjThfhQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamService</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_M-ENAImrEeiox5rjjThfhQ" base_Abstraction="_L95wgImrEeiox5rjjThfhQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamService:_oamService/TapiOam:OamService:_endPoint</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_XVQBcInmEeiox5rjjThfhQ" base_Abstraction="_WLhZQInmEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:Specify xmi:id="_gdk34InmEeiox5rjjThfhQ" base_Abstraction="_fbvncInmEeiox5rjjThfhQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamProfile/TapiOam:OamProfile:_pmBinData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_lN-EwInmEeiox5rjjThfhQ" base_Abstraction="_hSUukInmEeiox5rjjThfhQ">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamProfile/TapiOam:OamProfile:_pmBinData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelClass xmi:id="_GMdSAIs6Eeiox5rjjThfhQ" base_Class="_GMcq8Is6Eeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_Osag4Ys6Eeiox5rjjThfhQ" base_Class="_Osag4Is6Eeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_SROEYYs6Eeiox5rjjThfhQ" base_Class="_SROEYIs6Eeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_HV6JMYtBEeiox5rjjThfhQ" base_StructuralFeature="_HV6JMItBEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_QkEcsYtTEeiox5rjjThfhQ" base_Class="_QkEcsItTEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_i8tn8YtTEeiox5rjjThfhQ" base_StructuralFeature="_i8tn8ItTEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ul54oYtTEeiox5rjjThfhQ" base_StructuralFeature="_ul54oItTEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_2dW9EYtTEeiox5rjjThfhQ" base_StructuralFeature="_2dW9EItTEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_28cFwItTEeiox5rjjThfhQ" base_StructuralFeature="_28besItTEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_MNyjgItUEeiox5rjjThfhQ" base_StructuralFeature="_MNx8cItUEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ZP2EkItUEeiox5rjjThfhQ" base_StructuralFeature="_ZP1dgItUEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_eRL5sItjEeiox5rjjThfhQ" base_Class="_eRLSoItjEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Fd9bMYtkEeiox5rjjThfhQ" base_StructuralFeature="_Fd9bMItkEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F0ym0YtkEeiox5rjjThfhQ" base_StructuralFeature="_F0ym0ItkEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_GKzTEItkEeiox5rjjThfhQ" base_StructuralFeature="_GKysAItkEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Gi6REItkEeiox5rjjThfhQ" base_StructuralFeature="_Gi5qAItkEeiox5rjjThfhQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_u3bYUYwVEeiOpaAXWYLV6w" base_Class="_u3bYUIwVEeiOpaAXWYLV6w"/>
+  <OpenModel_Profile:Specify xmi:id="_M8cugIw_Eeigx9YFdrZg7Q" base_Abstraction="_P0cBkIw6EeiOpaAXWYLV6w">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthLoopbackJob:_ethLoopbackJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_8X9WkIxAEeigx9YFdrZg7Q" base_Abstraction="_RiGdQIw6EeiOpaAXWYLV6w">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthTestJob:_ethTestJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_ZEKcUIxBEeigx9YFdrZg7Q" base_Abstraction="_SMGcgIw6EeiOpaAXWYLV6w">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthLoopbackResultData:_ethLoopbackResultData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_xS31cI-WEeif_K-NzYvdow" base_StructuralFeature="_xS2nUI-WEeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_0fW_kI-WEeif_K-NzYvdow" base_StructuralFeature="_0fVxcI-WEeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_PQbY4I-YEeif_K-NzYvdow" base_StructuralFeature="_PQax0o-YEeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_PQiGkI-YEeif_K-NzYvdow" base_StructuralFeature="_PQax04-YEeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_StUwAY-4Eeif_K-NzYvdow" base_Class="_StUwAI-4Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_THTWQY-4Eeif_K-NzYvdow" base_Class="_THTWQI-4Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_lk8WQY-4Eeif_K-NzYvdow" base_StructuralFeature="_lk8WQI-4Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mP4JoI-4Eeif_K-NzYvdow" base_StructuralFeature="_mP3ikI-4Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mv01AI-4Eeif_K-NzYvdow" base_StructuralFeature="_mv0N8I-4Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_RE5kMI-5Eeif_K-NzYvdow" base_StructuralFeature="_RE49II-5Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Refv8I-5Eeif_K-NzYvdow" base_StructuralFeature="_RefI4I-5Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Rzl2MY-5Eeif_K-NzYvdow" base_StructuralFeature="_Rzl2MI-5Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_d4hq4I-9Eeif_K-NzYvdow" base_Class="_d4hD0I-9Eeif_K-NzYvdow"/>
+  <OpenModel_Profile:Specify xmi:id="_89d2EJAfEeif_K-NzYvdow" base_Abstraction="_6fv2cJAfEeif_K-NzYvdow"/>
+  <OpenModel_Profile:Specify xmi:id="_a4QkELz9EeigbqghS2smLg" base_Abstraction="_Zp0bALz9EeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthOnDemandLmPerformanceData:_ethOnDemandLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_3CLmsLz-EeigbqghS2smLg" base_Abstraction="_1sg0QLz-EeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthProActiveLmPerformanceData:_ethProActiveLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_EnnHUL0PEeigbqghS2smLg" base_Abstraction="_DiYkoL0PEeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthProActiveLmPerformanceData:_ethProActiveLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_Q896cL0PEeigbqghS2smLg" base_Abstraction="_QCBVIL0PEeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthOnDemandLmPerformanceData:_ethOnDemandLmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_gDjfEL0PEeigbqghS2smLg" base_Abstraction="_eyRdYL0PEeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthProActiveDmPerformanceData:_ethProActiveDmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_--r6gL0PEeigbqghS2smLg" base_Abstraction="_-IYkoL0PEeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthProActive1LmPerformanceData:_ethProActive1LmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_ddj3wL0QEeigbqghS2smLg" base_Abstraction="_cjv64L0QEeigbqghS2smLg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthOnDemand1LmPerformanceData:_ethOnDemand1LmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:StrictComposite xmi:id="_VR2ykMDqEeiTospVRf7ogw" base_Association="_9S-ZUH-HEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_Ymmg0MDqEeiTospVRf7ogw" base_Association="_u-4SgH-QEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_dIZRAMDqEeiTospVRf7ogw" base_Association="_OhiecH-FEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_gWSwYMDqEeiTospVRf7ogw" base_Association="_0i1EQH-FEeiIS5sA2ssQOQ"/>
+  <OpenModel_Profile:Specify xmi:id="_QBWE4MHfEeiH7bxV9WLpOA" base_Abstraction="_OVx68MHfEeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamProfile/TapiOam:OamProfile:_pmThresholdData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_e-e9IMHgEeiH7bxV9WLpOA" base_Abstraction="_eEvRsMHgEeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthProActiveDmPerformanceData:_ethProActiveDmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_yGVXwMHgEeiH7bxV9WLpOA" base_Abstraction="_vm79IMHgEeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthOnDemandDmPerformanceData:_ethOnDemandDmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_6hFWgMHgEeiH7bxV9WLpOA" base_Abstraction="_5fldQMHgEeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthOnDemandDmPerformanceData:_ethOnDemandDmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_CzR4wMI6EeiH7bxV9WLpOA" base_Abstraction="_Bz6GcMI6EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthProActive1LmPerformanceData:_ethProActive1LmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_P9WtYMI6EeiH7bxV9WLpOA" base_Abstraction="_O4eI8MI6EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthOnDemand1LmPerformanceData:_ethOnDemand1LmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_jx0WYMI6EeiH7bxV9WLpOA" base_Abstraction="_iBK4IMI6EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthOnDemand1DmPerformanceData:_ethOnDemand1DmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_yiMacMI6EeiH7bxV9WLpOA" base_Abstraction="_xqTJIMI6EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiOam:PmCurrentData:_pmHistoryData/TapiEth:EthProActive1DmPerformanceData:_ethProActive1DmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_7KAk0MI6EeiH7bxV9WLpOA" base_Abstraction="_6QN2EMI6EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthProActive1DmPerformanceData:_ethProActive1DmPerformanceData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_DRDvAMI8EeiH7bxV9WLpOA" base_Abstraction="_CTQC8MI8EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamProfile/TapiOam:OamProfile:_pmBinData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_gxbcoMI8EeiH7bxV9WLpOA" base_Abstraction="_fbsYwMI8EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthLinkTraceJob:_ethLinkTraceJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_sRVOcMI8EeiH7bxV9WLpOA" base_Abstraction="_rQ66UMI8EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthLinkTraceResultData:_ethLinkTraceResultData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_1IHo8MI8EeiH7bxV9WLpOA" base_Abstraction="_0TfHAMI8EeiH7bxV9WLpOA">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiOam:OamJob:_pmCurrentData/TapiEth:EthTestResultData:_ethTestResultData</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_7frk0MjHEeidCYTlzANolg" base_Abstraction="_4XLi0MjHEeidCYTlzANolg">
+    <target>/TapiOam::CreateOamService/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelClass xmi:id="_D2dwwMsREeidCYTlzANolg" base_Class="_D2dJsMsREeidCYTlzANolg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kJ400MsREeidCYTlzANolg" base_Class="_kJ3msMsREeidCYTlzANolg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_mf3NsMsREeidCYTlzANolg" base_Class="_mf2moMsREeidCYTlzANolg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_rI7qkMsREeidCYTlzANolg" base_Class="_rI7DgMsREeidCYTlzANolg"/>
+  <OpenModel_Profile:Specify xmi:id="_0CIDYMsSEeidCYTlzANolg" base_Abstraction="_K5nN8MsSEeidCYTlzANolg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthProActive1wayMeasurementJob:_ethProActive1wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_1cXz0MsSEeidCYTlzANolg" base_Abstraction="_LmStwMsSEeidCYTlzANolg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthProActive2wayMeasurementJob:_ethProActive2wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_3Bia0MsSEeidCYTlzANolg" base_Abstraction="_MXRewMsSEeidCYTlzANolg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthOnDemand1wayMeasurementJob:_ethOnDemand1wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_4sVvwMsSEeidCYTlzANolg" base_Abstraction="_NKu8AMsSEeidCYTlzANolg">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthOnDemand2wayMeasurementJob:_ethOnDemand2wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_eCv4UMyOEeiKRKRmVModyg" base_Abstraction="_c0brEMyOEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamService/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_4jM4MMyOEeiKRKRmVModyg" base_Abstraction="_3iPxgMyOEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamService/TapiOam::output/TapiOam::service</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_hQB3MMyPEeiKRKRmVModyg" base_Abstraction="_gItCwMyPEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamService/TapiOam::output/TapiOam::service</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_a-vp4MyQEeiKRKRmVModyg" base_Abstraction="_XQIDEMyQEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamServiceEndPoint/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_kJW_UMyQEeiKRKRmVModyg" base_Abstraction="_jKI-AMyQEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamServiceEndPoint/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_svcEUMyQEeiKRKRmVModyg" base_Abstraction="_rzSlIMyQEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamService/TapiOam::output/TapiOam::service/TapiOam::endPoint</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_zdFBAMyQEeiKRKRmVModyg" base_Abstraction="_ykJN4MyQEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamService/TapiOam::output/TapiOam::service/TapiOam::endPoint</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_4ibfUMySEeiKRKRmVModyg" base_Abstraction="_1C7SkMySEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_C5gn4MyTEeiKRKRmVModyg" base_Abstraction="_B7KwUMyTEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_Gf0nQMyTEeiKRKRmVModyg" base_Abstraction="_FYucUMyTEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_Ji1sUMyTEeiKRKRmVModyg" base_Abstraction="_IfAQwMyTEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_PNW_IMyTEeiKRKRmVModyg" base_Abstraction="_N-95YMyTEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_UGLIMMyTEeiKRKRmVModyg" base_Abstraction="_TGksYMyTEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_XIcmYMyTEeiKRKRmVModyg" base_Abstraction="_WIY3kMyTEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_ZaBAYMyTEeiKRKRmVModyg" base_Abstraction="_YfhHAMyTEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::input</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_lR50YMyTEeiKRKRmVModyg" base_Abstraction="_hnibcMyTEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_wXXs8MyTEeiKRKRmVModyg" base_Abstraction="_vbbpIMyTEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_0GrQQMyTEeiKRKRmVModyg" base_Abstraction="_zFm00MyTEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_6C2TwMyTEeiKRKRmVModyg" base_Abstraction="_475SwMyTEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_dEPZ8MyUEeiKRKRmVModyg" base_Abstraction="_cBC3kMyUEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_iAX8wMyUEeiKRKRmVModyg" base_Abstraction="_hJ2kcMyUEeiKRKRmVModyg">
+    <target>/TapiOam::CreateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_oIdVUMyUEeiKRKRmVModyg" base_Abstraction="_nP2SUMyUEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_sO6NUMyUEeiKRKRmVModyg" base_Abstraction="_rUB5cMyUEeiKRKRmVModyg">
+    <target>/TapiOam::UpdateOamJob/TapiOam::output/TapiOam::oamJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_CBcw8cyzEeiKRKRmVModyg" base_StructuralFeature="_CBcw8MyzEeiKRKRmVModyg" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_y3vxcMyzEeiKRKRmVModyg" base_StructuralFeature="_y3vKYMyzEeiKRKRmVModyg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_y3xmocyzEeiKRKRmVModyg" base_StructuralFeature="_y3xmoMyzEeiKRKRmVModyg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_c9BjkMzUEeiKRKRmVModyg" base_StructuralFeature="_c9A8gMzUEeiKRKRmVModyg" partOfObjectKey="1"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_rat8MszUEeiKRKRmVModyg" base_StructuralFeature="_rat8MczUEeiKRKRmVModyg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ravKUczUEeiKRKRmVModyg" base_StructuralFeature="_ravKUMzUEeiKRKRmVModyg"/>
+  <OpenModel_Profile:Specify xmi:id="_N1mfMMzZEein-9bKLx5r3g" base_Abstraction="_7x_3MMzVEeiKRKRmVModyg">
+    <target>/TapiCommon:Context:_context/TapiNotification:NotificationContext:_notificationContext/TapiNotification:NotificationContext:_notification/TapiNotification:Notification:_tcaInfo</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_X3KqwMzZEein-9bKLx5r3g" base_Abstraction="_7M0GgMzVEeiKRKRmVModyg">
+    <target>/TapiCommon:Context:_context/TapiNotification:NotificationContext:_notificationContext/TapiNotification:NotificationContext:_notification/TapiNotification:Notification:_tcaInfo</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:StrictComposite xmi:id="_GWOKQMzeEein-9bKLx5r3g" base_Association="_y3n1oMyzEeiKRKRmVModyg"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_HykMcMzeEein-9bKLx5r3g" base_Association="_rasuEMzUEeiKRKRmVModyg"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kXOzgM8SEeiQlow2bYuzuw" base_Class="_kXMXQM8SEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_Jcfskc8sEeiQlow2bYuzuw" base_Class="_JcfskM8sEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_XixqwM8sEeiQlow2bYuzuw" base_Class="_XixDsM8sEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_EaCbIM8zEeiQlow2bYuzuw" base_Class="_EaBNAM8zEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:Specify xmi:id="_f5fZ4M8zEeiQlow2bYuzuw" base_Abstraction="_eyi_8M8zEeiQlow2bYuzuw">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthProActive2wayMeasurementJob:_ethProActive2wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_jmWtMM8zEeiQlow2bYuzuw" base_Abstraction="_iv0GwM8zEeiQlow2bYuzuw">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthProActive2wayMeasurementJob:_ethProActive2wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_pvMTsM8zEeiQlow2bYuzuw" base_Abstraction="_oxpGUM8zEeiQlow2bYuzuw">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthOnDemand2wayMeasurementJob:_ethOnDemand2wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:Specify xmi:id="_sTp0gM8zEeiQlow2bYuzuw" base_Abstraction="_rTleoM8zEeiQlow2bYuzuw">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthOnDemand2wayMeasurementJob:_ethOnDemand2wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_l__ooc80EeiQlow2bYuzuw" base_StructuralFeature="_l__ooM80EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ecC5kM81EeiQlow2bYuzuw" base_StructuralFeature="_ecBrcM81EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mwgqIc81EeiQlow2bYuzuw" base_StructuralFeature="_mwgqIM81EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_hGM9QM82EeiQlow2bYuzuw" base_StructuralFeature="_hGMWMM82EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_62Whkc82EeiQlow2bYuzuw" base_StructuralFeature="_62WhkM82EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cuZ5wc86EeiQlow2bYuzuw" base_StructuralFeature="_cuZ5wM86EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_nBX-Yc86EeiQlow2bYuzuw" base_StructuralFeature="_nBX-YM86EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_8zg1Ac86EeiQlow2bYuzuw" base_StructuralFeature="_8zg1AM86EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_hZwZIc87EeiQlow2bYuzuw" base_StructuralFeature="_hZwZIM87EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_tLYwsM_WEeiQlow2bYuzuw" base_StructuralFeature="_tLYJoM_WEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_wc2Pgc_YEeiQlow2bYuzuw" base_Class="_wc2PgM_YEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_BCa6oM_ZEeiQlow2bYuzuw" base_StructuralFeature="_BCaTkM_ZEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_U2kakM_ZEeiQlow2bYuzuw" base_StructuralFeature="_U2jzgM_ZEeiQlow2bYuzuw"/>
+  <OpenModel_Profile:Specify xmi:id="_WuL9UM_2EeiQlow2bYuzuw" base_Abstraction="_VkSWAM_2EeiQlow2bYuzuw">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthProActive1wayMeasurementJob:_ethProActive1wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelClass xmi:id="_Ga0nEM_3EeiQlow2bYuzuw" base_Class="_Ga0AAM_3EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:Specify xmi:id="_TouLwM_3EeiQlow2bYuzuw" base_Abstraction="_PfjW8M_3EeiQlow2bYuzuw">
+    <target>/TapiCommon:Context:_context/TapiOam:OamContext:_oamContext/TapiOam:OamContext:_oamJob/TapiEth:EthOnDemand1wayMeasurementJob:_ethOnDemand1wayMeasurementJob</target>
+  </OpenModel_Profile:Specify>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_gkG8wc_6EeiQlow2bYuzuw" base_StructuralFeature="_gkG8wM_6EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_hELj8M_6EeiQlow2bYuzuw" base_StructuralFeature="_hEKV0M_6EeiQlow2bYuzuw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_A9-IYNJeEeiOXPERXrWTXw" base_Class="_A95P4NJeEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_DcTMANJeEeiOXPERXrWTXw" base_StructuralFeature="_DcSk8NJeEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_D5UfMdJeEeiOXPERXrWTXw" base_StructuralFeature="_D5UfMNJeEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_EVonwNJeEeiOXPERXrWTXw" base_StructuralFeature="_EVoAsNJeEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_E2IFsdJeEeiOXPERXrWTXw" base_StructuralFeature="_E2IFsNJeEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cMI38NJgEeiOXPERXrWTXw" base_StructuralFeature="_cMIQ4NJgEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_cu_tYNJgEeiOXPERXrWTXw" base_StructuralFeature="_cu_GUNJgEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_duOVwdJgEeiOXPERXrWTXw" base_StructuralFeature="_duOVwNJgEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_ecWnEdJgEeiOXPERXrWTXw" base_StructuralFeature="_ecWnENJgEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_j4rs4NJgEeiOXPERXrWTXw" base_StructuralFeature="_j4rF0NJgEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kZIukdJgEeiOXPERXrWTXw" base_StructuralFeature="_kZIukNJgEeiOXPERXrWTXw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_lmw_UdJgEeiOXPERXrWTXw" base_StructuralFeature="_lmw_UNJgEeiOXPERXrWTXw"/>
+</xmi:XMI>

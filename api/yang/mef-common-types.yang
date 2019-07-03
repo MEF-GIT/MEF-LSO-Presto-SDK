@@ -1,0 +1,926 @@
+module mef-common-types {
+    namespace "urn:mef:yang:mef-common-types";
+    prefix mef-common-types;
+    organization "Metro Ethernet Forum (MEF)";
+    contact "MEF";
+    description "none";
+    revision 2018-03-21 {
+        description "MEF NRP R2";
+        reference "ONF-TR-527, ONF-TR-512, ONF-TR-531, RFC 6020 and RFC 6087";
+    }
+    /***********************
+    * package type-definitions
+    **********************/ 
+        typedef admin-state {
+            type enumeration {
+                enum UNLOCKED {
+                    description "The resource is administratively permitted to perform services for its users.";
+                }
+                enum LOCKED {
+                    description "The resource is administratively prohibited from performing services for its users.";
+                }
+            }
+            description "This enumeration is for Administrative states. Refer to ITU-T X.731.";
+        }
+        grouping agg-link-depth {
+            container vlan-id {
+                uses vlan-id;
+                description "The ingress frame Vlan ID. ";
+            }
+            leaf link-depth {
+                type positive-integer;
+                description "The number of links for the aggregation link.";
+            }
+            description "This is a pair of <VLAN ID, link depth> indicating that a given VLAN ID maps to a given number of links in the Port Conversation ID to Aggregation Link Map.";
+        }
+        typedef available-meg-level {
+            type enumeration {
+                enum NONE {
+                    description "Indicates that SOAM EI Frames are not guaranteed to pass over this OVC at any MEG Level.";
+                }
+                enum 0 {
+                    description "none";
+                }
+                enum 1 {
+                    description "none";
+                }
+                enum 2 {
+                    description "none";
+                }
+                enum 3 {
+                    description "none";
+                }
+                enum 4 {
+                    description "none";
+                }
+                enum 5 {
+                    description "none";
+                }
+                enum 6 {
+                    description "none";
+                }
+                enum 7 {
+                    description "none";
+                }
+            }
+            description "This enumeration is for available MEG level, can be either NONE or value 0..7.  NONE indicates that SOAM EI Frames are not guaranteed to pass over at any MEG Level.";
+        }
+        typedef color-field-type {
+            type enumeration {
+                enum PCP {
+                    description "Using PCP field to map to the color.";
+                }
+                enum DEI {
+                    description "Using DEI field to map to the color.";
+                }
+                enum END_POINT {
+                    description "Using EVC End Point or the OVC End Point to map to the color.";
+                }
+                enum DSCP {
+                    description "Using DSCP field to map to the color.";
+                }
+            }
+            description "This enumeration is for selecting which frame field being used for color indication.";
+        }
+        typedef color-mode {
+            type enumeration {
+                enum COLOR_AWARE {
+                    description "none";
+                }
+                enum COLOR_BLIND {
+                    description "none";
+                }
+            }
+            description "This enumeration indicates whether the Color Identifier of the Service Frame is considered by the Bandwidth Profile Algorithm.";
+        }
+        typedef connection-type {
+            type enumeration {
+                enum POINT_TO_POINT {
+                    description "none";
+                }
+                enum MULTIPOINT {
+                    description "none";
+                }
+                enum ROOTED_MULTIPOINT {
+                    description "none";
+                }
+            }
+            description "This is for EVC or OVC connection types, including point to point, multi-point and rooted multi-point.";
+        }
+        grouping conversation-id-to-aggregation-link-map {
+            leaf conversation-id {
+                type natural-number;
+                description "The conversation ID is a Vlan ID or 0 for untagged or priority tagged frame.. ";
+            }
+            leaf-list link-id-list {
+                type natural-number;
+                min-elements 1;
+                description "The link ID of the aggregation link.";
+            }
+            description "This is a Port Conversation ID to Aggregation Link Map as defined in IEEE Std 802.1AX – 2014.";
+        }
+        typedef cos-or-eec-mapping-type {
+            type enumeration {
+                enum END_POINT {
+                    description "Using EVC End Point or OVC End Point to map to the CoS Name as CoS ID.";
+                }
+                enum PCP {
+                    description "Using PCP field to map to the CoS Name as CoS ID.";
+                }
+                enum DSCP {
+                    description "Using DSCP field to map to the CoS Name as CoS ID.";
+                }
+            }
+            description "This lists the Class of Service identifier type, or the Equivalence Class Identifier type. ";
+        }
+        typedef dei-or-discard {
+            type enumeration {
+                enum DISCARD {
+                    description "Discard the egress frame when the Egress Map determines based on CoS Name (and ingress Color).";
+                }
+                enum 0 {
+                    description "Set  egress frame DEI field to be 0 when the Egress Map determines based on CoS Name (and ingress Color).";
+                }
+                enum 1 {
+                    description "Set  egress frame DEI field to be 1 when the Egress Map determines based on CoS Name (and ingress Color).";
+                }
+            }
+            description "This lists the DEI value for color or discard, used for Egress Map.";
+        }
+        typedef egress-map-type {
+            type enumeration {
+                enum CN_C_TAG_PCP {
+                    description "CoS Name to C-Tag PCP egress map type";
+                }
+                enum CC_C_TAG_PCP {
+                    description "CoS Name and Color to C-Tag PCP egress map type";
+                }
+                enum CC_C_TAG_DEI {
+                    description "CoS Name and Color to C-Tag DEI egress map type";
+                }
+                enum CN_S_TAG_PCP {
+                    description "CoS Name to S-Tag PCP egress map type";
+                }
+                enum CC_S_TAG_PCP {
+                    description "CoS Name and Color to S-Tag PCP egress map type";
+                }
+                enum CC_S_TAG_DEI {
+                    description "CoS Name and Color to S-Tag DEI egress map type";
+                }
+            }
+            description "This lists the Egress Map types, either CoS Name to PCP, or CoS Name and Ingress Color to PCP, or  CoS Name and Ingress Color to DEI for S-Tag or C-Tag.";
+        }
+        typedef ethernet-frame-format {
+            type enumeration {
+                enum ETHERNET {
+                    description "none";
+                }
+            }
+            description "This is a single value read only attribute. Keep this in the info model just because MEF 10.3 lists it as a service attribute.";
+        }
+        typedef evc-end-point-role {
+            type enumeration {
+                enum ROOT {
+                    description "EVC End Point has role of root for the EVC.";
+                }
+                enum LEAF {
+                    description "EVC End Point has role of leaf for the EVC.";
+                }
+            }
+            description "The value indicates how external interface frames mapped to the  EVC End Point can be forwarded.";
+        }
+        typedef frame-color {
+            type enumeration {
+                enum GREEN {
+                    description "none";
+                }
+                enum YELLOW {
+                    description "none";
+                }
+            }
+            description "Frame color is either Green or Yellow.";
+        }
+        typedef frame-delivery {
+            type enumeration {
+                enum DISCARD {
+                    description "Frame must be discarded.";
+                }
+                enum CONDITIONALLY {
+                    description "Frame will be delivered with specified condition.";
+                }
+                enum UNCONDITIONALLY {
+                    description "Frame will be delivered unconditionally.";
+                }
+            }
+            description "Service frame delivery defined in MEF 10.3. When the value is conditionally, the specific condition has to be addresses by the users. What conditions should be supported are not in the scope.";
+        }
+        typedef identifier-45 {
+            type string;
+            description "Unique by network administrative domain, containing no more than 45 characters and non-null RFC Display String but not contain the characters 0x00 through 0x1f.";
+        }
+        typedef identifier-90 {
+            type string;
+            description "Unique by network administrative domain, containing no more than 90 characters and non-null RFC Display String but not contain the characters 0x00 through 0x1f.";
+        }
+        typedef interface-resiliency {
+            type enumeration {
+                enum NONE {
+                    description "none";
+                }
+                enum 2_LINK_ACTIVE_STANDBY {
+                    description "none";
+                }
+                enum ALL_ACTIVE {
+                    description "none";
+                }
+                enum OTHER {
+                    description "none";
+                }
+            }
+            description "The method for protection, if any, against a physical link failure. Refer to MEF 10.3.2 and MEF 26.2.";
+        }
+        typedef ip-version {
+            type enumeration {
+                enum IPV4 {
+                    description "none";
+                }
+                enum IPV6 {
+                    description "none";
+                }
+                enum IPV4_AND_IPV6 {
+                    description "none";
+                }
+            }
+            description "This enumeration lists the IP versions, including IPv4, IPv6 and both.";
+        }
+        typedef l2cp-address-set {
+            type enumeration {
+                enum CTA {
+                    description "CE-Vlan Tag Aware";
+                }
+                enum CTB {
+                    description "CE-Vlan Tag Blind";
+                }
+                enum CTB2 {
+                    description "CE-Vlan Tag Blind option 2";
+                }
+            }
+            description "This lists the L2CP Address Set. Refer to MEF 45.";
+        }
+        grouping l2cp-peering {
+            container protocol-id {
+                uses l2cp-protocol;
+                description "This is a L2CP Protocol Identifier.";
+            }
+            leaf destination-address {
+                type natural-number;
+                description "This is a Mac Address.";
+            }
+            leaf-list link-id-list {
+                type positive-integer;
+                description "It is possible that a protocol (e.g. ESMC) could operate on some, but not all, of the physical
+                    links. When linkId is not listed, the protocol peering applies to all members of the aggregation link.";
+            }
+            description "This is a list specifies the L2CP Protocol Identifier and the Destination Address in use by the protocol entity.";
+        }
+        grouping l2cp-protocol {
+            leaf l2cp-protocol-type {
+                type l2cp-protocol-type;
+                description "This attribute specifies the type of L2CP protocol, i.e., LLC or EtherType.";
+            }
+            leaf llc-address-or-ether-type {
+                type natural-number;
+                description "This attribute specifies the LLC address or the EtherType value.";
+            }
+            leaf sub-type {
+                type natural-number;
+                description "This attribute specifies the subtype of the L2CP protocol.";
+            }
+            description "This data type defines a L2CP protocol (LLC address type or EtherType) with possible subtype.";
+        }
+        typedef l2cp-protocol-type {
+            type enumeration {
+                enum ETHERTYPE {
+                    description "EtherType for L2CP, e.g., LLDP (0x88CC).";
+                }
+                enum LLC {
+                    description "Logical Link Control sublayer address for L2CP, e.g., STP (0x42).";
+                }
+            }
+            description "This lists the L2CP protocol types, either EtherType, or LLC Address.";
+        }
+        typedef mep-direction {
+            type enumeration {
+                enum DOWN {
+                    description "none";
+                }
+                enum UP {
+                    description "none";
+                }
+            }
+            description "This is for MEP direction, either Down MEP or Up MEP.";
+        }
+        grouping mep-level-and-direction {
+            leaf level {
+                type natural-number;
+                description "This is the MEG level, value between 0..7.";
+            }
+            leaf direction {
+                type mep-direction;
+                description "This is MEP direction, UP or DOWN.";
+            }
+            description "This complex data type includes MEG LEVEL and MEP direction.";
+        }
+        typedef natural-number {
+            type int64;
+            description "An integer >=0";
+        }
+        typedef operational-state {
+            type enumeration {
+                enum ENABLED {
+                    description "none";
+                }
+                enum DISABLED {
+                    description "none";
+                }
+            }
+            description "This enumeration is for Operational states. Refer to ITU-T X.731.";
+        }
+        typedef ovc-end-point-map-form {
+            type enumeration {
+                enum FORM_E {
+                    description "OVC End Point Map for ENNI.";
+                }
+                enum FORM_V {
+                    description "OVC End Point Map for VUNI.";
+                }
+                enum FORM_U {
+                    description "OVC End Point Map for UNI.";
+                }
+                enum FORM_T {
+                    description "OVC End Point Map for Trunk.";
+                }
+            }
+            description "The OVC End Point Map types, for ENNI (FORM E), for UNI (FORM U), for VUNI (FORM V), or for Trunk (FORM T).";
+        }
+        typedef ovc-end-point-role {
+            type enumeration {
+                enum ROOT {
+                    description "OVC End Point has role of root for the OVC.";
+                }
+                enum LEAF {
+                    description "OVC End Point has role of leaf for the OVC.";
+                }
+                enum TRUNK {
+                    description "OVC End Point has role of trunk for the OVC.";
+                }
+            }
+            description "The value indicates how external interface frames mapped to the  OVC End Point can be forwarded.";
+        }
+        typedef pcp-or-discard {
+            type enumeration {
+                enum DISCARD {
+                    description "none";
+                }
+                enum 0 {
+                    description "none";
+                }
+                enum 1 {
+                    description "none";
+                }
+                enum 2 {
+                    description "none";
+                }
+                enum 3 {
+                    description "none";
+                }
+                enum 4 {
+                    description "none";
+                }
+                enum 5 {
+                    description "none";
+                }
+                enum 6 {
+                    description "none";
+                }
+                enum 7 {
+                    description "none";
+                }
+            }
+            description "This enumeration lists one of PCP values or DISCARD.";
+        }
+        typedef percentage {
+            type int64;
+            description "Data type for percentage, 0%-100%.";
+        }
+        typedef physical-layer {
+            type enumeration {
+                enum 10BASE2 {
+                    description "none";
+                }
+                enum 10BASE5 {
+                    description "none";
+                }
+                enum 10BASE_F {
+                    description "none";
+                }
+                enum 10BASE_FB {
+                    description "none";
+                }
+                enum 10BASE_FL {
+                    description "none";
+                }
+                enum 10BASE_FP {
+                    description "none";
+                }
+                enum 10BASE_T {
+                    description "none";
+                }
+                enum 10BASE_TE {
+                    description "none";
+                }
+                enum 10BROAD36 {
+                    description "none";
+                }
+                enum 10PASS_TS {
+                    description "none";
+                }
+                enum 100BASE_BX10 {
+                    description "none";
+                }
+                enum 100BASE_FX {
+                    description "none";
+                }
+                enum 100BASE_LX10 {
+                    description "none";
+                }
+                enum 100BASE_T {
+                    description "none";
+                }
+                enum 100BASE_T2 {
+                    description "none";
+                }
+                enum 100BASE_T4 {
+                    description "none";
+                }
+                enum 100BASE_TX {
+                    description "none";
+                }
+                enum 100BASE_X {
+                    description "none";
+                }
+                enum 1000BASE_BX10 {
+                    description "none";
+                }
+                enum 1000BASE_CX {
+                    description "none";
+                }
+                enum 1000BASE_KX {
+                    description "none";
+                }
+                enum 1000BASE_LX {
+                    description "none";
+                }
+                enum 1000BASE_LX10 {
+                    description "none";
+                }
+                enum 1000BASE_PX10 {
+                    description "none";
+                }
+                enum 1000BASE_PX20 {
+                    description "none";
+                }
+                enum 1000BASE_SX {
+                    description "none";
+                }
+                enum 1000BASE_T {
+                    description "none";
+                }
+                enum 1000BASE_X {
+                    description "none";
+                }
+                enum 10GBASE_CX4 {
+                    description "none";
+                }
+                enum 10GBASE_E {
+                    description "none";
+                }
+                enum 10GBASE_ER {
+                    description "none";
+                }
+                enum 10GBASE_EW {
+                    description "none";
+                }
+                enum 10GBASE_KR {
+                    description "none";
+                }
+                enum 10GBASE_KX4 {
+                    description "none";
+                }
+                enum 10GBASE_L {
+                    description "none";
+                }
+                enum 10GBASE_LR {
+                    description "none";
+                }
+                enum 10GBASE_LRM {
+                    description "none";
+                }
+                enum 10GBASE_LW {
+                    description "none";
+                }
+                enum 10GBASE_LX4 {
+                    description "none";
+                }
+                enum 10GBASE_PR {
+                    description "none";
+                }
+                enum 10GBASE_PRX {
+                    description "none";
+                }
+                enum 10GBASE_R {
+                    description "none";
+                }
+                enum 10GBASE_S {
+                    description "none";
+                }
+                enum 10GBASE_SR {
+                    description "none";
+                }
+                enum 10GBASE_SW {
+                    description "none";
+                }
+                enum 10GBASE_T {
+                    description "none";
+                }
+                enum 10GBASE_W {
+                    description "none";
+                }
+                enum 10GBASE_X {
+                    description "none";
+                }
+                enum 100GBASE_R {
+                    description "none";
+                }
+                enum 100GBASE_CR10 {
+                    description "none";
+                }
+                enum 100GBASE_ER4 {
+                    description "none";
+                }
+                enum 100GBASE_LR4 {
+                    description "none";
+                }
+                enum 100GBASE_SR10 {
+                    description "none";
+                }
+                enum 40GBASE_R {
+                    description "none";
+                }
+                enum 40GBASE_CR4 {
+                    description "none";
+                }
+                enum 40GBASE__FR {
+                    description "none";
+                }
+                enum 40GBASE_KR4 {
+                    description "none";
+                }
+                enum 40GBASE_LR4 {
+                    description "none";
+                }
+                enum 40GBASE_SR4 {
+                    description "none";
+                }
+                enum 1BASE5 {
+                    description "none";
+                }
+                enum 2BASE_TL {
+                    description "none";
+                }
+                enum 1G_EPON {
+                    description "none";
+                }
+                enum 10G_EPON {
+                    description "none";
+                }
+                enum 10_1G_EPON {
+                    description "none";
+                }
+                enum 10_10G_EPON {
+                    description "none";
+                }
+                enum OTHER {
+                    description "none";
+                }
+                enum NONE {
+                    description "none";
+                }
+            }
+            description "IEEE802.3 (2012) defined list excluding 1000BASE-PX-D and 1000BASE-PX-U. NONE is added with further MEF 10.3 discussion, for supporting logical interfaces.";
+        }
+        grouping physical-layer-per-link {
+            leaf link-id {
+                type natural-number;
+                description "This is the link ID.";
+            }
+            leaf physical-layer {
+                type physical-layer;
+                description "This is the physical layer. IEEE802.3 (2012) defined.";
+            }
+            description "A link may consist of one or more physical ports. This data type includes the link ID and the physical port associated to the link Id.";
+        }
+        typedef pm-metric-type {
+            type enumeration {
+                enum FD {
+                    description "Frame Delay Performance Metric.";
+                }
+                enum FDR {
+                    description "Frame Delay Range Performance Metric.";
+                }
+                enum MFD {
+                    description "Mean Frame Delay Performance Metric.";
+                }
+                enum IFDV {
+                    description "Inter Frame Delay Variation Performance Metric.";
+                }
+                enum FLR {
+                    description "Frame Loss Ratio Performance Metric.";
+                }
+                enum AV {
+                    description "Availability Performance Metric.";
+                }
+                enum HLI {
+                    description "High Loss Interval Performance Metric.";
+                }
+                enum CHLI {
+                    description "Consecutive High Loss Interval Performance Metric.";
+                }
+                enum GROUP_AV {
+                    description "Group Availability (for a single EVC/OVC) Performance Metric.";
+                }
+                enum CPM {
+                    description "Composite Performance Metric. Refer to MEF 10.3.1.";
+                }
+            }
+            description "This enumeration provides the list of PM Metric types, including FD, MFD, FDR, IFDV, FLR, AV, HLI, CHLI, GROUP_AV, and CPM.";
+        }
+        typedef pm-unit {
+            type enumeration {
+                enum MILLISECOND {
+                    description "Measured Performance Metric in PM report as milliseconds, for FD, FDR, IFDV, and MFD.";
+                }
+                enum COUNT {
+                    description "Measured Performance Metric in PM report as count number, for HLI and CHLI.";
+                }
+                enum PERCENT {
+                    description "Measured Performance Metric in PM report as percentage, for FLR, Availability, Group Availability and Composite PM.";
+                }
+            }
+            description "PM Unit, used for pairing with Value in data type PmUnitAndValue. Can be second, millisecond, micro second, etc. ";
+        }
+        grouping pm-unit-and-value {
+            leaf pm-unit {
+                type pm-unit;
+                description "This attribute denotes the 'unit',  e.g., MILLISECOND, COUNT or PERCENT.";
+            }
+            leaf delay-value {
+                type uint64;
+                description "This attribute denotes the delay value only when the PmUnit=SECOND. It is for FD, FDR, MFD, IFDV.";
+            }
+            leaf count-value {
+                type natural-number;
+                description "This attribute denotes the count value only when the PmUnit=COUNT. It is for HLI and CHLI.";
+            }
+            leaf percent-value {
+                type percentage;
+                description "This attribute denotes the percentage value only when the PmUnit=PERCENT. It is for FLR, AV, GROUP_AV and CPM.";
+            }
+            description "This data type provides the pair of <unit, value> where the unit can be ms (for frame delay), number (for HLI), and value is the correspondent value for that unit.";
+        }
+        typedef positive-integer {
+            type int64;
+            description "An integer >0";
+        }
+        typedef service-state {
+            type enumeration {
+                enum PENDING {
+                    description "none";
+                }
+                enum ACTIVE {
+                    description "none";
+                }
+                enum INACTIVE {
+                    description "none";
+                }
+            }
+            description "This enumeration is for Service State.";
+        }
+        grouping source-mac-address-limit {
+            leaf limit {
+                type natural-number;
+                description "This attribute denotes the maximum acceptable source MAC addresses.";
+            }
+            leaf time-interval {
+                type natural-number;
+                description "This attribute denotes the time interval in milliseconds.";
+            }
+            description "This limits the number of source MAC Addresses that can be used in ingress external interface frames mapped to the End Point of all types over a time interval.";
+        }
+        typedef svlan-id-control {
+            type enumeration {
+                enum FULL {
+                    description "Operator can support only a single SP/SO (Service Provider/Super Operator) at the ENNI.";
+                }
+                enum PARTIAL {
+                    description "Operator can support only multiple SP/SO (Service Provider/Super Operator) at the ENNI";
+                }
+            }
+            description "This lists the S Vlan ID Control, either FULL or PARTIAL.";
+        }
+        grouping sync-mode-per-link {
+            leaf link-id {
+                type natural-number;
+                description "This is the link ID of the link in the Aggregation Link.";
+            }
+            leaf sync-mode-enabled {
+                type boolean;
+                description "This attribute denotes whether the Synchronous Mode is enabled (on the link with the Link ID).";
+            }
+            description "A link may consist of one or more physical ports. This data type includes the link ID and the sync mode of the physical port associated to the link Id.";
+        }
+        typedef tagged-l2cp-processing {
+            type enumeration {
+                enum 802.1_COMPLIANT {
+                    description "none";
+                }
+                enum 802.1_NON_COMPLIANT {
+                    description "none";
+                }
+            }
+            description "Either 802.1 compliant or not. Refer to MEF 45.";
+        }
+        grouping time-and-date {
+            leaf year {
+                type positive-integer;
+                description "This denotes the year.";
+            }
+            leaf month {
+                type positive-integer;
+                description "This denotes the month.";
+            }
+            leaf day {
+                type positive-integer;
+                description "This denotes the day.";
+            }
+            leaf hour {
+                type natural-number;
+                description "This denotes the hour.";
+            }
+            leaf minute {
+                type natural-number;
+                description "This denotes the minute.";
+            }
+            leaf second {
+                type natural-number;
+                description "This denotes the second.";
+            }
+            description "This data type is for Time and Date in UTC.";
+        }
+        grouping time-interval-t {
+            leaf unit {
+                type time-interval-unit;
+                description "Month, week, day, hour, etc.";
+            }
+            leaf number {
+                type positive-integer;
+                description "This denotes the value (for the unit), e.g., 1 (month), 20 (day), etc.";
+            }
+            description "Time interval T for PM. E.g., 1 month, 20 days, 2 weeks, etc.";
+        }
+        typedef time-interval-unit {
+            type enumeration {
+                enum YEAR {
+                    description "none";
+                }
+                enum MONTH {
+                    description "none";
+                }
+                enum WEEK {
+                    description "none";
+                }
+                enum DAY {
+                    description "none";
+                }
+                enum HOUR {
+                    description "none";
+                }
+                enum MINUTE {
+                    description "none";
+                }
+                enum SECOND {
+                    description "none";
+                }
+            }
+            description "Time interval unit, e.g., month, day, week, hour, etc.";
+        }
+        grouping vlan-id {
+            leaf vlan-id {
+                type positive-integer;
+                description "This is the Vlan ID value.";
+            }
+            description "This is for VLAN ID from 1 to 4094";
+        }
+        grouping vlan-id-listing {
+            leaf type {
+                type vlan-id-mapping-type;
+                description "Can be LIST, or ALL, or EXCEPT.";
+            }
+            list vlan-id-list {
+                key 'vlan-id';
+                uses vlan-id;
+                description "This is a list of Vlan IDs.";
+            }
+            description "The list VLAN IDs, either when type=LIST, or when type==EXCEPT (which means the VLAN IDs except the listed). When type=ALL, the vlanId list is not applicable.";
+        }
+        typedef vlan-id-mapping-type {
+            type enumeration {
+                enum ALL {
+                    description "All Vlan IDs.";
+                }
+                enum EXCEPT {
+                    description "All Vlan IDs except the listed.";
+                }
+                enum LIST {
+                    description "List of Vlan IDs.";
+                }
+            }
+            description "Vlan ID types, ALL for all vlan IDs, LIST for a list of Vlan IDs, EXCEPT for all Vlan IDs except the listed. ";
+        }
+        typedef vlan-id-preservation {
+            type enumeration {
+                enum PRESERVE {
+                    description "To achieve EVC CE-VLAN ID Preservation.";
+                }
+                enum RETAIN {
+                    description "C-Tag, if present, is encapsulated with the C-Tag VLAN ID value retained.";
+                }
+                enum STRIP {
+                    description "C-Tag is discarded.";
+                }
+            }
+            description "This is for Vlan ID Preservation. Refer to MEF 26.2 section 12.7.";
+        }
+        typedef vlan-tag {
+            type enumeration {
+                enum S_TAG {
+                    description "none";
+                }
+                enum C_TAG {
+                    description "none";
+                }
+            }
+            description "This is for Vlan Tag type, i.e., S-tag or C-tag.";
+        }
+        grouping vlan-id-list-or-untag {
+            leaf type {
+                type vlan-id-mapping-type-or-untag;
+                description "none";
+            }
+            list vlan-id-list {
+                key 'vlan-id';
+                uses vlan-id;
+                description "none";
+            }
+            description "none";
+        }
+        typedef vlan-id-mapping-type-or-untag {
+            type enumeration {
+                enum ALL {
+                    description "none";
+                }
+                enum EXCEPT {
+                    description "none";
+                }
+                enum LIST {
+                    description "none";
+                }
+                enum UNTAGGED {
+                    description "none";
+                }
+            }
+            description "Vlan ID types, ALL for all Vlan IDs, LIST for a list of Vlan IDs, EXCEPT for all Vlan IDs except the listed, UNTAGGED to indicate that untagged and priority-tagged frames are mapped to this end point.";
+        }
+        typedef resource-state {
+            type enumeration {
+                enum INACTIVE {
+                    description "none";
+                }
+                enum ACTIVE {
+                    description "none";
+                }
+            }
+            description "none";
+        }
+
+}

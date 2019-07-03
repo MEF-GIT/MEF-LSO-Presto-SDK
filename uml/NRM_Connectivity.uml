@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OpenModel_Profile="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/OpenModel_Profile/_S30WUD8HEeiIisB6uOvKFA/26 UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA">
+  <uml:Package xmi:id="_4PGK8LlwEeWThfpUfUgfAw" name="NRM_Connectivity">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Gx08UMXtEeWD-ti4RxNzCQ" name="Main">
+      <packagedElement xmi:type="uml:Package" xmi:id="_KG9sIMXtEeWD-ti4RxNzCQ" name="ObjectClasses">
+        <packagedElement xmi:type="uml:Class" xmi:id="_EFFdgNvLEeW_M-JLVGfOJQ" name="CarrierEthEnniNResource">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6IEpsGT6EeeqgKBbu4ch6g" annotatedElement="_EFFdgNvLEeW_M-JLVGfOJQ">
+            <body>This class represents ENNI-N management function. It augments the ONF TAPI ServiceInterfacePoint class at the Ethernet frame layer.</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_jjJOcJH3EeamHolSPgiluw" general="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_PQxGkIy2EeaGSdkQNw73qA" name="taggedL2cpProcessing">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_8eowYNEpEea72c3ryUDKcg" annotatedElement="_PQxGkIy2EeaGSdkQNw73qA">
+              <body>This attribute represents the Tagged L2CP Processing defined in MEF 45 section 8.3 (IEEE 802.1 compliant or 802.1 non-compliant. Desired to be 802.1 compliant). It is one of the ENNI Operator Multi-lateral attributes, which requires the CENs at the ENNI-N to agree on the values but may allow these values to be different.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_3F2VcPFLEeWd4sURjtTdCg"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_IMhM8NvLEeW_M-JLVGfOJQ" name="CarrierEthInniNResource">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_8eMMgGT6EeeqgKBbu4ch6g" annotatedElement="_IMhM8NvLEeW_M-JLVGfOJQ">
+            <body>This class represents INNI-N management function. It augments the ONF TAPI ServiceInterfacePoint class at the Ethernet frame layer.</body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_lZ_bUJH3EeamHolSPgiluw" general="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_c036kNvXEeW_M-JLVGfOJQ" name="CarrierEthUniNResource">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_x_pKAGT6EeeqgKBbu4ch6g" annotatedElement="_c036kNvXEeW_M-JLVGfOJQ">
+            <body>This class represents UNI-N management function. It augments the ONF TAPI ServiceInterfacePoint class at the Ethernet frame layer. </body>
+          </ownedComment>
+          <generalization xmi:type="uml:Generalization" xmi:id="_hcBw8JH3EeamHolSPgiluw" general="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ut31wPp-EeWW9vyo0B_HXA" name="elmiPeModeEnabled">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_fnLHwNEnEea72c3ryUDKcg" annotatedElement="_ut31wPp-EeWW9vyo0B_HXA">
+              <body>This attribute denotes whether the ELMI is enabled or not. When the value is TRUE, the CEN MUST meet the mandatory requirements in MEF 16 that apply to the UNI-N.&#xD;
+Note: Ethernel Local Management Interface protocol contents are defined which clearly identify MEF Service/Resource constructs like UNI and EVC, hence the attribute cannot be placed in an ethernet generic class.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_OYDosOiGEeaBucEb-GXXqQ" name="_ingressBwpFlow" aggregation="composite" association="_OYBzgOiGEeaBucEb-GXXqQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="__GcwIGfXEeeQecjgWqc8kw" annotatedElement="_OYDosOiGEeaBucEb-GXXqQ">
+              <body>This attribute represents the relationship between the UNI-N and the ingress BwpFlow.</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_qMhCMM-DEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_haQuUOiGEeaBucEb-GXXqQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_haUYsOiGEeaBucEb-GXXqQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_IKvVYOiHEeaBucEb-GXXqQ" name="_egressBwpFlow" aggregation="composite" association="_IKtgMOiHEeaBucEb-GXXqQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Dih54GfYEeeQecjgWqc8kw" annotatedElement="_IKvVYOiHEeaBucEb-GXXqQ">
+              <body>This attribute represents the relationship between the UNI-N and the egress BwpFlow. </body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_qMhCMM-DEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NRqy8OiHEeaBucEb-GXXqQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NRsBEOiHEeaBucEb-GXXqQ" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_qJS2oNvaEeW_M-JLVGfOJQ" name="CarrierEthPhysicalLinksResource">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_wH0y4FvdEeetHIYo68ULZw" annotatedElement="_qJS2oNvaEeW_M-JLVGfOJQ">
+            <body>This class represents the set of one or more physical links supporting the Ethernet interface. This allows a proper extension of TAPI Service Interface Point at Ethernet physical layer, while maintaining 7.3 features.&#xD;
+</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_YN_yEOqpEeWraMOoRRkqIw" name="physicalLayerPerLinkList" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_yFg9QNElEea72c3ryUDKcg" annotatedElement="_YN_yEOqpEeWraMOoRRkqIw">
+              <body>This attribute is a list of physical layers, one for each physical link implementing the UNI or ENNI or INNI. Different physical links can use different physical layers. The Physical Layer for each physical link implementing the UNI or ENNI or INNI MUST be one of the PHYs listed in IEEE Std 802.3 – 2012 but excluding 1000BASE-PX-D and 1000BASE-PX-U.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_1AVxYGhaEeWJq6qF01kEMA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hifwYOq2EeWraMOoRRkqIw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hiizsOq2EeWraMOoRRkqIw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_s6CBoOq8EeWraMOoRRkqIw" name="syncModePerLinkList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_J6M6cNEmEea72c3ryUDKcg" annotatedElement="_s6CBoOq8EeWraMOoRRkqIw">
+              <body>This attribute is a list with one item for each of the physical links. When the value of an item is &quot;Enabled,&quot; the bits transmitted from the CEN to the CE on the physical link corresponding to the item can be used by the CE as a bit clock reference.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_RZi6QGhpEeWJq6qF01kEMA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0iGmQOq8EeWraMOoRRkqIw" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0iJCgOq8EeWraMOoRRkqIw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_PZ7VIFvkEeetHIYo68ULZw" name="numberOfLinks" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_tH4LwFvkEeetHIYo68ULZw" annotatedElement="_PZ7VIFvkEeetHIYo68ULZw">
+              <body>This attribute specifies the number of links at the Carrier Ethernet Interface (UNI or ENNI or INNI).</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_t8jxAFvkEeetHIYo68ULZw" name="linkAggregation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_9-RhIFvkEeetHIYo68ULZw" annotatedElement="_t8jxAFvkEeetHIYo68ULZw">
+              <body>This attribute represents the Link Aggregation for a UNI or an ENNI or an INNI. </body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_t0cVYEqgEeWslOhmT__Dhw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="__jd9UFvkEeetHIYo68ULZw" name="portConvsIdToAggLinkMapList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_UUDQUFvlEeetHIYo68ULZw" annotatedElement="__jd9UFvkEeetHIYo68ULZw">
+              <body>This attribute is applicable only when the UNI or ENNI or INNI resiliency attribute has the value of ALL_ACTIVE. Its value is a Port Conversation ID to Aggregation Link Map as defined in IEEE Std 802.1AX – 2014.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_VUKwcE0EEeWOKsU_6x9uZA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oJPfAFwaEeetHIYo68ULZw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJXa0FwaEeetHIYo68ULZw" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_r1sZ0OI3EeW7jKmP9DNTwg" name="CarrierEthInterfaceResource" isAbstract="true">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jtBY8GT6EeeqgKBbu4ch6g" annotatedElement="_r1sZ0OI3EeW7jKmP9DNTwg">
+            <body>This class contains common attributes for Carrier Ethernet External and Internal interfaces.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_CcypACCLEee2wdENZF_53A" name="maxFrameSize" isReadOnly="true">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_4tSO0GWLEeejWuUtKucLew" annotatedElement="_CcypACCLEee2wdENZF_53A">
+              <body>This value indicates the maximum length of frames supported by this Interface.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_IFxQQM-MEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_lVakwFvTEeezoqRf5xx_3Q" name="l2cpPeeringList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_wnglEGWMEeejWuUtKucLew" annotatedElement="_lVakwFvTEeezoqRf5xx_3Q">
+              <body>This attribute represents the L2CP Peering Service defined in MEF 45 section 8.2 when applied to the UNI/ENNI/INNI.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_CNbxUEqtEeWslOhmT__Dhw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_21skoFvTEeezoqRf5xx_3Q"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_21z5YFvTEeezoqRf5xx_3Q" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_wA9D4OI4EeW7jKmP9DNTwg" name="CarrierEthConnectivityEndPointResource">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZrSOQGT6EeeqgKBbu4ch6g" annotatedElement="_wA9D4OI4EeW7jKmP9DNTwg">
+            <body>This class models the Carrier Ethernet Connectivity Service End Point. It augments the ONF TAPI ConnectivityServiceEndPoint.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_-k-rMP_KEeWW84pAUedGzg" name="cosMappingType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_D_9tUNKqEea72c3ryUDKcg" annotatedElement="_-k-rMP_KEeWW84pAUedGzg">
+              <body>The Class of Service (CoS) is used to specify ingress Bandwidth Profiles. The CoS Mapping Type is one of SEP (Service End Point) based, PCP based or DSCP based.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_zosaYO-QEeW3dY7H090qAA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_k2U3gP_REeWlys2IgwhgjA" name="sourceMacAddressLimit">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_PENd4NKqEea72c3ryUDKcg" annotatedElement="_k2U3gP_REeWlys2IgwhgjA">
+              <body>This attribute limits the number of source MAC Addresses that can be used in ingress EI Frames mapped to the Connectivity Service End Point of all types over a time interval. When not present, the number of source MAC addresses is unlimited.&#xD;
+Two independent parameters control the behavior of this attribute: N : A positive integer and t : A time interval.&#xD;
+This attribute operates by maintaining a list of maximum length N of source MAC addresses which are aged-out of the list if not seen in a time interval t. If an ingress Service Frame arrives with a new source MAC address when the list is full, the Service Frame is discarded.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_GBRO8GevEeWPQagsKdiB-g"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lOI5MKXvEee6--Kyk-VrWQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lTGRsKXvEee6--Kyk-VrWQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_L8f8kP_kEeWlys2IgwhgjA" name="eecMappingType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_ffKNYNKqEea72c3ryUDKcg" annotatedElement="_L8f8kP_kEeWlys2IgwhgjA">
+              <body>The Egress Equivalence Class (EEC) is used to specify Egress Bandwidth Profiles. The EEC Mapping Type is one of SEP (Service End Point) based, PCP based or DSCP based.&#xD;
+When the list of EEC Identifier is empty,  this attribute shall be unset. Otherwise it shall be set.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_zosaYO-QEeW3dY7H090qAA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DFVLYKXwEee6--Kyk-VrWQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DFY1wKXwEee6--Kyk-VrWQ" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Rj-f4pbpEeajgeOxcKql5w" name="_colorIdentifier" aggregation="composite" association="_Rj8qsJbpEeajgeOxcKql5w">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Sigk8E_WEee4rdkexLKUGQ" annotatedElement="_Rj-f4pbpEeajgeOxcKql5w">
+              <body>This attribute represents the relationship between the Connectivity Service End Point and a Color Identifier.</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_GNCK1DtCEeeMwdt_5yKiiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_hz-yULAREeawOO4lUwmOfg" name="sVlanIdList">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_W3F_kE_WEee4rdkexLKUGQ" annotatedElement="_hz-yULAREeawOO4lUwmOfg">
+              <body>List of one or more S-VLAN ID values. An S-Tagged Frame, whose S-VLAN ID value matches an entry in this attribute, maps to the Connectivity Service End Point.&#xD;
+Type=LIST: all listed VLAN IDs. Type=EXCEPT: all VLAN IDs except the listed ones. Type=ALL, all VLAN IDs, hence vlanId list is not applicable.&#xD;
+</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_rggUsPYGEeW7BOfIBnaF1Q"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pLLCULAREeawOO4lUwmOfg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pLNekLAREeawOO4lUwmOfg" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zTNM0LASEeawOO4lUwmOfg" name="ceVlanIdListAndUntag" type="_mzLvoGVdEeeHFpVwgq-AVg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_gpHUgNKpEea72c3ryUDKcg" annotatedElement="_zTNM0LASEeawOO4lUwmOfg">
+              <body>List of one or more C-VLAN ID values. A C-Tagged Frame, whose C-VLAN ID value matches an entry in this attribute, maps to the Connectivity Service End Point.&#xD;
+It is possible to specify whether untagged and priority tagged frames are included in the mapping.&#xD;
+Type=LIST: all listed VLAN IDs. Type=EXCEPT: all VLAN IDs except the listed ones. Type=ALL, all VLAN IDs, hence vlanId list is not applicable.</body>
+            </ownedComment>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_xraZsCCOEee2wdENZF_53A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xrcO4CCOEee2wdENZF_53A" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_GdP_0LATEeawOO4lUwmOfg" name="rootSVlanId">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_kCpLgGYqEeejWuUtKucLew" annotatedElement="_GdP_0LATEeawOO4lUwmOfg">
+              <body>This attribute applies only to End Points with Trunk End Point Role. It identifies the S-VLAN ID of frames mapped to either a Root End Point or a Trunk End Point (via the Root S-VLAN ID value) of the Connectivity Service.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#__yzNwE3UEeW8nr4xP1Jhmg"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zeQQUCCOEee2wdENZF_53A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zeSFgCCOEee2wdENZF_53A" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_HGa4oLATEeawOO4lUwmOfg" name="leafSVlanId">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_1lStcGYrEeejWuUtKucLew" annotatedElement="_HGa4oLATEeawOO4lUwmOfg">
+              <body>This attribute applies only to End Points with Trunk End Point Role. It identifies the S-VLAN ID of frames mapped to either a Leaf End Point or a Trunk End Point (via the Leaf S-VLAN ID value) of the Connectivity Service.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#__yzNwE3UEeW8nr4xP1Jhmg"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0PWWECCOEee2wdENZF_53A"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0PZZYCCOEee2wdENZF_53A" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_TUIzMultEeaBucEb-GXXqQ" name="_cosIdentifierList" aggregation="composite" association="_TUIMIOltEeaBucEb-GXXqQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_yD2r0E_WEee4rdkexLKUGQ" annotatedElement="_TUIzMultEeaBucEb-GXXqQ">
+              <body>This attribute represents the relationship between the Connectivity Service End Point and the Class of Service Identifier(s).</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_DiXNADtFEeeCFfJ0S3qwlA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YWO0EOltEeaBucEb-GXXqQ" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YWQpQOltEeaBucEb-GXXqQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_qXL4E-ltEeaBucEb-GXXqQ" name="_eecIdentifierList" aggregation="composite" association="_qXL4EOltEeaBucEb-GXXqQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_2Zf2YE_WEee4rdkexLKUGQ" annotatedElement="_qXL4E-ltEeaBucEb-GXXqQ">
+              <body>This attribute represents the relationship between the Connectivity Service End Point and the Egress Equivalence Class Identifier(s).</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_cQesgDtFEeeCFfJ0S3qwlA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ubYtUOltEeaBucEb-GXXqQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ubbJkOltEeaBucEb-GXXqQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_QBvjculvEeaBucEb-GXXqQ" name="_egressMapList" aggregation="composite" association="_QBu8YOlvEeaBucEb-GXXqQ">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_5PAD4E_WEee4rdkexLKUGQ" annotatedElement="_QBvjculvEeaBucEb-GXXqQ">
+              <body>This attribute represents the relationship between the End Point and the Egress Map(s).  This attribute is a set of mappings that determine the content of the S-Tag or C-Tag of an egress EI Frame.&#xD;
+</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_IxnDmTtGEeeCFfJ0S3qwlA"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_V2H84OlvEeaBucEb-GXXqQ"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_V2LAMOlvEeaBucEb-GXXqQ" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_UhzoMFvUEeezoqRf5xx_3Q" name="l2cpAddressSet">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_za_HIGYtEeejWuUtKucLew" annotatedElement="_UhzoMFvUEeezoqRf5xx_3Q">
+              <body>This attribute specifies the subset of the Bridge Reserved Addresses that are filtered (i.e. L2CP Frames with this destination address are Peered or Discarded but not Passed) at a L2CP Decision Point.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_Zi6cQEqoEeWslOhmT__Dhw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_22Ld4GCWEeeWHq5mFAU8rw" name="_egressBwpFlow" aggregation="composite" association="_22CT8GCWEeeWHq5mFAU8rw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_VbHvQGfcEeeQecjgWqc8kw" annotatedElement="_22Ld4GCWEeeWHq5mFAU8rw">
+              <body>This attribute denotes the relationship between a Connectivity Service End Point and the bandwidth profile flow. It describes egress policing on all egress EI Frames mapped to a given End Point.</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_qMhCMM-DEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6xgrAGCWEeeWHq5mFAU8rw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6xmKkGCWEeeWHq5mFAU8rw" value="1"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_LYDxEmCYEeeWHq5mFAU8rw" name="_ingressBwpFlow" aggregation="composite" association="_LYB74GCYEeeWHq5mFAU8rw">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_fO7ysGfcEeeQecjgWqc8kw" annotatedElement="_LYDxEmCYEeeWHq5mFAU8rw">
+              <body> This attribute denotes the relationship between a Connectivity Service End Point and the bandwidth profile flow. It describes ingress policing on all ingress EI Frames mapped to a given End Point.</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_qMhCMM-DEeWZuobpkt7kiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Od6uwGCYEeeWHq5mFAU8rw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OeA1YGCYEeeWHq5mFAU8rw" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_dVudAORrEeWP6ZKRyKAUBA" name="CarrierEthConnectivityResource">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_K4D1EGT7EeeqgKBbu4ch6g" annotatedElement="_dVudAORrEeWP6ZKRyKAUBA">
+            <body>This class represents the Ethernet end to end connectivity at resource level. It may map an original EVC, OVC, or Service Component. It augments the TAPI ConnectivityService class, which represents the request for connectivity between two or more ConnectivityServiceEndPoint.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_Hps4kAAOEealys2IgwhgjA" name="multipointCapable">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_tiyJ0E_VEee4rdkexLKUGQ" annotatedElement="_Hps4kAAOEealys2IgwhgjA">
+              <body>A value of “true” indicates that the End Points can be added/removed during Connectivity Service lifecycle.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_OYgKEACWEealys2IgwhgjA" name="ceVlanPcpPreservation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_EVjJgNKvEea72c3ryUDKcg" annotatedElement="_OYgKEACWEealys2IgwhgjA">
+              <body>This attribute can be used to preserve the value of the CE-VLAN PCP field in VLAN Tagged Service Frames across a Connectivity Service.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mYFIoACWEealys2IgwhgjA" name="ceVlanDeiPreservation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_7HykANKvEea72c3ryUDKcg" annotatedElement="_mYFIoACWEealys2IgwhgjA">
+              <body>This attribute can be used to preserve the value of the CE-VLAN DEI field in VLAN Tagged Service Frames across a Connectivity Service.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ePMD4IrYEeaGSdkQNw73qA" name="maxFrameSize">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_xaqaUE_VEee4rdkexLKUGQ" annotatedElement="_ePMD4IrYEeaGSdkQNw73qA">
+              <body>This attribute denotes the maximum frame size in bytes requested for the connectivity service.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#_YaQA0M-LEeWZuobpkt7kiw"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ZJOXIACVEealys2IgwhgjA" name="ceVlanIdPreservation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_qG0y0NKuEea72c3ryUDKcg" annotatedElement="_ZJOXIACVEealys2IgwhgjA">
+              <body>This attribute describes a relationship between the format of the VLAN ID and related fields values of the frame at one Interface and the format and VLAN ID and related fields values of the corresponding frame at another Interface.&#xD;
+Used the MEF 7.3 OVC type (PRESERVE/STRIP/RETAIN) as it depends on EVC/OVC decomposition performed by SOFs.&#xD;
+&#xD;
+</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_EH9GkOoJEeWM9o9A42VTIA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_2mY-wACgEealys2IgwhgjA" name="sVlanPcpPreservation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Gz8pINKwEea72c3ryUDKcg" annotatedElement="_2mY-wACgEealys2IgwhgjA">
+              <body>This attribute describes a relationship between the S-VLAN PCP value of a frame at one ENNI and the S-VLAN PCP of the corresponding frame at another ENNI supported by the Operator CEN where each ENNI has a Connectivity Service End Point that is associated by the Connectivity Service.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_8p8coACgEealys2IgwhgjA" name="sVlanDeiPreservation">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_bKkZcNKvEea72c3ryUDKcg" annotatedElement="_8p8coACgEealys2IgwhgjA">
+              <body>This attribute describes a relationship between the S-VLAN DEI value of a frame at one ENNI and the S-VLAN DEI of the corresponding frame at another ENNI supported by the Operator CEN where each ENNI has a Connectivity Service End Point that is associated by the Connectivity Service.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_71-bUF26EeeNgoEu_TNfLA" name="unicastFrameDelivery" type="_5jbUcF27EeeNgoEu_TNfLA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_HI9scGYUEeejWuUtKucLew" annotatedElement="_71-bUF26EeeNgoEu_TNfLA">
+              <body>When the value is conditionally, the conditions that determine whether a Data Service Frame is delivered or discarded MUST be specified. Conditions can be described in the name-value pair list.</body>
+            </ownedComment>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_txFBsGYUEeejWuUtKucLew" value="UNCONDITIONALLY"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_8up6UF27EeeNgoEu_TNfLA" name="multicastFrameDelivery" type="_5jbUcF27EeeNgoEu_TNfLA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_61X-cGYUEeejWuUtKucLew" annotatedElement="_8up6UF27EeeNgoEu_TNfLA">
+              <body>When the value is conditionally, the conditions that determine whether a Data Service Frame is delivered or discarded MUST be specified. Conditions can be described in the name-value pair list.</body>
+            </ownedComment>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_AJZc0GYVEeejWuUtKucLew" value="UNCONDITIONALLY"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_BDfMkF28EeeNgoEu_TNfLA" name="broadcastFrameDelivery" type="_5jbUcF27EeeNgoEu_TNfLA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Jq3zEGYVEeejWuUtKucLew" annotatedElement="_BDfMkF28EeeNgoEu_TNfLA">
+              <body>When the value is conditionally, the conditions that determine whether a Data Service Frame is delivered or discarded MUST be specified. Conditions can be described in the name-value pair list.</body>
+            </ownedComment>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_Cqrt0GYVEeejWuUtKucLew" value="UNCONDITIONALLY"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_7oBYgHiNEeeiGa-yzInBbg" name="_carrierEthernetSls" aggregation="composite" association="_7ixFEHiNEeeiGa-yzInBbg">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_61LToLAiEeeMCvdMVTzbvw" annotatedElement="_7oBYgHiNEeeiGa-yzInBbg">
+              <body>This attribute presents the relationship between a Connectivity Service and a service level specification.</body>
+            </ownedComment>
+            <type xmi:type="uml:Class" href="MEF_Common.uml#_SLdBdTs-EeeMwdt_5yKiiw"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LzuyIHiOEeeiGa-yzInBbg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lz6YUHiOEeeiGa-yzInBbg" value="1"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_DjoNsMqdEeWot_xi6Y1_nA" name="Diagrams">
+        <packagedElement xmi:type="uml:Package" xmi:id="_3xoc8E6LEeaQ_N_xQDn9QQ" name="Notes">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_dQefINygEeW_M-JLVGfOJQ">
+            <body>MEF NRM not instantiated Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zji4ktygEeW_M-JLVGfOJQ">
+            <body>MEF NRM Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_ZCJj4NyoEeW_M-JLVGfOJQ">
+            <body>Light blue Classes represent MEF NRM not instantiated Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_sfyBQNyoEeW_M-JLVGfOJQ">
+            <body>MEF 7.3&#xD;
+- EthernetServiceInterface attributes&#xD;
+- UNI attributes&#xD;
+applicable to CeEtyLpSpec</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_6_m4sN-ZEeWKWce1WnQ71g">
+            <body>MEF Common Classes (MEF 7.3 original classes)</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_uIUMIOrcEeWraMOoRRkqIw">
+            <body>MEF 7.2 UNI and E-NNI attributes for Resource Model consideration&#xD;
+&#xD;
+&#xD;
+</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_OViioAAHEealys2IgwhgjA">
+            <body>Open Issues / For Discussion</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_zqb_sAALEealys2IgwhgjA">
+            <body>cosMappingType: added to NRM CeEvcEndPointLpSpec class as &quot;cosMappingType&quot;&#xD;
+MEF 7.3 (UML): This is for selecting which CoS mapping type: SAP based, PCP based or DSCP based.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_IyV4QIYsEea7RpKRhh6fQA">
+            <body>ONF TAPI Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_awA3YIYvEea7RpKRhh6fQA">
+            <body>ONF Core IM Spec Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_qQ81sIYvEea7RpKRhh6fQA">
+            <body>ONF Core IM Entity Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_k1vUwIYwEea7RpKRhh6fQA">
+            <body>ONF Core IM Entity Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_Vh-csIZlEeamHOwITfi2Aw">
+            <body>Verify usage of LpSpec: current (29/9/2016) TAPI model does not include LpSpec class, but directly uses &quot;LpSpec&quot; string in tech specific models (OCH, ODU)</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="__0u40JXpEeamHolSPgiluw">
+            <body>MEF 7.3 original Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="__0vf4JXpEeamHolSPgiluw">
+            <body>MEF NRM Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="__0vf4ZXpEeamHolSPgiluw">
+            <body>ONF TAPI Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_PeewsJXxEeamHolSPgiluw">
+            <body>ONF TAPI Class not yet imported</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_UZHMwJXzEeamHolSPgiluw">
+            <body>ONF TAPI Class removed...</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_4WLzsLWSEea0L8whKj-gEQ">
+            <body>The SetOfOrderedPairs class allow SOF to provision appropriate MEG/MEP in the infrastructure.&#xD;
+These MEPs will allow Performance Monitoring, which results will be used by SOF to evaluate SLS fulfilment.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_NDDYUMXOEeaaJuNZS6nmtA">
+            <body>MEF NRM Classes</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_RpBLUNc8EeaQt5wmIVL2yQ">
+            <body>ONF TAPI Class not yet defined (!)</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_rXNNcN9jEearPZg-QhOQ0A">
+            <body>ServiceEndPoint has LayerProtocols</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_0CiwcN9kEearPZg-QhOQ0A">
+            <body>LayerProtocol has MEPs</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_pEvk8Pe0EeaXI6483XIKNQ">
+            <body>CarrierEthPhysicalLinksResource, CarrierEthUniNResource, CarrierEthEnniNResource, CarrierEthInniNResource augment ONF TAPI ServiceInterfacePoint.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_p6yKMPe2EeaXI6483XIKNQ">
+            <body>CarrierEthConnectivityEndPointResource augments ONF TAPI ConnectivityServiceEndPoint.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_-jFq8Pe2EeaXI6483XIKNQ">
+            <body>CarrierEthConnectivityResource augments ONF TAPI ConnectivityService, which end points are the TAPI ConnectivityServiceEndPoint.&#xD;
+TAPI ConnectivityServiceEndPoint is augmented by CarrierEthConnectivityEndPointResource.</body>
+          </ownedComment>
+          <ownedComment xmi:type="uml:Comment" xmi:id="_fvaQcPe4EeaXI6483XIKNQ">
+            <body>- MEF CgEthConnServSpec augments TAPI ConnectivityService, which end points are the TAPI ConnectivityServicePort.&#xD;
+- TAPI ConnectivityServicePort is augmented by MEF CgEthFrameFlowCPaASpec.</body>
+          </ownedComment>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Rsox0N-8EeWKWce1WnQ71g" name="Associations">
+        <packagedElement xmi:type="uml:Association" xmi:id="_LYB74GCYEeeWHq5mFAU8rw" name="CarrierEthConnectivityEndPointResourceHasIngressBwpFlow" memberEnd="_LYDxEmCYEeeWHq5mFAU8rw _LYHbcGCYEeeWHq5mFAU8rw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LYDxEGCYEeeWHq5mFAU8rw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LYDxEWCYEeeWHq5mFAU8rw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_LYHbcGCYEeeWHq5mFAU8rw" name="CarrierEthConnectivityEndPointResource" type="_wA9D4OI4EeW7jKmP9DNTwg" association="_LYB74GCYEeeWHq5mFAU8rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_22CT8GCWEeeWHq5mFAU8rw" name="CarrierEthConnectivityEndPointResourceHasEgressBwpFlow" memberEnd="_22Ld4GCWEeeWHq5mFAU8rw _22OhMGCWEeeWHq5mFAU8rw">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_22JosGCWEeeWHq5mFAU8rw" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_22KPwGCWEeeWHq5mFAU8rw" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_22OhMGCWEeeWHq5mFAU8rw" name="CarrierEthConnectivityEndPointResource" type="_wA9D4OI4EeW7jKmP9DNTwg" association="_22CT8GCWEeeWHq5mFAU8rw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_Rj8qsJbpEeajgeOxcKql5w" name="CarrierEthConnectivityEndPointResourceHasColorIdentifier" memberEnd="_Rj-f4pbpEeajgeOxcKql5w _Rj_uAJbpEeajgeOxcKql5w">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Rj-f4JbpEeajgeOxcKql5w" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Rj-f4ZbpEeajgeOxcKql5w" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_Rj_uAJbpEeajgeOxcKql5w" name="CarrierEthConnectivityEndPointResource" type="_wA9D4OI4EeW7jKmP9DNTwg" association="_Rj8qsJbpEeajgeOxcKql5w"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_OYBzgOiGEeaBucEb-GXXqQ" name="CarrierEthUniNResourceHasIngressBwpFlow" memberEnd="_OYDosOiGEeaBucEb-GXXqQ _OYHTEOiGEeaBucEb-GXXqQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_OYDBoOiGEeaBucEb-GXXqQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_OYDBoeiGEeaBucEb-GXXqQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_OYHTEOiGEeaBucEb-GXXqQ" name="CarrierEthUniNResource" type="_c036kNvXEeW_M-JLVGfOJQ" association="_OYBzgOiGEeaBucEb-GXXqQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_IKtgMOiHEeaBucEb-GXXqQ" name="CarrierEthUniNResourceHasEgressBwpFlow" memberEnd="_IKvVYOiHEeaBucEb-GXXqQ _IKyYsOiHEeaBucEb-GXXqQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IKuuUOiHEeaBucEb-GXXqQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IKuuUeiHEeaBucEb-GXXqQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_IKyYsOiHEeaBucEb-GXXqQ" name="CarrierEthUniNResource" type="_c036kNvXEeW_M-JLVGfOJQ" association="_IKtgMOiHEeaBucEb-GXXqQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_TUIMIOltEeaBucEb-GXXqQ" name="CarrierEthConnectivityEndPointResourceHasCosIdentifier" memberEnd="_TUIzMultEeaBucEb-GXXqQ _TUKoYOltEeaBucEb-GXXqQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TUIzMOltEeaBucEb-GXXqQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_TUIzMeltEeaBucEb-GXXqQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_TUKoYOltEeaBucEb-GXXqQ" name="CarrierEthConnectivityEndPointResource" type="_wA9D4OI4EeW7jKmP9DNTwg" association="_TUIMIOltEeaBucEb-GXXqQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_qXL4EOltEeaBucEb-GXXqQ" name="CarrierEthConnectivityEndPointResourceHasEecIdentifier" memberEnd="_qXL4E-ltEeaBucEb-GXXqQ _qXOUUOltEeaBucEb-GXXqQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qXL4EeltEeaBucEb-GXXqQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qXL4EultEeaBucEb-GXXqQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_qXOUUOltEeaBucEb-GXXqQ" name="CarrierEthConnectivityEndPointResource" type="_wA9D4OI4EeW7jKmP9DNTwg" association="_qXL4EOltEeaBucEb-GXXqQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_QBu8YOlvEeaBucEb-GXXqQ" name="CarrierEthConnectivityEndPointResourceHasEgressMap" memberEnd="_QBvjculvEeaBucEb-GXXqQ _QBxYoOlvEeaBucEb-GXXqQ">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QBvjcOlvEeaBucEb-GXXqQ" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QBvjcelvEeaBucEb-GXXqQ" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_QBxYoOlvEeaBucEb-GXXqQ" name="CarrierEthConnectivityEndPointResource" type="_wA9D4OI4EeW7jKmP9DNTwg" association="_QBu8YOlvEeaBucEb-GXXqQ"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Association" xmi:id="_7ixFEHiNEeeiGa-yzInBbg" name="CarrierEthConnectivityResourceHasCarrierEthernetSls" memberEnd="_7oBYgHiNEeeiGa-yzInBbg _7oGRAHiNEeeiGa-yzInBbg">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7n_jUHiNEeeiGa-yzInBbg" source="org.eclipse.papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7oAKYHiNEeeiGa-yzInBbg" key="nature" value="UML_Nature"/>
+          </eAnnotations>
+          <ownedEnd xmi:type="uml:Property" xmi:id="_7oGRAHiNEeeiGa-yzInBbg" name="carrierethconnectivityresource" type="_dVudAORrEeWP6ZKRyKAUBA" association="_7ixFEHiNEeeiGa-yzInBbg"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_wnURQJXaEeamHolSPgiluw" name="Temporary - Experimental"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_k8W_IBBwEeWfEcW0-H9BYg" name="TypeDefinitions">
+        <packagedElement xmi:type="uml:Enumeration" xmi:id="_sOIHQF27EeeNgoEu_TNfLA" name="DeliveryActionType">
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_sOIHQV27EeeNgoEu_TNfLA" name="DISCARD"/>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_sOIHQl27EeeNgoEu_TNfLA" name="CONDITIONALLY"/>
+          <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_sOIHQ127EeeNgoEu_TNfLA" name="UNCONDITIONALLY"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_5jbUcF27EeeNgoEu_TNfLA" name="FrameDeliveryCondition">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_FoyAcGfzEeeQecjgWqc8kw" annotatedElement="_5jbUcF27EeeNgoEu_TNfLA">
+            <body>This type allows to specify conditions when the delivery type is conditionally.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5jbUcV27EeeNgoEu_TNfLA" name="action" type="_sOIHQF27EeeNgoEu_TNfLA">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_JqUOIGfxEeeQecjgWqc8kw" annotatedElement="_5jbUcV27EeeNgoEu_TNfLA">
+              <body>Data Service Frame disposition.</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_5jbUcl27EeeNgoEu_TNfLA" name="deliveryCondition">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mrJAYGfuEeeQecjgWqc8kw" annotatedElement="_5jbUcl27EeeNgoEu_TNfLA">
+              <body>When the value is conditionally, the conditions that determine whether a Data Service Frame is delivered or discarded MUST be specified. Conditions can be described in the name-value pair list, where name is used to represent the condition name or identifier, and value is used to represent the condition details associated to that name/identifier. Interoperability requires further standardization.</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="../TapiModel/TapiCommon.uml#_6efrYNnVEeWIOYiRCk5bbQ"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nJAM4F_yEeeNgoEu_TNfLA"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nJQEgF_yEeeNgoEu_TNfLA" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_mzLvoGVdEeeHFpVwgq-AVg" name="vlanIdListAndUntag">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_bmhDEGfzEeeQecjgWqc8kw" annotatedElement="_mzLvoGVdEeeHFpVwgq-AVg">
+            <body>This type allows to specify the list of one or more C-VLAN ID values, to be considered according to the mapping type. In addition, it is possible to specify whether untagged and priority tagged frames are included in the mapping.</body>
+          </ownedComment>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mzLvoWVdEeeHFpVwgq-AVg" name="vlanIdMappingType">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_cGSPoGfwEeeQecjgWqc8kw" annotatedElement="_mzLvoWVdEeeHFpVwgq-AVg">
+              <body>Type=LIST: all listed VLAN IDs. Type=EXCEPT: all VLAN IDs except the listed ones. Type=ALL, all VLAN IDs, hence vlanId list is not applicable.</body>
+            </ownedComment>
+            <type xmi:type="uml:Enumeration" href="MEF_Types.uml#_3ctA8PYGEeW7BOfIBnaF1Q"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mzLvomVdEeeHFpVwgq-AVg" name="untaggedAndPrioTaggedIncluded">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_mzLvo2VdEeeHFpVwgq-AVg" annotatedElement="_mzLvomVdEeeHFpVwgq-AVg">
+              <body>If true, then untagged and priority tagged frames are included in the mapping, otherwise not.</body>
+            </ownedComment>
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_mzLvpGVdEeeHFpVwgq-AVg" name="vlanId">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_hkyfsGfwEeeQecjgWqc8kw" annotatedElement="_mzLvpGVdEeeHFpVwgq-AVg">
+              <body>This is for VLAN ID from 1 to 4094</body>
+            </ownedComment>
+            <type xmi:type="uml:DataType" href="MEF_Types.uml#__yzNwE3UEeW8nr4xP1Jhmg"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qdeQEGVdEeeHFpVwgq-AVg"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qdrrcGVdEeeHFpVwgq-AVg" value="*"/>
+          </ownedAttribute>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_80gV8AsBEeewA9pfV27yeQ" name="Imports">
+      <packageImport xmi:type="uml:PackageImport" xmi:id="__EW4sAsBEeewA9pfV27yeQ">
+        <importedPackage xmi:type="uml:Model" href="../TapiModel/TapiCommon.uml#_cOw5UDA4Eea4fKwSGMr6CA"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_paEfUDGJEeeq8-o_3nsquA">
+        <importedPackage xmi:type="uml:Model" href="MEF_Types.uml#_BTq7kDAzEeeMUevANHuhog"/>
+      </packageImport>
+      <packageImport xmi:type="uml:PackageImport" xmi:id="_TKRoEDGkEeeq8-o_3nsquA">
+        <importedPackage xmi:type="uml:Model" href="MEF_Common.uml#_wAkcEDAyEeeMUevANHuhog"/>
+      </packageImport>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_kzpwAITzEeihEoLajNqWsg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kzy58YTzEeihEoLajNqWsg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kzy58oTzEeihEoLajNqWsg" key="Version" value="0.2.11"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kzy584TzEeihEoLajNqWsg" key="Comment" value="«LifecycleAggregate» stereotype added"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kzy59ITzEeihEoLajNqWsg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kzy59YTzEeihEoLajNqWsg" key="Date" value="2017-06-21"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kzy59oTzEeihEoLajNqWsg" key="Author" value=""/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kzqXEITzEeihEoLajNqWsg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_EwISEFaYEeeYOvPfNXXwvA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TAPI/UML/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_7SJiwLwcEeiJzfxJS6sjLQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7SKJ0LwcEeiJzfxJS6sjLQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="../TapiModel/UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lf1tINL-EeiDCZ93dVwnIQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lf27QNL-EeiDCZ93dVwnIQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_S32LgD8HEeiIisB6uOvKFA"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="UmlProfiles/OpenModelProfile/OpenModel_Profile.profile.uml#_m1xqsHBgEd6FKu9XX1078A"/>
+    </profileApplication>
+  </uml:Package>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7QfsDspEeegMcfuywP9HQ" base_Class="_EFFdgNvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjATspEeegMcfuywP9HQ" base_StructuralFeature="_PQxGkIy2EeaGSdkQNw73qA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7TjAjspEeegMcfuywP9HQ" base_Class="_IMhM8NvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7TjAzspEeegMcfuywP9HQ" base_Class="_c036kNvXEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjBDspEeegMcfuywP9HQ" base_StructuralFeature="_ut31wPp-EeWW9vyo0B_HXA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjBzspEeegMcfuywP9HQ" base_StructuralFeature="_OYDosOiGEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjCDspEeegMcfuywP9HQ" base_StructuralFeature="_IKvVYOiHEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7TjCTspEeegMcfuywP9HQ" base_Class="_qJS2oNvaEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjCjspEeegMcfuywP9HQ" base_StructuralFeature="_YN_yEOqpEeWraMOoRRkqIw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjCzspEeegMcfuywP9HQ" base_StructuralFeature="_s6CBoOq8EeWraMOoRRkqIw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7TjETspEeegMcfuywP9HQ" base_Class="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7TjEjspEeegMcfuywP9HQ" base_StructuralFeature="_CcypACCLEee2wdENZF_53A"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7UxIDspEeegMcfuywP9HQ" base_Class="_wA9D4OI4EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxITspEeegMcfuywP9HQ" base_StructuralFeature="_-k-rMP_KEeWW84pAUedGzg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxIjspEeegMcfuywP9HQ" base_StructuralFeature="_k2U3gP_REeWlys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxIzspEeegMcfuywP9HQ" base_StructuralFeature="_L8f8kP_kEeWlys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxJDspEeegMcfuywP9HQ" base_StructuralFeature="_Rj-f4pbpEeajgeOxcKql5w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxJjspEeegMcfuywP9HQ" base_StructuralFeature="_hz-yULAREeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxJzspEeegMcfuywP9HQ" base_StructuralFeature="_zTNM0LASEeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxKDspEeegMcfuywP9HQ" base_StructuralFeature="_GdP_0LATEeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxKTspEeegMcfuywP9HQ" base_StructuralFeature="_HGa4oLATEeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxLDspEeegMcfuywP9HQ" base_StructuralFeature="_TUIzMultEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxLTspEeegMcfuywP9HQ" base_StructuralFeature="_qXL4E-ltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxLjspEeegMcfuywP9HQ" base_StructuralFeature="_QBvjculvEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_M7UxLzspEeegMcfuywP9HQ" base_Class="_dVudAORrEeWP6ZKRyKAUBA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7UxMTspEeegMcfuywP9HQ" base_StructuralFeature="_Hps4kAAOEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmUDspEeegMcfuywP9HQ" base_StructuralFeature="_OYgKEACWEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmUTspEeegMcfuywP9HQ" base_StructuralFeature="_mYFIoACWEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmUjspEeegMcfuywP9HQ" base_StructuralFeature="_ePMD4IrYEeaGSdkQNw73qA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmVDspEeegMcfuywP9HQ" base_StructuralFeature="_ZJOXIACVEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmVTspEeegMcfuywP9HQ" base_StructuralFeature="_2mY-wACgEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmVjspEeegMcfuywP9HQ" base_StructuralFeature="_8p8coACgEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmazspEeegMcfuywP9HQ" base_StructuralFeature="_Rj_uAJbpEeajgeOxcKql5w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmbDspEeegMcfuywP9HQ" base_StructuralFeature="_OYHTEOiGEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7WmbTspEeegMcfuywP9HQ" base_StructuralFeature="_IKyYsOiHEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7X0dTspEeegMcfuywP9HQ" base_StructuralFeature="_TUKoYOltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7X0djspEeegMcfuywP9HQ" base_StructuralFeature="_qXOUUOltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_M7X0dzspEeegMcfuywP9HQ" base_StructuralFeature="_QBxYoOlvEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_lVdBAFvTEeezoqRf5xx_3Q" base_StructuralFeature="_lVakwFvTEeezoqRf5xx_3Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_Uh0PQFvUEeezoqRf5xx_3Q" base_StructuralFeature="_UhzoMFvUEeezoqRf5xx_3Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_PZ78MFvkEeetHIYo68ULZw" base_StructuralFeature="_PZ7VIFvkEeetHIYo68ULZw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_t8jxAVvkEeetHIYo68ULZw" base_StructuralFeature="_t8jxAFvkEeetHIYo68ULZw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="__jd9UVvkEeetHIYo68ULZw" base_StructuralFeature="__jd9UFvkEeetHIYo68ULZw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_77VccF26EeeNgoEu_TNfLA" base_StructuralFeature="_71-bUF26EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_5jbUc127EeeNgoEu_TNfLA" base_StructuralFeature="_5jbUcV27EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_5jb7gF27EeeNgoEu_TNfLA" base_StructuralFeature="_5jbUcl27EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_8uqhYF27EeeNgoEu_TNfLA" base_StructuralFeature="_8up6UF27EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_BDfMkV28EeeNgoEu_TNfLA" base_StructuralFeature="_BDfMkF28EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_22ME8GCWEeeWHq5mFAU8rw" base_StructuralFeature="_22Ld4GCWEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_LYEYIGCYEeeWHq5mFAU8rw" base_StructuralFeature="_LYDxEmCYEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:Reference xmi:id="_O9FJsGT7EeeqgKBbu4ch6g" base_Element="_YN_yEOqpEeWraMOoRRkqIw" reference="MEF 10.3 section 9.2 and MEF 26.2 section 14.2&#xD;&#xA;MEF 7.3: This attribute is a list of physical layers, one for each physical link implementing the UNI or ENNI. Different physical links can use different physical layers. The Physical Layer for each physical link implementing the UNI or ENNI MUST is one of the PHYs listed in IEEE Std 802.3 – 2012 but excluding 1000BASE-PX-D and 1000BASE-PX-U.&#xD;&#xA;G.8052: This attribute identifies the PHY type of the ETY trail termination. See clause 30.3.2.1.2 of [IEEE 802.3].&#xD;&#xA;IEEE 802.3: A read-only value that identifies the PHY type. The enumeration of the type is such that the value matches the clause number of this International Standard that specifies the particular PHY. The value of this attribute maps to the value of aMAUType. The enumeration “none” can only occur in a standard implementation where an MII exists and there is nothing connected. However, the attribute aMIIDetect should be used to determine whether an MII exists or not."/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mzQoIGVdEeeHFpVwgq-AVg" base_StructuralFeature="_mzLvoWVdEeeHFpVwgq-AVg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mzTrcGVdEeeHFpVwgq-AVg" base_StructuralFeature="_mzLvomVdEeeHFpVwgq-AVg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_mzTrcWVdEeeHFpVwgq-AVg" base_StructuralFeature="_mzLvpGVdEeeHFpVwgq-AVg"/>
+  <OpenModel_Profile:Reference xmi:id="_I5K7gGV0EeejWuUtKucLew" base_Element="_PZ7VIFvkEeetHIYo68ULZw" reference="MEF 10.3 section 9.4 and MEF 26.2 section 14.4"/>
+  <OpenModel_Profile:Reference xmi:id="_P7vmYGV0EeejWuUtKucLew" base_Element="_t8jxAFvkEeetHIYo68ULZw" reference="MEF 10.3.2 (UNI Resiliency) and MEF 26.2 section 14.5"/>
+  <OpenModel_Profile:Reference xmi:id="_d4ZsgGWKEeejWuUtKucLew" base_Element="__jd9UFvkEeetHIYo68ULZw" reference="MEF 10.3.2 and MEF 26.2 section 14.6"/>
+  <OpenModel_Profile:Reference xmi:id="_swWYMGWKEeejWuUtKucLew" base_Element="_s6CBoOq8EeWraMOoRRkqIw" reference="MEF 10.3 section 9.3 and MEF 26.2 section 14.3"/>
+  <OpenModel_Profile:Reference xmi:id="_9c-tkGWKEeejWuUtKucLew" base_Element="_ut31wPp-EeWW9vyo0B_HXA" reference="MEF 10.3 section 9.18"/>
+  <OpenModel_Profile:Reference xmi:id="_PoSncGWLEeejWuUtKucLew" base_Element="_OYDosOiGEeaBucEb-GXXqQ" reference="MEF 10.3 section 9.14 and MEF 26.2 section 14.12"/>
+  <OpenModel_Profile:Reference xmi:id="_YZ61IGWLEeejWuUtKucLew" base_Element="_IKvVYOiHEeaBucEb-GXXqQ" reference="MEF 10.3 section 9.15 and MEF 26.2 section 14.13"/>
+  <OpenModel_Profile:Reference xmi:id="_55dHAGWLEeejWuUtKucLew" base_Element="_CcypACCLEee2wdENZF_53A" reference="MEF 10.3 section 9.7 and MEF 26.2 section 14.8, table 54"/>
+  <OpenModel_Profile:Reference xmi:id="_yMgM8GWMEeejWuUtKucLew" base_Element="_lVakwFvTEeezoqRf5xx_3Q" reference="MEF 26.2 section 10.1, 14.21 and MEF 45 section 8.2"/>
+  <OpenModel_Profile:Reference xmi:id="_EnK8AGWOEeejWuUtKucLew" base_Element="_PQxGkIy2EeaGSdkQNw73qA" reference="MEF 26.2 section 10.2 and MEF 45 section 8.3"/>
+  <OpenModel_Profile:Reference xmi:id="_NOI8YGWPEeejWuUtKucLew" base_Element="_Hps4kAAOEealys2IgwhgjA" reference="MEF NRM"/>
+  <OpenModel_Profile:Reference xmi:id="_iKpLgGWPEeejWuUtKucLew" base_Element="_ePMD4IrYEeaGSdkQNw73qA" reference="MEF 10.3 section 8.9 and MEF 26.2 section 12.6"/>
+  <OpenModel_Profile:Reference xmi:id="_mRGw8GWXEeejWuUtKucLew" base_Element="_ZJOXIACVEealys2IgwhgjA" reference="MEF 10.3 section 8.6.1 and MEF 26.2 section 12.7&#xD;&#xA;"/>
+  <OpenModel_Profile:Reference xmi:id="__oNjIGWXEeejWuUtKucLew" base_Element="_OYgKEACWEealys2IgwhgjA" reference="MEF 10.3 section 8.6.2 and MEF 26.2 section 12.8"/>
+  <OpenModel_Profile:Reference xmi:id="_MLfdgGWYEeejWuUtKucLew" base_Element="_mYFIoACWEealys2IgwhgjA" reference="MEF 26.2 section 12.9"/>
+  <OpenModel_Profile:Reference xmi:id="_cmRN4GWYEeejWuUtKucLew" base_Element="_2mY-wACgEealys2IgwhgjA" reference="MEF 26.2 section 12.10"/>
+  <OpenModel_Profile:Reference xmi:id="_kv9R0GWYEeejWuUtKucLew" base_Element="_8p8coACgEealys2IgwhgjA" reference="MEF 26.2 section 12.11"/>
+  <OpenModel_Profile:Reference xmi:id="_9gKboGYSEeejWuUtKucLew" base_Element="_71-bUF26EeeNgoEu_TNfLA" reference="MEF 10.3 section 8.5 and MEF 26.2 section 12.13"/>
+  <OpenModel_Profile:Reference xmi:id="_BvneoGYTEeejWuUtKucLew" base_Element="_8up6UF27EeeNgoEu_TNfLA" reference="MEF 10.3 section 8.5 and MEF 26.2 section 12.13"/>
+  <OpenModel_Profile:Reference xmi:id="_KU-x8GYTEeejWuUtKucLew" base_Element="_BDfMkF28EeeNgoEu_TNfLA" reference="MEF 10.3 section 8.5 and MEF 26.2 section 12.13"/>
+  <OpenModel_Profile:Reference xmi:id="_yAV2cGYfEeejWuUtKucLew" base_Element="_-k-rMP_KEeWW84pAUedGzg" reference="MEF 10.3 section 10.2 and MEF 26.2 section 16.6"/>
+  <OpenModel_Profile:Reference xmi:id="_4gkCMGYfEeejWuUtKucLew" base_Element="_k2U3gP_REeWlys2IgwhgjA" reference="MEF 10.3 section 10.9 and MEF 26.2 section 16.15"/>
+  <OpenModel_Profile:Reference xmi:id="_i3NesGYgEeejWuUtKucLew" base_Element="_L8f8kP_kEeWlys2IgwhgjA" reference="MEF 10.3 section 10.4 and MEF 26.2 section 16.9"/>
+  <OpenModel_Profile:Reference xmi:id="_Tif6UGYnEeejWuUtKucLew" base_Element="_hz-yULAREeawOO4lUwmOfg" reference="MEF 26.2 section 16.5.1"/>
+  <OpenModel_Profile:Reference xmi:id="_JpNPEGYpEeejWuUtKucLew" base_Element="_zTNM0LASEeawOO4lUwmOfg" reference="MEF 10.3 section 9.10 and MEF 26.2 section 16.5.4"/>
+  <OpenModel_Profile:Reference xmi:id="_9vcWUGYpEeejWuUtKucLew" base_Element="_GdP_0LATEeawOO4lUwmOfg" reference="MEF 26.2 section 16.5.2"/>
+  <OpenModel_Profile:Reference xmi:id="___EPkGYpEeejWuUtKucLew" base_Element="_HGa4oLATEeawOO4lUwmOfg" reference="MEF 26.2 section 16.5.2"/>
+  <OpenModel_Profile:Reference xmi:id="_hRXr0GYsEeejWuUtKucLew" base_Element="_UhzoMFvUEeezoqRf5xx_3Q" reference="MEF 26.2 section 12.16 and MEF 45 section 8.1"/>
+  <OpenModel_Profile:Reference xmi:id="_EWrMMGYuEeejWuUtKucLew" base_Element="_QBvjculvEeaBucEb-GXXqQ" reference="MEF 26.2 section 16.8"/>
+  <OpenModel_Profile:Reference xmi:id="_6EX2AGfaEeeQecjgWqc8kw" base_Element="_Rj-f4pbpEeajgeOxcKql5w" reference="MEF 10.3 section 10.3 and MEF 26.2 section 16.7"/>
+  <OpenModel_Profile:Reference xmi:id="_zolo4GfbEeeQecjgWqc8kw" base_Element="_TUIzMultEeaBucEb-GXXqQ" reference="MEF 10.3 section 10.2 and MEF 26.2 section 16.6"/>
+  <OpenModel_Profile:Reference xmi:id="_6RSbMGfbEeeQecjgWqc8kw" base_Element="_qXL4E-ltEeaBucEb-GXXqQ" reference="MEF 10.3 section 10.4 and MEF 26.2 section 16.9"/>
+  <OpenModel_Profile:Reference xmi:id="_DZBmUGfdEeeQecjgWqc8kw" base_Element="_LYDxEmCYEeeWHq5mFAU8rw" reference="MEF 10.3 section 12 and MEF 26.2 section 13."/>
+  <OpenModel_Profile:Reference xmi:id="_UYNEQGfdEeeQecjgWqc8kw" base_Element="_22Ld4GCWEeeWHq5mFAU8rw" reference="MEF 10.3 section 12 and MEF 26.2 section 13"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F8gE4XI_Eeei2vL55Yytow" base_StructuralFeature="_LYHbcGCYEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_F8gE4nI_Eeei2vL55Yytow" base_StructuralFeature="_22OhMGCWEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_7oCmoHiNEeeiGa-yzInBbg" base_StructuralFeature="_7oBYgHiNEeeiGa-yzInBbg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_7oG4EHiNEeeiGa-yzInBbg" base_StructuralFeature="_7oGRAHiNEeeiGa-yzInBbg"/>
+  <OpenModel_Profile:Reference xmi:id="_CdWSEKgkEee67L_AFkuXhA" base_Element="_7oBYgHiNEeeiGa-yzInBbg" reference="MEF10.3 section 8.8 and MEF 26.2 section 12.13"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kzszUITzEeihEoLajNqWsg" base_Class="_EFFdgNvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kztaYITzEeihEoLajNqWsg" base_StructuralFeature="_PQxGkIy2EeaGSdkQNw73qA"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kztaYYTzEeihEoLajNqWsg" base_Class="_IMhM8NvLEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kzuBcITzEeihEoLajNqWsg" base_Class="_c036kNvXEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBcYTzEeihEoLajNqWsg" base_StructuralFeature="_ut31wPp-EeWW9vyo0B_HXA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBcoTzEeihEoLajNqWsg" base_StructuralFeature="_OYDosOiGEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBc4TzEeihEoLajNqWsg" base_StructuralFeature="_IKvVYOiHEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kzuBdITzEeihEoLajNqWsg" base_Class="_qJS2oNvaEeW_M-JLVGfOJQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBdYTzEeihEoLajNqWsg" base_StructuralFeature="_YN_yEOqpEeWraMOoRRkqIw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBdoTzEeihEoLajNqWsg" base_StructuralFeature="_s6CBoOq8EeWraMOoRRkqIw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBd4TzEeihEoLajNqWsg" base_StructuralFeature="_PZ7VIFvkEeetHIYo68ULZw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuBeITzEeihEoLajNqWsg" base_StructuralFeature="_t8jxAFvkEeetHIYo68ULZw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuogITzEeihEoLajNqWsg" base_StructuralFeature="__jd9UFvkEeetHIYo68ULZw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kzuogYTzEeihEoLajNqWsg" base_Class="_r1sZ0OI3EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuogoTzEeihEoLajNqWsg" base_StructuralFeature="_CcypACCLEee2wdENZF_53A"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuog4TzEeihEoLajNqWsg" base_StructuralFeature="_lVakwFvTEeezoqRf5xx_3Q"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kzuohITzEeihEoLajNqWsg" base_Class="_wA9D4OI4EeW7jKmP9DNTwg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuohYTzEeihEoLajNqWsg" base_StructuralFeature="_-k-rMP_KEeWW84pAUedGzg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzuohoTzEeihEoLajNqWsg" base_StructuralFeature="_k2U3gP_REeWlys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPkITzEeihEoLajNqWsg" base_StructuralFeature="_L8f8kP_kEeWlys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPkYTzEeihEoLajNqWsg" base_StructuralFeature="_Rj-f4pbpEeajgeOxcKql5w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPkoTzEeihEoLajNqWsg" base_StructuralFeature="_hz-yULAREeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPk4TzEeihEoLajNqWsg" base_StructuralFeature="_zTNM0LASEeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPlITzEeihEoLajNqWsg" base_StructuralFeature="_GdP_0LATEeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPlYTzEeihEoLajNqWsg" base_StructuralFeature="_HGa4oLATEeawOO4lUwmOfg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzvPloTzEeihEoLajNqWsg" base_StructuralFeature="_TUIzMultEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzv2oITzEeihEoLajNqWsg" base_StructuralFeature="_qXL4E-ltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzv2oYTzEeihEoLajNqWsg" base_StructuralFeature="_QBvjculvEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzv2ooTzEeihEoLajNqWsg" base_StructuralFeature="_UhzoMFvUEeezoqRf5xx_3Q"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzv2o4TzEeihEoLajNqWsg" base_StructuralFeature="_22Ld4GCWEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzv2pITzEeihEoLajNqWsg" base_StructuralFeature="_LYDxEmCYEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelClass xmi:id="_kzv2pYTzEeihEoLajNqWsg" base_Class="_dVudAORrEeWP6ZKRyKAUBA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdsITzEeihEoLajNqWsg" base_StructuralFeature="_Hps4kAAOEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdsYTzEeihEoLajNqWsg" base_StructuralFeature="_OYgKEACWEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdsoTzEeihEoLajNqWsg" base_StructuralFeature="_mYFIoACWEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwds4TzEeihEoLajNqWsg" base_StructuralFeature="_ePMD4IrYEeaGSdkQNw73qA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdtITzEeihEoLajNqWsg" base_StructuralFeature="_ZJOXIACVEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdtYTzEeihEoLajNqWsg" base_StructuralFeature="_2mY-wACgEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdtoTzEeihEoLajNqWsg" base_StructuralFeature="_8p8coACgEealys2IgwhgjA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzwdt4TzEeihEoLajNqWsg" base_StructuralFeature="_71-bUF26EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxEwITzEeihEoLajNqWsg" base_StructuralFeature="_8up6UF27EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxEwYTzEeihEoLajNqWsg" base_StructuralFeature="_BDfMkF28EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxEwoTzEeihEoLajNqWsg" base_StructuralFeature="_7oBYgHiNEeeiGa-yzInBbg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxEw4TzEeihEoLajNqWsg" base_StructuralFeature="_LYHbcGCYEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxExITzEeihEoLajNqWsg" base_StructuralFeature="_22OhMGCWEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxExYTzEeihEoLajNqWsg" base_StructuralFeature="_Rj_uAJbpEeajgeOxcKql5w"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxr0ITzEeihEoLajNqWsg" base_StructuralFeature="_OYHTEOiGEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxr0YTzEeihEoLajNqWsg" base_StructuralFeature="_IKyYsOiHEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxr0oTzEeihEoLajNqWsg" base_StructuralFeature="_TUKoYOltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxr04TzEeihEoLajNqWsg" base_StructuralFeature="_qXOUUOltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzxr1ITzEeihEoLajNqWsg" base_StructuralFeature="_QBxYoOlvEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzyS4ITzEeihEoLajNqWsg" base_StructuralFeature="_7oGRAHiNEeeiGa-yzInBbg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzyS4YTzEeihEoLajNqWsg" base_StructuralFeature="_5jbUcV27EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzyS4oTzEeihEoLajNqWsg" base_StructuralFeature="_5jbUcl27EeeNgoEu_TNfLA"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzyS44TzEeihEoLajNqWsg" base_StructuralFeature="_mzLvoWVdEeeHFpVwgq-AVg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzyS5ITzEeihEoLajNqWsg" base_StructuralFeature="_mzLvomVdEeeHFpVwgq-AVg"/>
+  <OpenModel_Profile:OpenModelAttribute xmi:id="_kzy58ITzEeihEoLajNqWsg" base_StructuralFeature="_mzLvpGVdEeeHFpVwgq-AVg"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_JEZdkMDyEeimjatONtR4zA" base_Association="_TUIMIOltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_MRKUgMDyEeimjatONtR4zA" base_Association="_QBu8YOlvEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_Nnbj4MDyEeimjatONtR4zA" base_Association="_Rj8qsJbpEeajgeOxcKql5w"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_WXMwYMDyEeimjatONtR4zA" base_Association="_22CT8GCWEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_Xvxs4MDyEeimjatONtR4zA" base_Association="_LYB74GCYEeeWHq5mFAU8rw"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_n2l_cMDyEeimjatONtR4zA" base_Association="_OYBzgOiGEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_o8EZwMDyEeimjatONtR4zA" base_Association="_IKtgMOiHEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_yGGgYMDyEeimjatONtR4zA" base_Association="_qXL4EOltEeaBucEb-GXXqQ"/>
+  <OpenModel_Profile:StrictComposite xmi:id="_3lYMgMDyEeimjatONtR4zA" base_Association="_7ixFEHiNEeeiGa-yzInBbg"/>
+</xmi:XMI>
