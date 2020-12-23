@@ -1,6 +1,10 @@
-# MEF-LSO-Presto-SDK (R3)
+# MEF-LSO-Presto-SDK - Aretha Release
 
 This repository contains the MEF LSO Presto SDK. 
+
+**Note:**
+Since Q4 2020 MEF has introduced a common release schema for all SDKs.
+The Presto SDK had no progress since last release, this release brings only a new tag.
 
 This release is a significant step towards utilizing programmable
 networks as part of our MEF 3.0 vision. The SDK builds on the previous
@@ -66,9 +70,7 @@ The SDK contains the following items:
 
    https://github.com/aboelbisher/LOS-PRESTO
 
-
 ## Commercial Implementations
-
 
 ## Related Projects
 
