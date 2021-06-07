@@ -1,32 +1,24 @@
-# MEF-LSO-Presto-SDK - Aretha Release
+# MEF-LSO-Presto-SDK - Billie Release
 
-This repository contains the MEF LSO Presto SDK. 
+This repository contains the MEF LSO Presto SDK.
+
+## Download Link
+
+Download the entire repository by clicking
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/billie/MEF-LSO-Presto-SDK-billie.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
-The Presto SDK had no progress since last release, this release brings only a new tag.
 
-This release is a significant step towards utilizing programmable
-networks as part of our MEF 3.0 vision. The SDK builds on the previous
-release to align the API schemas and definitions for Network Resource
-Provisioning (NRP) to the LSO Presto NRP IPS which was recently
-published as [MEF 60](https://www.mef.net/Assets/Technical_Specifications/PDF/MEF_60.pdf).
-In addition, its information model incorporates the latest ONF TAPI 2.0
-release. The SDK’s data models are supported in a reference
-implementation of the OpenDaylight SDN Controller and will be part of
-the official Fluorine release. This reference implementation
-demonstrates how a northbound application can, in a technology-agnostic
-and vendor-agnostic manner, provision a point-to-point or
-point-to-multipoint network connectivity service between end points.
-Released Presto APIs are controller and underlay technology-agnostic
-thus enabling programmatic network orchestration via various SDN
-controllers as well as via proprietary NMS/EMS software.
+Since the last Aretha release (December 2020) the following items have been updated:
 
-MEF has leveraged collaborative input from the ONF on its TAPI model in
-the creation of the LSO Presto NRP (Network Resource Provisioning) IPS.
-CenturyLink, Nokia, Amartus, Ciena, Cisco, Coriant, Ericsson, Huawei,
-Infinera, Iometrix, NEC and RAD are among the key contributors of this
-release.
+- MEF 66 - SOAM for IP Services - has become a Published Standard, July 2020
+- MEF 67 - Service Activation Testing for IP Services - has become a Published Standard, December 2020
+- MEF 72.1 - Resource Model -Subscriber & Operator Layer 1 - a new Published Standard, January 2021
+- MEF 83 - Network Resource Model - OAM - included, September 2019
+- MEF 86 - Presto Service OAM Interface Profile Specification - included, November 2019
+
+There is no update on the api and code artifacts.
 
 The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
