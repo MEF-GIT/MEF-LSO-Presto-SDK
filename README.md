@@ -1,24 +1,18 @@
-# MEF-LSO-Presto-SDK - Billie Release
+# MEF-LSO-Presto-SDK - Celine Release
 
 This repository contains the MEF LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/billie/MEF-LSO-Presto-SDK-billie.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/celine/MEF-LSO-Presto-SDK-celine.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
 
-Since the last Aretha release (December 2020) the following items have been updated:
+Since the last Billie release (December 2020) the following items have been updated:
 
-- MEF 66 - SOAM for IP Services - has become a Published Standard, July 2020
-- MEF 67 - Service Activation Testing for IP Services - has become a Published Standard, December 2020
-- MEF 72.1 - Resource Model -Subscriber & Operator Layer 1 - a new Published Standard, January 2021
-- MEF 83 - Network Resource Model - OAM - included, September 2019
-- MEF 86 - Presto Service OAM Interface Profile Specification - included, November 2019
-
-There is no update on the api and code artifacts.
+- `api\swagger\presto-nrp.yaml` - fixed a typo
 
 More information about the LSO Presto API reference point can be found here:
 

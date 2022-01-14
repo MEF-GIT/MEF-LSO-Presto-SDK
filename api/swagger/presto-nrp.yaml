@@ -306,8 +306,8 @@ paths:
             $ref: "#/definitions/tapi.topology.node.OwnedNodeEdgePoint"
         400:
           description: "Internal error"
-  ? /data/context/topology={uuid}/node={node-uuid}/owned-node-edge-point={owned-node-edge-point-uuid}/connection-end-point={connection-end-point-uuid}/
-  : get:
+  /data/context/topology={uuid}/node={node-uuid}/owned-node-edge-point={owned-node-edge-point-uuid}/connection-end-point={connection-end-point-uuid}/:
+    get:
       tags:
       - "tapi-common"
       description: "returns tapi.connectivity.ConnectionEndPoint"
