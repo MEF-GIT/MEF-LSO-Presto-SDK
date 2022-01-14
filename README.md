@@ -28,7 +28,7 @@ https://wiki.mef.net/display/CESG/LSO+Presto+SDK
 
 This is the SDK for the MEF LSO Presto API reference point. The SDK contains the following items:
 
-* COPYRIGHT - Copyright 2018 MEF Forum
+* COPYRIGHT - Copyright 2021 MEF Forum
 * LICENSE - Contains a copy of the Apache 2.0 license
 * api 
   * [swagger](api/swagger/README.md) - Contains the MEF NRP Swagger specifications.
