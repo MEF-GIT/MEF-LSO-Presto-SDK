@@ -1,18 +1,16 @@
-# MEF-LSO-Presto-SDK - Celine Release
+# MEF-LSO-Presto-SDK - Dolly Release
 
 This repository contains the MEF LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/celine/MEF-LSO-Presto-SDK-celine.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/dolly/MEF-LSO-Presto-SDK-dolly.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
 
-Since the last Billie release (December 2020) the following items have been updated:
-
-- `api\swagger\presto-nrp.yaml` - fixed a typo
+Since the last Celine release (January 2022) no items have been updated.
 
 More information about the LSO Presto API reference point can be found here:
 
@@ -62,7 +60,7 @@ The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
 ## Copyright
 
-© MEF Forum 2021. All Rights Reserved.
+© MEF Forum 2022. All Rights Reserved.
 
 ## Disclaimer
 
