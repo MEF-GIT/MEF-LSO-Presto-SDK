@@ -1,11 +1,11 @@
-# MEF-LSO-Presto-SDK - Dolly Release
+# MEF-LSO-Presto-SDK - Ella Release
 
 This repository contains the MEF LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/dolly/MEF-LSO-Presto-SDK-dolly.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/ella/MEF-LSO-Presto-SDK-ella.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
@@ -60,7 +60,7 @@ The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
 ## Copyright
 
-© MEF Forum 2022. All Rights Reserved.
+© MEF Forum 2023. All Rights Reserved.
 
 ## Disclaimer
 
