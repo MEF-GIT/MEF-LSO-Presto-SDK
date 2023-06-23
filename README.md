@@ -1,11 +1,11 @@
-# MEF-LSO-Presto-SDK - Ella Release
+# MEF-LSO-Presto-SDK - Fergie Release
 
 This repository contains the MEF LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/ella/MEF-LSO-Presto-SDK-ella.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/fergie/MEF-LSO-Presto-SDK-fergie.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
