@@ -3,8 +3,7 @@ swagger: "2.0"
 info:
   description: "MEF 60 (PRESTO NRP) swagger definition"
   version: "2018R2"
-  title: "mef-common,tapi-topology,tapi-common,tapi-connectivity,mef-common-types,nrm-connectivity,nrp-interface\
-    \ API"
+  title: "Network Resource Provisioning"
 host: "localhost:1234"
 basePath: "/restconf"
 consumes:

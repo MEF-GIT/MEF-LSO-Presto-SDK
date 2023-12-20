@@ -1,16 +1,16 @@
-# MEF-LSO-Presto-SDK - Fergie Release
+# MEF-LSO-Presto-SDK - Grace Release
 
 This repository contains the MEF LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/fergie/MEF-LSO-Presto-SDK-fergie.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/grace/MEF-LSO-Presto-SDK-grace.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
 
-Since the last Celine release (January 2022) no items have been updated.
+Since the Celine release (January 2022) no items have been updated.
 
 More information about the LSO Presto API reference point can be found here:
 
@@ -54,7 +54,7 @@ https://github.com/OpenNetworkingFoundation/TAPI
 
 ## Issues, Questions, and Feedback
 
-Issues should be reported with the use of GitHub issues. Questions and feedback should be asked either at [Presto SDK Community](https://github.com/orgs/MEF-GIT/teams/mef-lso-presto-sdk-community) or directly to community_manager@mef.net.
+Issues should be reported with the use of GitHub issues. Questions and feedback should be asked either at [Presto SDK Discussions](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/discussions) or directly to community_manager@mef.net.
 
 The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
