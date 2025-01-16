@@ -1,5 +1,11 @@
 # Network Resource Provisioning: Release notes
 
+## Release Irene:
+
+**Readiness status**: early draft version, on hold
+
+**Summary** - No changes.
+
 ## Release Haley:
 
 **Readiness status**: early draft version, on hold

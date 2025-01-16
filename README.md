@@ -1,11 +1,11 @@
-# MEF-LSO-Presto-SDK - Haley Release
+# MEF-LSO-Presto-SDK - Irene Release
 
 This repository contains the MEF LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/haley/MEF-LSO-Presto-SDK-haley.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/irene/MEF-LSO-Presto-SDK-irene.zip)
 
 **Note:**
 Since Q4 2020 MEF has introduced a common release schema for all SDKs.
@@ -60,7 +60,7 @@ The MEF LSO Presto SDK is released under the Apache 2.0 license.
 
 ## Copyright
 
-© MEF Forum 2024. All Rights Reserved.
+© MEF Forum 2025. All Rights Reserved.
 
 ## Disclaimer
 
