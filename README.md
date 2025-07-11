@@ -1,11 +1,11 @@
-# Mplify-LSO-Presto-SDK - Irene Release
+# Mplify-LSO-Presto-SDK - Janis Release
 
 This repository contains the Mplify LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/irene/Mplify-LSO-Presto-SDK-irene.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/janis/Mplify-LSO-Presto-SDK-janis.zip)
 
 **Note:**
 Since Q4 2020 Mplify has introduced a common release schema for all SDKs.
