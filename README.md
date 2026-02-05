@@ -1,11 +1,11 @@
-# Mplify-LSO-Presto-SDK - Janis Release
+# Mplify-LSO-Presto-SDK - Kylie Release
 
 This repository contains the Mplify LSO Presto SDK.
 
 ## Download Link
 
 Download the entire repository by clicking
-[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/janis/Mplify-LSO-Presto-SDK-janis.zip)
+[here](https://github.com/MEF-GIT/MEF-LSO-Presto-SDK/releases/download/kylie/Mplify-LSO-Presto-SDK-kylie.zip)
 
 **Note:**
 Since Q4 2020 Mplify has introduced a common release schema for all SDKs.
@@ -20,7 +20,7 @@ https://wiki.mplify.net/display/CESG/LSO+Presto+SDK
 
 This is the SDK for the Mplify LSO Presto API reference point. The SDK contains the following items:
 
-* COPYRIGHT - Copyright 2025 Mplify Alliance
+* COPYRIGHT - Copyright 2026 Mplify Alliance
 * LICENSE - Contains a copy of the Apache 2.0 license
 * api 
   * [swagger](api/swagger/README.md) - Contains the Mplify NRP Swagger specifications.
@@ -60,7 +60,7 @@ The Mplify LSO Presto SDK is released under the Apache 2.0 license.
 
 ## Copyright
 
-© Mplify Alliance 2025. All Rights Reserved.
+© Mplify Alliance 6. All Rights Reserved.
 
 **Disclaimer**
 

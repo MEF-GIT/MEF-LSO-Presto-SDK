@@ -1,5 +1,11 @@
 # Network Resource Provisioning: Release notes
 
+## Release Kylie:
+
+**Readiness status**: early draft version, on hold
+
+**Summary** - No changes.
+
 ## Release Janis:
 
 **Readiness status**: early draft version, on hold
